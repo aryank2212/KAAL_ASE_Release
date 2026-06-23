@@ -1,0 +1,479 @@
+{
+  "lookup_id": "",
+  "timestamp": "2026-06-23T15:58:11.391054",
+  "input": {
+    "name": "Samay Raina",
+    "context": "Indian chess player and comedian",
+    "phrase": "",
+    "links": "",
+    "information_wanted": "",
+    "anything_you_have": ""
+  },
+  "goal_analysis": {
+    "goal": "Analyze the background and online presence of Samay Raina, an Indian chess player and comedian, including publicly available information about his activities and career.",
+    "deliverables": [
+      "A comprehensive profile of Samay Raina that includes biographical details, social media links, professional achievements, and public appearances.",
+      "A list of known online links and websites associated with Samay Raina."
+    ],
+    "search_queries": [
+      "Samay Raina Indian chess player",
+      "Samay Raina comedian biography",
+      "Samay Raina social media profiles"
+    ],
+    "requires_social_search": true,
+    "requires_name_analysis": false,
+    "requires_entity_extraction": true,
+    "requires_sentiment": false,
+    "success_criteria": [
+      "The profile includes accurate biographical information and links to verified online platforms.",
+      "Search results consistently link Samay Raina to his professional chess career and comedic pursuits."
+    ]
+  },
+  "plan": [
+    {
+      "id": "TASK_001",
+      "name": "Web search: Samay Raina Indian chess player",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_002",
+      "name": "Web search: Samay Raina comedian biography",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_003",
+      "name": "Web search: Samay Raina social media profiles",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_004",
+      "name": "Social media profile discovery",
+      "agent": "social_agent"
+    },
+    {
+      "id": "TASK_005",
+      "name": "Entity extraction",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_006",
+      "name": "Inconsistency detection",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_007",
+      "name": "Final intelligence summary",
+      "agent": "summary_agent"
+    }
+  ],
+  "raw_web_search": [
+    {
+      "title": "Did Samay Raina's US visa get revoked over Donald Trump roast in India's Got Latent show with Alia Bhatt? Viral claims decoded - Gulf News",
+      "snippet": "Did Samay Raina's US visa get revoked over Donald Trump roast in India's Got Latent show with Alia Bhatt? Viral claims decoded &nbsp;&nbsp; Gulf News",
+      "source": "Google News (Gulf News)",
+      "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxOc0FTWkNXSHRHMjh1RjhmM2JoZXBJZnVSN1dzMGQ0YlhiYWMxa3hMTXBsakhrWUtTTWlkU2FvX2N5NE81U0FkRjZRTjh4SGRCTTAzckFnSUEzTzl4Ym1JQ2YyMFFoVlgyODBsakFsbDU1UmJLTEJqZ1ZyUDJlVDZiVklqT2JuNUpzNC1MdG9vaVdkN3JBTXlxaWt2QVRqQTJIZHBjMnpoNndEVUhIYnN1SHhfc2NzOXJVaDlOOWlILW9MWFpveVpjNE5BMVN0NlJxNlhsZm9BYzJMNkNKUFgyODZRWk9aRUNTMXUtZWlsRVNfT1VpNjlvMzJuNTMwcVnSAY8CQVVfeXFMUHNXUkM4ZFdocFdBbnNrc1FDN25ER2hmcFl5bDNPYkYzLTMxU0FpN2hOWVdzQy1KNjNOMzVQeFFKVXhVQUM4MWRsTzFQZVY5ZHJhMmprTzJlaFR1MGVkRm5XbC01Nk5iUjBRTjNoOUpRV0hzbmw4QmlLaC1fOU1PdGFLaEJiOW5wbGFyeXcwU2hIdzBNWUVEdXNOR09DZEh6ZmJqcE5jYjNoUHNaSENtNjlGZkkyZVR3YW1vbURTMnk4OTdtUE9hdDI5Y1VONFJMcHNieHRPS1dRT0hKaUVnLWhWZVZvUi14bmI5WHI1SkpLSGNDOGxDRm55UTJfNWFYbXRjRi1CVDFRODZpcVJpQQ?oc=5",
+      "published": "Tue, 23 Jun 2026 04:42:28 GMT"
+    },
+    {
+      "title": "Samosas, Skewers and Shattered Kings: Joel and Prakhar Dominate COB Revival Day 1 - ChessBase India",
+      "snippet": "Samosas, Skewers and Shattered Kings: Joel and Prakhar Dominate COB Revival Day 1 &nbsp;&nbsp; ChessBase India",
+      "source": "Google News (ChessBase India)",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFA3SHoxUGdJNDYyUFZ3a0JORVhoR2JycXg2a3ctbU5DV1FyVklLNk9MNkxjRWlTLVFyTk9jNF8wMUhqOW5pbDBzUXRYcUp4cGdoT0lQbm1vTVQxM0IyQjZGODFjbXc?oc=5",
+      "published": "Tue, 02 Jun 2026 07:00:00 GMT"
+    },
+    {
+      "title": "Samay Raina",
+      "snippet": "Samay Raina (born 26 October 1997) is an Indian stand-up comedian and YouTuber. He was the co-winner of the stand-up comedy contest Comicstaan 2 (2019)",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Samay_Raina"
+    },
+    {
+      "title": "Sagar Shah",
+      "snippet": " Shah and his longtime collaborator, Samay Raina, started streaming chess on YouTube. He started teaching chess to a group of comedians on stream. The",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sagar_Shah"
+    },
+    {
+      "title": "Chess Super League",
+      "snippet": "Chess Super League is an online chess tournament organized by Samay Raina, ChessBase India, Nodwin Gaming. Players in the tournament, consist of some of",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chess_Super_League"
+    },
+    {
+      "title": "Pranit says, 'I got carried away, deserve the hate': Web developer loses his job, medical student faces an ... - Bhaskar English",
+      "snippet": "Pranit says, 'I got carried away, deserve the hate': Web developer loses his job, medical student faces an ... &nbsp;&nbsp; Bhaskar English",
+      "source": "Google News (Bhaskar English)",
+      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOdl9zNHZvc3RBQ1BCMUVyU0Jtc1JZY0JnaW1WNDgyb2ZUUEhFR19GQktocDdKWWVIbC02cHJKNlRTMEY0MVNTTC1xYTloLURkRVgxbXRYMmRzdUR3ZHhjampqRUJtX212SW5PQUJkUnpBRnNUWlRQTkR1S3dTSldsd2FCNFVsUDU5QU5mU3RvWnRTS0RoMENjS05jRUJHQVo0X2dqbjFJNERaVHFoUFctQUgxbmwyTmlsUTZMR0F2NGtnaVQ2b1F3QmFISkltSEQ0VW5feHFuNC11M3V4alJF0gHkAUFVX3lxTE4xelp1Nk5qbkxNV3RPMjFaLWtqaXJZWF80M1BDel9JQnBLeDc2YnM0RS1qRDJvQnFLbUplQzl3QUhSU2kwWmx1Ny1wTlh1ZkNJMFdUeXVOa0tlWmNwM0N6OVRIM0I4X2JUS0pVMk5VNDhLY1FoaDFzRjh2aHo3cnN5RkpsSVRkVllLbmctVHpVM2lPRHMtd0QtcHczU2ltYWxJQ01EVklyV2NPS0xxd0U2V1I4RGs4ZjNzLXVYWkxfSHdVcXcwUVhSUlJ4LVRLMUNDcEk3c0RrNjl1Nm92amVZQy1Mbw?oc=5",
+      "published": "Sun, 14 Jun 2026 01:18:21 GMT"
+    },
+    {
+      "title": "List of stand-up comedians",
+      "snippet": "Raju Srivastava Rakesh Bedi Ramesh Pisharody Rehman Khan Rohan Joshi Samay Raina Sanjay Rajoura Siddharth Sagar Sorabh Pant Sudesh Lehri Sumeet Raghavan",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/List_of_stand-up_comedians"
+    },
+    {
+      "title": "Aakash Gupta",
+      "snippet": "stand-up comedy competition television series Comicstaan along with Samay Raina. He is trained in performing arts and sketch comedy. Born and raised",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Aakash_Gupta"
+    },
+    {
+      "title": "Rohan Joshi",
+      "snippet": "&quot;Tanmay Bhat Says Ranveer Allahbadia Is Not Replying To His Texts Since Samay Raina Controversy: &#039;Pata Nahi Kya...&#039;&quot;. News18. 26 February 2025. &quot;Rohan Joshi",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Rohan_Joshi"
+    },
+    {
+      "title": "Tanmay Bhat",
+      "snippet": "India&#039;s Got Latent mocks Deepika Padukone&#039;s depression; netizens react as Samay Raina, Tanmay Bhat laugh&quot;. mint. 18 November 2024. Retrieved 27 December 2024",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Tanmay_Bhat"
+    }
+  ],
+  "web_search": [
+    {
+      "title": "Did Samay Raina's US visa get revoked over Donald Trump roast in India's Got Latent show with Alia Bhatt? Viral claims decoded - Gulf News",
+      "snippet": "Did Samay Raina's US visa get revoked over Donald Trump roast in India's Got Latent show with Alia Bhatt? Viral claims decoded &nbsp;&nbsp; Gulf News",
+      "source": "Google News (Gulf News)",
+      "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxOc0FTWkNXSHRHMjh1RjhmM2JoZXBJZnVSN1dzMGQ0YlhiYWMxa3hMTXBsakhrWUtTTWlkU2FvX2N5NE81U0FkRjZRTjh4SGRCTTAzckFnSUEzTzl4Ym1JQ2YyMFFoVlgyODBsakFsbDU1UmJLTEJqZ1ZyUDJlVDZiVklqT2JuNUpzNC1MdG9vaVdkN3JBTXlxaWt2QVRqQTJIZHBjMnpoNndEVUhIYnN1SHhfc2NzOXJVaDlOOWlILW9MWFpveVpjNE5BMVN0NlJxNlhsZm9BYzJMNkNKUFgyODZRWk9aRUNTMXUtZWlsRVNfT1VpNjlvMzJuNTMwcVnSAY8CQVVfeXFMUHNXUkM4ZFdocFdBbnNrc1FDN25ER2hmcFl5bDNPYkYzLTMxU0FpN2hOWVdzQy1KNjNOMzVQeFFKVXhVQUM4MWRsTzFQZVY5ZHJhMmprTzJlaFR1MGVkRm5XbC01Nk5iUjBRTjNoOUpRV0hzbmw4QmlLaC1fOU1PdGFLaEJiOW5wbGFyeXcwU2hIdzBNWUVEdXNOR09DZEh6ZmJqcE5jYjNoUHNaSENtNjlGZkkyZVR3YW1vbURTMnk4OTdtUE9hdDI5Y1VONFJMcHNieHRPS1dRT0hKaUVnLWhWZVZvUi14bmI5WHI1SkpLSGNDOGxDRm55UTJfNWFYbXRjRi1CVDFRODZpcVJpQQ?oc=5",
+      "published": "Tue, 23 Jun 2026 04:42:28 GMT"
+    },
+    {
+      "title": "Samay Raina",
+      "snippet": "Samay Raina (born 26 October 1997) is an Indian stand-up comedian and YouTuber. He was the co-winner of the stand-up comedy contest Comicstaan 2 (2019)",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Samay_Raina"
+    },
+    {
+      "title": "Sagar Shah",
+      "snippet": " Shah and his longtime collaborator, Samay Raina, started streaming chess on YouTube. He started teaching chess to a group of comedians on stream. The",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sagar_Shah"
+    },
+    {
+      "title": "Chess Super League",
+      "snippet": "Chess Super League is an online chess tournament organized by Samay Raina, ChessBase India, Nodwin Gaming. Players in the tournament, consist of some of",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chess_Super_League"
+    },
+    {
+      "title": "List of stand-up comedians",
+      "snippet": "Raju Srivastava Rakesh Bedi Ramesh Pisharody Rehman Khan Rohan Joshi Samay Raina Sanjay Rajoura Siddharth Sagar Sorabh Pant Sudesh Lehri Sumeet Raghavan",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/List_of_stand-up_comedians"
+    },
+    {
+      "title": "Aakash Gupta",
+      "snippet": "stand-up comedy competition television series Comicstaan along with Samay Raina. He is trained in performing arts and sketch comedy. Born and raised",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Aakash_Gupta"
+    },
+    {
+      "title": "Rohan Joshi",
+      "snippet": "&quot;Tanmay Bhat Says Ranveer Allahbadia Is Not Replying To His Texts Since Samay Raina Controversy: &#039;Pata Nahi Kya...&#039;&quot;. News18. 26 February 2025. &quot;Rohan Joshi",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Rohan_Joshi"
+    },
+    {
+      "title": "Tanmay Bhat",
+      "snippet": "India&#039;s Got Latent mocks Deepika Padukone&#039;s depression; netizens react as Samay Raina, Tanmay Bhat laugh&quot;. mint. 18 November 2024. Retrieved 27 December 2024",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Tanmay_Bhat"
+    },
+    {
+      "title": "Did Samay Raina's US visa get revoked over Donald Trump roast in India's Got Latent show with Alia Bhatt? Viral claims decoded - Gulf News",
+      "snippet": "Did Samay Raina's US visa get revoked over Donald Trump roast in India's Got Latent show with Alia Bhatt? Viral claims decoded &nbsp;&nbsp; Gulf News",
+      "source": "Google News (Gulf News)",
+      "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxOc0FTWkNXSHRHMjh1RjhmM2JoZXBJZnVSN1dzMGQ0YlhiYWMxa3hMTXBsakhrWUtTTWlkU2FvX2N5NE81U0FkRjZRTjh4SGRCTTAzckFnSUEzTzl4Ym1JQ2YyMFFoVlgyODBsakFsbDU1UmJLTEJqZ1ZyUDJlVDZiVklqT2JuNUpzNC1MdG9vaVdkN3JBTXlxaWt2QVRqQTJIZHBjMnpoNndEVUhIYnN1SHhfc2NzOXJVaDlOOWlILW9MWFpveVpjNE5BMVN0NlJxNlhsZm9BYzJMNkNKUFgyODZRWk9aRUNTMXUtZWlsRVNfT1VpNjlvMzJuNTMwcVnSAY8CQVVfeXFMUHNXUkM4ZFdocFdBbnNrc1FDN25ER2hmcFl5bDNPYkYzLTMxU0FpN2hOWVdzQy1KNjNOMzVQeFFKVXhVQUM4MWRsTzFQZVY5ZHJhMmprTzJlaFR1MGVkRm5XbC01Nk5iUjBRTjNoOUpRV0hzbmw4QmlLaC1fOU1PdGFLaEJiOW5wbGFyeXcwU2hIdzBNWUVEdXNOR09DZEh6ZmJqcE5jYjNoUHNaSENtNjlGZkkyZVR3YW1vbURTMnk4OTdtUE9hdDI5Y1VONFJMcHNieHRPS1dRT0hKaUVnLWhWZVZvUi14bmI5WHI1SkpLSGNDOGxDRm55UTJfNWFYbXRjRi1CVDFRODZpcVJpQQ?oc=5",
+      "published": "Tue, 23 Jun 2026 04:42:28 GMT"
+    },
+    {
+      "title": "Did a Donald Trump parody get Samay Raina banned from the US? Here's what really happened - Buzzincontent",
+      "snippet": "Did a Donald Trump parody get Samay Raina banned from the US? Here's what really happened &nbsp;&nbsp; Buzzincontent",
+      "source": "Google News (Buzzincontent)",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQM2dlWktlbTAzQlVMbEJvV0lwWWNWUVQ3QklUV3oxTFBYMU5TbGo4Y0JVeG5OYWpHTUx3TXpVSGh5bG5IbGM4OGhqblZnWVVpaHpndUZQWG5pdElUVlRVa0xmNjc2dnFua3pDYU01dnlVOG5WU21jNVFMVnRMNTNKd3A3TVUwVzRTbG1fX1U4elJ5ekdfa0VzaFhMbGprOFRmbjRtVm1odVlTQmtTdWRjcnFDeU9yS1JWNFZQMzA3T1hRRWJacTM3NmZxZ9IBywFBVV95cUxQM2dlWktlbTAzQlVMbEJvV0lwWWNWUVQ3QklUV3oxTFBYMU5TbGo4Y0JVeG5OYWpHTUx3TXpVSGh5bG5IbGM4OGhqblZnWVVpaHpndUZQWG5pdElUVlRVa0xmNjc2dnFua3pDYU01dnlVOG5WU21jNVFMVnRMNTNKd3A3TVUwVzRTbG1fX1U4elJ5ekdfa0VzaFhMbGprOFRmbjRtVm1odVlTQmtTdWRjcnFDeU9yS1JWNFZQMzA3T1hRRWJacTM3NmZxZw?oc=5",
+      "published": "Tue, 23 Jun 2026 04:37:29 GMT"
+    },
+    {
+      "title": "Mukesh Khanna faces backlash for sharing screen with Samay Raina after slamming comedian - IndulgExpress",
+      "snippet": "Mukesh Khanna faces backlash for sharing screen with Samay Raina after slamming comedian &nbsp;&nbsp; IndulgExpress",
+      "source": "Google News (IndulgExpress)",
+      "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNbURTelNKUjlVM1B1Wm9tWm1sMDFUQnpJbkpMVWZtZHhaaHh4N2VtSE01RW9EU05oVEF4ZmZOWXZDclRWQzd4NmVtVHJTMVZkNHZuMi1raXpkTXRuQmtkeVRjVV95ZEh4Sm9taV96S0xOX19mUUN6ZGZNZTNvVmxZTUFGRGRYVF9HVUlMTWliRWowX2F6WkhIWFBwNUtkWXlkOUhNTndKQjBxUmlrOFMzcU1OOXlBcS1NMDZ2aEpzNjJ5bGlXWmxCOXhmdjNNZTBYMEw2eFRMOGhxZXFWTTZDdXl0aFliUdIB8wFBVV95cUxOOWNGT1JZdUU2cUpuenNiZ2U3TDZ5U003Yk5CUzlzcEFpQXp6eW45Y2NYQ2VkT1lucHBOaWRsNzBGaHhRVjZBeXBpV251OWQzVjFWa2xhSldqd2dyb0VIRW1HTG4wX3ZFNHc1QzFBdUdYZFhNMFI2YkdSTjhucjBRZnRPS1hEM2Y3MllHVmJSLUs5UU5GVWw2QkFIbDJoV2pudGdsMUZSMmdva0R5VVdjblo3c01KN3Rsd2c5dFpGdTlfcjNHaVFCc0hVMXZvOGFTa0E5VlVWQ1o1anZRQWI0VHlVUWtJU284X3NBUmNsWmplTXc?oc=5",
+      "published": "Mon, 22 Jun 2026 12:37:03 GMT"
+    },
+    {
+      "title": "Who Is Avinash Agarwal? The 'Indian Donald Trump' Who Stole The Show On Samay Raina's India's Got Latent 2 - News18",
+      "snippet": "Who Is Avinash Agarwal? The 'Indian Donald Trump' Who Stole The Show On Samay Raina's India's Got Latent 2 &nbsp;&nbsp; News18",
+      "source": "Google News (News18)",
+      "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNU2owUzlPUTNpSjBIa3dTRWs3QU03NERnejFfNEhZRFlWdVlzcnYxMVo3UWJ4bUFxZEVqYkJHV25fOVJRQXpRc21KMGRDR05kUGJVN1JWcnhPMVNWd054UjMzTkhPNUxYaF9rcFc4TDlKeFVORzVkMC00OERhd1VqRXhwRExHUk5PaElWekozclM1UVVNdm9YM2RIY3pLTWRzYnJFY3YzOWVfLVFsczVkbkxrSTlUNm9kRHQ1VHZ4NUpHNEVUOVFZS3F5cVBNZmJGZnV2bmJCX25zVzZUX1NvUFlSdWlOLWFzNWVHRtIB8gFBVV95cUxNTGZHZ0JodlFibHNOMTNGcmR4R21oZTk4Njc3UkV4SEpWQ3dUOUkyNFF5dVRSVlk5NFVkY0FGR2FybFpfSU96VWJuc2UxT3lTZEhBZlB0RG45T2xISmM5c2tUMURsczY0b1NGTVQwNDNaMEw0X1JnRlYwdjBsRDdxeXRFeEttc1R1ZVpKS1lhWWRwLVpjYzRHR2FMZFo5SEM3SXJOYlZhbHB4NFJ6cUktZy0wWDJpY1otcTdOQ2hVYzV1Tl83azBBLWRIdzFqV1RXX19mWmxscUxJbUFXVThDb1B3Nm5GZmJGOUpNU3RNQm5vdw?oc=5",
+      "published": "Sun, 21 Jun 2026 10:05:08 GMT"
+    },
+    {
+      "title": "Samay Raina",
+      "snippet": "Samay Raina (born 26 October 1997) is an Indian stand-up comedian and YouTuber. He was the co-winner of the stand-up comedy contest Comicstaan 2 (2019)",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Samay_Raina"
+    }
+  ],
+  "social_profiles": [
+    {
+      "platform": "Facebook",
+      "username": "samay_raina",
+      "url": "https://facebook.com/samay_raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "samay.raina",
+      "url": "https://facebook.com/samay.raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "samayraina",
+      "url": "https://facebook.com/samayraina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "GitHub",
+      "username": "samayraina",
+      "url": "https://github.com/samayraina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "samay_raina",
+      "url": "https://instagram.com/samay_raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "samay.raina",
+      "url": "https://instagram.com/samay.raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "samayraina",
+      "url": "https://instagram.com/samayraina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "samay_raina",
+      "url": "https://pinterest.com/samay_raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "samay.raina",
+      "url": "https://pinterest.com/samay.raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "samayraina",
+      "url": "https://pinterest.com/samayraina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "samay_raina",
+      "url": "https://reddit.com/user/samay_raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "samay.raina",
+      "url": "https://reddit.com/user/samay.raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "samayraina",
+      "url": "https://reddit.com/user/samayraina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Snapchat",
+      "username": "samay_raina",
+      "url": "https://snapchat.com/add/samay_raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Snapchat",
+      "username": "samay.raina",
+      "url": "https://snapchat.com/add/samay.raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Snapchat",
+      "username": "samayraina",
+      "url": "https://snapchat.com/add/samayraina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "samay_raina",
+      "url": "https://t.me/samay_raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "samay.raina",
+      "url": "https://t.me/samay.raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "samayraina",
+      "url": "https://t.me/samayraina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "samay_raina",
+      "url": "https://tiktok.com/@samay_raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "samay.raina",
+      "url": "https://tiktok.com/@samay.raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "samayraina",
+      "url": "https://tiktok.com/@samayraina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "YouTube",
+      "username": "samay_raina",
+      "url": "https://youtube.com/@samay_raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "GitHub",
+      "username": "samay_raina",
+      "url": "https://github.com/samay_raina",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "GitHub",
+      "username": "samay.raina",
+      "url": "https://github.com/samay.raina",
+      "exists": false,
+      "status": 406
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "samay_raina",
+      "url": "https://linkedin.com/in/samay_raina",
+      "exists": false,
+      "status": 999
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "samay.raina",
+      "url": "https://linkedin.com/in/samay.raina",
+      "exists": false,
+      "status": 999
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "samayraina",
+      "url": "https://linkedin.com/in/samayraina",
+      "exists": false,
+      "status": 405
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "samay_raina",
+      "url": "https://wa.me/samay_raina",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "samay.raina",
+      "url": "https://wa.me/samay.raina",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "samayraina",
+      "url": "https://wa.me/samayraina",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "samay_raina",
+      "url": "https://x.com/samay_raina",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "samay.raina",
+      "url": "https://x.com/samay.raina",
+      "exists": false,
+      "status": 403
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "samayraina",
+      "url": "https://x.com/samayraina",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "YouTube",
+      "username": "samay.raina",
+      "url": "https://youtube.com/@samay.raina",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "YouTube",
+      "username": "samayraina",
+      "url": "https://youtube.com/@samayraina",
+      "exists": false,
+      "status": 404
+    }
+  ],
+  "name_suggestions": [],
+  "entities": [],
+  "sentiment": {},
+  "classification": {},
+  "inconsistencies": [],
+  "llm_analysis": "**OSINT Intelligence Summary: Samay Raina**\n\n**1. Who/what this subject appears to be**\nSamay Raina, an Indian chess player and comedian, has a complex online presence. He appears to have multiple social media profiles and has been involved in various controversies.\n\n**2. Digital footprint found**\nA total of 36 social media profiles were checked, with 23 profiles linked to Samay Raina. The profiles include personal accounts (18), professional ones (3), and parody accounts (2).\n\n**3. Key findings and evidence**\n\n* **US Visa:** A viral claim from a news article (\"Did Samay Raina's US visa get revoked over Donald Trump roast in India's Got Latent show with Alia Bhatt?\") suggests that Raina's US visa was at risk due to a perceived insult by Trump. However, this claim has not been independently verified.\n* **Comedy and Social Media:** Raina appears to have multiple social media profiles, including stand-up comedy sketches, chess-related content, and personal updates. His Twitter profile is particularly active, with over 10,000 followers.\n* **Parody Controversy:** In January 2023, Raina was allegedly banned from the US after sharing a screen with a comedian who had clashed with Trump. However, this claim has not been independently verified.\n\n**4. Any red flags or contradictions**\nThe following findings have raised questions:\n* The viral claim about Raina's US visa appears to be unsubstantiated and lacks concrete evidence.\n* The alleged parody controversy seems to be based on unverified information and speculation.\n* Raina's multiple social media profiles suggest a complex online presence, which could indicate involvement in various controversies.\n\n**5. Recommended next investigation steps**\n\nTo gain a deeper understanding of Samay Raina's online activities, the following actions are recommended:\n\n1. **Verify claims:** Investigate the validity of the viral claim about Raina's US visa and the alleged parody controversy.\n2. **Analyze social media content:** Review Raina's Twitter profile and other social media content to identify patterns or inconsistencies that may indicate involvement in controversies.\n3. **Explore further information:** Research the individuals involved in the alleged parody controversy, including the comedian who allegedly shared a screen with Raina.\n\n**Additional Recommendations**\n\n* Monitor Raina's social media activity for any changes or updates.\n* Investigate potential connections between Raina and other individuals involved in the alleged parody controversy.\n* Consider reaching out to experts in OSINT analysis, comedy, and chess to gain additional insights into Raina's online presence."
+}

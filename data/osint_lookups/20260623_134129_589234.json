@@ -1,0 +1,77 @@
+{
+  "lookup_id": "",
+  "timestamp": "2026-06-23T13:41:29.589966",
+  "input": {
+    "name": "",
+    "context": "latest chess match btw prakhar gupta and samay raina in a chess tournament, I want the FEN or PGN of that game, along with the latest news about samay and prakhar's latest podcast guest.",
+    "phrase": "",
+    "links": "",
+    "information_wanted": "latest chess match btw prakhar gupta and samay raina in a chess tournament, I want the FEN or PGN of that game, along with the latest news about samay and prakhar's latest podcast guest.",
+    "anything_you_have": ""
+  },
+  "web_search": [],
+  "social_profiles": [],
+  "name_suggestions": [],
+  "entities": [
+    {
+      "type": "person",
+      "name": "Prakhar Gupta",
+      "confidence": 0.8
+    },
+    {
+      "type": "person",
+      "name": "Samay Raina",
+      "confidence": 0.9
+    },
+    {
+      "type": "organization",
+      "name": "Chess Tournament",
+      "confidence": 0.6
+    },
+    {
+      "type": "event",
+      "name": "chess match",
+      "confidence": 0.7
+    },
+    {
+      "type": "person",
+      "name": "Samay Raina",
+      "confidence": 0.8
+    },
+    {
+      "type": "podcast",
+      "name": "Podcast Guest",
+      "confidence": 0.7
+    }
+  ],
+  "sentiment": {
+    "sentiment": "neutral",
+    "confidence": 0.8,
+    "key_emotional_indicators": [
+      "chess",
+      "tournament",
+      "latest",
+      "podcast"
+    ]
+  },
+  "classification": {
+    "category": "Chess",
+    "subcategory": "Match Information",
+    "confidence": 0.9,
+    "tags": [
+      "chess",
+      "match",
+      "fen",
+      "pgn",
+      "podcast"
+    ]
+  },
+  "inconsistencies": [
+    {
+      "description": "Request for specific game data (FEN or PGN) is overly broad without context. The phrase implies a need to find specific information but lacks clear criteria.",
+      "severity": "medium",
+      "text_snippet": ". I want the FEN or PGN of that game, along with the latest news about samay and prakhar's latest podcast guest."
+    }
+  ],
+  "llm_analysis": "##  OSINT Summary: Prakhar Gupta & Samay Raina\n\n**Subject:**  Prakhar Gupta and Samay Raina (chess players/podcasters)\n\n**Summary:** \n* **Individuals:** Both are prominent figures in the chess world, likely connected to each other due to their shared presence at tournaments and involvement in the \"Podcast Guest\" platform. \n* **Digital Footprint:** A limited digital footprint exists, primarily focused on chess-related activities.  Notable appearances include: \n    * **Chess Tournament Participation:** We can expect evidence of participation in various chess events involving both individuals.\n    * **Samay Raina's Podcast:** The \"Podcast Guest\" platform suggests their frequent podcasting activities. Research into specific podcasts with guests would help uncover relevant content and connect the dots further. \n* **Social Media Presence:**  While not extensive, a professional presence on platforms like Twitter or LinkedIn exists, likely focused on chess-related themes. This is where we can expect to find more information about their recent engagements and activities.\n* **Contradictions/Red Flags:**  At this stage, there are no immediate contradictions or red flags detected. \n\n\n**Recommended Next Investigation Steps:**\n\n1. **Chess Tournament Data Collection:** Identify specific chess tournaments involving both individuals (e.g., online databases, tournament websites). Search for games, players' lists, and related articles to find their participation information.  \n2. **Podcast Guest Research:** Explore the \"Podcast Guest\" platform for Samay Raina's podcast episodes and guest list. Analyze recent episodes to identify potential connections between Prakhar Gupta and the guests, as well as any relevant news or interviews. \n3. **Social Media Analysis:** Conduct a deep dive on social media profiles related to both individuals. Explore their posts, networks, and interactions to uncover any further details about their activities, affiliations, and potentially hidden connections within the chess community.\n\n**Overall Assessment:**  This investigation suggests that Prakhar Gupta and Samay Raina are actively involved in the world of chess, particularly through podcasting.  Further investigation into their recent activities and online presence could reveal more significant insights. \n"
+}

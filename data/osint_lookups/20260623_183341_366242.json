@@ -1,0 +1,1650 @@
+{
+  "lookup_id": "",
+  "timestamp": "2026-06-23T18:33:41.366268",
+  "input": {
+    "name": "Aryan Kumar Rajput",
+    "context": "Student, 19 year old, lives in Delhi, India",
+    "phrase": "college",
+    "links": "https://www.linkedin.com/in/aryan-kumar-rajput-13b308343/",
+    "information_wanted": "his college",
+    "anything_you_have": "1st year student, goes to a college in gurugram, haryana"
+  },
+  "model": "gemma4:latest",
+  "goal_analysis": {
+    "goal": "Identify and document the name of the college Aryan Kumar Rajput is attending in Gurugram, Haryana, India.",
+    "deliverables": [
+      "College name",
+      "Relevant location details (city, state)"
+    ],
+    "search_queries": [
+      "Aryan Kumar Rajput Gurugram colleges",
+      "college students Aryan Kumar Rajput LinkedIn Gurugram",
+      "1st year student Aryan Kumar Rajput Delhi India college"
+    ],
+    "requires_social_search": true,
+    "requires_name_analysis": true,
+    "requires_entity_extraction": true,
+    "requires_sentiment": false,
+    "success_criteria": [
+      "The search queries should return the college's name, and the location of this college, if possible"
+    ]
+  },
+  "plan": [
+    {
+      "id": "TASK_001",
+      "name": "Web search: Aryan Kumar Rajput Gurugram colleges",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_002",
+      "name": "Web search: college students Aryan Kumar Rajput LinkedIn Gurugram",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_003",
+      "name": "Web search: 1st year student Aryan Kumar Rajput Delhi India college",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_004",
+      "name": "Social media profile discovery",
+      "agent": "social_agent"
+    },
+    {
+      "id": "TASK_005",
+      "name": "Name variations analysis",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_006",
+      "name": "Entity extraction",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_007",
+      "name": "Inconsistency detection",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_008",
+      "name": "Final intelligence summary",
+      "agent": "summary_agent"
+    }
+  ],
+  "raw_web_search": [
+    {
+      "title": "Bihar",
+      "snippet": "Aryabhatta Knowledge University has 33 educational colleges, 8 community colleges, and one vocational college. Chanakya National Law University and Chandragupt",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bihar"
+    },
+    {
+      "title": "Maratha Empire",
+      "snippet": "and Ambala), Hisar (Hisar, Sirsa, Fatehabad, parts of Rohtak), Ahirwal (Gurugram, Rewari, Narnaul, Mahendragarh) and Mewat. Daulat Rao Scindia ceded Haryana",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Maratha_Empire"
+    },
+    {
+      "title": "Bihar",
+      "snippet": "per capital income of 1.85L, which is much lower than other cities like Gurugram (\u20b97.41L), Noida (\u20b96.13), Bengaluru (\u20b96.21L), Hyderabad (\u20b96.58L) and Mumbai",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bihar"
+    },
+    {
+      "title": "JEE Advanced Toppers List 2026 Out - AIR Rank, Zone Wise Toppers - Careers360",
+      "snippet": "JEE Advanced Toppers List 2026 Out - AIR Rank, Zone Wise Toppers &nbsp;&nbsp; Careers360",
+      "source": "Google News (Careers360)",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1fSXNETU9vVkZpdDJjYkp4aHRNYU9uaXFPTEdoWVdqcUc5NjdWR3Jab3FqR0lNbWFfMVBCNGtWY1JzWE1JcWItVHZESlhZVk9kVmwzZVFkejRIWjdCdGJzN3h1MHlhM1Q1MHZnM2dxX29wUQ?oc=5",
+      "published": "Mon, 01 Jun 2026 07:00:00 GMT"
+    },
+    {
+      "title": "Delhi Sultanate",
+      "snippet": "(Hindavi) began to emerge in the Delhi Sultanate period, developed from the Middle Indo-Aryan apabhramsha vernaculars of North India. Amir Khusrau, who lived",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Delhi_Sultanate"
+    },
+    {
+      "title": "India",
+      "snippet": "northern plains. The resulting Delhi Sultanate drew northern India into the cosmopolitan networks of medieval Islam. In south India, the Vijayanagara Empire",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/India"
+    },
+    {
+      "title": "Bihar",
+      "snippet": " Communist Party of India (1982). Sinha, Udai Prakash; Kumar, Swargesh (2012). Bihar Tourism: Retrospect and Prospect. New Delhi: Concept Publishing Company",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bihar"
+    },
+    {
+      "title": "Cinema of India",
+      "snippet": "his immense popularity in India and China. Other notable Hindi film stars of recent decades include Ajay Devgn, Akshay Kumar, Anil Kapoor, Hrithik Roshan",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cinema_of_India"
+    }
+  ],
+  "web_search": [
+    {
+      "title": "Bihar",
+      "snippet": "Aryabhatta Knowledge University has 33 educational colleges, 8 community colleges, and one vocational college. Chanakya National Law University and Chandragupt",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bihar"
+    },
+    {
+      "title": "Maratha Empire",
+      "snippet": "and Ambala), Hisar (Hisar, Sirsa, Fatehabad, parts of Rohtak), Ahirwal (Gurugram, Rewari, Narnaul, Mahendragarh) and Mewat. Daulat Rao Scindia ceded Haryana",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Maratha_Empire"
+    },
+    {
+      "title": "Bihar",
+      "snippet": "per capital income of 1.85L, which is much lower than other cities like Gurugram (\u20b97.41L), Noida (\u20b96.13), Bengaluru (\u20b96.21L), Hyderabad (\u20b96.58L) and Mumbai",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bihar"
+    },
+    {
+      "title": "JEE Advanced Toppers List 2026 Out - AIR Rank, Zone Wise Toppers - Careers360",
+      "snippet": "JEE Advanced Toppers List 2026 Out - AIR Rank, Zone Wise Toppers &nbsp;&nbsp; Careers360",
+      "source": "Google News (Careers360)",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1fSXNETU9vVkZpdDJjYkp4aHRNYU9uaXFPTEdoWVdqcUc5NjdWR3Jab3FqR0lNbWFfMVBCNGtWY1JzWE1JcWItVHZESlhZVk9kVmwzZVFkejRIWjdCdGJzN3h1MHlhM1Q1MHZnM2dxX29wUQ?oc=5",
+      "published": "Mon, 01 Jun 2026 07:00:00 GMT"
+    },
+    {
+      "title": "Delhi Sultanate",
+      "snippet": "(Hindavi) began to emerge in the Delhi Sultanate period, developed from the Middle Indo-Aryan apabhramsha vernaculars of North India. Amir Khusrau, who lived",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Delhi_Sultanate"
+    },
+    {
+      "title": "India",
+      "snippet": "northern plains. The resulting Delhi Sultanate drew northern India into the cosmopolitan networks of medieval Islam. In south India, the Vijayanagara Empire",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/India"
+    },
+    {
+      "title": "Bihar",
+      "snippet": " Communist Party of India (1982). Sinha, Udai Prakash; Kumar, Swargesh (2012). Bihar Tourism: Retrospect and Prospect. New Delhi: Concept Publishing Company",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bihar"
+    },
+    {
+      "title": "Cinema of India",
+      "snippet": "his immense popularity in India and China. Other notable Hindi film stars of recent decades include Ajay Devgn, Akshay Kumar, Anil Kapoor, Hrithik Roshan",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cinema_of_India"
+    }
+  ],
+  "social_profiles": [
+    {
+      "platform": "About.me",
+      "username": "aryanrajput",
+      "url": "https://about.me/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Academia.edu",
+      "username": "aryanrajput",
+      "url": "https://independent.academia.edu/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Bandcamp",
+      "username": "aryanrajput",
+      "url": "https://www.bandcamp.com/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Behance",
+      "username": "aryan_rajput",
+      "url": "https://www.behance.net/aryan_rajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Behance",
+      "username": "aryanrajput",
+      "url": "https://www.behance.net/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Blogger",
+      "username": "aryankumarrajput",
+      "url": "https://aryankumarrajput.blogspot.com",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Bluesky",
+      "username": "aryanrajput",
+      "url": "https://bsky.app/profile/aryanrajput.bsky.social",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Codecademy",
+      "username": "aryanrajput",
+      "url": "https://www.codecademy.com/profiles/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Codepen",
+      "username": "aryanrajput",
+      "url": "https://codepen.io/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "DEV Community",
+      "username": "aryan_rajput",
+      "url": "https://dev.to/aryan_rajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "DeviantART",
+      "username": "aryan_rajput",
+      "url": "https://aryan_rajput.deviantart.com",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "DeviantART",
+      "username": "aryanrajput",
+      "url": "https://aryanrajput.deviantart.com",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Discord",
+      "username": "aryan_rajput",
+      "url": "https://discord.com",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Discord",
+      "username": "aryanrajput",
+      "url": "https://discord.com",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Disqus",
+      "username": "aryan_rajput",
+      "url": "https://disqus.com/aryan_rajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Disqus",
+      "username": "aryanrajput",
+      "url": "https://disqus.com/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Dribbble",
+      "username": "aryan_rajput",
+      "url": "https://dribbble.com/aryan_rajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Dribbble",
+      "username": "aryanrajput",
+      "url": "https://dribbble.com/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Duolingo",
+      "username": "aryan_rajput",
+      "url": "https://www.duolingo.com/profile/aryan_rajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Duolingo",
+      "username": "aryanrajput",
+      "url": "https://www.duolingo.com/profile/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Facebook",
+      "username": "aryankumarrajput",
+      "url": "https://www.facebook.com/aryankumarrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Facebook",
+      "username": "aryanrajput",
+      "url": "https://www.facebook.com/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Facebook",
+      "username": "aryan.kumar.rajput",
+      "url": "https://www.facebook.com/aryan.kumar.rajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Figma",
+      "username": "aryan_rajput",
+      "url": "https://www.figma.com/@aryan_rajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Figma",
+      "username": "aryan_kumar_rajput",
+      "url": "https://www.figma.com/@aryan_kumar_rajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Figma",
+      "username": "aryankumarrajput",
+      "url": "https://www.figma.com/@aryankumarrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Figma",
+      "username": "aryanrajput",
+      "url": "https://www.figma.com/@aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Figma",
+      "username": "aryan.kumar.rajput",
+      "url": "https://www.figma.com/@aryan.kumar.rajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Fiverr",
+      "username": "aryan_rajput",
+      "url": "https://www.fiverr.com/aryan_rajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Fiverr",
+      "username": "aryanrajput",
+      "url": "https://www.fiverr.com/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Flipboard",
+      "username": "aryanrajput",
+      "url": "https://flipboard.com/@aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Geeksfor Geeks",
+      "username": "aryanrajput",
+      "url": "https://www.geeksforgeeks.org/profile/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Giphy",
+      "username": "aryanrajput",
+      "url": "https://giphy.com/channel/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "GitHub",
+      "username": "aryankumarrajput",
+      "url": "https://github.com/aryankumarrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "GitHub",
+      "username": "aryanrajput",
+      "url": "https://github.com/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Google Scholar",
+      "username": "aryan_rajput",
+      "url": "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=aryan_rajput&btnG=",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Google Scholar",
+      "username": "aryanrajput",
+      "url": "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=aryanrajput&btnG=",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Gumroad",
+      "username": "aryanrajput",
+      "url": "https://www.gumroad.com/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "HubPages",
+      "username": "aryanrajput",
+      "url": "https://hubpages.com/@aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "HuggingFace",
+      "username": "aryanrajput",
+      "url": "https://huggingface.co/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Imgur",
+      "username": "aryanrajput",
+      "url": "https://imgur.com/user/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Instagram",
+      "username": "aryan_rajput",
+      "url": "https://www.instagram.com/aryan_rajput/",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Instagram",
+      "username": "aryan_kumar_rajput",
+      "url": "https://www.instagram.com/aryan_kumar_rajput/",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Instagram",
+      "username": "aryankumarrajput",
+      "url": "https://www.instagram.com/aryankumarrajput/",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Instagram",
+      "username": "aryanrajput",
+      "url": "https://www.instagram.com/aryanrajput/",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Instagram",
+      "username": "aryan.kumar.rajput",
+      "url": "https://www.instagram.com/aryan.kumar.rajput/",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Itch.io",
+      "username": "aryan_rajput",
+      "url": "https://aryan_rajput.itch.io/",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Letterboxd",
+      "username": "aryanrajput",
+      "url": "https://letterboxd.com/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Medium",
+      "username": "aryanrajput",
+      "url": "https://medium.com/@aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "MyAnimeList",
+      "username": "aryanrajput",
+      "url": "https://myanimelist.net/profile/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Pastebin",
+      "username": "aryanrajput",
+      "url": "https://pastebin.com/u/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Paypal",
+      "username": "aryanrajput",
+      "url": "https://www.paypal.com/paypalme/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Pbase",
+      "username": "aryan.kumar.rajput",
+      "url": "https://pbase.com/aryan.kumar.rajput/profile",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "ProductHunt",
+      "username": "aryan_rajput",
+      "url": "https://www.producthunt.com/@aryan_rajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Roblox",
+      "username": "aryan_rajput",
+      "url": "https://www.roblox.com/user.aspx?username=aryan_rajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Roblox",
+      "username": "aryanrajput",
+      "url": "https://www.roblox.com/user.aspx?username=aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Slack",
+      "username": "aryanrajput",
+      "url": "https://aryanrajput.slack.com",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Snapchat",
+      "username": "aryan_rajput",
+      "url": "https://www.snapchat.com/add/aryan_rajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Snapchat",
+      "username": "aryanrajput",
+      "url": "https://www.snapchat.com/add/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "SoundCloud",
+      "username": "aryanrajput",
+      "url": "https://soundcloud.com/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "StackOverflow",
+      "username": "aryan_rajput",
+      "url": "https://stackoverflow.com/users/filter?search=aryan_rajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Steam",
+      "username": "aryan_rajput",
+      "url": "https://steamcommunity.com/id/aryan_rajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Substack",
+      "username": "aryanrajput",
+      "url": "https://substack.com/@aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Telegram",
+      "username": "aryan_rajput",
+      "url": "https://t.me/aryan_rajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Telegram",
+      "username": "aryankumarrajput",
+      "url": "https://t.me/aryankumarrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Telegram",
+      "username": "aryanrajput",
+      "url": "https://t.me/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "TradingView",
+      "username": "aryan_rajput",
+      "url": "https://www.tradingview.com/u/aryan_rajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "TradingView",
+      "username": "aryanrajput",
+      "url": "https://www.tradingview.com/u/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "TripAdvisor",
+      "username": "aryan_rajput",
+      "url": "https://tripadvisor.com/members/aryan_rajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Twitch",
+      "username": "aryan_rajput",
+      "url": "https://twitchtracker.com/aryan_rajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Twitch",
+      "username": "aryanrajput",
+      "url": "https://twitchtracker.com/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Twitter",
+      "username": "aryanrajput",
+      "url": "https://twitter.com/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "VK",
+      "username": "aryan_rajput",
+      "url": "https://vk.com/aryan_rajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "W3Schools",
+      "username": "aryan_rajput",
+      "url": "https://pathfinder-api.kai.w3spaces.com/public-profile-api/aryan_rajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Wattpad",
+      "username": "aryan_rajput",
+      "url": "https://www.wattpad.com/user/aryan_rajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Wattpad",
+      "username": "aryanrajput",
+      "url": "https://www.wattpad.com/user/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Weebly",
+      "username": "aryanrajput",
+      "url": "http://aryanrajput.weebly.com/",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Wikipedia",
+      "username": "aryan_rajput",
+      "url": "https://en.wikipedia.org/wiki/User:aryan_rajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "WordPress",
+      "username": "aryanrajput",
+      "url": "https://aryanrajput.wordpress.com/",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Xing",
+      "username": "aryan_rajput",
+      "url": "https://www.xing.com/profile/aryan_rajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Xing",
+      "username": "aryan_kumar_rajput",
+      "url": "https://www.xing.com/profile/aryan_kumar_rajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Xing",
+      "username": "aryanrajput",
+      "url": "https://www.xing.com/profile/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "YouTube",
+      "username": "aryan_rajput",
+      "url": "https://www.youtube.com/@aryan_rajput/about",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "YouTube",
+      "username": "aryankumarrajput",
+      "url": "https://www.youtube.com/@aryankumarrajput/about",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "YouTube",
+      "username": "aryanrajput",
+      "url": "https://www.youtube.com/@aryanrajput/about",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "linktr.ee",
+      "username": "aryanrajput",
+      "url": "https://linktr.ee/aryanrajput",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    }
+  ],
+  "entities": [
+    {
+      "type": "location",
+      "name": "Bihar",
+      "confidence": 0.9,
+      "context": "India"
+    },
+    {
+      "type": "location",
+      "name": "Hisar",
+      "confidence": 0.8,
+      "context": "India"
+    },
+    {
+      "type": "location",
+      "name": " Haryana",
+      "confidence": 0.8,
+      "context": "India"
+    },
+    {
+      "type": "location",
+      "name": "Delhi Sultanate",
+      "confidence": 0.7,
+      "context": "Historical Location"
+    },
+    {
+      "type": "organization",
+      "name": "Aryabhatta Knowledge University",
+      "confidence": 0.9
+    },
+    {
+      "type": "organization",
+      "name": "Chanakya National Law University",
+      "confidence": 0.8,
+      "context": "Educational institution"
+    },
+    {
+      "type": "organization",
+      "name": "Maratha Empire",
+      "confidence": 0.7,
+      "context": "Historical/Political Entity"
+    },
+    {
+      "type": "organization",
+      "name": "Ambala",
+      "confidence": 0.5,
+      "context": "Location"
+    },
+    {
+      "type": "organization",
+      "name": "Daulat Rao Scindia",
+      "confidence": 0.8,
+      "context": "Historical figure"
+    },
+    {
+      "type": "organization",
+      "name": "Haryana",
+      "confidence": 0.7,
+      "context": "Indian State"
+    },
+    {
+      "type": "location",
+      "name": "New Delhi",
+      "confidence": 0.9,
+      "context": "India"
+    },
+    {
+      "type": "organization",
+      "name": "Careers360",
+      "confidence": 0.8,
+      "context": "Educational Platform"
+    },
+    {
+      "type": "event",
+      "name": "JEE Advanced Toppers List 2026 Out",
+      "confidence": 0.7
+    },
+    {
+      "type": "event",
+      "name": "AIR Rank, Zone Wise Toppers  - Careers360 ",
+      "confidence": 0.7,
+      "context": "Event/Information Item"
+    },
+    {
+      "type": "organization",
+      "name": "Communist Party of India",
+      "confidence": 0.8,
+      "context": "Political Entity"
+    },
+    {
+      "type": "person",
+      "name": "Amir Khusrau",
+      "confidence": 0.9,
+      "context": "Historical figure"
+    },
+    {
+      "type": "person",
+      "name": "Ajay Devgn",
+      "confidence": 0.7,
+      "context": "Actor"
+    },
+    {
+      "type": "person",
+      "name": "Akshay Kumar",
+      "confidence": 0.7,
+      "context": "Actor"
+    },
+    {
+      "type": "person",
+      "name": "Anil Kapoor",
+      "confidence": 0.7,
+      "context": "Actor"
+    },
+    {
+      "type": "person",
+      "name": "Hrithik Roshan",
+      "confidence": 0.7,
+      "context": "Actor"
+    }
+  ],
+  "sentiment": {
+    "sentiment": "neutral",
+    "confidence": 0.75,
+    "key_emotional_indicators": [
+      "economic disparity",
+      "historical overview",
+      "international recognition",
+      "popularity of figures in film"
+    ]
+  },
+  "classification": {
+    "category": "geography",
+    "subcategory": "India Education/Demographics",
+    "confidence": 0.9,
+    "tags": [
+      "education",
+      "population",
+      "economic",
+      "historical",
+      "culture",
+      "cinema"
+    ]
+  },
+  "inconsistencies": [],
+  "name_suggestions": [
+    {
+      "suggested_name": "Aryaman Kumar Rajput",
+      "type": "full_name",
+      "rationale": "This is a common variation using the 'Aryan' part of the name."
+    },
+    {
+      "suggested_name": "Aaryan Kumar Rajput",
+      "type": "full_name",
+      "rationale": "Simple and direct, keeping common usage."
+    },
+    {
+      "suggested_name": "Arjun Kumar Rajput",
+      "type": "full_name",
+      "rationale": "Another variation using the 'Arjun' part of the name, a popular choice."
+    },
+    {
+      "suggested_name": "Aryan K. Rajput",
+      "type": "alias",
+      "rationale": "Shortened form commonly used in online settings."
+    },
+    {
+      "suggested_name": "Rajput AK",
+      "type": "nickname",
+      "rationale": "Could be an abbreviation or shorthand for the full name."
+    }
+  ],
+  "maigret_searches": [
+    {
+      "username": "aryan_rajput",
+      "total_checked": 200,
+      "profiles_found": 26,
+      "profiles": {
+        "Instagram": {
+          "username": "aryan_rajput",
+          "url": "https://www.instagram.com/aryan_rajput/",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Instagram"
+        },
+        "Wikipedia": {
+          "username": "aryan_rajput",
+          "url": "https://en.wikipedia.org/wiki/User:aryan_rajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Wikipedia"
+        },
+        "Telegram": {
+          "username": "aryan_rajput",
+          "url": "https://t.me/aryan_rajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Telegram"
+        },
+        "YouTube": {
+          "username": "aryan_rajput",
+          "url": "https://www.youtube.com/@aryan_rajput/about",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "YouTube"
+        },
+        "Twitch": {
+          "username": "aryan_rajput",
+          "url": "https://twitchtracker.com/aryan_rajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Twitch"
+        },
+        "StackOverflow": {
+          "username": "aryan_rajput",
+          "url": "https://stackoverflow.com/users/filter?search=aryan_rajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "StackOverflow"
+        },
+        "VK": {
+          "username": "aryan_rajput",
+          "url": "https://vk.com/aryan_rajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "VK"
+        },
+        "Google Scholar": {
+          "username": "aryan_rajput",
+          "url": "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=aryan_rajput&btnG=",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Google Scholar"
+        },
+        "Behance": {
+          "username": "aryan_rajput",
+          "url": "https://www.behance.net/aryan_rajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Behance"
+        },
+        "Dribbble": {
+          "username": "aryan_rajput",
+          "url": "https://dribbble.com/aryan_rajput",
+          "status": "Claimed",
+          "http_status": 404,
+          "site_name": "Dribbble"
+        },
+        "Disqus": {
+          "username": "aryan_rajput",
+          "url": "https://disqus.com/aryan_rajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Disqus"
+        },
+        "TripAdvisor": {
+          "username": "aryan_rajput",
+          "url": "https://tripadvisor.com/members/aryan_rajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "TripAdvisor"
+        },
+        "Steam": {
+          "username": "aryan_rajput",
+          "url": "https://steamcommunity.com/id/aryan_rajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Steam"
+        },
+        "Xing": {
+          "username": "aryan_rajput",
+          "url": "https://www.xing.com/profile/aryan_rajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Xing"
+        },
+        "Figma": {
+          "username": "aryan_rajput",
+          "url": "https://www.figma.com/@aryan_rajput",
+          "status": "Claimed",
+          "http_status": 202,
+          "site_name": "Figma"
+        },
+        "Snapchat": {
+          "username": "aryan_rajput",
+          "url": "https://www.snapchat.com/add/aryan_rajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Snapchat"
+        },
+        "W3Schools": {
+          "username": "aryan_rajput",
+          "url": "https://pathfinder-api.kai.w3spaces.com/public-profile-api/aryan_rajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "W3Schools"
+        },
+        "DEV Community": {
+          "username": "aryan_rajput",
+          "url": "https://dev.to/aryan_rajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "DEV Community"
+        },
+        "DeviantART": {
+          "username": "aryan_rajput",
+          "url": "https://aryan_rajput.deviantart.com",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "DeviantART"
+        },
+        "Itch.io": {
+          "username": "aryan_rajput",
+          "url": "https://aryan_rajput.itch.io/",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Itch.io"
+        },
+        "Duolingo": {
+          "username": "aryan_rajput",
+          "url": "https://www.duolingo.com/profile/aryan_rajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Duolingo"
+        },
+        "TradingView": {
+          "username": "aryan_rajput",
+          "url": "https://www.tradingview.com/u/aryan_rajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "TradingView"
+        },
+        "ProductHunt": {
+          "username": "aryan_rajput",
+          "url": "https://www.producthunt.com/@aryan_rajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "ProductHunt"
+        },
+        "Fiverr": {
+          "username": "aryan_rajput",
+          "url": "https://www.fiverr.com/aryan_rajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Fiverr"
+        },
+        "Wattpad": {
+          "username": "aryan_rajput",
+          "url": "https://www.wattpad.com/user/aryan_rajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Wattpad"
+        },
+        "Roblox": {
+          "username": "aryan_rajput",
+          "url": "https://www.roblox.com/user.aspx?username=aryan_rajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Roblox"
+        }
+      }
+    },
+    {
+      "username": "aryan_kumar_rajput",
+      "total_checked": 200,
+      "profiles_found": 2,
+      "profiles": {
+        "Instagram": {
+          "username": "aryan_kumar_rajput",
+          "url": "https://www.instagram.com/aryan_kumar_rajput/",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Instagram"
+        },
+        "Figma": {
+          "username": "aryan_kumar_rajput",
+          "url": "https://www.figma.com/@aryan_kumar_rajput",
+          "status": "Claimed",
+          "http_status": 202,
+          "site_name": "Figma"
+        }
+      }
+    },
+    {
+      "username": "aryankumarrajput",
+      "total_checked": 200,
+      "profiles_found": 7,
+      "profiles": {
+        "YouTube": {
+          "username": "aryankumarrajput",
+          "url": "https://www.youtube.com/@aryankumarrajput/about",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "YouTube"
+        },
+        "Instagram": {
+          "username": "aryankumarrajput",
+          "url": "https://www.instagram.com/aryankumarrajput/",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Instagram"
+        },
+        "Telegram": {
+          "username": "aryankumarrajput",
+          "url": "https://t.me/aryankumarrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Telegram"
+        },
+        "Blogger": {
+          "username": "aryankumarrajput",
+          "url": "https://aryankumarrajput.blogspot.com",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Blogger"
+        },
+        "GitHub": {
+          "username": "aryankumarrajput",
+          "url": "https://github.com/aryankumarrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "GitHub"
+        },
+        "Facebook": {
+          "username": "aryankumarrajput",
+          "url": "https://www.facebook.com/aryankumarrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Facebook"
+        },
+        "Figma": {
+          "username": "aryankumarrajput",
+          "url": "https://www.figma.com/@aryankumarrajput",
+          "status": "Claimed",
+          "http_status": 202,
+          "site_name": "Figma"
+        }
+      }
+    },
+    {
+      "username": "aryanrajput",
+      "total_checked": 200,
+      "profiles_found": 43,
+      "profiles": {
+        "WordPress": {
+          "username": "aryanrajput",
+          "url": "https://aryanrajput.wordpress.com/",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "WordPress"
+        },
+        "Medium": {
+          "username": "aryanrajput",
+          "url": "https://medium.com/@aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Medium"
+        },
+        "YouTube": {
+          "username": "aryanrajput",
+          "url": "https://www.youtube.com/@aryanrajput/about",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "YouTube"
+        },
+        "Instagram": {
+          "username": "aryanrajput",
+          "url": "https://www.instagram.com/aryanrajput/",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Instagram"
+        },
+        "GitHub": {
+          "username": "aryanrajput",
+          "url": "https://github.com/aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "GitHub"
+        },
+        "linktr.ee": {
+          "username": "aryanrajput",
+          "url": "https://linktr.ee/aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "linktr.ee"
+        },
+        "Telegram": {
+          "username": "aryanrajput",
+          "url": "https://t.me/aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Telegram"
+        },
+        "Substack": {
+          "username": "aryanrajput",
+          "url": "https://substack.com/@aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Substack"
+        },
+        "Facebook": {
+          "username": "aryanrajput",
+          "url": "https://www.facebook.com/aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Facebook"
+        },
+        "Weebly": {
+          "username": "aryanrajput",
+          "url": "http://aryanrajput.weebly.com/",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Weebly"
+        },
+        "Bluesky": {
+          "username": "aryanrajput",
+          "url": "https://bsky.app/profile/aryanrajput.bsky.social",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Bluesky"
+        },
+        "Twitch": {
+          "username": "aryanrajput",
+          "url": "https://twitchtracker.com/aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Twitch"
+        },
+        "SoundCloud": {
+          "username": "aryanrajput",
+          "url": "https://soundcloud.com/aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "SoundCloud"
+        },
+        "Imgur": {
+          "username": "aryanrajput",
+          "url": "https://imgur.com/user/aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Imgur"
+        },
+        "Behance": {
+          "username": "aryanrajput",
+          "url": "https://www.behance.net/aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Behance"
+        },
+        "Dribbble": {
+          "username": "aryanrajput",
+          "url": "https://dribbble.com/aryanrajput",
+          "status": "Claimed",
+          "http_status": 404,
+          "site_name": "Dribbble"
+        },
+        "Giphy": {
+          "username": "aryanrajput",
+          "url": "https://giphy.com/channel/aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Giphy"
+        },
+        "Slack": {
+          "username": "aryanrajput",
+          "url": "https://aryanrajput.slack.com",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Slack"
+        },
+        "Xing": {
+          "username": "aryanrajput",
+          "url": "https://www.xing.com/profile/aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Xing"
+        },
+        "Disqus": {
+          "username": "aryanrajput",
+          "url": "https://disqus.com/aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Disqus"
+        },
+        "Figma": {
+          "username": "aryanrajput",
+          "url": "https://www.figma.com/@aryanrajput",
+          "status": "Claimed",
+          "http_status": 202,
+          "site_name": "Figma"
+        },
+        "HuggingFace": {
+          "username": "aryanrajput",
+          "url": "https://huggingface.co/aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "HuggingFace"
+        },
+        "Twitter": {
+          "username": "aryanrajput",
+          "url": "https://twitter.com/aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Twitter"
+        },
+        "Google Scholar": {
+          "username": "aryanrajput",
+          "url": "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=aryanrajput&btnG=",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Google Scholar"
+        },
+        "Pastebin": {
+          "username": "aryanrajput",
+          "url": "https://pastebin.com/u/aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Pastebin"
+        },
+        "Snapchat": {
+          "username": "aryanrajput",
+          "url": "https://www.snapchat.com/add/aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Snapchat"
+        },
+        "Bandcamp": {
+          "username": "aryanrajput",
+          "url": "https://www.bandcamp.com/aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Bandcamp"
+        },
+        "Paypal": {
+          "username": "aryanrajput",
+          "url": "https://www.paypal.com/paypalme/aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Paypal"
+        },
+        "Codepen": {
+          "username": "aryanrajput",
+          "url": "https://codepen.io/aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Codepen"
+        },
+        "Fiverr": {
+          "username": "aryanrajput",
+          "url": "https://www.fiverr.com/aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Fiverr"
+        },
+        "DeviantART": {
+          "username": "aryanrajput",
+          "url": "https://aryanrajput.deviantart.com",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "DeviantART"
+        },
+        "Gumroad": {
+          "username": "aryanrajput",
+          "url": "https://www.gumroad.com/aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Gumroad"
+        },
+        "About.me": {
+          "username": "aryanrajput",
+          "url": "https://about.me/aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "About.me"
+        },
+        "Flipboard": {
+          "username": "aryanrajput",
+          "url": "https://flipboard.com/@aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Flipboard"
+        },
+        "Duolingo": {
+          "username": "aryanrajput",
+          "url": "https://www.duolingo.com/profile/aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Duolingo"
+        },
+        "TradingView": {
+          "username": "aryanrajput",
+          "url": "https://www.tradingview.com/u/aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "TradingView"
+        },
+        "HubPages": {
+          "username": "aryanrajput",
+          "url": "https://hubpages.com/@aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "HubPages"
+        },
+        "Codecademy": {
+          "username": "aryanrajput",
+          "url": "https://www.codecademy.com/profiles/aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Codecademy"
+        },
+        "Wattpad": {
+          "username": "aryanrajput",
+          "url": "https://www.wattpad.com/user/aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Wattpad"
+        },
+        "Geeksfor Geeks": {
+          "username": "aryanrajput",
+          "url": "https://www.geeksforgeeks.org/profile/aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Geeksfor Geeks"
+        },
+        "MyAnimeList": {
+          "username": "aryanrajput",
+          "url": "https://myanimelist.net/profile/aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "MyAnimeList"
+        },
+        "Letterboxd": {
+          "username": "aryanrajput",
+          "url": "https://letterboxd.com/aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Letterboxd"
+        },
+        "Roblox": {
+          "username": "aryanrajput",
+          "url": "https://www.roblox.com/user.aspx?username=aryanrajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Roblox"
+        }
+      }
+    },
+    {
+      "username": "aryan.kumar.rajput",
+      "total_checked": 200,
+      "profiles_found": 4,
+      "profiles": {
+        "Facebook": {
+          "username": "aryan.kumar.rajput",
+          "url": "https://www.facebook.com/aryan.kumar.rajput",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Facebook"
+        },
+        "Instagram": {
+          "username": "aryan.kumar.rajput",
+          "url": "https://www.instagram.com/aryan.kumar.rajput/",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Instagram"
+        },
+        "Figma": {
+          "username": "aryan.kumar.rajput",
+          "url": "https://www.figma.com/@aryan.kumar.rajput",
+          "status": "Claimed",
+          "http_status": 202,
+          "site_name": "Figma"
+        },
+        "Pbase": {
+          "username": "aryan.kumar.rajput",
+          "url": "https://pbase.com/aryan.kumar.rajput/profile",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Pbase"
+        }
+      }
+    }
+  ],
+  "holehe_searches": [],
+  "llm_analysis": "## OSINT Intelligence Report: Aryan Kumar Rajput\n\n**Date of Report:** 2026-06-23\n**Subject:** Aryan Kumar Rajput\n**Target Profile Details:** Student, Age 19, Location (Reported): Delhi, India. Reported College Location: Gurugram, Haryana.\n\n***\n\n### 1. Who/What Subject Appears To Be\n\nAryan Kumar Rajput appears to be a college student of approximately 19 years old, located in the National Capital Region (NCR) of India. His digital presence suggests an association with higher education and potential academic achievement, given the context of \"student\" status and previous search attempts targeting educational institutions.\n\n### 2. Digital Footprint Found\n\n*   **Professional:** A LinkedIn profile was identified: `https://www.linkedin.com/in/aryan-kumar-rajput-13b308343/`.\n*   **Web Searchable:** The name has been subject to multiple web searches across various platforms, yielding a high volume of profiles (86 found out of 86 checked) and numerous generalized search results.\n*   **Academic Data Points (Contextual):** Preliminary searching targeted academic performance indicators (e.g., \"JEE Advanced Toppers List 2026\").\n\n### 3. Key Findings and Evidence\n\nThe primary objective\u2014identifying the subject's specific college\u2014remains unfulfilled based on the current dataset.\n\n*   **LinkedIn:** The existence of a LinkedIn profile is confirmed, which represents the most direct professional link. Further investigation into this specific URL is required to extract academic or employment details.\n*   **Geographic Data Contradiction (Task Scope):** Searches specifically combining \"Aryan Kumar Rajput,\" \"Gurugram,\" and \"college\" (`[TASK_001]`) yielded only highly generalized, irrelevant Wikipedia links concerning the Bihar region and the Maratha Empire. This indicates a failure in localized search mapping or tool functionality for this specific query combination.\n*   **Academic Context:** Searches related to general student profiles (e.g., `[TASK_003]`) returned broad results such as the \"JEE Advanced Toppers List 2026,\" confirming that academic achievement is a relevant data point in the subject\u2019s circle, but not confirming his enrollment status or institution name.\n\n### 4. Red Flags or Contradictions\n\n**Data Quality and Search Noise:**\nThe most significant observation is the overwhelming amount of **low-signal, high-noise data**. Multiple tasks returned irrelevant Wikipedia results (e.g., `Bihar`, `Maratha Empire`, `Delhi Sultanate`). This does not contradict the subject's identity but heavily suggests that the current search methodology or tools used are unable to isolate locally relevant academic records for Gurugram, Haryana.\n\n**Missing Institutional Link:**\nDespite multiple attempts targeting college/student status and specific geographies (Delhi/Gurugram), **no verifiable evidence of a name-to-institution link was established.** The subject's claimed current enrollment cannot be substantiated by the raw findings.\n\n### 5. Recommended Next Investigation Steps\n\nThe primary focus must shift from generalized searching to deep analysis of the existing, stable footprint data:\n\n1.  **Analyze LinkedIn Deep Dive:** Conduct a comprehensive scrape and analysis of the provided LinkedIn URL (`https://www.linkedin.com/in/aryan-kumar-rajput-13b308343/`). Prioritize extraction of listed education (University name, degree, dates) or current work experience.\n2.  **Verify Institutional Alumni Lists:** Use advanced search techniques targeting specific college names in Gurugram known for housing 1st-year engineering/MBA programs. If a potential institution is identified, cross-reference the subject's name against publicly available alumni directories or recent campus news articles (if applicable and ethical).\n3.  **Targeted Local Directory Search:** Re-run searches using highly specific educational jargon combined with location details (e.g., `\"Gurugram\" AND \"College Name/Institute Name\" AND \"Student Portal Login\"`), minimizing reliance on general name/location combinations that appear to generate excessive noise."
+}

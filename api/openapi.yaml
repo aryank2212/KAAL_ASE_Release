@@ -1,0 +1,372 @@
+openapi: 3.1.0
+info:
+  title: KAAL-ASE API
+  version: 0.1.0
+  description: API contract for the KAAL-ASE intelligence management platform.
+servers:
+  - url: http://localhost:8000
+paths:
+  /health:
+    get:
+      summary: Health check
+      responses:
+        "200":
+          description: Service is healthy
+  /api/v1/cases:
+    post:
+      summary: Create a case
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CaseCreate"
+      responses:
+        "201":
+          description: Created case
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Case"
+  /api/v1/cases/{case_id}:
+    get:
+      summary: Get a case
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+      responses:
+        "200":
+          description: Case
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Case"
+  /api/v1/cases/{case_id}/profiles:
+    post:
+      summary: Create a profile in a case
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ProfileCreate"
+      responses:
+        "201":
+          description: Created profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Profile"
+  /api/v1/profiles/{profile_id}:
+    get:
+      summary: Get a profile
+      parameters:
+        - $ref: "#/components/parameters/ProfileId"
+      responses:
+        "200":
+          description: Profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Profile"
+    patch:
+      summary: Update a profile
+      parameters:
+        - $ref: "#/components/parameters/ProfileId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ProfilePatch"
+      responses:
+        "200":
+          description: Updated profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Profile"
+  /api/v1/cases/{case_id}/evidence:
+    post:
+      summary: Register evidence metadata
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EvidenceCreate"
+      responses:
+        "201":
+          description: Registered evidence
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Evidence"
+  /api/v1/evidence/{evidence_id}/ingest:
+    post:
+      summary: Queue evidence extraction
+      parameters:
+        - name: evidence_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "202":
+          description: Ingestion queued
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/IngestionJob"
+  /api/v1/evidence/{evidence_id}/observations:
+    get:
+      summary: List observations extracted from evidence
+      parameters:
+        - name: evidence_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Extracted observations
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Observation"
+  /api/v1/ingestion-jobs/{ingestion_job_id}:
+    get:
+      summary: Get an ingestion job
+      parameters:
+        - name: ingestion_job_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Ingestion job
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/IngestionJob"
+  /api/v1/search:
+    post:
+      summary: Search intelligence records
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SearchRequest"
+      responses:
+        "200":
+          description: Search results
+  /api/v1/cases/{case_id}/graph:
+    get:
+      summary: Get case graph
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+      responses:
+        "200":
+          description: Graph nodes and edges
+  /api/v1/analysis/summarize:
+    post:
+      summary: Generate a reviewable AI summary
+      responses:
+        "202":
+          description: Analysis queued
+components:
+  parameters:
+    CaseId:
+      name: case_id
+      in: path
+      required: true
+      schema:
+        type: string
+    ProfileId:
+      name: profile_id
+      in: path
+      required: true
+      schema:
+        type: string
+  schemas:
+    CaseCreate:
+      type: object
+      required: [title]
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+    Case:
+      type: object
+      properties:
+        case_id:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        status:
+          type: string
+    ProfileCreate:
+      type: object
+      properties:
+        name:
+          type: string
+        aliases:
+          type: array
+          items:
+            type: string
+    ProfilePatch:
+      type: object
+      additionalProperties: true
+    Profile:
+      type: object
+      properties:
+        profile_id:
+          type: string
+        case_id:
+          type: string
+        name:
+          type: string
+        aliases:
+          type: array
+          items:
+            type: string
+        known_locations:
+          type: array
+          items:
+            type: object
+        social_profiles:
+          type: array
+          items:
+            type: object
+        images:
+          type: array
+          items:
+            type: object
+        documents:
+          type: array
+          items:
+            type: object
+        timeline:
+          type: array
+          items:
+            type: object
+        relationships:
+          type: array
+          items:
+            type: object
+        confidence_score:
+          type: number
+        risk_score:
+          type: number
+        source_references:
+          type: array
+          items:
+            type: object
+    EvidenceCreate:
+      type: object
+      required: [filename, media_type, storage_uri, sha256]
+      properties:
+        filename:
+          type: string
+        media_type:
+          type: string
+        storage_uri:
+          type: string
+        sha256:
+          type: string
+        source_reference_id:
+          type: string
+        size_bytes:
+          type: integer
+    Evidence:
+      type: object
+      properties:
+        evidence_id:
+          type: string
+        case_id:
+          type: string
+        filename:
+          type: string
+        media_type:
+          type: string
+        storage_uri:
+          type: string
+        sha256:
+          type: string
+        source_reference_id:
+          type: string
+        size_bytes:
+          type: integer
+        ingestion_status:
+          type: string
+    IngestionJob:
+      type: object
+      properties:
+        ingestion_job_id:
+          type: string
+        case_id:
+          type: string
+        evidence_id:
+          type: string
+        job_type:
+          type: string
+        status:
+          type: string
+        priority:
+          type: string
+        extractor:
+          type: string
+        extractor_version:
+          type: string
+        error_message:
+          type: string
+    Observation:
+      type: object
+      properties:
+        observation_id:
+          type: string
+        case_id:
+          type: string
+        evidence_id:
+          type: string
+        source_reference_id:
+          type: string
+        observation_type:
+          type: string
+        value:
+          type: object
+          additionalProperties: true
+        confidence:
+          type: number
+        extractor:
+          type: string
+        extractor_version:
+          type: string
+        review_status:
+          type: string
+    SearchRequest:
+      type: object
+      required: [case_id, query]
+      properties:
+        case_id:
+          type: string
+        query:
+          type: string
+        modes:
+          type: array
+          items:
+            type: string
+            enum: [natural_language, semantic, entity, timeline, geospatial]
+        filters:
+          type: object
+          additionalProperties: true

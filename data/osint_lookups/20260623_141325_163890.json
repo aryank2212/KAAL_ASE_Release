@@ -1,0 +1,127 @@
+{
+  "lookup_id": "",
+  "timestamp": "2026-06-23T14:13:25.163978",
+  "input": {
+    "name": "Samay Raina",
+    "context": "Indian chess player, comedian, podcast host",
+    "phrase": "latest chess match with Prakhar Gupta",
+    "links": "https://www.youtube.com/@SamayRainaOfficial",
+    "information_wanted": "FEN or PGN, latest podcast guest",
+    "anything_you_have": ""
+  },
+  "goal_analysis": {
+    "goal": "",
+    "deliverables": [],
+    "search_queries": [],
+    "requires_social_search": false,
+    "requires_name_analysis": false,
+    "requires_entity_extraction": true,
+    "requires_sentiment": true,
+    "success_criteria": []
+  },
+  "plan": [
+    {
+      "id": "TASK_001",
+      "name": "Web search: Samay Raina latest chess match with Prakhar Gupta",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_002",
+      "name": "Entity extraction",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_003",
+      "name": "Sentiment & classification",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_004",
+      "name": "Inconsistency detection",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_005",
+      "name": "Final intelligence summary",
+      "agent": "summary_agent"
+    }
+  ],
+  "web_search": [
+    {
+      "title": "Prakhar Gupta DEFEATED Samay Raina in CHESS! #shorts",
+      "snippet": "",
+      "source": "DuckDuckGo",
+      "url": "https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D3dO613i8op8&amp;rut=951f338d6cc9283e3fc3d5efaebd2643c8349c866ff970b0651e94d5cf6e6f9d"
+    },
+    {
+      "title": "Samay Raina and Prakhar Gupta have an intense rivalry that ... - Facebook",
+      "snippet": "",
+      "source": "DuckDuckGo",
+      "url": "https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.facebook.com%2Fchessbaseindia%2Fvideos%2Fwhen%2Darch%2Drivals%2Dclash%2Dtop%2Dcomedian%2Dsamay%2Draina%2Dvs%2Dtop%2Dpodcaster%2Dprakhar%2Dgupta%2Dc%2F3210896785764338%2F&amp;rut=15f90afd5bee76aa1a8c8d5a6f2cf892a27d60c295a8716a855c361ca2b8e53b"
+    },
+    {
+      "title": "Prakhar Gupta relives his COB Revival triumph ft. Sahil Tickoo",
+      "snippet": "",
+      "source": "DuckDuckGo",
+      "url": "https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DKm72xOmOZqE&amp;rut=c18d89542f9e36535263b884ddcbf82e07d306b20e3933c03952b84fcc9cf1d5"
+    },
+    {
+      "title": "COB Revival - Prakhar, Joel, Vivek &amp; Samay Qualifies to Semifinals",
+      "snippet": "",
+      "source": "DuckDuckGo",
+      "url": "https://duckduckgo.com/l/?uddg=https%3A%2F%2Fchessbase.in%2Fnews%2Fcob%2Drevival%2Dday%2D2%2Dreport&amp;rut=b80b276a7ca07379e8e8113e5fe189fa0ec49b5be6cabb32e9c20c18717f8f8c"
+    },
+    {
+      "title": "COB Revival Final Set: Joel vs Prakhar - ChessBase India",
+      "snippet": "",
+      "source": "DuckDuckGo",
+      "url": "https://duckduckgo.com/l/?uddg=https%3A%2F%2Fchessbase.in%2Fnews%2Fcob%2Drevival%2Dsemi%2Dfinals%2Dreport&amp;rut=080df1cf437c88d45f7470755ffef61963e2203eb94688863dfdf443178030ff"
+    }
+  ],
+  "social_profiles": [],
+  "name_suggestions": [],
+  "entities": [],
+  "sentiment": {
+    "sentiment": "positive",
+    "confidence": 0.85,
+    "key_emotional_indicators": [
+      "chess",
+      "match",
+      "podcast"
+    ]
+  },
+  "classification": {
+    "category": "Person",
+    "subcategory": "Sports & Games",
+    "confidence": 0.95,
+    "tags": [
+      "chess",
+      "comedy",
+      "podcast",
+      "indian"
+    ]
+  },
+  "inconsistencies": [
+    {
+      "description": "The text suggests Samay Raina is involved in a recent chess match with Prakhar Gupta.",
+      "severity": "medium",
+      "text_snippet": "latest chess match with Prakhar Gupta."
+    },
+    {
+      "description": "The text mentions links to Samay Raina's YouTube channel, which could be used for verification of the claims.",
+      "severity": "low",
+      "text_snippet": "https://www.youtube.com/@SamayRainaOfficial."
+    },
+    {
+      "description": "The request for FEN or PGN and guest information indicates a desire to verify or delve deeper into specific details regarding Raina's chess activities and podcast, which might be difficult to obtain without further investigation.",
+      "severity": "medium",
+      "text_snippet": "FEN or PGN, latest podcast guest."
+    },
+    {
+      "description": "The lack of additional context may contribute to ambiguity. It is recommended that the user provide more information for a comprehensive analysis. ",
+      "severity": "low",
+      "text_snippet": "."
+    }
+  ],
+  "llm_analysis": "## Intelligence Report: Samay Raina\n\n**Date:** 2023-10-27\n\n**Analyst:** Bard AI (Senior OSINT Analyst)\n\n\n**1. Subject/Entity:** Samay Raina appears to be an Indian chess player, comedian, and podcast host with a significant online presence.  \n\n**2. Digital Footprint:**\n\n* **YouTube:** https://www.youtube.com/@SamayRainaOfficial - Official YouTube channel showcasing his comedic content, chess matches and podcasts.\n* **Facebook:** https://www.facebook.com/chessbaseindia - A video sharing page linked to the ChessBase India platform. \n\n\n**3. Key Findings & Evidence:**\n\n*  **Chess Match with Prakhar Gupta:** Research reveals a recent competitive chess match between Samay Raina and Prakhar Gupta (\"Prakhar Gupta DEFEATED Samay Raina in CHESS! #shorts\").\n    -  https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D3dO613i8op8&amp;rut=951f3\n* **Rivalry:**  Evidence suggests a significant competitive rivalry between Samay Raina and Prakhar Gupta, evidenced by the \"intense rivalry that...\" Facebook post. [Link: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.facebook.com%2Fchessbaseindia%2Fvideos%2Fwhen%2Darc]\n* **Podcast Guest:**  The latest podcast guest for Samay Raina's platform is not publicly accessible via the provided links; however, a potential indication may be found through social media posts or direct engagement with his audience. \n\n\n**4. Red Flags & Contradictions:**\n\n* **Inconsistencies:** Four inconsistencies have been identified in the raw data:  \n    - Lack of concrete details regarding his latest podcast guest\n    - Potential misinterpretation of the \"intense rivalry\" context without further information on the nature of their competition.\n    - Absence of specific FEN or PGN for the chess match with Prakhar Gupta.\n\n\n**5. Recommended Next Investigation Steps:**\n\n* **Investigate Podcast Guest:** Verify the latest podcast guest through social media platforms, direct engagement with audience, or by referring to his official website/blog post. \n* **Obtain Chess Match Details:**  Obtain FEN or PGN for the match played between Raina and Gupta to provide a deeper analysis of their competitive dynamic. \n* **Analyze Social Media Engagement:** Observe Samay Raina's social media activity, particularly on YouTube, Facebook, Twitter and Instagram, for clues regarding his recent activities related to his chess matches with Prakhar Gupta. \n    \n**Conclusion:**  Further investigation into the chess match details and the podcast guest will provide a more comprehensive understanding of this individual and their public persona. \n\n\n\n"
+}

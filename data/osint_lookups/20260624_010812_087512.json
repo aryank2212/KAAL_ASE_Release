@@ -1,0 +1,84 @@
+{
+  "lookup_id": "",
+  "timestamp": "2026-06-24T01:08:12.087531",
+  "input": {
+    "name": "Aryan Kumar",
+    "context": "19 yr old, male, student, reside in delhi",
+    "phrase": "https://www.instagram.com/aryan12.22/ https://www.youtube.com/@iTACHi-2212 ak24682212@gmail.com",
+    "links": "https://www.instagram.com/aryan12.22/ https://www.youtube.com/@iTACHi-2212 ak24682212@gmail.com",
+    "information_wanted": "his college details",
+    "anything_you_have": "Verified Context:"
+  },
+  "model": "gemma2:2b",
+  "goal_analysis": {
+    "goal": "General OSINT investigation",
+    "deliverables": [
+      "Gather intelligence on subject"
+    ],
+    "search_queries": [
+      "Aryan Kumar https://www.instagram.com/aryan12.22/ https://www.youtube.com/@iTACHi-2212 ak24682212@gmail.com"
+    ],
+    "requires_social_search": true,
+    "requires_name_analysis": true,
+    "requires_entity_extraction": true,
+    "requires_sentiment": true,
+    "success_criteria": [
+      "Information gathered"
+    ]
+  },
+  "plan": [
+    {
+      "id": "TASK_001",
+      "name": "Web search: Aryan Kumar https://www.instagram.com/aryan12.22/ https://ww",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_002",
+      "name": "Social media profile discovery",
+      "agent": "social_agent"
+    },
+    {
+      "id": "TASK_003",
+      "name": "Name variations analysis",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_004",
+      "name": "Entity extraction",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_005",
+      "name": "Sentiment & classification",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_006",
+      "name": "Inconsistency detection",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_007",
+      "name": "Final intelligence summary",
+      "agent": "summary_agent"
+    }
+  ],
+  "raw_web_search": [],
+  "web_search": [],
+  "social_profiles": [],
+  "entities": [],
+  "sentiment": {},
+  "classification": {},
+  "inconsistencies": [],
+  "name_suggestions": [],
+  "maigret_searches": [],
+  "holehe_searches": [
+    {
+      "email": "ak24682212@gmail.com",
+      "error": "No module named 'holehe'",
+      "registrations_found": 0,
+      "registrations": {}
+    }
+  ],
+  "llm_analysis": ""
+}

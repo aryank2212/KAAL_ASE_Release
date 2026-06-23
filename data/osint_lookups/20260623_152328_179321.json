@@ -1,0 +1,183 @@
+{
+  "lookup_id": "",
+  "timestamp": "2026-06-23T15:23:28.179354",
+  "input": {
+    "name": "",
+    "context": "Top 10 news and today is 2026-06-23.",
+    "phrase": "",
+    "links": "",
+    "information_wanted": "Give me the top 10 current news stories today.",
+    "anything_you_have": ""
+  },
+  "goal_analysis": {
+    "goal": "Identify and summarize the top 10 news stories from today's major online news outlets.",
+    "deliverables": [
+      "List of the top 10 current news stories as determined by major online news outlets on June 23, 2026.",
+      "Each story should be a distinct headline for easy identification and review."
+    ],
+    "search_queries": [
+      "top news websites 2026-06-23",
+      "world news top 10 today",
+      "major news outlets headlines 2026-06-23"
+    ],
+    "requires_social_search": true,
+    "requires_name_analysis": false,
+    "requires_entity_extraction": false,
+    "requires_sentiment": false,
+    "success_criteria": [
+      "The results should align with the criteria of a top 10 list from reputable news outlets."
+    ]
+  },
+  "plan": [
+    {
+      "id": "TASK_001",
+      "name": "Web search: top news websites 2026-06-23",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_002",
+      "name": "Web search: world news top 10 today",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_003",
+      "name": "Web search: major news outlets headlines 2026-06-23",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_004",
+      "name": "Inconsistency detection",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_005",
+      "name": "Final intelligence summary",
+      "agent": "summary_agent"
+    }
+  ],
+  "web_search": [
+    {
+      "title": "List of miscellaneous fake news websites",
+      "snippet": "elsewhere, satirical fake news websites, troll farm websites involved in fake news, user-generated fake news websites, and other fake news online networks. The",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/List_of_miscellaneous_fake_news_websites"
+    },
+    {
+      "title": "Top Chef: Carolinas",
+      "snippet": "the original on January 29, 2026. Retrieved January 29, 2026. Crist, Allison (January 29, 2026). &quot;Meet the Top Chef Season 23 Cheftestants, Including a",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Top_Chef%3A_Carolinas"
+    },
+    {
+      "title": "Fake news website",
+      "snippet": "Fake news websites (also referred to as hoax news websites) are websites on the Internet that deliberately publish fake news\u2014hoaxes, propaganda, and disinformation",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Fake_news_website"
+    },
+    {
+      "title": "List of date formats by country",
+      "snippet": "such as &quot;23 June 2026&quot; (23/06/26, 23/06/2026, 23-06-2026 or 23.06.2026) and month\u2013day formats such as &quot;June 23, 2026&quot; (06/23/26 or 06/23/2026). This can",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/List_of_date_formats_by_country"
+    },
+    {
+      "title": "2026 FIFA World Cup",
+      "snippet": "June\u00a017,\u00a02026\u00a0(2026-06-17) 8:00\u00a0p.m. UTC\u22126 Estadio Azteca, Mexico City Attendance: 80,824 Referee: Anthony Taylor (England) June\u00a023,\u00a02026\u00a0(2026-06-23) 12:00\u00a0p",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup"
+    },
+    {
+      "title": "The World Today (TV news programme)",
+      "snippet": "World Today, styled also as The World Today with Maryam Moshiri is a news programme that premiered on both UK feed and international feed of BBC News",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/The_World_Today_%28TV_news_programme%29"
+    },
+    {
+      "title": "Tom Llamas",
+      "snippet": "for NBC News as the anchor of NBC Nightly News and Top Story with Tom Llamas. He worked for ABC News as the weekend anchor of ABC World News Tonight from",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Tom_Llamas"
+    },
+    {
+      "title": "USA Today",
+      "snippet": "USA Today (often stylized in all caps) is an American daily newspaper and news broadcasting company. Founded by Al Neuharth in 1980 and launched on September",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/USA_Today"
+    },
+    {
+      "title": "Today (American TV program)",
+      "snippet": "weeks until the week of April 9, 2012, when Good Morning America topped it again. Today maintained its No. 2 status behind GMA from the summer of 2012 until",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Today_%28American_TV_program%29"
+    },
+    {
+      "title": "Vox (website)",
+      "snippet": "practice. Today, Explained is a daily podcast, hosted by Sean Ramaswaram and Noel King, providing short explanations of items in the news. Future Perfect",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Vox_%28website%29"
+    },
+    {
+      "title": "Google News",
+      "snippet": "&quot;Google News&quot;. Google Play. Retrieved June 15, 2026. &quot;Google News - Daily Headlines 5.160.0.926176964&quot;. APKMirror. June 4, 2026. Retrieved June 15, 2026. &quot;Google",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Google_News"
+    },
+    {
+      "title": "2026 Iran war",
+      "snippet": "BBC News Persian (in Persian). 28 February 2026. Retrieved 1 March 2026. &quot;Iran targets US bases across Persian Gulf states, IRGC-aligned outlet says&quot;",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/2026_Iran_war"
+    },
+    {
+      "title": "XXXTentacion",
+      "snippet": "Jahseh Dwayne Ricardo Onfroy (January 23, 1998 \u2013 June 18, 2018), professionally known as XXXTentacion, was an American rapper, singer-songwriter, and record",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/XXXTentacion"
+    },
+    {
+      "title": "2026 World Baseball Classic",
+      "snippet": "Retrieved March 19, 2026. Maguire, Brent (March 17, 2026). &quot;MVP Garcia headlines 2026 Classic All-Tournament Team&quot;. mlb.com. MLB. &quot;2026 World Baseball Classic",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/2026_World_Baseball_Classic"
+    },
+    {
+      "title": "Ji\u0159\u00ed Proch\u00e1zka",
+      "snippet": "bonus. The fight was later awarded &#039;Czech Fight of the Year&#039; by major media outlets. Proch\u00e1zka defended his title against Tom\u00e1\u0161 Penz on June 6, 2014",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ji%C5%99%C3%AD_Proch%C3%A1zka"
+    }
+  ],
+  "social_profiles": [],
+  "name_suggestions": [],
+  "entities": [],
+  "sentiment": {},
+  "classification": {},
+  "inconsistencies": [
+    {
+      "description": "Context doesn't match expected format for a news list. 'top 10 news' implies a compiled ranking, but the prompt asks for a simple list.",
+      "severity": "medium",
+      "text_snippet": "Top 10 news and today is 2026-06-23."
+    },
+    {
+      "description": "Requesting news for today with a specific date (2026-06-23) implies an automated system or data source, but lacks context about the expected format of the response. Is this a list of headlines, a summary of current events, or something else?",
+      "severity": "medium",
+      "text_snippet": "Give me the top 10 current news stories today."
+    },
+    {
+      "description": "Lack of specific criteria for 'top 10' makes it unclear what exactly constitutes being listed. Does this refer to overall popularity, relevance, impact, or a combination? The prompt needs more specificity.",
+      "severity": "medium",
+      "text_snippet": "Give me the top 10 current news stories today."
+    },
+    {
+      "description": "Links are expected for 'links', but there is no provided link data. This implies an incomplete request that may need clarification regarding the desired information source, format, and specific links.",
+      "severity": "medium",
+      "text_snippet": "Links: ."
+    },
+    {
+      "description": "The phrase 'Info wanted' suggests a user seeking guidance about how to proceed with their query. It needs further explanation of the user's intent or expectation for this request.",
+      "severity": "low",
+      "text_snippet": "Info wanted: Give me the top 10 current news stories today."
+    }
+  ],
+  "llm_analysis": "## OSINT Intelligence Summary - Top 10 News for 2026-06-23\n\n**1. Subject:**  Determining \"Top 10 news and today is 2026-06-23\" requires further context. The user's query only provides a vague prompt, making it impossible to definitively define the subject or their interest without additional information.\n\n**2. Digital Footprint Found:**\n* **Web Search Results:**  The OSINT investigation reveals a substantial online presence for various news outlets and programs. \n    * **List of miscellaneous fake news websites** suggests potential for misinformation and unreliable sources. \n    * **Top Chef: Carolinas** indicates focus on culinary competition within a specific geographical location.  \n    * **Fake news website** provides further information about the topic of fake news and its prevalence in digital environments.\n    * **The World Today**, **Tom Llamas,** and **USA Today** are prominent examples of mainstream news sources with established reputations. \n\n**3. Key Findings and Evidence:**\n    * **Multiple Sources:** The presence of various news sources from reputable outlets and TV programs suggests a broad overview of current events. \n    * **Google News:** The inclusion of Google News highlights the user's interest in reliable, comprehensive digital information about trending topics.  \n* **\"Top 10 News\"** implies specific categories or areas of focus within the news landscape. This will influence subsequent investigation and provide a more targeted analysis.\n\n\n**4. Red Flags and Contradictions:**\n    * **Inconsistencies (5):** These inconsistencies require further investigation. The exact nature of these inconsistencies must be determined to understand their impact on the user's intelligence query. \n        *  **Examples:** This could involve contradictions between results from different sources, differing timeframes, or potential manipulation of information.\n\n **5. Recommended Next Investigation Steps:**\n\n   * **Clarification:**  Obtain explicit context about \"Top 10 news and today is 2026-06-23\".  Provide specific categories (e.g., political, environmental, technology) to facilitate targeted research.\n   * **Contextual Analysis:** Identify the user's intent behind this request.  \n        * *Is the user seeking a broad overview of current events or are they interested in a specific topic? \n        * *Do they need actionable intelligence for business, personal affairs, or security purposes?*\n   * **Source Verification:** Analyze sources identified during the initial search to assess their reliability and potential biases. Cross-reference information from multiple reputable sources.  \n    * **Red Flag Analysis:** Identify the nature of the 5 inconsistencies and determine if they reflect deliberate manipulation, unreliable data, or human error.\n\nBy following these steps, a more comprehensive intelligence report can be generated regarding \"Top 10 News for 2026-06-23\".  \n\n\n**Disclaimer:** The analysis presented is based on the available information provided in this prompt. Further investigation and context are crucial to produce a complete and accurate assessment of the subject's digital footprint, including potential threats or opportunities. \n"
+}

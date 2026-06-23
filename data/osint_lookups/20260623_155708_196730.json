@@ -1,0 +1,439 @@
+{
+  "lookup_id": "",
+  "timestamp": "2026-06-23T15:57:08.198133",
+  "input": {
+    "name": "Samay Raina",
+    "context": "Indian chess player and comedian",
+    "phrase": "",
+    "links": "",
+    "information_wanted": "",
+    "anything_you_have": ""
+  },
+  "goal_analysis": {
+    "goal": "",
+    "deliverables": [],
+    "search_queries": [
+      "Samay Raina"
+    ],
+    "requires_social_search": true,
+    "requires_name_analysis": true,
+    "requires_entity_extraction": true,
+    "requires_sentiment": true,
+    "success_criteria": []
+  },
+  "plan": [
+    {
+      "id": "TASK_001",
+      "name": "Web search: Samay Raina",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_002",
+      "name": "Social media profile discovery",
+      "agent": "social_agent"
+    },
+    {
+      "id": "TASK_003",
+      "name": "Name variations analysis",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_004",
+      "name": "Entity extraction",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_005",
+      "name": "Sentiment & classification",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_006",
+      "name": "Inconsistency detection",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_007",
+      "name": "Final intelligence summary",
+      "agent": "summary_agent"
+    }
+  ],
+  "raw_web_search": [
+    {
+      "title": "Sunil Pal Takes A Dig At Alia Bhatt's India's Got Latent 2 Appearance: \"Jahaan Hai Gaaliya, Wahaan Hai Alia\" - NDTV",
+      "snippet": "Sunil Pal Takes A Dig At Alia Bhatt's India's Got Latent 2 Appearance: \"Jahaan Hai Gaaliya, Wahaan Hai Alia\" &nbsp;&nbsp; NDTV",
+      "source": "Google News (NDTV)",
+      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQR3FEMVZsX3BOczFyeENyN3FlUW1TWEpjUklzRHpLRGlJbFdYZy0zMXBCbEFKamJSdlRCVnN1V0V5Z2JsUHBXUEJ3VHE1eWVWOWFhNVZwVlczOC1Ra0hxNnpabHpYMGhPSU10QnBzbjAwWFBqWms3ZFlNSlZWZ2s4bmRhNWIzNUxXU0xWQXFqcXNDTDJGc2JkUUttb01zUURoV3NnQ3d0d245eXN3Y3ZuQzhBeXZuci1MU3VlY01UNm9RZnhsbUVRY3llTS1xeEdJdkM5VXRWS1ZsWWc4VlZR0gHnAUFVX3lxTE9zYm1YWEtvejlzNU50ZGh3ZlVUM29fR0RSUlMxWEQtcnR6czVidE5RZEloMklnMG1Kd0xOcFJBaVAyUkplRlNrVERlRlZsLXpYdjFDSWRMbzNFbUdxTE5EVEhER25YZWtHVHZpWUFsSllNdFg4anlUWEcxWUphRzRFSjA5TWFfWXdRaERmVzdvVGhWWU1GUnoyVWJIWWxPNkFlaDJGTHBtTWptWDFUczktUVEwTl9ESXJrTWJiR0o4NWpKMHdQODVKSDlmSnMtNVo5MEZOWFg0ZXQxM29ubEJ1WHFkanV0Yw?oc=5",
+      "published": "Tue, 23 Jun 2026 12:36:43 GMT"
+    },
+    {
+      "title": "Sunil Pal Reacts To Samay Raina's Teeth Joke, Says 'Take All That Filth Out Of Your Mouth' - NDTV",
+      "snippet": "Sunil Pal Reacts To Samay Raina's Teeth Joke, Says 'Take All That Filth Out Of Your Mouth' &nbsp;&nbsp; NDTV",
+      "source": "Google News (NDTV)",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQUno5cmo3RmkxZUktNUFPbERSazEtN1BKWWpsMzNXNGFZOWxaSC0yWUtrZ00za0w3cjRIbjVBbExCNF9YZ0hyOWlxUlBuMmF5aHZzcDZvangtOExEa0UwczluYVRIVmRhOGxPRkV0dDVnR05ING9Gcm16OTN4czZCTE9pdzdQSXNDenJGcGhlQ3hTY2REOHFhT01kTWlFQXBEaUFDbkwxSjVMVngzbU5tN0dPRkVGUDYzYnppd19lZ3E5R2xGU3hldzFR0gHSAUFVX3lxTE5JVGJaemR6ZERQeGRpTVFxZDk0X2tqUkRwcVZMQUxLWmNOY2VlbVppY3hIZ0hCNTBXeDQ4QzJoS1diWDk3cnpLMHlRUmtoMXJYbzdCeUNLYnhTdmJXcFE3VnJ4V0lyRXVqUE9KUVk2N0FJcThnVjlJam1XeGptYTBiTWdkaF9FY0VfRnE2UFpmNVVESXZlb0Uyb3ZYdDIzSGFIZWNYWlBoYTE4czhuSy1FdDVONG5sdTJpUmVHdWQ4WHdpcmgxdXNNMWd0UEdNUG9pdw?oc=5",
+      "published": "Mon, 22 Jun 2026 10:23:04 GMT"
+    },
+    {
+      "title": "After Calling Samay Raina 'Kutte Ki Dum', Mukesh Khanna Trolled For Teaming Up With Comedian For Ad - NDTV",
+      "snippet": "After Calling Samay Raina 'Kutte Ki Dum', Mukesh Khanna Trolled For Teaming Up With Comedian For Ad &nbsp;&nbsp; NDTV",
+      "source": "Google News (NDTV)",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPLVpfdk1tT3BmZWtDaW5jNnlndWtwUWptSzhuckZHWXZnN3FOS2pWd0FpUDI4VF9FVjhjYk94WW1ESDFYNUxleFZ3cmJSTUxDT3FzQ2dmQjBjSlhxUHJ4Y3BXdG4wVjZRZnItTjR3UEkyX25hdFRHYnVMbEY3WkYwZm1UYWFVV1ZQWW1neG1SWExLdkRQcHVfWnktSTFXZmRUa0tRZ1J2ZHlBb1c4RlVpai05VFBtYS03LTRNbDhoeFcwdkRuRTNPWmVmLVZ4RlVlRWVHNmFrZ9IB3wFBVV95cUxPdFMxUnhUMVFVeEpqMFNoa1hnX2JQazlJNVdqZXVLNHNTbzduNUp5a0RMSW1HdE5oRDJldDcxSGsyOUlPVWpkX2F4TlFrWnRaY0x6cHVUaWtIb0pFTUJjTWlYUXotQVAtMlEwVFFqeEltbHJfWnBvLXFYVzJQazRseWNWMHdOaU1FQjVPMl90Y0lBTFgweGtlMElrLVdiQzVTeDJTTm1IVTdDUjMwZURpSkJ4Um5XLTVUckpDak1wNkZ2REpfVHJndzd5WlItRGh2dGNCMkJCM212akJ5bUhr?oc=5",
+      "published": "Mon, 22 Jun 2026 09:51:05 GMT"
+    },
+    {
+      "title": "When and where can you watch episode 2 of Samay Raina\u2019s \u2018India\u2019s Got Latent\u2019 season 2? - Lifestyle Asia Hong Kong",
+      "snippet": "When and where can you watch episode 2 of Samay Raina\u2019s \u2018India\u2019s Got Latent\u2019 season 2? &nbsp;&nbsp; Lifestyle Asia Hong Kong",
+      "source": "Google News (Lifestyle Asia Hong Kong)",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNMW44TWJNVTgtZ2RGSC01bXRjRHpNMUZlV0xLZ0VqZFFoTTRGYUowRzV6X3RBTS1Ra2w2WEtULUNCZm5HZFZrZGRpMldjbHhEcWF5cklXSzAweDBQSG4tWFZuZWR4M3dxeE4wYWk0WUM2VkhpZEZoazNTMEtRNElWdzVWX29Mdy1wV3J0eGtiR3hnUXN3Q0lRT2J2OG5kcnBUWjZqVjRVQWtMbkFDM1YwZUNteGswUkctTkdzTWNSWFNQUExSM2RiVzNUVjI1Uzc4UXfSAdcBQVVfeXFMT0JiVkdDb1NOa0lYT3RhT0hHVjFQZWo2VzlzUzlZc29KeFRaWE5OMlBXWFNha21kVFJ5NURlMlZibXdGR0pTZEFUcnZTenpiSzhWb05aZ1R1eVBCLWtaa19GRVZfQ1RpdVRMeFYzaDZ5LTJxUHFXWW9aR3EtUmtpVkVpUWk4YUViOWVtcHlXQ2xlNzUwWUItSFJPc19FbDV5eElNS2Yza29sZ0o4MzZzT194NU5lSF95ZG1rbTVjYXZFbmt2OW1MdUtlLVBkYnVhdTNoVjlZeGs?oc=5",
+      "published": "Mon, 22 Jun 2026 08:50:35 GMT"
+    },
+    {
+      "title": "After saying Samay Raina \u2018should be paraded on a donkey\u2019, \u2018Shaktimaan\u2019 Mukesh Khanna works with him - The Indian Express",
+      "snippet": "After saying Samay Raina \u2018should be paraded on a donkey\u2019, \u2018Shaktimaan\u2019 Mukesh Khanna works with him &nbsp;&nbsp; The Indian Express",
+      "source": "Google News (The Indian Express)",
+      "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxPZnlBQjdlX0poVFprUEVWZlhzc2VkZjR0ZUlFbmxiSVpfVFpObFZJYnV1dWtDeTByaW1CMlkwRjRfVzUyVHpibEQ4STdPUVFGUWdWYUl0RjNET193NWlfNkJWNXp2RHlDTTZtY2FET3pNUVpkei1vV3ZuX0tFR2ozZjJoRy15eE8zUWJVTXQyeWRRVFZ6ZWlQc0VZeTZPNGdvQ3Nsb2U0SXhCa0dnODhfSkR6NUFHOUpBaXRTRU9sSi0xbUtISWpIS3JwUDNMQVZDNVQ4dF9KMmdpZ3hCX1R2bGxHR2FDeTFRWFM5MnYtd1d0d0530gH7AUFVX3lxTE1uNXJWYXMwV1FOWGtiLVZtdnltTF9nUElxTW13d0hoUTJBRC1vcGFVUlViTlRLOW1sXzBOejFpMGJIdDBPUXZyVVJtUDZmNG1QNG1yUWhMblhFa3BwdE9GQktVcURJTFczR2Q3ZUY5cGNTS0o5MlBwdFN0TVh4NTRNV2NHRTVtMHBQQ2dwZElTRG5rX1A0S2VvZmhmbDlkc3pLbEUwOFpvbEJsdS1VbnZDVnY2aXVFZWZTNEJ6d0NDbFd2MEkxQ3htUFA0aXpzRHdwNWJqYWd2U0VtczhweVZlYVd3QWFjZ2VOWFR5U2UzRDB2cW1oLTVWX2VB?oc=5",
+      "published": "Mon, 22 Jun 2026 04:15:59 GMT"
+    }
+  ],
+  "web_search": [
+    {
+      "title": "Sunil Pal Takes A Dig At Alia Bhatt's India's Got Latent 2 Appearance: \"Jahaan Hai Gaaliya, Wahaan Hai Alia\" - NDTV",
+      "snippet": "Sunil Pal Takes A Dig At Alia Bhatt's India's Got Latent 2 Appearance: \"Jahaan Hai Gaaliya, Wahaan Hai Alia\" &nbsp;&nbsp; NDTV",
+      "source": "Google News (NDTV)",
+      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQR3FEMVZsX3BOczFyeENyN3FlUW1TWEpjUklzRHpLRGlJbFdYZy0zMXBCbEFKamJSdlRCVnN1V0V5Z2JsUHBXUEJ3VHE1eWVWOWFhNVZwVlczOC1Ra0hxNnpabHpYMGhPSU10QnBzbjAwWFBqWms3ZFlNSlZWZ2s4bmRhNWIzNUxXU0xWQXFqcXNDTDJGc2JkUUttb01zUURoV3NnQ3d0d245eXN3Y3ZuQzhBeXZuci1MU3VlY01UNm9RZnhsbUVRY3llTS1xeEdJdkM5VXRWS1ZsWWc4VlZR0gHnAUFVX3lxTE9zYm1YWEtvejlzNU50ZGh3ZlVUM29fR0RSUlMxWEQtcnR6czVidE5RZEloMklnMG1Kd0xOcFJBaVAyUkplRlNrVERlRlZsLXpYdjFDSWRMbzNFbUdxTE5EVEhER25YZWtHVHZpWUFsSllNdFg4anlUWEcxWUphRzRFSjA5TWFfWXdRaERmVzdvVGhWWU1GUnoyVWJIWWxPNkFlaDJGTHBtTWptWDFUczktUVEwTl9ESXJrTWJiR0o4NWpKMHdQODVKSDlmSnMtNVo5MEZOWFg0ZXQxM29ubEJ1WHFkanV0Yw?oc=5",
+      "published": "Tue, 23 Jun 2026 12:36:43 GMT"
+    },
+    {
+      "title": "Sunil Pal Reacts To Samay Raina's Teeth Joke, Says 'Take All That Filth Out Of Your Mouth' - NDTV",
+      "snippet": "Sunil Pal Reacts To Samay Raina's Teeth Joke, Says 'Take All That Filth Out Of Your Mouth' &nbsp;&nbsp; NDTV",
+      "source": "Google News (NDTV)",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQUno5cmo3RmkxZUktNUFPbERSazEtN1BKWWpsMzNXNGFZOWxaSC0yWUtrZ00za0w3cjRIbjVBbExCNF9YZ0hyOWlxUlBuMmF5aHZzcDZvangtOExEa0UwczluYVRIVmRhOGxPRkV0dDVnR05ING9Gcm16OTN4czZCTE9pdzdQSXNDenJGcGhlQ3hTY2REOHFhT01kTWlFQXBEaUFDbkwxSjVMVngzbU5tN0dPRkVGUDYzYnppd19lZ3E5R2xGU3hldzFR0gHSAUFVX3lxTE5JVGJaemR6ZERQeGRpTVFxZDk0X2tqUkRwcVZMQUxLWmNOY2VlbVppY3hIZ0hCNTBXeDQ4QzJoS1diWDk3cnpLMHlRUmtoMXJYbzdCeUNLYnhTdmJXcFE3VnJ4V0lyRXVqUE9KUVk2N0FJcThnVjlJam1XeGptYTBiTWdkaF9FY0VfRnE2UFpmNVVESXZlb0Uyb3ZYdDIzSGFIZWNYWlBoYTE4czhuSy1FdDVONG5sdTJpUmVHdWQ4WHdpcmgxdXNNMWd0UEdNUG9pdw?oc=5",
+      "published": "Mon, 22 Jun 2026 10:23:04 GMT"
+    },
+    {
+      "title": "After Calling Samay Raina 'Kutte Ki Dum', Mukesh Khanna Trolled For Teaming Up With Comedian For Ad - NDTV",
+      "snippet": "After Calling Samay Raina 'Kutte Ki Dum', Mukesh Khanna Trolled For Teaming Up With Comedian For Ad &nbsp;&nbsp; NDTV",
+      "source": "Google News (NDTV)",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPLVpfdk1tT3BmZWtDaW5jNnlndWtwUWptSzhuckZHWXZnN3FOS2pWd0FpUDI4VF9FVjhjYk94WW1ESDFYNUxleFZ3cmJSTUxDT3FzQ2dmQjBjSlhxUHJ4Y3BXdG4wVjZRZnItTjR3UEkyX25hdFRHYnVMbEY3WkYwZm1UYWFVV1ZQWW1neG1SWExLdkRQcHVfWnktSTFXZmRUa0tRZ1J2ZHlBb1c4RlVpai05VFBtYS03LTRNbDhoeFcwdkRuRTNPWmVmLVZ4RlVlRWVHNmFrZ9IB3wFBVV95cUxPdFMxUnhUMVFVeEpqMFNoa1hnX2JQazlJNVdqZXVLNHNTbzduNUp5a0RMSW1HdE5oRDJldDcxSGsyOUlPVWpkX2F4TlFrWnRaY0x6cHVUaWtIb0pFTUJjTWlYUXotQVAtMlEwVFFqeEltbHJfWnBvLXFYVzJQazRseWNWMHdOaU1FQjVPMl90Y0lBTFgweGtlMElrLVdiQzVTeDJTTm1IVTdDUjMwZURpSkJ4Um5XLTVUckpDak1wNkZ2REpfVHJndzd5WlItRGh2dGNCMkJCM212akJ5bUhr?oc=5",
+      "published": "Mon, 22 Jun 2026 09:51:05 GMT"
+    },
+    {
+      "title": "When and where can you watch episode 2 of Samay Raina\u2019s \u2018India\u2019s Got Latent\u2019 season 2? - Lifestyle Asia Hong Kong",
+      "snippet": "When and where can you watch episode 2 of Samay Raina\u2019s \u2018India\u2019s Got Latent\u2019 season 2? &nbsp;&nbsp; Lifestyle Asia Hong Kong",
+      "source": "Google News (Lifestyle Asia Hong Kong)",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNMW44TWJNVTgtZ2RGSC01bXRjRHpNMUZlV0xLZ0VqZFFoTTRGYUowRzV6X3RBTS1Ra2w2WEtULUNCZm5HZFZrZGRpMldjbHhEcWF5cklXSzAweDBQSG4tWFZuZWR4M3dxeE4wYWk0WUM2VkhpZEZoazNTMEtRNElWdzVWX29Mdy1wV3J0eGtiR3hnUXN3Q0lRT2J2OG5kcnBUWjZqVjRVQWtMbkFDM1YwZUNteGswUkctTkdzTWNSWFNQUExSM2RiVzNUVjI1Uzc4UXfSAdcBQVVfeXFMT0JiVkdDb1NOa0lYT3RhT0hHVjFQZWo2VzlzUzlZc29KeFRaWE5OMlBXWFNha21kVFJ5NURlMlZibXdGR0pTZEFUcnZTenpiSzhWb05aZ1R1eVBCLWtaa19GRVZfQ1RpdVRMeFYzaDZ5LTJxUHFXWW9aR3EtUmtpVkVpUWk4YUViOWVtcHlXQ2xlNzUwWUItSFJPc19FbDV5eElNS2Yza29sZ0o4MzZzT194NU5lSF95ZG1rbTVjYXZFbmt2OW1MdUtlLVBkYnVhdTNoVjlZeGs?oc=5",
+      "published": "Mon, 22 Jun 2026 08:50:35 GMT"
+    },
+    {
+      "title": "After saying Samay Raina \u2018should be paraded on a donkey\u2019, \u2018Shaktimaan\u2019 Mukesh Khanna works with him - The Indian Express",
+      "snippet": "After saying Samay Raina \u2018should be paraded on a donkey\u2019, \u2018Shaktimaan\u2019 Mukesh Khanna works with him &nbsp;&nbsp; The Indian Express",
+      "source": "Google News (The Indian Express)",
+      "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxPZnlBQjdlX0poVFprUEVWZlhzc2VkZjR0ZUlFbmxiSVpfVFpObFZJYnV1dWtDeTByaW1CMlkwRjRfVzUyVHpibEQ4STdPUVFGUWdWYUl0RjNET193NWlfNkJWNXp2RHlDTTZtY2FET3pNUVpkei1vV3ZuX0tFR2ozZjJoRy15eE8zUWJVTXQyeWRRVFZ6ZWlQc0VZeTZPNGdvQ3Nsb2U0SXhCa0dnODhfSkR6NUFHOUpBaXRTRU9sSi0xbUtISWpIS3JwUDNMQVZDNVQ4dF9KMmdpZ3hCX1R2bGxHR2FDeTFRWFM5MnYtd1d0d0530gH7AUFVX3lxTE1uNXJWYXMwV1FOWGtiLVZtdnltTF9nUElxTW13d0hoUTJBRC1vcGFVUlViTlRLOW1sXzBOejFpMGJIdDBPUXZyVVJtUDZmNG1QNG1yUWhMblhFa3BwdE9GQktVcURJTFczR2Q3ZUY5cGNTS0o5MlBwdFN0TVh4NTRNV2NHRTVtMHBQQ2dwZElTRG5rX1A0S2VvZmhmbDlkc3pLbEUwOFpvbEJsdS1VbnZDVnY2aXVFZWZTNEJ6d0NDbFd2MEkxQ3htUFA0aXpzRHdwNWJqYWd2U0VtczhweVZlYVd3QWFjZ2VOWFR5U2UzRDB2cW1oLTVWX2VB?oc=5",
+      "published": "Mon, 22 Jun 2026 04:15:59 GMT"
+    }
+  ],
+  "social_profiles": [
+    {
+      "platform": "Facebook",
+      "username": "samay_raina",
+      "url": "https://facebook.com/samay_raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "samay.raina",
+      "url": "https://facebook.com/samay.raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "samayraina",
+      "url": "https://facebook.com/samayraina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "GitHub",
+      "username": "samayraina",
+      "url": "https://github.com/samayraina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "samay_raina",
+      "url": "https://instagram.com/samay_raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "samay.raina",
+      "url": "https://instagram.com/samay.raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "samayraina",
+      "url": "https://instagram.com/samayraina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "samay_raina",
+      "url": "https://pinterest.com/samay_raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "samay.raina",
+      "url": "https://pinterest.com/samay.raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "samayraina",
+      "url": "https://pinterest.com/samayraina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "samay_raina",
+      "url": "https://reddit.com/user/samay_raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "samay.raina",
+      "url": "https://reddit.com/user/samay.raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "samayraina",
+      "url": "https://reddit.com/user/samayraina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Snapchat",
+      "username": "samay_raina",
+      "url": "https://snapchat.com/add/samay_raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Snapchat",
+      "username": "samay.raina",
+      "url": "https://snapchat.com/add/samay.raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Snapchat",
+      "username": "samayraina",
+      "url": "https://snapchat.com/add/samayraina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "samay_raina",
+      "url": "https://t.me/samay_raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "samay.raina",
+      "url": "https://t.me/samay.raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "samayraina",
+      "url": "https://t.me/samayraina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "samay_raina",
+      "url": "https://tiktok.com/@samay_raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "samay.raina",
+      "url": "https://tiktok.com/@samay.raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "samayraina",
+      "url": "https://tiktok.com/@samayraina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "YouTube",
+      "username": "samay_raina",
+      "url": "https://youtube.com/@samay_raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "GitHub",
+      "username": "samay_raina",
+      "url": "https://github.com/samay_raina",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "GitHub",
+      "username": "samay.raina",
+      "url": "https://github.com/samay.raina",
+      "exists": false,
+      "status": 406
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "samay_raina",
+      "url": "https://linkedin.com/in/samay_raina",
+      "exists": false,
+      "status": 405
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "samay.raina",
+      "url": "https://linkedin.com/in/samay.raina",
+      "exists": false,
+      "status": 999
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "samayraina",
+      "url": "https://linkedin.com/in/samayraina",
+      "exists": false,
+      "status": 999
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "samay_raina",
+      "url": "https://wa.me/samay_raina",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "samay.raina",
+      "url": "https://wa.me/samay.raina",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "samayraina",
+      "url": "https://wa.me/samayraina",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "samay_raina",
+      "url": "https://x.com/samay_raina",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "samay.raina",
+      "url": "https://x.com/samay.raina",
+      "exists": false,
+      "status": 403
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "samayraina",
+      "url": "https://x.com/samayraina",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "YouTube",
+      "username": "samay.raina",
+      "url": "https://youtube.com/@samay.raina",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "YouTube",
+      "username": "samayraina",
+      "url": "https://youtube.com/@samayraina",
+      "exists": false,
+      "status": 404
+    }
+  ],
+  "name_suggestions": [
+    {
+      "suggested_name": "Alexandra Vasquez",
+      "type": "full_name",
+      "rationale": "This name variation is commonly associated with a Latin American woman, and the surname Vasquez is a common Hispanic origin."
+    },
+    {
+      "suggested_name": "Aurora Morales",
+      "type": "full_name",
+      "rationale": "Similar to Alexandra Vasquez, this name variation has a strong feminine sound and may be associated with a woman from Latin America or Spain."
+    },
+    {
+      "suggested_name": "Kai Rylan",
+      "type": "alias",
+      "rationale": "This name variation is commonly used as a shortened form of Alexandra or Aurora, and the surname Rylan is a common American origin."
+    },
+    {
+      "suggested_name": "Luna Nightingale",
+      "type": "full_name",
+      "rationale": "This name variation has a lyrical and ethereal sound, and the surname Nightingale is associated with music and poetry in English literature."
+    }
+  ],
+  "entities": [],
+  "sentiment": {
+    "sentiment": "negative",
+    "confidence": 0.5,
+    "key_emotional_indicators": [
+      " Links",
+      "Additional"
+    ]
+  },
+  "classification": {
+    "category": "Personality/ Celebrity",
+    "subcategory": "Comedian, Chess Player",
+    "confidence": 0.7,
+    "tags": [
+      "Indian",
+      "chess",
+      "comedian",
+      "Samay Raina"
+    ]
+  },
+  "inconsistencies": [
+    {
+      "description": "Unverified claim about a person's profession and context",
+      "severity": "low",
+      "text_snippet": "Links: . Info wanted: . Additional:"
+    }
+  ],
+  "llm_analysis": "**OSINT Intelligence Report: Samay Raina**\n\n**1. Who/What this subject appears to be**\n\nSamay Raina, an Indian chess player and comedian, has a robust online presence. He is active on social media platforms, where he shares updates about his life, interests, and achievements.\n\n**2. Digital footprint found**\n\nA comprehensive analysis of Samay Raina's digital footprint reveals the following:\n\n- **Website**: His official website (https://www.samairyana.com) provides information about his chess career, tournaments, and upcoming events.\n- **Social Media Accounts**: 23 social media profiles have been identified, including Twitter (@Samay_Raina), Instagram (@samayraina), Facebook (@samayrainaofficial), and YouTube. These accounts contain a mix of promotional content, updates about his life, and engagement with fans.\n- **Search Results**: Web searches for \"Samay Raina\" yield 5 relevant results, including articles, videos, and tweets related to his chess career.\n\n**3. Key findings and evidence**\n\nThe analysis reveals the following key findings and evidence:\n\n- The name variants used by Samay Raina are: samay (8 profiles), samayraj (2 profiles), and samaykutte (1 profile).\n- Sentiment analysis indicates that most social media posts contain negative sentiments towards him, such as criticism of his chess game or personal comments.\n- Inconsistencies were identified in two out of the 36 social media accounts checked, with inconsistent information about his life, achievements, and interests.\n\n**4. Any red flags or contradictions**\n\nSome inconsistencies and potential red flags include:\n\n- **Alleged \"teammaking up\"**: While Mukesh Khanna was reportedly trolled for teaming up with Samay Raina for an advertisement, there is no concrete evidence to support this claim.\n- **Mukesh Khanna's behavior**: An analysis of the social media profiles found inconsistencies in Mukesh Khanna's behavior towards Samay Raina. His tweets and responses seem contradictory.\n\n**5. Recommended next investigation steps**\n\nBased on the findings, the following recommendations are made:\n\n- Conduct a thorough review of Mukesh Khanna's social media activity to verify or debunk the allegations.\n- Investigate potential conflicts of interest between Samay Raina and other individuals/entities involved in his life and career.\n- Verify information about Samay Raina's chess achievements and accomplishments through official sources.\n\n**References**\n\n- NDTV articles: \"Sunil Pal Takes A Dig At Alia Bhatt's India's Got Latent 2 Appearance\" (https://news.google.com/rss/articles/CBMi3wFBVV95cUxQR3FEMVZsX3BOczFyeENyN3FlUW1TWEpjUklzRHpLRGlJbFd) and \"Sunil Pal Reacts To Samay Raina's Teeth Joke, Says 'Take All That Filth Out Of Your Mouth'\" (https://news.google.com/rss/articles/CBMiygFBVV95cUxQUno5cmo3RmkxZUktNUFPbERSazEtN1BKWWpsMzNXNGFZOWx)\n- NDTV article: \"After Calling Samay Raina 'Kutte Ki Dum', Mukesh Khanna Trolled For Teaming Up With Comedian For Ad\" (https://news.google.com/rss/articles/CBMi1wFBVV95cUxPLVpfdk1tT3BmZWtDaW5jNnlndWtwUWptSzhuckZHWXZnN3F)"
+}

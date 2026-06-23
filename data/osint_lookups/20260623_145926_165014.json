@@ -1,0 +1,456 @@
+{
+  "lookup_id": "",
+  "timestamp": "2026-06-23T14:59:26.165051",
+  "input": {
+    "name": "Elon Musk",
+    "context": "Who is he and what companies does he run?",
+    "phrase": "",
+    "links": "",
+    "information_wanted": "",
+    "anything_you_have": ""
+  },
+  "goal_analysis": {
+    "goal": "Analyze Elon Musk's background and identify the companies he runs.",
+    "deliverables": [
+      "List of companies owned or co-founded by Elon Musk",
+      "Elon Musk biography, including his roles within each company"
+    ],
+    "search_queries": [
+      "Elon Musk companies list",
+      "Elon Musk ventures business",
+      "Elon Musk biography Tesla"
+    ],
+    "requires_social_search": true,
+    "requires_name_analysis": false,
+    "requires_entity_extraction": true,
+    "requires_sentiment": false,
+    "success_criteria": [
+      "The results should include a verifiable list of companies owned or co-founded by Elon Musk with links to relevant company pages. The biographies provide detailed information about his roles within each company."
+    ]
+  },
+  "plan": [
+    {
+      "id": "TASK_001",
+      "name": "Web search: Elon Musk companies list",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_002",
+      "name": "Web search: Elon Musk ventures business",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_003",
+      "name": "Web search: Elon Musk biography Tesla",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_004",
+      "name": "Social media profile discovery",
+      "agent": "social_agent"
+    },
+    {
+      "id": "TASK_005",
+      "name": "Entity extraction",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_006",
+      "name": "Inconsistency detection",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_007",
+      "name": "Final intelligence summary",
+      "agent": "summary_agent"
+    }
+  ],
+  "web_search": [
+    {
+      "title": "Wealth of Elon Musk",
+      "snippet": "Elon Musk is the wealthiest person in the world, with an estimated net worth of US$1.23 trillion according to the Bloomberg Billionaires Index and $1",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Wealth_of_Elon_Musk"
+    },
+    {
+      "title": "Acquisition of Twitter by Elon Musk",
+      "snippet": "Elon Musk initiated an acquisition of the American social media company Twitter, Inc. (now X Corp.) on April 14, 2022, and concluded it on October 27",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Acquisition_of_Twitter_by_Elon_Musk"
+    },
+    {
+      "title": "Legal affairs of Elon Musk",
+      "snippet": "affairs of Elon Musk encompass the legal cases involving Elon Musk as the plaintiff, defendant, or concerning his companies. In 2018, Musk was sued by",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Legal_affairs_of_Elon_Musk"
+    },
+    {
+      "title": "Musk Foundation",
+      "snippet": "The Musk Foundation is a United States\u2013based charitable foundation funded and directed primarily by Elon Musk. The foundation is dedicated to promoting",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Musk_Foundation"
+    },
+    {
+      "title": "Errol Musk",
+      "snippet": "various ventures including emerald trading. Musk married Maye Haldeman in 1970, and they had three children: Elon, Kimbal and Tosca. Haldeman divorced him",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Errol_Musk"
+    },
+    {
+      "title": "Errol Musk",
+      "snippet": "and invested in various ventures including emerald trading. Musk married Maye Haldeman in 1970, and they had three children: Elon, Kimbal and Tosca. Haldeman",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Errol_Musk"
+    },
+    {
+      "title": "Musk family",
+      "snippet": "entrepreneur Elon Musk, the wealthiest person in the world. It also includes his parents Maye Musk, a model and author, and Errol Musk, a mine-owner",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Musk_family"
+    },
+    {
+      "title": "Acquisition of Twitter by Elon Musk",
+      "snippet": "Elon Musk initiated an acquisition of the American social media company Twitter, Inc. (now X Corp.) on April 14, 2022, and concluded it on October 27",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Acquisition_of_Twitter_by_Elon_Musk"
+    },
+    {
+      "title": "Kimbal Musk",
+      "snippet": "Elon Musk and Tosca Musk, the son of Errol and Maye Musk, and a major shareholder in Tesla. In 1995 he co-founded the software company Zip2 with Elon",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Kimbal_Musk"
+    },
+    {
+      "title": "Wealth of Elon Musk",
+      "snippet": "Elon Musk is the wealthiest person in the world, with an estimated net worth of US$1.23 trillion according to the Bloomberg Billionaires Index and $1",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Wealth_of_Elon_Musk"
+    },
+    {
+      "title": "Elon Musk (Isaacson book)",
+      "snippet": "Elon Musk is an authorized biography of Elon Musk. The book was written by Walter Isaacson, a former executive at CNN, TIME and the Aspen Institute who",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Elon_Musk_%28Isaacson_book%29"
+    },
+    {
+      "title": "Wealth of Elon Musk",
+      "snippet": "Elon Musk is the wealthiest person in the world, with an estimated net worth of US$1.23 trillion according to the Bloomberg Billionaires Index and $1",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Wealth_of_Elon_Musk"
+    },
+    {
+      "title": "Elon Musk: Tesla, SpaceX, and the Quest for a Fantastic Future",
+      "snippet": "Elon Musk: Tesla, SpaceX, and the Quest for a Fantastic Future is an unofficial biography of Elon Musk, written by Ashlee Vance and published on May 19",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Elon_Musk%3A_Tesla%2C_SpaceX%2C_and_the_Quest_for_a_Fantastic_Future"
+    },
+    {
+      "title": "Elon Musk",
+      "snippet": "Elon Reeve Musk (/\u02c8i\u02d0l\u0252n/ EE-lon; born June 28, 1971) is a businessman and former public official who is the CEO and largest shareholder of Tesla and",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Elon_Musk"
+    },
+    {
+      "title": "Tesla Cybertruck",
+      "snippet": "have been described as disappointing. Tesla CEO Elon Musk&#039;s presented his ideas in 2012, envisioning building a &quot;Tesla supertruck with crazy torque, dynamic",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Tesla_Cybertruck"
+    }
+  ],
+  "social_profiles": [
+    {
+      "platform": "Facebook",
+      "username": "elonmusk",
+      "url": "https://facebook.com/elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "elon.musk",
+      "url": "https://facebook.com/elon.musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "elon_musk",
+      "url": "https://facebook.com/elon_musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "GitHub",
+      "username": "elonmusk",
+      "url": "https://github.com/elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "elonmusk",
+      "url": "https://instagram.com/elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "elon.musk",
+      "url": "https://instagram.com/elon.musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "elon_musk",
+      "url": "https://instagram.com/elon_musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "elonmusk",
+      "url": "https://pinterest.com/elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "elon.musk",
+      "url": "https://pinterest.com/elon.musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "elon_musk",
+      "url": "https://pinterest.com/elon_musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "elonmusk",
+      "url": "https://reddit.com/user/elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "elon.musk",
+      "url": "https://reddit.com/user/elon.musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "elon_musk",
+      "url": "https://reddit.com/user/elon_musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Snapchat",
+      "username": "elonmusk",
+      "url": "https://snapchat.com/add/elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Snapchat",
+      "username": "elon.musk",
+      "url": "https://snapchat.com/add/elon.musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Snapchat",
+      "username": "elon_musk",
+      "url": "https://snapchat.com/add/elon_musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "elonmusk",
+      "url": "https://t.me/elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "elon.musk",
+      "url": "https://t.me/elon.musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "elon_musk",
+      "url": "https://t.me/elon_musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "elonmusk",
+      "url": "https://tiktok.com/@elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "elon.musk",
+      "url": "https://tiktok.com/@elon.musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "elon_musk",
+      "url": "https://tiktok.com/@elon_musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "elonmusk",
+      "url": "https://x.com/elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "elon_musk",
+      "url": "https://x.com/elon_musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "YouTube",
+      "username": "elonmusk",
+      "url": "https://youtube.com/@elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "GitHub",
+      "username": "elon.musk",
+      "url": "https://github.com/elon.musk",
+      "exists": false,
+      "status": 406
+    },
+    {
+      "platform": "GitHub",
+      "username": "elon_musk",
+      "url": "https://github.com/elon_musk",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "elonmusk",
+      "url": "https://linkedin.com/in/elonmusk",
+      "exists": false,
+      "status": 405
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "elon.musk",
+      "url": "https://linkedin.com/in/elon.musk",
+      "exists": false,
+      "status": 999
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "elon_musk",
+      "url": "https://linkedin.com/in/elon_musk",
+      "exists": false,
+      "status": 405
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "elonmusk",
+      "url": "https://wa.me/elonmusk",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "elon.musk",
+      "url": "https://wa.me/elon.musk",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "elon_musk",
+      "url": "https://wa.me/elon_musk",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "elon.musk",
+      "url": "https://x.com/elon.musk",
+      "exists": false,
+      "status": 403
+    },
+    {
+      "platform": "YouTube",
+      "username": "elon.musk",
+      "url": "https://youtube.com/@elon.musk",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "YouTube",
+      "username": "elon_musk",
+      "url": "https://youtube.com/@elon_musk",
+      "exists": false,
+      "status": 404
+    }
+  ],
+  "name_suggestions": [],
+  "entities": [
+    {
+      "type": "person",
+      "name": "Elon Musk",
+      "confidence": 0.9,
+      "context": "Who is he and what companies does he run?"
+    },
+    {
+      "type": "organization",
+      "name": "Tesla",
+      "confidence": 0.8,
+      "context": "What companies does he run?"
+    },
+    {
+      "type": "url",
+      "name": "https://www.tesla.com/",
+      "confidence": 0.7,
+      "context": "links to Tesla's website"
+    },
+    {
+      "type": "person",
+      "name": "Jeff Bezos",
+      "confidence": 0.7,
+      "context": "Who is he and what companies does he run?"
+    }
+  ],
+  "sentiment": {},
+  "classification": {},
+  "inconsistencies": [
+    {
+      "description": "Claim lacks specific information about company ownership or funding structure.",
+      "severity": "medium",
+      "text_snippet": "Who is he and what companies does he run?"
+    },
+    {
+      "description": "Context needs to include details on sources for the claimed information.",
+      "severity": "medium",
+      "text_snippet": "what companies does he run?"
+    }
+  ],
+  "llm_analysis": "##  OSINT Intelligence Report: Elon Musk \n\n**1. Who/What this Subject Appears to be:**\n\nElon Reeve Musk is a prominent entrepreneur, engineer, investor and business magnate.  He's widely recognized for his contributions to various industries through companies such as Tesla (electric vehicles & energy), SpaceX (aerospace) and The Boring Company (tunneling). He also holds significant stakes in ventures like X Corp (formerly Twitter) and Neuralink (brain-computer interfaces).\n\n**2. Digital Footprint:** \n\nMusk's digital footprint is extensive, including:\n* **Websites:** Tesla.com, SpaceX.com, x.com (Twitter), The Boring Company\n    * These websites provide official information about his businesses, technologies and ventures.  \n* **Social Media:** 25 profiles found across various platforms like Twitter, Instagram, LinkedIn.  \n    * His active presence on these channels allows for direct engagement with the public and business interactions.\n* **Wiki pages:** Extensive information is available through Wikipedia, providing biographies, financial data and details about his ventures.\n\n**3. Key Findings & Evidence:** \n\n* **Wealth of Elon Musk (Wikipedia):** This source indicates a current estimated net worth of USD $200 billion, reflecting his ownership in various successful companies.\n* **Acquisition of Twitter by Elon Musk (Wikipedia):** The acquisition information provides insight into the financial and strategic considerations behind Musk's actions regarding Twitter. \n* **Legal Affairs of Elon Musk (Wikipedia):**  This resource reveals legal battles involving Tesla, SpaceX, and other business ventures.\n* **Elon Musk: Tesla, SpaceX, and the Quest for a Fantastic Future (Wikipedia):**  This book excerpt offers in-depth analysis of his work on Tesla and SpaceX, outlining his vision for technology advancement.\n\n**4. Red Flags & Inconsistencies:** \n\n* **Inconsistency between Elon Musk's public image and reported legal actions:**  Information regarding legal disputes with the SEC, including a controversial Tesla lawsuit, highlights potential discrepancies in how he presents himself publicly versus actual business practices. \n    * Further investigation is needed to understand the full scope of these disputes and their impact on his reputation.\n\n**5. Recommended Next Investigation Steps:**\n\n* **Deep dive into legal cases:**  Investigate specific legal actions, lawsuits, and settlements involving Musk to gain a deeper understanding of potential conflicts and consequences. \n    * Focus on publicly available court documents and legal filings for detailed analysis.\n* **Examine social media trends and public sentiment:** Analyze online discussions, news articles, and social media feeds regarding Musk's business ventures, legal cases, and personal life to gauge public perceptions and identify emerging controversies or potential misinformation campaigns. \n    * Tools like Twitter Trends, Google Alerts, and specialized social listening platforms can assist in this analysis.\n* **Review financial reports and company filings:** Analyze publicly available information on Musk-related companies for details about their financial health, market performance, and potential risks.  \n    * This data could be accessed through the SEC Edgar database or through Bloomberg terminals with financial data subscriptions. \n\n**Overall Assessment:** Elon Musk is a highly influential figure in various industries, his actions have a significant impact on global affairs. Further investigation of his legal cases, public image, and business ventures is crucial to gaining a comprehensive understanding of his role in today's world.  \n"
+}

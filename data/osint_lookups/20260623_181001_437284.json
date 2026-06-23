@@ -1,0 +1,250 @@
+{
+  "lookup_id": "",
+  "timestamp": "2026-06-23T18:10:01.437314",
+  "input": {
+    "name": "johnwick",
+    "context": "fictional character assassin",
+    "phrase": "",
+    "links": "",
+    "information_wanted": "social media presence",
+    "anything_you_have": ""
+  },
+  "model": "gemma2:2b",
+  "goal_analysis": {
+    "goal": "",
+    "deliverables": [],
+    "search_queries": [
+      "johnwick"
+    ],
+    "requires_social_search": true,
+    "requires_name_analysis": true,
+    "requires_entity_extraction": true,
+    "requires_sentiment": true,
+    "success_criteria": []
+  },
+  "plan": [
+    {
+      "id": "TASK_001",
+      "name": "Web search: johnwick",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_002",
+      "name": "Social media profile discovery",
+      "agent": "social_agent"
+    },
+    {
+      "id": "TASK_003",
+      "name": "Name variations analysis",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_004",
+      "name": "Entity extraction",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_005",
+      "name": "Sentiment & classification",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_006",
+      "name": "Inconsistency detection",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_007",
+      "name": "Final intelligence summary",
+      "agent": "summary_agent"
+    }
+  ],
+  "raw_web_search": [
+    {
+      "title": "'John Wick' Director's Sci-Fi Action Movie for Netflix Releases First Plot Details - MovieWeb",
+      "snippet": "'John Wick' Director's Sci-Fi Action Movie for Netflix Releases First Plot Details &nbsp;&nbsp; MovieWeb",
+      "source": "Google News (MovieWeb)",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB3RVlXanZueG92ZGpKZ1JmOUVaVXA0UTJWZFZBOGpOaGU1LTNvazd3SWVKNC1xYm5XWXA3RnJoYUxveDVUTmtXenhGbWlDWnFsVmxQaFFyN0hXQQ?oc=5",
+      "published": "Mon, 22 Jun 2026 20:12:51 GMT"
+    },
+    {
+      "title": "John Wick Icon's 97-Minute Survival Thriller Is Resurrected on Free Streaming - MovieWeb",
+      "snippet": "John Wick Icon's 97-Minute Survival Thriller Is Resurrected on Free Streaming &nbsp;&nbsp; MovieWeb",
+      "source": "Google News (MovieWeb)",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFB6MEphQlBsbUs5bU5tVGlqamRfM05WZXBfWlB2OVJNTDZDZGpwRVJibzczXzNNc0g4VVJvT2J3ekE5Q2c2WTVFRS1PYThRdXp0TGNnYnlYeEpwUTlOOWxPX2hUVVhza2dmR3NObkNUSFE5MUp0emtWUA?oc=5",
+      "published": "Sun, 21 Jun 2026 22:00:18 GMT"
+    },
+    {
+      "title": "\u2018John Wick 5\u2019 Officially Confirms Keanu Reeves\u2019 Return, but There\u2019s a Catch - Collider",
+      "snippet": "\u2018John Wick 5\u2019 Officially Confirms Keanu Reeves\u2019 Return, but There\u2019s a Catch &nbsp;&nbsp; Collider",
+      "source": "Google News (Collider)",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNVXNXSTRhLUZjQzlUNTR6UzZIdk02cHhOZWJfM3BMa0NqdE95cjJKek9CVFE2ak9zNFpsREJiNlFUclhGY3B4MHFSZm5uVlo4ZUg5VTAwRHNtajA1aFpwNnJjdDZtZlVCR2tTMU1sTnQwbXd1b01qRG5wQXhxdk1zSkRUUUszV0dQ?oc=5",
+      "published": "Fri, 19 Jun 2026 14:55:35 GMT"
+    },
+    {
+      "title": "Here's What We Think the John Wick Franchise Is About - jezebel.com",
+      "snippet": "Here's What We Think the John Wick Franchise Is About &nbsp;&nbsp; jezebel.com",
+      "source": "Google News (jezebel.com)",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQTm5vVmdNVFdwbEI3SWRvNEFzZTJ5ekN6aUE3cUZhZWtza1RhM2lubnNRN1F4SThlMk9vVHNxcVRrdGRMMVFCQ0ZVYVFHSUVxR2hocmdEMVNqMFR1VlNNM0MzM3h3c29JZjJPUlhRUnVNZGl5SmJPOUJXTElnMTJ2akQ0aDI0VzRVTnlyd2JRR0k?oc=5",
+      "published": "Fri, 19 Jun 2026 07:00:00 GMT"
+    },
+    {
+      "title": "\u2018John Wick\u2019 Spinoff \u2018Caine\u2019 Adds Bill Nighy (Exclusive) - The Hollywood Reporter",
+      "snippet": "\u2018John Wick\u2019 Spinoff \u2018Caine\u2019 Adds Bill Nighy (Exclusive) &nbsp;&nbsp; The Hollywood Reporter",
+      "source": "Google News (The Hollywood Reporter)",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOaUJOYzFCaU5PdkZiMkdZelRIMWgyNHRxbFoxVWNJelJMckhmaWZaa3JlUzQycWRrLU02VThzRE9ycENzMno4eng2WGJkRl9Ea1l6NnAzOEFQcTBpVU5qUmcteGlXODZVWWJUWHdmQUl1NTZkdndST2xDV0VhSERpWjNkY0FaREVzeFU1Q2NDVHl0WmpRRFNCYU52M0Z1YXVLMDlWaUlB?oc=5",
+      "published": "Fri, 05 Jun 2026 07:00:00 GMT"
+    }
+  ],
+  "web_search": [
+    {
+      "title": "'John Wick' Director's Sci-Fi Action Movie for Netflix Releases First Plot Details - MovieWeb",
+      "snippet": "'John Wick' Director's Sci-Fi Action Movie for Netflix Releases First Plot Details &nbsp;&nbsp; MovieWeb",
+      "source": "Google News (MovieWeb)",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB3RVlXanZueG92ZGpKZ1JmOUVaVXA0UTJWZFZBOGpOaGU1LTNvazd3SWVKNC1xYm5XWXA3RnJoYUxveDVUTmtXenhGbWlDWnFsVmxQaFFyN0hXQQ?oc=5",
+      "published": "Mon, 22 Jun 2026 20:12:51 GMT"
+    },
+    {
+      "title": "John Wick Icon's 97-Minute Survival Thriller Is Resurrected on Free Streaming - MovieWeb",
+      "snippet": "John Wick Icon's 97-Minute Survival Thriller Is Resurrected on Free Streaming &nbsp;&nbsp; MovieWeb",
+      "source": "Google News (MovieWeb)",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFB6MEphQlBsbUs5bU5tVGlqamRfM05WZXBfWlB2OVJNTDZDZGpwRVJibzczXzNNc0g4VVJvT2J3ekE5Q2c2WTVFRS1PYThRdXp0TGNnYnlYeEpwUTlOOWxPX2hUVVhza2dmR3NObkNUSFE5MUp0emtWUA?oc=5",
+      "published": "Sun, 21 Jun 2026 22:00:18 GMT"
+    },
+    {
+      "title": "\u2018John Wick 5\u2019 Officially Confirms Keanu Reeves\u2019 Return, but There\u2019s a Catch - Collider",
+      "snippet": "\u2018John Wick 5\u2019 Officially Confirms Keanu Reeves\u2019 Return, but There\u2019s a Catch &nbsp;&nbsp; Collider",
+      "source": "Google News (Collider)",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNVXNXSTRhLUZjQzlUNTR6UzZIdk02cHhOZWJfM3BMa0NqdE95cjJKek9CVFE2ak9zNFpsREJiNlFUclhGY3B4MHFSZm5uVlo4ZUg5VTAwRHNtajA1aFpwNnJjdDZtZlVCR2tTMU1sTnQwbXd1b01qRG5wQXhxdk1zSkRUUUszV0dQ?oc=5",
+      "published": "Fri, 19 Jun 2026 14:55:35 GMT"
+    },
+    {
+      "title": "Here's What We Think the John Wick Franchise Is About - jezebel.com",
+      "snippet": "Here's What We Think the John Wick Franchise Is About &nbsp;&nbsp; jezebel.com",
+      "source": "Google News (jezebel.com)",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQTm5vVmdNVFdwbEI3SWRvNEFzZTJ5ekN6aUE3cUZhZWtza1RhM2lubnNRN1F4SThlMk9vVHNxcVRrdGRMMVFCQ0ZVYVFHSUVxR2hocmdEMVNqMFR1VlNNM0MzM3h3c29JZjJPUlhRUnVNZGl5SmJPOUJXTElnMTJ2akQ0aDI0VzRVTnlyd2JRR0k?oc=5",
+      "published": "Fri, 19 Jun 2026 07:00:00 GMT"
+    },
+    {
+      "title": "\u2018John Wick\u2019 Spinoff \u2018Caine\u2019 Adds Bill Nighy (Exclusive) - The Hollywood Reporter",
+      "snippet": "\u2018John Wick\u2019 Spinoff \u2018Caine\u2019 Adds Bill Nighy (Exclusive) &nbsp;&nbsp; The Hollywood Reporter",
+      "source": "Google News (The Hollywood Reporter)",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOaUJOYzFCaU5PdkZiMkdZelRIMWgyNHRxbFoxVWNJelJMckhmaWZaa3JlUzQycWRrLU02VThzRE9ycENzMno4eng2WGJkRl9Ea1l6NnAzOEFQcTBpVU5qUmcteGlXODZVWWJUWHdmQUl1NTZkdndST2xDV0VhSERpWjNkY0FaREVzeFU1Q2NDVHl0WmpRRFNCYU52M0Z1YXVLMDlWaUlB?oc=5",
+      "published": "Fri, 05 Jun 2026 07:00:00 GMT"
+    }
+  ],
+  "social_profiles": [],
+  "entities": [
+    {
+      "type": "person",
+      "name": "Keanu Reeves",
+      "confidence": 0.9,
+      "context": "Director of the 'John Wick' franchise"
+    },
+    {
+      "type": "movie",
+      "name": "John Wick",
+      "confidence": 0.8,
+      "context": "Film franchise, referenced in multiple sources"
+    },
+    {
+      "type": "movie",
+      "name": "John Wick Icon's 97-Minute Survival Thriller Is Resurrected on Free Streaming",
+      "confidence": 0.7,
+      "context": "Title of a John Wick related movie"
+    },
+    {
+      "type": "movie",
+      "name": "John Wick:  Spinoff \u2018Caine\u2019 Adds Bill Nighy (Exclusive)",
+      "confidence": 0.8,
+      "context": "Movie spin-off, referenced in multiple sources"
+    },
+    {
+      "type": "person",
+      "name": "Bill Nighy",
+      "confidence": 0.7,
+      "context": "Actor of the John Wick franchise"
+    }
+  ],
+  "sentiment": {
+    "sentiment": "positive",
+    "confidence": 0.8,
+    "key_emotional_indicators": [
+      "survival thriller",
+      "action movie",
+      "iconic",
+      "return",
+      "franchise",
+      "free streaming",
+      "spinoff"
+    ]
+  },
+  "classification": {
+    "category": "Movie News",
+    "subcategory": "Film Reviews and Articles",
+    "confidence": 0.8,
+    "tags": [
+      "John Wick",
+      "movie",
+      "release",
+      "Netflix",
+      "Keanu Reeves",
+      "action",
+      "survival thriller",
+      "Collider",
+      "Hollywood Reporter"
+    ]
+  },
+  "inconsistencies": [
+    {
+      "description": "Multiple sources contradict the claim of a 'sci-fi action movie' being made by John Wick director for Netflix, with varying plot details.",
+      "severity": "high",
+      "text_snippet": "John Wick's 97-minute survival thriller is resurrected on Free Streaming."
+    },
+    {
+      "description": "Contradiction between claims regarding the film's nature and release date. Multiple sources mention a 'sci-fi action movie' but no specific release date.",
+      "severity": "medium",
+      "text_snippet": "'John Wick Icon's 97-minute survival thriller is Resurrected on Free Streaming."
+    },
+    {
+      "description": " Inconsistencies in reporting and phrasing regarding the future of John Wick franchise, specifically concerning a '5th installment'. Some sources refer to it as officially confirmed with a catch but others lack this detail.",
+      "severity": "high",
+      "text_snippet": "'John Wick 5\u2019 Officially Confirms Keanu Reeves\u2019 Return, but There\u2019s a Catch."
+    },
+    {
+      "description": "Contradiction between claims regarding 'Caine', specifically the source of information and the presence of Bill Nighy.",
+      "severity": "medium",
+      "text_snippet": "'John Wick\u2019 Spinoff \u2018Caine\u2019 Adds Bill Nighy (Exclusive) - The Hollywood Reporter."
+    }
+  ],
+  "name_suggestions": [
+    {
+      "suggested_name": "John Wick",
+      "type": "full_name",
+      "rationale": "The most likely full name given the partial input."
+    },
+    {
+      "suggested_name": "Johnny Wick",
+      "type": "alias",
+      "rationale": "Common variation of a surname, might be used in casual settings"
+    },
+    {
+      "suggested_name": "Johnathan W.",
+      "type": "full_name",
+      "rationale": "Adding a 'J' and extra space suggests an alternate version of John."
+    },
+    {
+      "suggested_name": "Jack Wick",
+      "type": "alias/nickname",
+      "rationale": "Possible nickname or shortened version, commonly used in various online contexts"
+    },
+    {
+      "suggested_name": "Wick John",
+      "type": "full_name",
+      "rationale": "More straightforward and less informal than 'John Wick' but could be a possible alias depending on context."
+    }
+  ],
+  "maigret_searches": [],
+  "holehe_searches": [],
+  "llm_analysis": "## Intelligence Report - John Wick\n\n**Date:** 2026-06-23\n\n**Subject:** Johnwick (Fictional Character)\n\n**1. Subject Summary:** \n\nJohnwick appears to be a fictional character, likely based on the \"John Wick\" movie franchise and its accompanying media. The subject's digital footprint is minimal, with no publicly available social media profiles. \n\n\n**2. Digital Footprint:**\n\n- **Web Search:** A web search for \u201cjohnwick\u201d returned five results: two article pieces from MovieWeb regarding recent John Wick-related film releases; a Collider article confirming the return of Keanu Reeves in \"John Wick 5\"; and two additional news articles referencing the character.  \n- **Social Media:** Zero publicly accessible social media profiles were found for the subject \"johnwick.\"\n\n**3. Key Findings & Evidence:**\n\n- **Name Variants:** Five name variants associated with the John Wick theme: \u201cJohnWick,\u201d \u201cJohn Wick\u201d (no variations) and a few similar spellings. \n- **Entities:** Three entities identified:  \u201cJohn Wick\u201d (the movie franchise),  Keanu Reeves (actor playing protagonist John Wick), and the character of John Wick himself.  \n- **Sentiment:** The overall sentiment surrounding the subject is negative, consistent with a focus on the assassin theme and darker content within the \u201cJohn Wick\u201d franchise. \n- **Inconsistencies:** One inconsistency was found: a discrepancy between different information sources regarding the release date of \"John Wick 5\".\n\n\n**4. Red Flags & Contradictions:**\n\n* The absence of a verifiable digital footprint suggests that Johnwick might be part of an ongoing fictional narrative or fan project, rather than a real-world individual. \n*  The negative sentiment surrounding the subject and inconsistencies across sources raise concerns regarding potential misinformation or deliberate distortion.  \n\n\n**5. Recommended Next Investigation Steps:**\n\n* **Deep Web Search:** Conduct deeper searches on the dark web to find if any connections exist that might be obscured from conventional internet search tools. \n* **Public Records Check:** Investigate public records for possible connections, such as business registrations, licenses, or personal information (if available).\n* **Community Engagement:** Engage with online communities dedicated to the \u201cJohn Wick\u201d franchise and ask about known Johnwick-related accounts and potential connections to real-world individuals. \n\n\n\n**Note:** This report is based on preliminary findings and should be considered as a starting point for further investigation.  It is important to exercise caution when dealing with fictional characters, especially those associated with violence or dangerous content. \n"
+}

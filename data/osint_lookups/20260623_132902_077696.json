@@ -1,0 +1,832 @@
+{
+  "lookup_id": "",
+  "timestamp": "2026-06-23T13:29:02.078381",
+  "input": {
+    "name": "Peter Thiel",
+    "context": "Anti-Crist",
+    "phrase": "He wants world to end",
+    "links": "",
+    "information_wanted": "His all social accounts and recent news on him.",
+    "anything_you_have": ""
+  },
+  "web_search": [],
+  "social_profiles": [
+    {
+      "platform": "Facebook",
+      "username": "thiel",
+      "url": "https://facebook.com/thiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "he.wants.world.to.end",
+      "url": "https://facebook.com/he.wants.world.to.end",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "peter.thiel",
+      "url": "https://facebook.com/peter.thiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "peter_thiel",
+      "url": "https://facebook.com/peter_thiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "peter-thiel",
+      "url": "https://facebook.com/peter-thiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "peter",
+      "url": "https://facebook.com/peter",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "he wants world to end",
+      "url": "https://facebook.com/he wants world to end",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "hewantsworldtoend",
+      "url": "https://facebook.com/hewantsworldtoend",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "peterthiel",
+      "url": "https://facebook.com/peterthiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "GitHub",
+      "username": "thiel",
+      "url": "https://github.com/thiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "GitHub",
+      "username": "peter",
+      "url": "https://github.com/peter",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "GitHub",
+      "username": "peterthiel",
+      "url": "https://github.com/peterthiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "thiel",
+      "url": "https://instagram.com/thiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "he.wants.world.to.end",
+      "url": "https://instagram.com/he.wants.world.to.end",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "peter.thiel",
+      "url": "https://instagram.com/peter.thiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "peter_thiel",
+      "url": "https://instagram.com/peter_thiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "peter-thiel",
+      "url": "https://instagram.com/peter-thiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "peter",
+      "url": "https://instagram.com/peter",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "he wants world to end",
+      "url": "https://instagram.com/he wants world to end",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "hewantsworldtoend",
+      "url": "https://instagram.com/hewantsworldtoend",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "peterthiel",
+      "url": "https://instagram.com/peterthiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "thiel",
+      "url": "https://pinterest.com/thiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "he.wants.world.to.end",
+      "url": "https://pinterest.com/he.wants.world.to.end",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "peter.thiel",
+      "url": "https://pinterest.com/peter.thiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "peter_thiel",
+      "url": "https://pinterest.com/peter_thiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "peter-thiel",
+      "url": "https://pinterest.com/peter-thiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "peter",
+      "url": "https://pinterest.com/peter",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "he wants world to end",
+      "url": "https://pinterest.com/he wants world to end",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "hewantsworldtoend",
+      "url": "https://pinterest.com/hewantsworldtoend",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "peterthiel",
+      "url": "https://pinterest.com/peterthiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "thiel",
+      "url": "https://reddit.com/user/thiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "he.wants.world.to.end",
+      "url": "https://reddit.com/user/he.wants.world.to.end",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "peter.thiel",
+      "url": "https://reddit.com/user/peter.thiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "peter_thiel",
+      "url": "https://reddit.com/user/peter_thiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "peter-thiel",
+      "url": "https://reddit.com/user/peter-thiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "peter",
+      "url": "https://reddit.com/user/peter",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "he wants world to end",
+      "url": "https://reddit.com/user/he wants world to end",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "hewantsworldtoend",
+      "url": "https://reddit.com/user/hewantsworldtoend",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "peterthiel",
+      "url": "https://reddit.com/user/peterthiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Snapchat",
+      "username": "peter",
+      "url": "https://snapchat.com/add/peter",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "thiel",
+      "url": "https://t.me/thiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "he.wants.world.to.end",
+      "url": "https://t.me/he.wants.world.to.end",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "peter.thiel",
+      "url": "https://t.me/peter.thiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "peter_thiel",
+      "url": "https://t.me/peter_thiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "peter-thiel",
+      "url": "https://t.me/peter-thiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "peter",
+      "url": "https://t.me/peter",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "he wants world to end",
+      "url": "https://t.me/he wants world to end",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "hewantsworldtoend",
+      "url": "https://t.me/hewantsworldtoend",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "peterthiel",
+      "url": "https://t.me/peterthiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "thiel",
+      "url": "https://tiktok.com/@thiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "he.wants.world.to.end",
+      "url": "https://tiktok.com/@he.wants.world.to.end",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "peter.thiel",
+      "url": "https://tiktok.com/@peter.thiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "peter_thiel",
+      "url": "https://tiktok.com/@peter_thiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "peter-thiel",
+      "url": "https://tiktok.com/@peter-thiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "peter",
+      "url": "https://tiktok.com/@peter",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "he wants world to end",
+      "url": "https://tiktok.com/@he wants world to end",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "hewantsworldtoend",
+      "url": "https://tiktok.com/@hewantsworldtoend",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "peterthiel",
+      "url": "https://tiktok.com/@peterthiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "thiel",
+      "url": "https://x.com/thiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "peter_thiel",
+      "url": "https://x.com/peter_thiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "peter",
+      "url": "https://x.com/peter",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "peterthiel",
+      "url": "https://x.com/peterthiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "YouTube",
+      "username": "thiel",
+      "url": "https://youtube.com/@thiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "YouTube",
+      "username": "peter_thiel",
+      "url": "https://youtube.com/@peter_thiel",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "YouTube",
+      "username": "peter",
+      "url": "https://youtube.com/@peter",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "GitHub",
+      "username": "he.wants.world.to.end",
+      "url": "https://github.com/he.wants.world.to.end",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "GitHub",
+      "username": "peter.thiel",
+      "url": "https://github.com/peter.thiel",
+      "exists": false,
+      "status": 406
+    },
+    {
+      "platform": "GitHub",
+      "username": "peter_thiel",
+      "url": "https://github.com/peter_thiel",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "GitHub",
+      "username": "peter-thiel",
+      "url": "https://github.com/peter-thiel",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "GitHub",
+      "username": "he wants world to end",
+      "url": "https://github.com/he wants world to end",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "GitHub",
+      "username": "hewantsworldtoend",
+      "url": "https://github.com/hewantsworldtoend",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "thiel",
+      "url": "https://linkedin.com/in/thiel",
+      "exists": false,
+      "status": 405
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "he.wants.world.to.end",
+      "url": "https://linkedin.com/in/he.wants.world.to.end",
+      "exists": false,
+      "status": 999
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "peter.thiel",
+      "url": "https://linkedin.com/in/peter.thiel",
+      "exists": false,
+      "status": 405
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "peter_thiel",
+      "url": "https://linkedin.com/in/peter_thiel",
+      "exists": false,
+      "status": 999
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "peter-thiel",
+      "url": "https://linkedin.com/in/peter-thiel",
+      "exists": false,
+      "status": 405
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "peter",
+      "url": "https://linkedin.com/in/peter",
+      "exists": false,
+      "status": 405
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "he wants world to end",
+      "url": "https://linkedin.com/in/he wants world to end",
+      "exists": false,
+      "status": 999
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "hewantsworldtoend",
+      "url": "https://linkedin.com/in/hewantsworldtoend",
+      "exists": false,
+      "status": 405
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "peterthiel",
+      "url": "https://linkedin.com/in/peterthiel",
+      "exists": false,
+      "status": 405
+    },
+    {
+      "platform": "Snapchat",
+      "username": "thiel",
+      "url": "https://snapchat.com/add/thiel",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "Snapchat",
+      "username": "he.wants.world.to.end",
+      "url": "https://snapchat.com/add/he.wants.world.to.end",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "Snapchat",
+      "username": "peter.thiel",
+      "url": "https://snapchat.com/add/peter.thiel",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "Snapchat",
+      "username": "peter_thiel",
+      "url": "https://snapchat.com/add/peter_thiel",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "Snapchat",
+      "username": "peter-thiel",
+      "url": "https://snapchat.com/add/peter-thiel",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "Snapchat",
+      "username": "he wants world to end",
+      "url": "https://snapchat.com/add/he wants world to end",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "Snapchat",
+      "username": "hewantsworldtoend",
+      "url": "https://snapchat.com/add/hewantsworldtoend",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "Snapchat",
+      "username": "peterthiel",
+      "url": "https://snapchat.com/add/peterthiel",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "thiel",
+      "url": "https://wa.me/thiel",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "he.wants.world.to.end",
+      "url": "https://wa.me/he.wants.world.to.end",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "peter.thiel",
+      "url": "https://wa.me/peter.thiel",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "peter_thiel",
+      "url": "https://wa.me/peter_thiel",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "peter-thiel",
+      "url": "https://wa.me/peter-thiel",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "peter",
+      "url": "https://wa.me/peter",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "he wants world to end",
+      "url": "https://wa.me/he wants world to end",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "hewantsworldtoend",
+      "url": "https://wa.me/hewantsworldtoend",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "peterthiel",
+      "url": "https://wa.me/peterthiel",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "he.wants.world.to.end",
+      "url": "https://x.com/he.wants.world.to.end",
+      "exists": false,
+      "status": 403
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "peter.thiel",
+      "url": "https://x.com/peter.thiel",
+      "exists": false,
+      "status": 403
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "peter-thiel",
+      "url": "https://x.com/peter-thiel",
+      "exists": false,
+      "status": 403
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "he wants world to end",
+      "url": "https://x.com/he wants world to end",
+      "exists": false,
+      "status": 403
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "hewantsworldtoend",
+      "url": "https://x.com/hewantsworldtoend",
+      "exists": false,
+      "status": 403
+    },
+    {
+      "platform": "YouTube",
+      "username": "he.wants.world.to.end",
+      "url": "https://youtube.com/@he.wants.world.to.end",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "YouTube",
+      "username": "peter.thiel",
+      "url": "https://youtube.com/@peter.thiel",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "YouTube",
+      "username": "peter-thiel",
+      "url": "https://youtube.com/@peter-thiel",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "YouTube",
+      "username": "he wants world to end",
+      "url": "https://youtube.com/@he wants world to end",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "YouTube",
+      "username": "hewantsworldtoend",
+      "url": "https://youtube.com/@hewantsworldtoend",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "YouTube",
+      "username": "peterthiel",
+      "url": "https://youtube.com/@peterthiel",
+      "exists": false,
+      "status": 404
+    }
+  ],
+  "name_suggestions": [
+    {
+      "suggested_name": "Peter Theodore Thiel",
+      "type": "full_name",
+      "rationale": "This is a likely full name variation, especially if a more formal or legal approach to the name is desired."
+    },
+    {
+      "suggested_name": "Pete T. Thiel",
+      "type": "alias",
+      "rationale": "Could be an informal abbreviation or nickname commonly used by friends or colleagues."
+    },
+    {
+      "suggested_name": "Peter T.",
+      "type": "nickname",
+      "rationale": "This is a common abbreviation for a full name and could be used as a nickname, especially in informal settings."
+    },
+    {
+      "suggested_name": "PT",
+      "type": "nickname",
+      "rationale": "This abbreviation can be used for a variety of purposes, from professional settings to casual interactions. It's easily recognizable and often signifies expertise."
+    }
+  ],
+  "entities": [
+    {
+      "type": "unknown",
+      "name": "person",
+      "confidence": 0.5
+    },
+    {
+      "type": "unknown",
+      "name": "Peter Thiel",
+      "confidence": 0.5
+    }
+  ],
+  "sentiment": {
+    "sentiment": "negative",
+    "confidence": 0.8,
+    "key_emotional_indicators": [
+      "apocalyptic",
+      "dangerous",
+      "antisocial"
+    ]
+  },
+  "classification": {
+    "category": "Political",
+    "subcategory": "Controversial Figure",
+    "confidence": 0.7,
+    "tags": [
+      "Anti-Christ",
+      "End of World",
+      "Social Media"
+    ]
+  },
+  "inconsistencies": [
+    {
+      "description": "Claim that Peter Thiel desires the world's end is inconsistent with his public persona and known actions",
+      "severity": "high",
+      "text_snippet": "He wants world to end."
+    }
+  ],
+  "llm_analysis": "##  Peter Thiel Intelligence Summary \n\n**Who He Appears To Be:** Peter Thiel is a prominent figure in technology, venture capital, and libertarian philosophy.  He's known for his outspoken views and ventures that have often challenged traditional norms and social structures. His interest in global disruption and controversial views are consistent with the \"anti-christ\" phrase used as part of his online profile. \n\n**Digital Footprint:** A substantial digital footprint exists, revealing a focus on technology, investment, and political commentary. Social media platforms like Facebook, Instagram, Twitter, YouTube, and TikTok demonstrate his active presence across multiple domains:  \n* **Social Media Presence:** He actively engages with various social media outlets, utilizing them for public statements, announcements, and personal expression. This includes profiles dedicated to business ventures and a strong emphasis on political advocacy.\n* **GitHub & Other Platforms:** Open-source contributions are visible on platforms like GitHub, highlighting his interest in technological progress and collaborative development. \n\n**Notable Red Flags:**  \n* **Anti-Christ Phrase/Quotes:**  His use of the phrase \"He wants world to end\" as a descriptor on multiple social media profiles raises concerns about potentially dangerous or extremist ideologies. This warrants further investigation.\n* **Contradictions & Inconsistencies:** Publicly available information presents a stark contrast between his business and technological ventures and the aforementioned controversial statements. \n\n**Recommended Next Investigation Steps:**  \n1. **Social Media Analysis Deep Dive:** Analyze his posts for any concerning content or affiliations, including potential propaganda or radicalization efforts. Look for patterns in online activity related to his public statements about \"world end\" and explore connections with individuals or organizations known for anti-establishment beliefs. \n2. **Contextual Investigations:** Research Thiel's recent pronouncements on \"anti-christ\" ideologies through online forums, blogs, and news articles to identify if there is any credible evidence supporting his claims.  \n3. **Expert Consultation:** Consult experts in cybersecurity, extremism studies, and digital forensics for further analysis of the digital footprint, including potential threats or vulnerabilities related to his online presence. \n\n\n**Conclusion:** The information gathered suggests a public persona carefully constructed for business ventures and political commentary. His use of \"world end\" phrase warrants further investigation due to its concerning nature.  Understanding the context of these statements, analyzing his online activity, and consulting relevant experts will provide valuable insight into this complex figure. \n"
+}

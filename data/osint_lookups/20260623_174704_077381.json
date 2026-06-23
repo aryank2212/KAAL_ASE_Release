@@ -1,0 +1,600 @@
+{
+  "lookup_id": "",
+  "timestamp": "2026-06-23T17:47:04.077537",
+  "input": {
+    "name": "Elon Musk",
+    "context": "CEO of Tesla and SpaceX",
+    "phrase": "",
+    "links": "",
+    "information_wanted": "Real news about SpaceX and Tesla from the last week",
+    "anything_you_have": ""
+  },
+  "model": "gemma2:2b",
+  "goal_analysis": {
+    "goal": "Identify and analyze recent news articles related to SpaceX and Tesla from reputable sources.",
+    "deliverables": [
+      "A list of recently published news articles about SpaceX and Tesla",
+      "A summary of the key findings for each article",
+      "Source links for each article"
+    ],
+    "search_queries": [
+      "SpaceX latest news",
+      "Tesla news last week",
+      "Elon Musk companies recent press releases"
+    ],
+    "requires_social_search": false,
+    "requires_name_analysis": true,
+    "requires_entity_extraction": true,
+    "requires_sentiment": false,
+    "success_criteria": [
+      "Each news article about SpaceX or Tesla should be from a reputable source like a major news agency with an established track record of accurate reporting."
+    ]
+  },
+  "plan": [
+    {
+      "id": "TASK_001",
+      "name": "Web search: SpaceX latest news",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_002",
+      "name": "Web search: Tesla news last week",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_003",
+      "name": "Web search: Elon Musk companies recent press releases",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_004",
+      "name": "Social media profile discovery",
+      "agent": "social_agent"
+    },
+    {
+      "id": "TASK_005",
+      "name": "Name variations analysis",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_006",
+      "name": "Entity extraction",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_007",
+      "name": "Inconsistency detection",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_008",
+      "name": "Final intelligence summary",
+      "agent": "summary_agent"
+    }
+  ],
+  "raw_web_search": [
+    {
+      "title": "Chip stocks plunge, but bargain-hunters stem losses in other tech names - Reuters",
+      "snippet": "Chip stocks plunge, but bargain-hunters stem losses in other tech names &nbsp;&nbsp; Reuters",
+      "source": "Google News (Reuters)",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPWUZ2UXRvZ190WlBJcFJmb09zZjZsbjJORUc1dWNjTFB0T0xFVmpydFRNLXA5NEE4cy1JQVBINURnTnZ4LW5TcV9PbzBjQWJGdlJCTEIwbnFJSEZYanZKZDRJYWR5blFVX3B5UWwxaW5BNHpOOHVnUWI4SU01WHU0MWpmTE5HbGFrc3B1VlNYX0RjcklLb2c0Z09JcmVzOWlIdTE3dDM5dmMtVkVKNFdnamRlU1YwekFib1JSQl9CWDltTTVnQWEyeg?oc=5",
+      "published": "Tue, 23 Jun 2026 16:32:57 GMT"
+    },
+    {
+      "title": "Global tech sell-off intensifies, led by AI and chip stocks - NBC News",
+      "snippet": "Global tech sell-off intensifies, led by AI and chip stocks &nbsp;&nbsp; NBC News",
+      "source": "Google News (NBC News)",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPdUJwcS1tc0otcS1kZFNpbllLQ1JUWXZrczgtOExVbGM5bjFQN0tKR0J1NEpETmwtajM0QUYxbUM0Sk1wWm5sZmtOM2JjdmtYb0xCdjJ3QUZ1LXRhemRYUVRycUhEaDJEbW9LeVB0elN6SWIyWVFvUG9Ub0RDbUhEQjdkVGRib1BuQUp4eTEwSTZYTUhyY0NkSzlKeExFMHE1UnZ3aWhiNDljNzIxRDJaNUx3?oc=5",
+      "published": "Tue, 23 Jun 2026 15:59:16 GMT"
+    },
+    {
+      "title": "SpaceX Stock Has Officially Fallen So Far That It's Below Where It Started - Futurism",
+      "snippet": "SpaceX Stock Has Officially Fallen So Far That It's Below Where It Started &nbsp;&nbsp; Futurism",
+      "source": "Google News (Futurism)",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1ldjNjVXVNRGpaU2Z0VGhGcXFUZFJQcUw5M1Z6cnNaSS1HazZXUkJwMEREVjk2WTgtUE5xRWltSjN6aHpqNEV2RjFMVTdqTkQ0NU1uZUlibnZtWWJCaHdvdTRBYllYNHE1U0tDUU94bzdpNXVp?oc=5",
+      "published": "Tue, 23 Jun 2026 15:01:17 GMT"
+    },
+    {
+      "title": "Elon Musk's SpaceX erases gains since red-hot debut on US stock market - The National",
+      "snippet": "Elon Musk's SpaceX erases gains since red-hot debut on US stock market &nbsp;&nbsp; The National",
+      "source": "Google News (The National)",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPUFZLTWgwYS1nR3BYLWUxcGhfQjJUS3lkdnBEd0dfRmFScExlTmQ2UEZhQ2xHLTVTYWZZck5BVk9KWlpzU01vNFFHQzZwQjBiYkczOWpaenFYeWhNRHNSaVZwS1daWVpsX05GTXVjVnU5Vi1SV2RPcnRRelBxWDJCOQ?oc=5",
+      "published": "Tue, 23 Jun 2026 14:45:43 GMT"
+    },
+    {
+      "title": "After $86 billion IPO, SpaceX to borrow $20 billion - Axios",
+      "snippet": "After $86 billion IPO, SpaceX to borrow $20 billion &nbsp;&nbsp; Axios",
+      "source": "Google News (Axios)",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE15X3dLTGxxXzF0Njc1U242Y2VlRHU2SE9sUjFUbXlUajZHSW05X3NONmZsQWdFTWR4Zmx2LXVyWFQwTC1DX01NMGJITUE5ZDRHU3BsY3J0aDM5MGxhRVJMRk1Db2JZY0U?oc=5",
+      "published": "Tue, 23 Jun 2026 13:27:01 GMT"
+    },
+    {
+      "title": "Tesla Delays Latest Self Driving Update (FSD v14) for Model Y L in Australia - zecar",
+      "snippet": "Tesla Delays Latest Self Driving Update (FSD v14) for Model Y L in Australia &nbsp;&nbsp; zecar",
+      "source": "Google News (zecar)",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOWDJsbzVwVEN3bDR4MF9WaEpPRjJubkFpZVNsMkpaY2kzVGdhaHNXUnFoakNQWXF6MEttQTNLN0VxTkQ1eEl4bjFHcC1jNkg2WnN2X256RWVyX29Fd1pJMTJ5UFdIdkVkYld1MFNod3NMMFJuTzlUQjBMa1dXUjNjN1ZlN0hrcVBVQ050ZA?oc=5",
+      "published": "Tue, 23 Jun 2026 09:17:24 GMT"
+    },
+    {
+      "title": "Tesla crash that killed a woman under US federal investigation - BBC",
+      "snippet": "Tesla crash that killed a woman under US federal investigation &nbsp;&nbsp; BBC",
+      "source": "Google News (BBC)",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9sMjBDUGxEME0xTjVySDZ6UUlGamV0NVlWZ0loYWR6SlZncTZYSjBmODNLZ1ZIcHhQUzIzZVAwQlJLSFkzRU9ka19ZbUUzOVd5ZHNNaC1XeGxqUQ?oc=5",
+      "published": "Mon, 22 Jun 2026 22:20:07 GMT"
+    },
+    {
+      "title": "Federal regulators open probe into fatal Tesla crash - Business Insider",
+      "snippet": "Federal regulators open probe into fatal Tesla crash &nbsp;&nbsp; Business Insider",
+      "source": "Google News (Business Insider)",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNSjdsT1FyRzFVdEtyM1JZcWs1cEtKdlBLSmJoam1RNXBjOWJ6dmV3NW1LX1J5bVZXcUc5WjV5R0UzT1g2SkhkdVluNkNDX1JraXpKaEo3SVpjblpsZmJ4TzlhbG4xMExxX19xZnJ5aHZjYWlFZ0QyMVVIdWNnQkJTTG9MS0J3cy1ZQVdkYmxHbmR6dmdpakI2eHYxTWIwX0djb3F4eUNRQV8zWFVZbDhDRA?oc=5",
+      "published": "Mon, 22 Jun 2026 20:51:00 GMT"
+    },
+    {
+      "title": "Tesla Robotaxi appears to be gearing up for Vegas launch - Las Vegas Review-Journal",
+      "snippet": "Tesla Robotaxi appears to be gearing up for Vegas launch &nbsp;&nbsp; Las Vegas Review-Journal",
+      "source": "Google News (Las Vegas Review-Journal)",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOUjEzTzBRUDYxMGVXSzJEVElUdTRfZDdBWEJLaFlRNlJ1TkFxcEhaNFc0WTBGclJEOGRTY0hsa2RIMjJqYnl6dld0RnZ1U3A5MjZ4Z1N0UlVDb3JWMkEzY0kzZVZaRHRrc0NyRzFTVkEzbTBFWTlTazRsVmxfMzFqWXlqbjAzQnFqbnVUVmJiOXVOYW9ZakUyRXZmOVVCSUpBdE5UOHo0NFhXMUFtN05UZ0tpLWpIZS1Yc0xsYnRwZXhqM1lh?oc=5",
+      "published": "Mon, 22 Jun 2026 20:14:38 GMT"
+    },
+    {
+      "title": "India's Tata Electronics hit by cyber breach claiming to expose Apple, Tesla trade secrets - Reuters",
+      "snippet": "India's Tata Electronics hit by cyber breach claiming to expose Apple, Tesla trade secrets &nbsp;&nbsp; Reuters",
+      "source": "Google News (Reuters)",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQbHRnOGVKZXFxVV9uVlMzMWtWeHlnMUhnVy1TclhMZ1VMQkxaZ3NwWXhnODhkYWhSSUNsSV93SEJLQ3FnSk9vZnVFeWFfcG1aNlpMUjJaV2dKbkJ0WTlWWGl4OVd2Zm05REV3MUhnczhZZDlwbUxMM1JUVTRZU0R4QWRmN3IyUWZlckJtd3JKSmlaS0RyYzJHU3BJTWlTTlFLNlhHcDlUQWZicW9OZ3RxVGFaTFRuekpabF9kM2xKd2hIYnRrVkJqMi1Od1lXLXV5OWc?oc=5",
+      "published": "Mon, 22 Jun 2026 15:32:00 GMT"
+    }
+  ],
+  "web_search": [
+    {
+      "title": "Chip stocks plunge, but bargain-hunters stem losses in other tech names - Reuters",
+      "snippet": "Chip stocks plunge, but bargain-hunters stem losses in other tech names &nbsp;&nbsp; Reuters",
+      "source": "Google News (Reuters)",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPWUZ2UXRvZ190WlBJcFJmb09zZjZsbjJORUc1dWNjTFB0T0xFVmpydFRNLXA5NEE4cy1JQVBINURnTnZ4LW5TcV9PbzBjQWJGdlJCTEIwbnFJSEZYanZKZDRJYWR5blFVX3B5UWwxaW5BNHpOOHVnUWI4SU01WHU0MWpmTE5HbGFrc3B1VlNYX0RjcklLb2c0Z09JcmVzOWlIdTE3dDM5dmMtVkVKNFdnamRlU1YwekFib1JSQl9CWDltTTVnQWEyeg?oc=5",
+      "published": "Tue, 23 Jun 2026 16:32:57 GMT"
+    },
+    {
+      "title": "Global tech sell-off intensifies, led by AI and chip stocks - NBC News",
+      "snippet": "Global tech sell-off intensifies, led by AI and chip stocks &nbsp;&nbsp; NBC News",
+      "source": "Google News (NBC News)",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPdUJwcS1tc0otcS1kZFNpbllLQ1JUWXZrczgtOExVbGM5bjFQN0tKR0J1NEpETmwtajM0QUYxbUM0Sk1wWm5sZmtOM2JjdmtYb0xCdjJ3QUZ1LXRhemRYUVRycUhEaDJEbW9LeVB0elN6SWIyWVFvUG9Ub0RDbUhEQjdkVGRib1BuQUp4eTEwSTZYTUhyY0NkSzlKeExFMHE1UnZ3aWhiNDljNzIxRDJaNUx3?oc=5",
+      "published": "Tue, 23 Jun 2026 15:59:16 GMT"
+    },
+    {
+      "title": "SpaceX Stock Has Officially Fallen So Far That It's Below Where It Started - Futurism",
+      "snippet": "SpaceX Stock Has Officially Fallen So Far That It's Below Where It Started &nbsp;&nbsp; Futurism",
+      "source": "Google News (Futurism)",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1ldjNjVXVNRGpaU2Z0VGhGcXFUZFJQcUw5M1Z6cnNaSS1HazZXUkJwMEREVjk2WTgtUE5xRWltSjN6aHpqNEV2RjFMVTdqTkQ0NU1uZUlibnZtWWJCaHdvdTRBYllYNHE1U0tDUU94bzdpNXVp?oc=5",
+      "published": "Tue, 23 Jun 2026 15:01:17 GMT"
+    },
+    {
+      "title": "Elon Musk's SpaceX erases gains since red-hot debut on US stock market - The National",
+      "snippet": "Elon Musk's SpaceX erases gains since red-hot debut on US stock market &nbsp;&nbsp; The National",
+      "source": "Google News (The National)",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPUFZLTWgwYS1nR3BYLWUxcGhfQjJUS3lkdnBEd0dfRmFScExlTmQ2UEZhQ2xHLTVTYWZZck5BVk9KWlpzU01vNFFHQzZwQjBiYkczOWpaenFYeWhNRHNSaVZwS1daWVpsX05GTXVjVnU5Vi1SV2RPcnRRelBxWDJCOQ?oc=5",
+      "published": "Tue, 23 Jun 2026 14:45:43 GMT"
+    },
+    {
+      "title": "After $86 billion IPO, SpaceX to borrow $20 billion - Axios",
+      "snippet": "After $86 billion IPO, SpaceX to borrow $20 billion &nbsp;&nbsp; Axios",
+      "source": "Google News (Axios)",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE15X3dLTGxxXzF0Njc1U242Y2VlRHU2SE9sUjFUbXlUajZHSW05X3NONmZsQWdFTWR4Zmx2LXVyWFQwTC1DX01NMGJITUE5ZDRHU3BsY3J0aDM5MGxhRVJMRk1Db2JZY0U?oc=5",
+      "published": "Tue, 23 Jun 2026 13:27:01 GMT"
+    },
+    {
+      "title": "Tesla Delays Latest Self Driving Update (FSD v14) for Model Y L in Australia - zecar",
+      "snippet": "Tesla Delays Latest Self Driving Update (FSD v14) for Model Y L in Australia &nbsp;&nbsp; zecar",
+      "source": "Google News (zecar)",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOWDJsbzVwVEN3bDR4MF9WaEpPRjJubkFpZVNsMkpaY2kzVGdhaHNXUnFoakNQWXF6MEttQTNLN0VxTkQ1eEl4bjFHcC1jNkg2WnN2X256RWVyX29Fd1pJMTJ5UFdIdkVkYld1MFNod3NMMFJuTzlUQjBMa1dXUjNjN1ZlN0hrcVBVQ050ZA?oc=5",
+      "published": "Tue, 23 Jun 2026 09:17:24 GMT"
+    },
+    {
+      "title": "Tesla crash that killed a woman under US federal investigation - BBC",
+      "snippet": "Tesla crash that killed a woman under US federal investigation &nbsp;&nbsp; BBC",
+      "source": "Google News (BBC)",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9sMjBDUGxEME0xTjVySDZ6UUlGamV0NVlWZ0loYWR6SlZncTZYSjBmODNLZ1ZIcHhQUzIzZVAwQlJLSFkzRU9ka19ZbUUzOVd5ZHNNaC1XeGxqUQ?oc=5",
+      "published": "Mon, 22 Jun 2026 22:20:07 GMT"
+    },
+    {
+      "title": "Federal regulators open probe into fatal Tesla crash - Business Insider",
+      "snippet": "Federal regulators open probe into fatal Tesla crash &nbsp;&nbsp; Business Insider",
+      "source": "Google News (Business Insider)",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNSjdsT1FyRzFVdEtyM1JZcWs1cEtKdlBLSmJoam1RNXBjOWJ6dmV3NW1LX1J5bVZXcUc5WjV5R0UzT1g2SkhkdVluNkNDX1JraXpKaEo3SVpjblpsZmJ4TzlhbG4xMExxX19xZnJ5aHZjYWlFZ0QyMVVIdWNnQkJTTG9MS0J3cy1ZQVdkYmxHbmR6dmdpakI2eHYxTWIwX0djb3F4eUNRQV8zWFVZbDhDRA?oc=5",
+      "published": "Mon, 22 Jun 2026 20:51:00 GMT"
+    },
+    {
+      "title": "Tesla Robotaxi appears to be gearing up for Vegas launch - Las Vegas Review-Journal",
+      "snippet": "Tesla Robotaxi appears to be gearing up for Vegas launch &nbsp;&nbsp; Las Vegas Review-Journal",
+      "source": "Google News (Las Vegas Review-Journal)",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOUjEzTzBRUDYxMGVXSzJEVElUdTRfZDdBWEJLaFlRNlJ1TkFxcEhaNFc0WTBGclJEOGRTY0hsa2RIMjJqYnl6dld0RnZ1U3A5MjZ4Z1N0UlVDb3JWMkEzY0kzZVZaRHRrc0NyRzFTVkEzbTBFWTlTazRsVmxfMzFqWXlqbjAzQnFqbnVUVmJiOXVOYW9ZakUyRXZmOVVCSUpBdE5UOHo0NFhXMUFtN05UZ0tpLWpIZS1Yc0xsYnRwZXhqM1lh?oc=5",
+      "published": "Mon, 22 Jun 2026 20:14:38 GMT"
+    },
+    {
+      "title": "India's Tata Electronics hit by cyber breach claiming to expose Apple, Tesla trade secrets - Reuters",
+      "snippet": "India's Tata Electronics hit by cyber breach claiming to expose Apple, Tesla trade secrets &nbsp;&nbsp; Reuters",
+      "source": "Google News (Reuters)",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQbHRnOGVKZXFxVV9uVlMzMWtWeHlnMUhnVy1TclhMZ1VMQkxaZ3NwWXhnODhkYWhSSUNsSV93SEJLQ3FnSk9vZnVFeWFfcG1aNlpMUjJaV2dKbkJ0WTlWWGl4OVd2Zm05REV3MUhnczhZZDlwbUxMM1JUVTRZU0R4QWRmN3IyUWZlckJtd3JKSmlaS0RyYzJHU3BJTWlTTlFLNlhHcDlUQWZicW9OZ3RxVGFaTFRuekpabF9kM2xKd2hIYnRrVkJqMi1Od1lXLXV5OWc?oc=5",
+      "published": "Mon, 22 Jun 2026 15:32:00 GMT"
+    },
+    {
+      "title": "Trump\u2013Musk feud",
+      "snippet": "From June to September 2025, businessman and former presidential advisor Elon Musk and U.S. president Donald Trump engaged in a series of social media attacks",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Trump%E2%80%93Musk_feud"
+    },
+    {
+      "title": "Political activities of Elon Musk",
+      "snippet": "Elon Musk has been actively involved in politics, particularly in the United States and Europe, throughout the majority of his business career. Despite",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Political_activities_of_Elon_Musk"
+    },
+    {
+      "title": "Elon Musk",
+      "snippet": "Elon Reeve Musk (/\u02c8i\u02d0l\u0252n/ EE-lon; born June 28, 1971) is a businessman and former public official who is the CEO and largest shareholder of Tesla and",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Elon_Musk"
+    }
+  ],
+  "social_profiles": [
+    {
+      "platform": "Facebook",
+      "username": "elon.musk",
+      "url": "https://facebook.com/elon.musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "elonmusk",
+      "url": "https://facebook.com/elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "elon_musk",
+      "url": "https://facebook.com/elon_musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "GitHub",
+      "username": "elonmusk",
+      "url": "https://github.com/elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "elon.musk",
+      "url": "https://instagram.com/elon.musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "elonmusk",
+      "url": "https://instagram.com/elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "elon_musk",
+      "url": "https://instagram.com/elon_musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "elon.musk",
+      "url": "https://pinterest.com/elon.musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "elonmusk",
+      "url": "https://pinterest.com/elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "elon_musk",
+      "url": "https://pinterest.com/elon_musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "elon.musk",
+      "url": "https://reddit.com/user/elon.musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "elonmusk",
+      "url": "https://reddit.com/user/elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "elon_musk",
+      "url": "https://reddit.com/user/elon_musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Snapchat",
+      "username": "elon.musk",
+      "url": "https://snapchat.com/add/elon.musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Snapchat",
+      "username": "elonmusk",
+      "url": "https://snapchat.com/add/elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Snapchat",
+      "username": "elon_musk",
+      "url": "https://snapchat.com/add/elon_musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "elon.musk",
+      "url": "https://t.me/elon.musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "elonmusk",
+      "url": "https://t.me/elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "elon_musk",
+      "url": "https://t.me/elon_musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "elon.musk",
+      "url": "https://tiktok.com/@elon.musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "elonmusk",
+      "url": "https://tiktok.com/@elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "elon_musk",
+      "url": "https://tiktok.com/@elon_musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "elonmusk",
+      "url": "https://x.com/elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "elon_musk",
+      "url": "https://x.com/elon_musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "YouTube",
+      "username": "elonmusk",
+      "url": "https://youtube.com/@elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "GitHub",
+      "username": "elon.musk",
+      "url": "https://github.com/elon.musk",
+      "exists": false,
+      "status": 406
+    },
+    {
+      "platform": "GitHub",
+      "username": "elon_musk",
+      "url": "https://github.com/elon_musk",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "elon.musk",
+      "url": "https://linkedin.com/in/elon.musk",
+      "exists": false,
+      "status": 405
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "elonmusk",
+      "url": "https://linkedin.com/in/elonmusk",
+      "exists": false,
+      "status": 999
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "elon_musk",
+      "url": "https://linkedin.com/in/elon_musk",
+      "exists": false,
+      "status": 999
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "elon.musk",
+      "url": "https://wa.me/elon.musk",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "elonmusk",
+      "url": "https://wa.me/elonmusk",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "elon_musk",
+      "url": "https://wa.me/elon_musk",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "elon.musk",
+      "url": "https://x.com/elon.musk",
+      "exists": false,
+      "status": 403
+    },
+    {
+      "platform": "YouTube",
+      "username": "elon.musk",
+      "url": "https://youtube.com/@elon.musk",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "YouTube",
+      "username": "elon_musk",
+      "url": "https://youtube.com/@elon_musk",
+      "exists": false,
+      "status": 404
+    }
+  ],
+  "entities": [
+    {
+      "type": "person",
+      "name": "Elon Musk",
+      "confidence": 0.9
+    },
+    {
+      "type": "person",
+      "name": "Donald Trump",
+      "confidence": 0.8
+    },
+    {
+      "type": "organization",
+      "name": "SpaceX",
+      "confidence": 0.9
+    },
+    {
+      "type": "organization",
+      "name": "Tesla",
+      "confidence": 0.9
+    },
+    {
+      "type": "location",
+      "name": "US",
+      "confidence": 0.7
+    },
+    {
+      "type": "event",
+      "name": "Trump\u2013Musk feud",
+      "confidence": 0.8
+    },
+    {
+      "type": "person",
+      "name": "Elon Reeve Musk",
+      "confidence": 1.0
+    },
+    {
+      "type": "date",
+      "name": "June 28, 1971",
+      "confidence": 0.9
+    }
+  ],
+  "sentiment": {
+    "sentiment": "mixed",
+    "confidence": 0.65,
+    "key_emotional_indicators": [
+      "downturn",
+      "investment",
+      "profitability",
+      "tension",
+      "uncertainty",
+      "controversy"
+    ]
+  },
+  "classification": {
+    "category": "Business & Finance",
+    "subcategory": "Technology Market",
+    "confidence": 0.9,
+    "tags": [
+      "Tech",
+      "stocks",
+      "IPO",
+      "Elon Musk",
+      "Tesla",
+      "SpaceX",
+      "investment",
+      "Cybersecurity"
+    ]
+  },
+  "inconsistencies": [
+    {
+      "description": "Inconsistency between news sources regarding SpaceX stock performance.",
+      "severity": "high",
+      "text_snippet": "Chip stocks plunge, but bargain-hunters stem losses in other tech names - Reuters. Chip stocks plunge, but bargain-hunters stem losses in other tech names &nbsp;&nbsp; Reuters. Global tech sell-off intensifies, led by AI and chip stocks - NBC News. Global tech sell-off intensifies, led by AI and chip stocks &nbsp;&nbsp; NBC News. SpaceX Stock Has Officially Fallen So Far That It's Below Where It Started - Futurism. SpaceX Stock Has Officially Fallen So Far That It's Below Where It Started &nbsp;&nbsp; Futurism. Elon Musk's SpaceX erases gains since red-hot debut on US stock market - The National. Elon Musk's SpaceX erases gains since red-hot debut on US stock market &nbsp;&nbsp; The National. After $86 billion IPO, SpaceX to borrow $20 billion - Axios. After $86 billion IPO, SpaceX to borrow $20 billion &nbsp;&nbsp; Axios."
+    },
+    {
+      "description": "Inconsistency between news sources regarding Tesla crash investigations.",
+      "severity": "medium",
+      "text_snippet": "Tesla crash that killed a woman under US federal investigation - BBC. Tesla crash that killed a woman under US federal investigation &nbsp;&nbsp; BBC. Federal regulators open probe into fatal Tesla crash - Business Insider. Federal regulators open probe into fatal Tesla crash &nbsp;&nbsp; Business Insider."
+    },
+    {
+      "description": "Contradiction between news sources regarding Elon Musk's political activity and his business career.",
+      "severity": "high",
+      "text_snippet": "Elon Musk has been actively involved in politics, particularly in the United States and Europe, throughout the majority of his business career. Despite."
+    }
+  ],
+  "name_suggestions": [
+    {
+      "suggested_name": "Elon Reeve Musk",
+      "type": "full_name"
+    },
+    {
+      "suggested_name": "El Elon Musk",
+      "type": "alias"
+    },
+    {
+      "suggested_name": "Elon M.",
+      "type": "abbreviation"
+    },
+    {
+      "suggested_name": "Ellio Musk",
+      "type": "nickname"
+    },
+    {
+      "suggested_name": "EMusk",
+      "type": "alias"
+    }
+  ],
+  "llm_analysis": "## OSINT Intelligence Report: Elon Musk \n\n**Date:** 2026-06-23\n\n**Subject:** Elon Musk - CEO of Tesla and SpaceX\n\n**1. Who/What This Subject Appears To Be:**\n\nElon Reeve Musk is a renowned entrepreneur, business magnate, and investor who currently serves as the CEO of both Tesla, Inc. (a prominent electric vehicle manufacturer) and SpaceX, (a privately held aerospace company). His companies play significant roles in shaping modern technology and space exploration. \n\n**2. Digital Footprint Found:**\n\nA substantial digital footprint has been uncovered across various platforms, including:\n\n* **Official Websites:** Tesla.com, SpaceX.com\n* **Social Media:** Twitter (@elonmusk), X (formerly Twitter)\n* **News Aggregators:** Google News, Reuters, BBC, NBC News \n* **Wikipedia Page:** Elon Musk - https://en.wikipedia.org/wiki/Elon_Musk\n\n**3. Key Findings and Evidence:**\n\n* **SpaceX:** The recent stock market performance of SpaceX highlights their significant economic influence: \n    - A report by the BBC (https://news.google.com/rss/articles/CBMiWkFVX3lxTFBXU3A1ZEtDbHhYenRtOXZRX2NzbUhpRUMyX3V4Mk10Vzk4U2V) states that Musk's SpaceX has surpassed Amazon in market valuation, ranking as the world's fifth most valuable firm.\n* **Tesla:**  Significant news related to Tesla includes delays of the latest self-driving software update for Model Y in Australia: \n    - \"Tesla Delays Latest Self Driving Update (FSD v14) for Model Y L in Australia\" by zecar (https://news.google.com/rss/articles/CBMjWFAFVV95cUxOWDJsbzVwVEN3bDR4MF9WaEpPRjJubkFpZVNsMkpaY2kzVGd) \n* **Elon Musk's Companies:** A series of press releases have demonstrated Musk's companies' impact: \n    -  Musk\u2019s SpaceX surpasses Amazon in market valuation (BBC): https://news.google.com/rss/articles/CBMiWkFVX3lxTFAxMXR6QXdrd3J1QTd0UUUzM1FvVEZVM2p1eGpFYkFOWE9HRFk\n    -  Elon Musk becomes world's first trillionaire as SpaceX soars in stock market debut (BBC): https://news.google.com/rss/articles/CBMiWkFVX3lxTFBXU3A1ZEtDbHhYenRtOXZRX2NzbUhpRUMyX3V4Mk10Vzk4U2V\n\n**4. Red Flags or Contradictions:** \n* **Potential for Inaccurate Information:** While most sources seem credible, some reporting on Elon Musk's business ventures has been contentious (e.g., Trump-Musk feud). Users should be aware of potential bias and subjective reporting in specific media outlets.  \n\n\n**5. Recommended Next Investigation Steps:**\n\n* **Analyze Financial Documents:** Further investigation into publicly available financial documents and quarterly reports will provide deeper insight into Tesla's performance and SpaceX's market value. \n* **Social Media Analysis:** Deep dive into Elon Musk\u2019s Twitter activity to understand his perspectives and potential public engagements. \n* **Expert Interviews:** Contacting industry experts and analysts for detailed analysis of SpaceX and Tesla's current market situation will offer a more in-depth understanding.  \n\n\n**Overall Assessment:**\n\nElon Musk remains one of the most influential figures globally, commanding significant attention across business, technology, and innovation sectors. His companies continue to make groundbreaking strides in their respective fields and play a crucial role in shaping the future of transportation and space exploration. \n"
+}

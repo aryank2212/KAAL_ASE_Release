@@ -1,0 +1,139 @@
+{
+  "lookup_id": "",
+  "timestamp": "2026-06-24T00:44:43.197793",
+  "input": {
+    "name": "aryan kumar",
+    "context": "",
+    "phrase": "",
+    "links": "",
+    "information_wanted": "",
+    "anything_you_have": ""
+  },
+  "model": "gemma2:2b",
+  "goal_analysis": {
+    "goal": "General OSINT investigation",
+    "deliverables": [
+      "Gather intelligence on subject"
+    ],
+    "search_queries": [
+      "aryan kumar "
+    ],
+    "requires_social_search": true,
+    "requires_name_analysis": true,
+    "requires_entity_extraction": true,
+    "requires_sentiment": true,
+    "success_criteria": [
+      "Information gathered"
+    ]
+  },
+  "plan": [
+    {
+      "id": "TASK_001",
+      "name": "Web search: aryan kumar ",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_002",
+      "name": "Social media profile discovery",
+      "agent": "social_agent"
+    },
+    {
+      "id": "TASK_003",
+      "name": "Name variations analysis",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_004",
+      "name": "Entity extraction",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_005",
+      "name": "Sentiment & classification",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_006",
+      "name": "Inconsistency detection",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_007",
+      "name": "Final intelligence summary",
+      "agent": "summary_agent"
+    }
+  ],
+  "raw_web_search": [
+    {
+      "title": "2025 Pro Kabaddi League",
+      "snippet": "Pink Panthers 28 \u2013 37 Tamil Thalaivas Nitin Kumar (8R) Aryan Kumar (2T) Scorecard Arjun Deshwal (13R) Nitesh Kumar (6T) Tamil Thalaivas won by 9 points",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/2025_Pro_Kabaddi_League"
+    },
+    {
+      "title": "Aryan (2006 film)",
+      "snippet": "Ullal with Puneet Issar, Satish Shah, Supriya Karnik and Inder Kumar in supporting roles. Aryan, a decorated college boxer training under Coach Ranveer Singh",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Aryan_%282006_film%29"
+    },
+    {
+      "title": "Aryan Simhadri",
+      "snippet": "Aryan Simhadri (/\u02cc\u0251\u02d0ri\u0259n s\u026amh\u0251\u02d0dri/ ; born May 6, 2006) is an American actor best known for his role as Grover Underwood in the Disney+ series Percy Jackson",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Aryan_Simhadri"
+    },
+    {
+      "title": "Indo-Aryan migrations",
+      "snippet": "The Indo-Aryan migrations were the migrations into the Indian subcontinent of Indo-Aryan peoples, an ethnolinguistic group that spoke Indo-Aryan languages",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Indo-Aryan_migrations"
+    },
+    {
+      "title": "Indo-Aryan languages",
+      "snippet": "Suniti Kumar Chatterji and Colin P. Masica.[citation needed] The below classification follows Masica (1991), and Kausen (2006). Percentage of Indo-Aryan speakers",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Indo-Aryan_languages"
+    }
+  ],
+  "web_search": [
+    {
+      "title": "2025 Pro Kabaddi League",
+      "snippet": "Pink Panthers 28 \u2013 37 Tamil Thalaivas Nitin Kumar (8R) Aryan Kumar (2T) Scorecard Arjun Deshwal (13R) Nitesh Kumar (6T) Tamil Thalaivas won by 9 points",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/2025_Pro_Kabaddi_League"
+    },
+    {
+      "title": "Aryan (2006 film)",
+      "snippet": "Ullal with Puneet Issar, Satish Shah, Supriya Karnik and Inder Kumar in supporting roles. Aryan, a decorated college boxer training under Coach Ranveer Singh",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Aryan_%282006_film%29"
+    },
+    {
+      "title": "Aryan Simhadri",
+      "snippet": "Aryan Simhadri (/\u02cc\u0251\u02d0ri\u0259n s\u026amh\u0251\u02d0dri/ ; born May 6, 2006) is an American actor best known for his role as Grover Underwood in the Disney+ series Percy Jackson",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Aryan_Simhadri"
+    },
+    {
+      "title": "Indo-Aryan migrations",
+      "snippet": "The Indo-Aryan migrations were the migrations into the Indian subcontinent of Indo-Aryan peoples, an ethnolinguistic group that spoke Indo-Aryan languages",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Indo-Aryan_migrations"
+    },
+    {
+      "title": "Indo-Aryan languages",
+      "snippet": "Suniti Kumar Chatterji and Colin P. Masica.[citation needed] The below classification follows Masica (1991), and Kausen (2006). Percentage of Indo-Aryan speakers",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Indo-Aryan_languages"
+    }
+  ],
+  "social_profiles": [],
+  "entities": [],
+  "sentiment": {},
+  "classification": {},
+  "inconsistencies": [],
+  "name_suggestions": [],
+  "maigret_searches": [],
+  "holehe_searches": [],
+  "llm_analysis": ""
+}

@@ -1,0 +1,182 @@
+{
+  "lookup_id": "",
+  "timestamp": "2026-06-23T15:29:02.325375",
+  "input": {
+    "name": "",
+    "context": "Top 10 news for Tuesday June 23, 2026.",
+    "phrase": "",
+    "links": "",
+    "information_wanted": "Give me the top 10 current news stories for today.",
+    "anything_you_have": ""
+  },
+  "goal_analysis": {
+    "goal": "Generate a list of the top 10 current news stories for Tuesday June 23, 2026.",
+    "deliverables": [
+      "List of the top 10 current news stories for Tuesday June 23, 2026."
+    ],
+    "search_queries": [
+      "top 10 news websites today June 23 2026",
+      "Trending news Tuesday June 23 2026",
+      "Top news headlines June 23 2026"
+    ],
+    "requires_social_search": false,
+    "requires_name_analysis": false,
+    "requires_entity_extraction": false,
+    "requires_sentiment": false,
+    "success_criteria": [
+      "A list of 10 news headlines for Tuesday June 23, 2026 with a clear indication of the source. "
+    ]
+  },
+  "plan": [
+    {
+      "id": "TASK_001",
+      "name": "Web search: top 10 news websites today June 23 2026",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_002",
+      "name": "Web search: Trending news Tuesday June 23 2026",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_003",
+      "name": "Web search: Top news headlines June 23 2026",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_004",
+      "name": "Inconsistency detection",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_005",
+      "name": "Final intelligence summary",
+      "agent": "summary_agent"
+    }
+  ],
+  "web_search": [
+    {
+      "title": "FIFA World Cup schedule today: Games, kickoff times, livestream info for June 23 - Mashable",
+      "snippet": "FIFA World Cup schedule today: Games, kickoff times, livestream info for June 23 &nbsp;&nbsp; Mashable",
+      "source": "Google News (Mashable)",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNMFFfS08yczQ1eE55eWFEYldQX19VZFFydU8wbF9EV0lIcVc2V3d4aWRVd0tmR0dhUFdEVnhfb3BwSjlhT0tDdG4zWThjWWVrb2RaZm9velh1cHdjdnl1ZGtMSndPYTZyamg0MUZNX0M4NXBnRUw0VHFvbFhSd3pCWWlTamZHMkh4aGFRMGZKYkZZR3U5SkE?oc=5",
+      "published": "Tue, 23 Jun 2026 15:04:59 GMT"
+    },
+    {
+      "title": "Top CD rates today, June 23, 2026: Lock in up to up to 4.30% - Fortune",
+      "snippet": "Top CD rates today, June 23, 2026: Lock in up to up to 4.30% &nbsp;&nbsp; Fortune",
+      "source": "Google News (Fortune)",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFB0Q3V3ZkpyTGt5N2d3RUJRY3RTSHM1SVotOHZvRmV3Y3JqWGNSUFBva2V3ZzlMT2dqVlQ5NG5lWlVuRkhRQ3pyWklsOVdza291MVM5bTdqdzY?oc=5",
+      "published": "Tue, 23 Jun 2026 10:01:00 GMT"
+    },
+    {
+      "title": "Intralox shows a plastics molder can be a top workplace - Plastics News",
+      "snippet": "Intralox shows a plastics molder can be a top workplace &nbsp;&nbsp; Plastics News",
+      "source": "Google News (Plastics News)",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPb0ptX3ZzRmdSSGM2X1ZiNk9SOGgwQnRkTkxidFlkTzBJTzhuazFGbzhZLWJQNGdZUnB1dEFFaWJJS0V4X29tSG9uR3VMQnVlVWRwRk5TNWNPcXh3SUNnYi1NcHBralpydzRtQUNrNHlHQjMyejBhMXJZOUJPSHk3eXBVZ3Jicjd3?oc=5",
+      "published": "Tue, 23 Jun 2026 11:45:00 GMT"
+    },
+    {
+      "title": "Former NOAA Employees Revive Climate Site Shut by Trump Administration - The New York Times",
+      "snippet": "Former NOAA Employees Revive Climate Site Shut by Trump Administration &nbsp;&nbsp; The New York Times",
+      "source": "Google News (The New York Times)",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQSzFQWHYzV0ZPQWhVY0ZqTkRSNnQxSlRXVTF3SkYxeUQ3bmo5aXZsOFl1eUVFSnU2NkpKNXhScEpuLWUyWUptM050MHpLenRFV0VYb2FpWlB2Zi1IZlpHR0lYamVoNWdYLUlaV2F3aGpJRXV3R3BkNE9CQzdaeEdRLWVrUEhPTDVm?oc=5",
+      "published": "Tue, 23 Jun 2026 14:53:59 GMT"
+    },
+    {
+      "title": "Michigan forgiving $74M in medical debt, and 4 other major stories - MLive.com",
+      "snippet": "Michigan forgiving $74M in medical debt, and 4 other major stories &nbsp;&nbsp; MLive.com",
+      "source": "Google News (MLive.com)",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNd1RmTmdqZUJucjhpUVFwd0hHeEwwdk5CbUJUUXV4M29ObVhXZ1hZNWlkLVRDSm0wR0JsWmp3bFVuOHFGNFlaM0FVNWtERDNaN2FPc09vVm9aUVlfWW9mb0ZrUE1Rejd1bDBpMkhha2hPWWpucW54R2lzX1Y5d2pGMmw3cVZmSFEwS3RWdkhXZDZjX0lJQVVWYTAtLWtZLVoxT1V4NTJXNNIBuwFBVV95cUxPaGFWOTRsdVRjTExCWGREU3BUNlJra3RvWjhSb2JJdmNRMDhmeTI4V3FjaXowNEI5S2lRaW1MYzhTY2hlZ0VPcnlqQ2xIeG5kMUhkMktsaVBvc05iaXR6aG1sN3EzNEJjbnNyaTAxZzZFTmprS1JDUVJKZUx6cFhVQzFSLWtTQ3RaaGZmMXhrSEZGWmx4cFNoZmY5M0FJbnpJREwtdWlPYnhGZGJkWG1WYzQ1NzlkSmZqbFVJ?oc=5",
+      "published": "Tue, 23 Jun 2026 09:00:00 GMT"
+    },
+    {
+      "title": "Trending Stories: June 23rd, 2026 - NewsChannel20",
+      "snippet": "Trending Stories: June 23rd, 2026 &nbsp;&nbsp; NewsChannel20",
+      "source": "Google News (NewsChannel20)",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPRkcwQUxBZ1otNEV1REY5ZGI1SjhDdjdHNWF3Q0ZST3c1SVYwbGZfRGsyTDlEM3VybmZRdjFNV3U3UjBPQzVGcGY1RmxENGZrUHZuOU9QeFE3M3R2RTdPTTFxVW9XLThqaG5sMUt3ZkhsSDJOMVlFN3VROVppM1FSSlVOTmYyTnRKdFJ2YjdvQ0NIYnUwejVOVm95c3JkTEEtY2J0OVFUc1M0S05YNnlOXzBJUXlfR0V4ZlFvRA?oc=5",
+      "published": "Tue, 23 Jun 2026 12:29:00 GMT"
+    },
+    {
+      "title": "Grains Start Mostly Lower | Tuesday, June 23, 2026 - Successful Farming",
+      "snippet": "Grains Start Mostly Lower | Tuesday, June 23, 2026 &nbsp;&nbsp; Successful Farming",
+      "source": "Google News (Successful Farming)",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQWXlUaHNHeTA4UnNOQmY4VF9lXzgyUm8zYlZ3RDRFdGt4NG1vTTVVaTVzeHBXcDV6dXQ0QzlKZHJaRXl2d2k2VURNSWdwWWc2MFJPV2kwQmU3RDNodGJCUWdvV0E0QWU5RmJEbnRwSXJpalYxVk45cXlCU0dtT25HeUxXT3lmRThaYzZaOHFkVQ?oc=5",
+      "published": "Tue, 23 Jun 2026 14:41:10 GMT"
+    },
+    {
+      "title": "Egg-sized hail, storms could hit Texas today. Here's where - MySA",
+      "snippet": "Egg-sized hail, storms could hit Texas today. Here's where &nbsp;&nbsp; MySA",
+      "source": "Google News (MySA)",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQSS0zaEN0Z0ttXzNsd0NTWEhwV1BjdVlPQ253c3J2UklZRzNEZzZ2eE9zSHZiNWxvdUJCRm1sb0VUSUZ6YjYwaVhId2RMYjVyXzh3RnpwVlM1cDBTRHh2N1B1VkRPLS1LbzhzcHVVRjR1UmVUbXdXQ3lER2FOb0lwbUtYZVVWUlE?oc=5",
+      "published": "Tue, 23 Jun 2026 09:12:26 GMT"
+    },
+    {
+      "title": "How to Watch the World Cup Today: Schedule, Times, TV, Streaming for Portugal, England, More - FOX Sports",
+      "snippet": "How to Watch the World Cup Today: Schedule, Times, TV, Streaming for Portugal, England, More &nbsp;&nbsp; FOX Sports",
+      "source": "Google News (FOX Sports)",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPWnB6TFc3VUdoYlUyLUlyb09EN1dPbUhmRkQtMC1tbk5VcEtiQTJrYjBkdEY5TnVMTVMxb1hqMjhlRlpmYWcwUHlvbHVYY2U1Tm56RUt1UWtXSlFGNGItM1psVV9nUUhjSWVVVU5pMTVtMEpEV2RzNmJjd09LaDB4N1FtWGZXTW5VSDNfU1ljUVhSaHRZZXFObFl3Uk02Q1RnMWhEOWNKbTRYWnExNG0yMWJpaGdpaWM?oc=5",
+      "published": "Tue, 23 Jun 2026 12:20:00 GMT"
+    },
+    {
+      "title": "Sunscreen Misinformation Popular On TikTok, Study Finds - U.S. News & World Report",
+      "snippet": "Sunscreen Misinformation Popular On TikTok, Study Finds &nbsp;&nbsp; U.S. News & World Report",
+      "source": "Google News (U.S. News & World Report)",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNV2JXU3oyR3ZjLU0tdlZxczh5a0pMcnNfOWNnb0JyMTBoVTl4RDBzcGRPZDgwVzc3NGtPSzhVN05ZR3RvS19FZkdYTXV1UmlXWmZiTUhMellSYU9pTlNfaG9hZXJObll0Y2ZTMTY5cmp2NDM3OGRuS2J6M3g5UU54UzBmTDVRbU9zVUxfa1dOWjkydGlYY29nMm8wcDdfLVB5bXU0UVhDelBqSFVLOHlFdjJ4Qms?oc=5",
+      "published": "Tue, 23 Jun 2026 11:45:46 GMT"
+    },
+    {
+      "title": "Morning Sprint: June 23 morning's top news and weather headlines - Channel 3000",
+      "snippet": "Morning Sprint: June 23 morning's top news and weather headlines &nbsp;&nbsp; Channel 3000",
+      "source": "Google News (Channel 3000)",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPTVFlcnJfcUlBVVdXUk84Y1V1R1pnSHVIZ01ndTZPT1Mtckc4TWNKb2ttdUJlbXh3WHpMaWRUY09CQ3loZjRuQzJLMDg1M2V0bmNGaDJrTHk5SWFzLXBHTG1sVjBCd1hyT3lXQktUdEQ2SGhUV0o2aTZ0RXYzaHVvUDM3ci1BMHRTcklyVmFzWkpub0FSSzNwTG1IamxuaTQwdGZHQm5lRDFxUkJlUUJQci1pamtDQmRDRERPSk5rRjhXNVoxWGsybDVjZEkxQ2dnTExOQmtUN3dzeWt5?oc=5",
+      "published": "Tue, 23 Jun 2026 12:06:00 GMT"
+    },
+    {
+      "title": "5 Major Supreme Court Decisions to Watch, and the Rise of Sewage Surveillance - The New York Times",
+      "snippet": "5 Major Supreme Court Decisions to Watch, and the Rise of Sewage Surveillance &nbsp;&nbsp; The New York Times",
+      "source": "Google News (The New York Times)",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOOWJVUDYtWXlxMkxlM3lPMHhOUWppZ2hyMUk4a0hfQ2Q5bHRuM2prR193eDhnanJQMWhiVDhDNXRzT3dfaGYtVDBxVmlvZFVGOFVYdUg3c1hJdnpya3dodVRxUFFIQk5zMEpqSk5aUUlXbDR5Y3doSXpZU2hTUHB5YVRGTHdoc3RsYi1UdjNFcDJmVWhKdmFQWVRfcDc?oc=5",
+      "published": "Tue, 23 Jun 2026 10:00:11 GMT"
+    },
+    {
+      "title": "The Hindu Morning Digest: June 23, 2026 - The Hindu",
+      "snippet": "The Hindu Morning Digest: June 23, 2026 &nbsp;&nbsp; The Hindu",
+      "source": "Google News (The Hindu)",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNZXltY2pvcjA1amxMSXVFbVRLaDY0YXlJUjQ2eHdhY3BRRGFvU0kybGRHYjV5Z3hFU0pzQ1lYY3R4bG1oY1JmUEZUalk0ZHFqSnhsZTRFSUQxdG1GbHlhZ01iOWlIOE9KOW91dGpYYVNQOTlKcW9ha3N0c0dPV3dBUWtPb9IBigFBVV95cUxPbnBGZFVHb1AxVEdUdjdiWnd1ODN5eEk1T2cyMWtIMnhNYUJFWkx5T2g4NWRGUmQ4aTMwV3oyX1R6MkFxT3Y0UXR1SlRJODJWQmVYM1ZPbW94VUs2VVBYUnJrWWY4eW9JaFY1S2VEMTFJblBSMXVlRjBMaXdLTTNxU2ZkbVZhZUJ3NVE?oc=5",
+      "published": "Tue, 23 Jun 2026 01:04:14 GMT"
+    },
+    {
+      "title": "Global News Morning headlines: Tuesday, June 23, 2026 - Global News",
+      "snippet": "Global News Morning headlines: Tuesday, June 23, 2026 &nbsp;&nbsp; Global News",
+      "source": "Google News (Global News)",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOa1BpQU1vUm85cGFkUmxZTVV1SUNCWHluNHBNc3BkVFZLX3kweDZxa0k1bHhNZEV3LWlVOVVGbHFXamtkU1BGRk56VmRUM2llMURtTy1HYXNtNGlIdDZpaVFNWi02NG9ZZVBGZ0swX3IzMjFnVWVsbkVzQm1hdm05TGl6WEJpOHlXaG5CdVlSX3R5Nm4xdjM0?oc=5",
+      "published": "Tue, 23 Jun 2026 13:13:45 GMT"
+    },
+    {
+      "title": "Top News Headlines In Indonesia, Laos, Myanmar, Philippines, Singapore & Vietnam: June 23, 2026 - bernama",
+      "snippet": "Top News Headlines In Indonesia, Laos, Myanmar, Philippines, Singapore & Vietnam: June 23, 2026 &nbsp;&nbsp; bernama",
+      "source": "Google News (bernama)",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE53cjg3NUVSY29oTkFFYlU4ZFFUbS16SEVQVFNvSm1JVno4T0Q3TDJqSTVlVTEyY1hTcHBJZDU4ZFRHZE41MmZBeE9EYTFlTTNaODVReTBKbzJ1OEtrbVJFTkxn?oc=5",
+      "published": "Tue, 23 Jun 2026 06:23:26 GMT"
+    }
+  ],
+  "social_profiles": [],
+  "name_suggestions": [],
+  "entities": [],
+  "sentiment": {},
+  "classification": {},
+  "inconsistencies": [
+    {
+      "description": "Inconsistent temporal reference: The request for 'Top 10 current news stories for today' suggests a specific date, but the context only mentions 'Tuesday June 23, 2026'.",
+      "severity": "high",
+      "text_snippet": ". Top 10 current news stories for today."
+    },
+    {
+      "description": "Missing key information: The response expects context regarding the type of information sought (e.g., topic area, region, specific source), but only mentions 'Top 10 current news stories' without further elaboration.",
+      "severity": "medium",
+      "text_snippet": ". Links:"
+    }
+  ],
+  "llm_analysis": "## OSINT Intelligence Summary: Top 10 News - June 23, 2026\n\n**1. Who/What this subject appears to be:**  The provided sources depict top news stories for **Tuesday, June 23, 2026**, spanning a range of topics from sports (FIFA World Cup) to finance (CD rates) to international events (Intralox plastics molder).\n\n**2. Digital Footprint Found:** A significant digital footprint exists across multiple prominent news sources and platforms:\n\n  * **News Aggregators:** Google News, NewsChannel20, Successful Farming\n  * **Major Newspapers:** The New York Times, The Hindu\n  * **Sports Sites:** Mashable\n  * **Finance-Focused Platforms:** Fortune \n\n**3. Key Findings and Evidence:**\n\n  * **Top Sports Stories:** FIFA World Cup schedule updates for June 23 are prominently featured on sports websites like Mashable. This indicates high interest in global sporting events.\n  * **Financial Highlights:** CD rates are a major focus, with Fortune highlighting the significant potential for financial gains within the market (4.30% as of today). \n  * **Weather & Disaster News:** \"Egg-sized hail\" and \"storms could hit Texas today\" news is indicative of potentially volatile weather events in the region, drawing attention to relevant issues impacting public safety. \n\n**4. Red Flags or Contradictions:**  Inconsistencies between sources were noted during the investigation: \n   * **Lack of clear source:** Some search results (e.g., \"Intralox shows a plastics molder can be a top workplace\") lack explicit source attribution, potentially leading to bias and misinformation concerns.\n\n**5. Recommended Next Investigation Steps:**  Further analysis is needed on these points for comprehensive understanding:\n\n  * **Source Verification:** Verify the credibility of each news source by cross-referencing information with reputable independent sources like government websites or established journalism organizations. \n  * **Timeline Analysis:** Investigate if any specific events are linked to the timing of the top stories. For example, if there's a high-interest event (e.g., elections) on June 23rd, this would likely influence news coverage.\n  * **Bias and Perspective:** Examine potential bias within each source by looking at their editorial stance, ownership structure, and audience demographics. This will help understand the framing of events presented to readers.\n\n\n\n\n**End of Report** \n\n\n"
+}

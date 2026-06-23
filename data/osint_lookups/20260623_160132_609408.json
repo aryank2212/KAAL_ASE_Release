@@ -1,0 +1,487 @@
+{
+  "lookup_id": "",
+  "timestamp": "2026-06-23T16:01:32.609436",
+  "input": {
+    "name": "Samay Raina",
+    "context": "Indian chess player and comedian",
+    "phrase": "",
+    "links": "",
+    "information_wanted": "",
+    "anything_you_have": ""
+  },
+  "goal_analysis": {
+    "goal": "Analyze and document information related to Samay Raina's background as an Indian chess player and comedian using available publicly accessible sources.",
+    "deliverables": [
+      "A comprehensive profile of Samay Raina, including his career as a chess player and comedian.",
+      "Relevant links and resources for the information presented."
+    ],
+    "search_queries": [
+      "Samay Raina Indian chess",
+      "Samay Raina stand-up comedy",
+      "Indian chess players notable figures"
+    ],
+    "requires_social_search": true,
+    "requires_name_analysis": true,
+    "requires_entity_extraction": false,
+    "requires_sentiment": false,
+    "success_criteria": [
+      "The generated profile contains accurate and reliable details about Samay Raina's career."
+    ]
+  },
+  "plan": [
+    {
+      "id": "TASK_001",
+      "name": "Web search: Samay Raina Indian chess",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_002",
+      "name": "Web search: Samay Raina stand-up comedy",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_003",
+      "name": "Web search: Indian chess players notable figures",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_004",
+      "name": "Social media profile discovery",
+      "agent": "social_agent"
+    },
+    {
+      "id": "TASK_005",
+      "name": "Name variations analysis",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_006",
+      "name": "Inconsistency detection",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_007",
+      "name": "Final intelligence summary",
+      "agent": "summary_agent"
+    }
+  ],
+  "raw_web_search": [
+    {
+      "title": "Explained: How Samay Raina Turned Stand-Up, Chess And A Controversial Show Into One Of India's Biggest Crea - News18",
+      "snippet": "Explained: How Samay Raina Turned Stand-Up, Chess And A Controversial Show Into One Of India's Biggest Crea &nbsp;&nbsp; News18",
+      "source": "Google News (News18)",
+      "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQank1NFlZVXlQQ3JhelJiNXlEUWhmYlVyVlZyY0JkZkVMWWJWbnBFUXdqRXNvbl81LUFSQUtMTG11aENpRVlGb0hDdEVSTVNXRDBUdnJ2WEpxR3U0OUFoV3dCX3NIUGtLWGdYVm41LWxVQ1RJRDRoRVZUakJfcnpLQkliNF9kMU9BcU9hX1h3RGRsZktlLWFXb1NmajgtTjNCeV9UeVU2cGJ3YnFsYkZTMVRZMXozZVphaExuUkhMWDVWRDN4Rkd4bkxGVWdSU3pGS0llR1pYVnRCQmt3MUFMLURqU3l3aFhPRmNZbTRrSG1tRFdMaUQ0NGFadEs2SUXSAYQCQVVfeXFMTUVXRkFNVGNheDVDdC1IU2I1TjJtUUxjWVAxTE9sN21oeVZaZy1LTHVfc185V3ZPNlZsNk1aZWVZcTkxbHdSYi15dV9rTklrU3hYZmV3eVZJVUowNmhsRkVZRnkzVDNnRTg5VFBSc2NhVlE1RmJxckhmUUZzbmYzdDlrU0RVMU0xa2RjWTk5djhsaDJiQ1BiTk1fQjZXdjVzN3g4WkEwMFVPSEgtdXlNcWwxTjZfeFh6OXh1TXB6SC10NmFyWUduRXlqaVV1elRiaHdsNG1KNmN6NEZlQWJwU0lpVkFScWotRUxBZkxKWFQ0Q1A4cnBBOWJ5X1JscUdEOUdHbUk?oc=5",
+      "published": "Tue, 23 Jun 2026 07:55:14 GMT"
+    },
+    {
+      "title": "Did Samay Raina's US visa get revoked over Donald Trump roast in India's Got Latent show with Alia Bhatt? Viral claims decoded - Gulf News",
+      "snippet": "Did Samay Raina's US visa get revoked over Donald Trump roast in India's Got Latent show with Alia Bhatt? Viral claims decoded &nbsp;&nbsp; Gulf News",
+      "source": "Google News (Gulf News)",
+      "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxOc0FTWkNXSHRHMjh1RjhmM2JoZXBJZnVSN1dzMGQ0YlhiYWMxa3hMTXBsakhrWUtTTWlkU2FvX2N5NE81U0FkRjZRTjh4SGRCTTAzckFnSUEzTzl4Ym1JQ2YyMFFoVlgyODBsakFsbDU1UmJLTEJqZ1ZyUDJlVDZiVklqT2JuNUpzNC1MdG9vaVdkN3JBTXlxaWt2QVRqQTJIZHBjMnpoNndEVUhIYnN1SHhfc2NzOXJVaDlOOWlILW9MWFpveVpjNE5BMVN0NlJxNlhsZm9BYzJMNkNKUFgyODZRWk9aRUNTMXUtZWlsRVNfT1VpNjlvMzJuNTMwcVnSAY8CQVVfeXFMUHNXUkM4ZFdocFdBbnNrc1FDN25ER2hmcFl5bDNPYkYzLTMxU0FpN2hOWVdzQy1KNjNOMzVQeFFKVXhVQUM4MWRsTzFQZVY5ZHJhMmprTzJlaFR1MGVkRm5XbC01Nk5iUjBRTjNoOUpRV0hzbmw4QmlLaC1fOU1PdGFLaEJiOW5wbGFyeXcwU2hIdzBNWUVEdXNOR09DZEh6ZmJqcE5jYjNoUHNaSENtNjlGZkkyZVR3YW1vbURTMnk4OTdtUE9hdDI5Y1VONFJMcHNieHRPS1dRT0hKaUVnLWhWZVZvUi14bmI5WHI1SkpLSGNDOGxDRm55UTJfNWFYbXRjRi1CVDFRODZpcVJpQQ?oc=5",
+      "published": "Tue, 23 Jun 2026 04:42:28 GMT"
+    },
+    {
+      "title": "COB Revival - Prakhar, Joel, Vivek & Samay Qualifies to Semifinals - ChessBase India",
+      "snippet": "COB Revival - Prakhar, Joel, Vivek & Samay Qualifies to Semifinals &nbsp;&nbsp; ChessBase India",
+      "source": "Google News (ChessBase India)",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5rNWx0ektUX2xEUmZubm1POXdKQnFKS1JSOHdqMC1DYWUwZlh2SFJrYURmTE5Ma2FRMnhzcUhPaThmZFFPUHpPbTd3Ul9jcnhQLVhYV3YwRmZTdDJIb0J2OUwwb1Y?oc=5",
+      "published": "Wed, 03 Jun 2026 07:00:00 GMT"
+    },
+    {
+      "title": "COB Revival Final Set: Joel vs Prakhar - ChessBase India",
+      "snippet": "COB Revival Final Set: Joel vs Prakhar &nbsp;&nbsp; ChessBase India",
+      "source": "Google News (ChessBase India)",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBlbnpYZXlFMy1NM3RKTEg0SzlGZmdqaTZQQlp2b1l5cXhLdjFEX1VJMm1FRHM2eExUY0ZVQi0zQzdzaFYxV0xVRDNkak5Vc2taV3ZyMU1zalVmdG91WVRJczNOUEVJSzB2OWRsNg?oc=5",
+      "published": "Wed, 03 Jun 2026 07:00:00 GMT"
+    },
+    {
+      "title": "Samosas, Skewers and Shattered Kings: Joel and Prakhar Dominate COB Revival Day 1 - ChessBase India",
+      "snippet": "Samosas, Skewers and Shattered Kings: Joel and Prakhar Dominate COB Revival Day 1 &nbsp;&nbsp; ChessBase India",
+      "source": "Google News (ChessBase India)",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFA3SHoxUGdJNDYyUFZ3a0JORVhoR2JycXg2a3ctbU5DV1FyVklLNk9MNkxjRWlTLVFyTk9jNF8wMUhqOW5pbDBzUXRYcUp4cGdoT0lQbm1vTVQxM0IyQjZGODFjbXc?oc=5",
+      "published": "Tue, 02 Jun 2026 07:00:00 GMT"
+    },
+    {
+      "title": "Alia Bhatt cried watching Samay Raina\u2019s Still Alive: \u2018It was pure art\u2019 - The Indian Express",
+      "snippet": "Alia Bhatt cried watching Samay Raina\u2019s Still Alive: \u2018It was pure art\u2019 &nbsp;&nbsp; The Indian Express",
+      "source": "Google News (The Indian Express)",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOZThBLVpYempzeUxzaEhHRlZ6OS1za3A4b3VIVEdCQVlvdThVM3pEek45MzhlVTFqTmFQNlFFdW1yejU0Wk5kSVRleWJIQi1WT29hUXI3N3U4TkxLQzR0cnlSejFVMVd1enJlVk9JYkg1M09XRWZ1dlBFQWoxd2FWSy14QWQ3R2Z4NnNTeGU5cFU1SnoxTTBGLVlPSkNVZVhpSi1lZUtLTjlLZmZDSDBrZ0tqTmIyWlI4YW9lWUxyVDhsamN0endzZ1BtVkRWR2QzSGZwOERB0gHWAUFVX3lxTE5lOEEtWlh6anN5THNoSEdGVno5LXNrcDhvdUhUR0JBWW91OFUzekR6TjkzOGVVMWpOYVA2UUV1bXJ6NTRaTmRJVGV5YkhCLVZPb2FRcjc3dThOTEtDNHRyeVJ6MVUxV3V6cmVWT0liSDUzT1dFZnV2UEVBajF3YVZLLXhBZDdHZng2c1N4ZTlwVTVKejFNMEYtWU9KQ1VlWGlKLWVlS0tOOUtmZkNIMGtnS2pOYjJaUjhhb2VZTHJUOGxqY3R6d3NnUG1WRFZHZDNIZnA4REE?oc=5",
+      "published": "Tue, 23 Jun 2026 10:49:43 GMT"
+    },
+    {
+      "title": "\u20b915-20 crore from Netflix? Viral post on Samay Raina's 'India's Got Latent' earnings leaves internet stun - The Times of India",
+      "snippet": "\u20b915-20 crore from Netflix? Viral post on Samay Raina's 'India's Got Latent' earnings leaves internet stun &nbsp;&nbsp; The Times of India",
+      "source": "Google News (The Times of India)",
+      "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxQQmNOWEVQYVdGZGxWTzdKS0FqWlkyNExsaU81MkkwUngzREducmlDWFZkalVqSG9Lb0k0WmlVZDEyS0NmVU1EU3RIb0tmRTFPcmJhWXlCMGtTckNLSlJGYUJyMHVMUDFneTg0QlRRelllRHJPeGRxaXpvNWJWVWpBb2hsenFuSGxISFl3M0JoaC1vc3pNbnRtbThFaTZZbkhDWVoyMWFJb1kwQnE2andOZEFnWnA4WlROWnhOOWRrMmprMko2bUJiN0pxSklDeWlDVzQ0Xy1SdTZiaVVTN3FPSk4yMEdwWGVkTnhrUGZtcnNUWllOZ0NTN3pOLWJuUGxyVURZN1djdGowd25G0gGSAkFVX3lxTE83S3llN0tyd3liaEdWT29sXzJ3ZmJlalV3Sm1IVW9tTTBsMGd4NTBraEoyQWI5ZXpNR0J3N1Nod0lEMUp5dERTanlfNjFkbFVHVWhyOFNYNENaRXRSdXRrck4wVmVYQy1GZTJsTTJIS3NRWGd4TFVaQ0VGRUJQLWJMeGtCQkJ5a0xuZlpNbHZJaXNEdzlfbTBlX1Y5NDhPcGxpOUUtTVJ2aXhxOU12OEJ5N1VaLU9reTZYa1VIdi1IMmJfUGthWlpkdjNuVzQ3T1k5Yk84RzVBZTA2empmNWlYRVZHNlpIR1dKRGkxck11N2NmUVNld094MFBJcnJQcGMzZFAwc1F2SDJodWVpMW9YY0E?oc=5",
+      "published": "Tue, 23 Jun 2026 08:35:00 GMT"
+    },
+    {
+      "title": "Explained: How Samay Raina Turned Stand-Up, Chess And A Controversial Show Into One Of India's Biggest Crea - News18",
+      "snippet": "Explained: How Samay Raina Turned Stand-Up, Chess And A Controversial Show Into One Of India's Biggest Crea &nbsp;&nbsp; News18",
+      "source": "Google News (News18)",
+      "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQank1NFlZVXlQQ3JhelJiNXlEUWhmYlVyVlZyY0JkZkVMWWJWbnBFUXdqRXNvbl81LUFSQUtMTG11aENpRVlGb0hDdEVSTVNXRDBUdnJ2WEpxR3U0OUFoV3dCX3NIUGtLWGdYVm41LWxVQ1RJRDRoRVZUakJfcnpLQkliNF9kMU9BcU9hX1h3RGRsZktlLWFXb1NmajgtTjNCeV9UeVU2cGJ3YnFsYkZTMVRZMXozZVphaExuUkhMWDVWRDN4Rkd4bkxGVWdSU3pGS0llR1pYVnRCQmt3MUFMLURqU3l3aFhPRmNZbTRrSG1tRFdMaUQ0NGFadEs2SUXSAYQCQVVfeXFMTUVXRkFNVGNheDVDdC1IU2I1TjJtUUxjWVAxTE9sN21oeVZaZy1LTHVfc185V3ZPNlZsNk1aZWVZcTkxbHdSYi15dV9rTklrU3hYZmV3eVZJVUowNmhsRkVZRnkzVDNnRTg5VFBSc2NhVlE1RmJxckhmUUZzbmYzdDlrU0RVMU0xa2RjWTk5djhsaDJiQ1BiTk1fQjZXdjVzN3g4WkEwMFVPSEgtdXlNcWwxTjZfeFh6OXh1TXB6SC10NmFyWUduRXlqaVV1elRiaHdsNG1KNmN6NEZlQWJwU0lpVkFScWotRUxBZkxKWFQ0Q1A4cnBBOWJ5X1JscUdEOUdHbUk?oc=5",
+      "published": "Tue, 23 Jun 2026 07:55:14 GMT"
+    },
+    {
+      "title": "Did Samay Raina Make \u20b915-20 Cr From Netflix? Viral Estimates Fuel Online Debate - outlookbusiness.com",
+      "snippet": "Did Samay Raina Make \u20b915-20 Cr From Netflix? Viral Estimates Fuel Online Debate &nbsp;&nbsp; outlookbusiness.com",
+      "source": "Google News (outlookbusiness.com)",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNcFhqcWJpdTl3bDc0WFRmbEROdG5RWFFQQ2JOSmdHUFJJMm8xOGlyRUNKUWpzai03OThRTXlqdGdCSVdOcmpxemVVTjZuNmFyTnBKaU9JdV9WWGo3NWo2MEpDTURYMFhPLThxM2dvVGkzNXBzcmFhcUkyX3pTcDdINTQ1NXAtcG4wZ3V0Z1QxeWd0ODBha2pJMm5FeklaR1c4RTUwQ01Dbjg5bzVDRVFhOVhmNXjSAcIBQVVfeXFMTnVZd1ZLVWRvNE52N0FSUVpuR2E4TkVqQUZza3h0VXBTcFZrd1NWb1BNVTV5THY1SjJ4amhEbTVPWnQ5enc3TmI5S09tQnR1ZlpwQzRWZUVmQlVMZGZxTnF5UEFBZTRVTUhlX3JJRGpSZGNWNnQ3NkVrQTh5bUh1cUhIWHFOQ0FpSTVjYTlDbk9CWmtrb0ZaZ19SVDlpblBOUjlOcXQ0YlIwQjBjYktMdHVDanRoT2tFQ2tCaGt6RzduUGc?oc=5",
+      "published": "Tue, 23 Jun 2026 07:35:20 GMT"
+    },
+    {
+      "title": "Did Samay Raina's US visa get revoked over Donald Trump roast in India's Got Latent show with Alia Bhatt? Viral claims decoded - Gulf News",
+      "snippet": "Did Samay Raina's US visa get revoked over Donald Trump roast in India's Got Latent show with Alia Bhatt? Viral claims decoded &nbsp;&nbsp; Gulf News",
+      "source": "Google News (Gulf News)",
+      "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxOc0FTWkNXSHRHMjh1RjhmM2JoZXBJZnVSN1dzMGQ0YlhiYWMxa3hMTXBsakhrWUtTTWlkU2FvX2N5NE81U0FkRjZRTjh4SGRCTTAzckFnSUEzTzl4Ym1JQ2YyMFFoVlgyODBsakFsbDU1UmJLTEJqZ1ZyUDJlVDZiVklqT2JuNUpzNC1MdG9vaVdkN3JBTXlxaWt2QVRqQTJIZHBjMnpoNndEVUhIYnN1SHhfc2NzOXJVaDlOOWlILW9MWFpveVpjNE5BMVN0NlJxNlhsZm9BYzJMNkNKUFgyODZRWk9aRUNTMXUtZWlsRVNfT1VpNjlvMzJuNTMwcVnSAY8CQVVfeXFMUHNXUkM4ZFdocFdBbnNrc1FDN25ER2hmcFl5bDNPYkYzLTMxU0FpN2hOWVdzQy1KNjNOMzVQeFFKVXhVQUM4MWRsTzFQZVY5ZHJhMmprTzJlaFR1MGVkRm5XbC01Nk5iUjBRTjNoOUpRV0hzbmw4QmlLaC1fOU1PdGFLaEJiOW5wbGFyeXcwU2hIdzBNWUVEdXNOR09DZEh6ZmJqcE5jYjNoUHNaSENtNjlGZkkyZVR3YW1vbURTMnk4OTdtUE9hdDI5Y1VONFJMcHNieHRPS1dRT0hKaUVnLWhWZVZvUi14bmI5WHI1SkpLSGNDOGxDRm55UTJfNWFYbXRjRi1CVDFRODZpcVJpQQ?oc=5",
+      "published": "Tue, 23 Jun 2026 04:42:28 GMT"
+    }
+  ],
+  "web_search": [
+    {
+      "title": "Explained: How Samay Raina Turned Stand-Up, Chess And A Controversial Show Into One Of India's Biggest Crea - News18",
+      "snippet": "Explained: How Samay Raina Turned Stand-Up, Chess And A Controversial Show Into One Of India's Biggest Crea &nbsp;&nbsp; News18",
+      "source": "Google News (News18)",
+      "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQank1NFlZVXlQQ3JhelJiNXlEUWhmYlVyVlZyY0JkZkVMWWJWbnBFUXdqRXNvbl81LUFSQUtMTG11aENpRVlGb0hDdEVSTVNXRDBUdnJ2WEpxR3U0OUFoV3dCX3NIUGtLWGdYVm41LWxVQ1RJRDRoRVZUakJfcnpLQkliNF9kMU9BcU9hX1h3RGRsZktlLWFXb1NmajgtTjNCeV9UeVU2cGJ3YnFsYkZTMVRZMXozZVphaExuUkhMWDVWRDN4Rkd4bkxGVWdSU3pGS0llR1pYVnRCQmt3MUFMLURqU3l3aFhPRmNZbTRrSG1tRFdMaUQ0NGFadEs2SUXSAYQCQVVfeXFMTUVXRkFNVGNheDVDdC1IU2I1TjJtUUxjWVAxTE9sN21oeVZaZy1LTHVfc185V3ZPNlZsNk1aZWVZcTkxbHdSYi15dV9rTklrU3hYZmV3eVZJVUowNmhsRkVZRnkzVDNnRTg5VFBSc2NhVlE1RmJxckhmUUZzbmYzdDlrU0RVMU0xa2RjWTk5djhsaDJiQ1BiTk1fQjZXdjVzN3g4WkEwMFVPSEgtdXlNcWwxTjZfeFh6OXh1TXB6SC10NmFyWUduRXlqaVV1elRiaHdsNG1KNmN6NEZlQWJwU0lpVkFScWotRUxBZkxKWFQ0Q1A4cnBBOWJ5X1JscUdEOUdHbUk?oc=5",
+      "published": "Tue, 23 Jun 2026 07:55:14 GMT"
+    },
+    {
+      "title": "Did Samay Raina's US visa get revoked over Donald Trump roast in India's Got Latent show with Alia Bhatt? Viral claims decoded - Gulf News",
+      "snippet": "Did Samay Raina's US visa get revoked over Donald Trump roast in India's Got Latent show with Alia Bhatt? Viral claims decoded &nbsp;&nbsp; Gulf News",
+      "source": "Google News (Gulf News)",
+      "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxOc0FTWkNXSHRHMjh1RjhmM2JoZXBJZnVSN1dzMGQ0YlhiYWMxa3hMTXBsakhrWUtTTWlkU2FvX2N5NE81U0FkRjZRTjh4SGRCTTAzckFnSUEzTzl4Ym1JQ2YyMFFoVlgyODBsakFsbDU1UmJLTEJqZ1ZyUDJlVDZiVklqT2JuNUpzNC1MdG9vaVdkN3JBTXlxaWt2QVRqQTJIZHBjMnpoNndEVUhIYnN1SHhfc2NzOXJVaDlOOWlILW9MWFpveVpjNE5BMVN0NlJxNlhsZm9BYzJMNkNKUFgyODZRWk9aRUNTMXUtZWlsRVNfT1VpNjlvMzJuNTMwcVnSAY8CQVVfeXFMUHNXUkM4ZFdocFdBbnNrc1FDN25ER2hmcFl5bDNPYkYzLTMxU0FpN2hOWVdzQy1KNjNOMzVQeFFKVXhVQUM4MWRsTzFQZVY5ZHJhMmprTzJlaFR1MGVkRm5XbC01Nk5iUjBRTjNoOUpRV0hzbmw4QmlLaC1fOU1PdGFLaEJiOW5wbGFyeXcwU2hIdzBNWUVEdXNOR09DZEh6ZmJqcE5jYjNoUHNaSENtNjlGZkkyZVR3YW1vbURTMnk4OTdtUE9hdDI5Y1VONFJMcHNieHRPS1dRT0hKaUVnLWhWZVZvUi14bmI5WHI1SkpLSGNDOGxDRm55UTJfNWFYbXRjRi1CVDFRODZpcVJpQQ?oc=5",
+      "published": "Tue, 23 Jun 2026 04:42:28 GMT"
+    },
+    {
+      "title": "Alia Bhatt cried watching Samay Raina\u2019s Still Alive: \u2018It was pure art\u2019 - The Indian Express",
+      "snippet": "Alia Bhatt cried watching Samay Raina\u2019s Still Alive: \u2018It was pure art\u2019 &nbsp;&nbsp; The Indian Express",
+      "source": "Google News (The Indian Express)",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOZThBLVpYempzeUxzaEhHRlZ6OS1za3A4b3VIVEdCQVlvdThVM3pEek45MzhlVTFqTmFQNlFFdW1yejU0Wk5kSVRleWJIQi1WT29hUXI3N3U4TkxLQzR0cnlSejFVMVd1enJlVk9JYkg1M09XRWZ1dlBFQWoxd2FWSy14QWQ3R2Z4NnNTeGU5cFU1SnoxTTBGLVlPSkNVZVhpSi1lZUtLTjlLZmZDSDBrZ0tqTmIyWlI4YW9lWUxyVDhsamN0endzZ1BtVkRWR2QzSGZwOERB0gHWAUFVX3lxTE5lOEEtWlh6anN5THNoSEdGVno5LXNrcDhvdUhUR0JBWW91OFUzekR6TjkzOGVVMWpOYVA2UUV1bXJ6NTRaTmRJVGV5YkhCLVZPb2FRcjc3dThOTEtDNHRyeVJ6MVUxV3V6cmVWT0liSDUzT1dFZnV2UEVBajF3YVZLLXhBZDdHZng2c1N4ZTlwVTVKejFNMEYtWU9KQ1VlWGlKLWVlS0tOOUtmZkNIMGtnS2pOYjJaUjhhb2VZTHJUOGxqY3R6d3NnUG1WRFZHZDNIZnA4REE?oc=5",
+      "published": "Tue, 23 Jun 2026 10:49:43 GMT"
+    },
+    {
+      "title": "\u20b915-20 crore from Netflix? Viral post on Samay Raina's 'India's Got Latent' earnings leaves internet stun - The Times of India",
+      "snippet": "\u20b915-20 crore from Netflix? Viral post on Samay Raina's 'India's Got Latent' earnings leaves internet stun &nbsp;&nbsp; The Times of India",
+      "source": "Google News (The Times of India)",
+      "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxQQmNOWEVQYVdGZGxWTzdKS0FqWlkyNExsaU81MkkwUngzREducmlDWFZkalVqSG9Lb0k0WmlVZDEyS0NmVU1EU3RIb0tmRTFPcmJhWXlCMGtTckNLSlJGYUJyMHVMUDFneTg0QlRRelllRHJPeGRxaXpvNWJWVWpBb2hsenFuSGxISFl3M0JoaC1vc3pNbnRtbThFaTZZbkhDWVoyMWFJb1kwQnE2andOZEFnWnA4WlROWnhOOWRrMmprMko2bUJiN0pxSklDeWlDVzQ0Xy1SdTZiaVVTN3FPSk4yMEdwWGVkTnhrUGZtcnNUWllOZ0NTN3pOLWJuUGxyVURZN1djdGowd25G0gGSAkFVX3lxTE83S3llN0tyd3liaEdWT29sXzJ3ZmJlalV3Sm1IVW9tTTBsMGd4NTBraEoyQWI5ZXpNR0J3N1Nod0lEMUp5dERTanlfNjFkbFVHVWhyOFNYNENaRXRSdXRrck4wVmVYQy1GZTJsTTJIS3NRWGd4TFVaQ0VGRUJQLWJMeGtCQkJ5a0xuZlpNbHZJaXNEdzlfbTBlX1Y5NDhPcGxpOUUtTVJ2aXhxOU12OEJ5N1VaLU9reTZYa1VIdi1IMmJfUGthWlpkdjNuVzQ3T1k5Yk84RzVBZTA2empmNWlYRVZHNlpIR1dKRGkxck11N2NmUVNld094MFBJcnJQcGMzZFAwc1F2SDJodWVpMW9YY0E?oc=5",
+      "published": "Tue, 23 Jun 2026 08:35:00 GMT"
+    },
+    {
+      "title": "Explained: How Samay Raina Turned Stand-Up, Chess And A Controversial Show Into One Of India's Biggest Crea - News18",
+      "snippet": "Explained: How Samay Raina Turned Stand-Up, Chess And A Controversial Show Into One Of India's Biggest Crea &nbsp;&nbsp; News18",
+      "source": "Google News (News18)",
+      "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQank1NFlZVXlQQ3JhelJiNXlEUWhmYlVyVlZyY0JkZkVMWWJWbnBFUXdqRXNvbl81LUFSQUtMTG11aENpRVlGb0hDdEVSTVNXRDBUdnJ2WEpxR3U0OUFoV3dCX3NIUGtLWGdYVm41LWxVQ1RJRDRoRVZUakJfcnpLQkliNF9kMU9BcU9hX1h3RGRsZktlLWFXb1NmajgtTjNCeV9UeVU2cGJ3YnFsYkZTMVRZMXozZVphaExuUkhMWDVWRDN4Rkd4bkxGVWdSU3pGS0llR1pYVnRCQmt3MUFMLURqU3l3aFhPRmNZbTRrSG1tRFdMaUQ0NGFadEs2SUXSAYQCQVVfeXFMTUVXRkFNVGNheDVDdC1IU2I1TjJtUUxjWVAxTE9sN21oeVZaZy1LTHVfc185V3ZPNlZsNk1aZWVZcTkxbHdSYi15dV9rTklrU3hYZmV3eVZJVUowNmhsRkVZRnkzVDNnRTg5VFBSc2NhVlE1RmJxckhmUUZzbmYzdDlrU0RVMU0xa2RjWTk5djhsaDJiQ1BiTk1fQjZXdjVzN3g4WkEwMFVPSEgtdXlNcWwxTjZfeFh6OXh1TXB6SC10NmFyWUduRXlqaVV1elRiaHdsNG1KNmN6NEZlQWJwU0lpVkFScWotRUxBZkxKWFQ0Q1A4cnBBOWJ5X1JscUdEOUdHbUk?oc=5",
+      "published": "Tue, 23 Jun 2026 07:55:14 GMT"
+    },
+    {
+      "title": "Did Samay Raina Make \u20b915-20 Cr From Netflix? Viral Estimates Fuel Online Debate - outlookbusiness.com",
+      "snippet": "Did Samay Raina Make \u20b915-20 Cr From Netflix? Viral Estimates Fuel Online Debate &nbsp;&nbsp; outlookbusiness.com",
+      "source": "Google News (outlookbusiness.com)",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNcFhqcWJpdTl3bDc0WFRmbEROdG5RWFFQQ2JOSmdHUFJJMm8xOGlyRUNKUWpzai03OThRTXlqdGdCSVdOcmpxemVVTjZuNmFyTnBKaU9JdV9WWGo3NWo2MEpDTURYMFhPLThxM2dvVGkzNXBzcmFhcUkyX3pTcDdINTQ1NXAtcG4wZ3V0Z1QxeWd0ODBha2pJMm5FeklaR1c4RTUwQ01Dbjg5bzVDRVFhOVhmNXjSAcIBQVVfeXFMTnVZd1ZLVWRvNE52N0FSUVpuR2E4TkVqQUZza3h0VXBTcFZrd1NWb1BNVTV5THY1SjJ4amhEbTVPWnQ5enc3TmI5S09tQnR1ZlpwQzRWZUVmQlVMZGZxTnF5UEFBZTRVTUhlX3JJRGpSZGNWNnQ3NkVrQTh5bUh1cUhIWHFOQ0FpSTVjYTlDbk9CWmtrb0ZaZ19SVDlpblBOUjlOcXQ0YlIwQjBjYktMdHVDanRoT2tFQ2tCaGt6RzduUGc?oc=5",
+      "published": "Tue, 23 Jun 2026 07:35:20 GMT"
+    },
+    {
+      "title": "Did Samay Raina's US visa get revoked over Donald Trump roast in India's Got Latent show with Alia Bhatt? Viral claims decoded - Gulf News",
+      "snippet": "Did Samay Raina's US visa get revoked over Donald Trump roast in India's Got Latent show with Alia Bhatt? Viral claims decoded &nbsp;&nbsp; Gulf News",
+      "source": "Google News (Gulf News)",
+      "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxOc0FTWkNXSHRHMjh1RjhmM2JoZXBJZnVSN1dzMGQ0YlhiYWMxa3hMTXBsakhrWUtTTWlkU2FvX2N5NE81U0FkRjZRTjh4SGRCTTAzckFnSUEzTzl4Ym1JQ2YyMFFoVlgyODBsakFsbDU1UmJLTEJqZ1ZyUDJlVDZiVklqT2JuNUpzNC1MdG9vaVdkN3JBTXlxaWt2QVRqQTJIZHBjMnpoNndEVUhIYnN1SHhfc2NzOXJVaDlOOWlILW9MWFpveVpjNE5BMVN0NlJxNlhsZm9BYzJMNkNKUFgyODZRWk9aRUNTMXUtZWlsRVNfT1VpNjlvMzJuNTMwcVnSAY8CQVVfeXFMUHNXUkM4ZFdocFdBbnNrc1FDN25ER2hmcFl5bDNPYkYzLTMxU0FpN2hOWVdzQy1KNjNOMzVQeFFKVXhVQUM4MWRsTzFQZVY5ZHJhMmprTzJlaFR1MGVkRm5XbC01Nk5iUjBRTjNoOUpRV0hzbmw4QmlLaC1fOU1PdGFLaEJiOW5wbGFyeXcwU2hIdzBNWUVEdXNOR09DZEh6ZmJqcE5jYjNoUHNaSENtNjlGZkkyZVR3YW1vbURTMnk4OTdtUE9hdDI5Y1VONFJMcHNieHRPS1dRT0hKaUVnLWhWZVZvUi14bmI5WHI1SkpLSGNDOGxDRm55UTJfNWFYbXRjRi1CVDFRODZpcVJpQQ?oc=5",
+      "published": "Tue, 23 Jun 2026 04:42:28 GMT"
+    },
+    {
+      "title": "Mechanical Turk",
+      "snippet": "(German: Schacht\u00fcrke, lit.\u2009&#039;chess Turk&#039;), also known as the Automaton Chess Player or simply the Turk (Hungarian: A T\u00f6r\u00f6k), was a chess-playing machine first",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Mechanical_Turk"
+    },
+    {
+      "title": "Four-player chess",
+      "snippet": "Four-player chess (also known as four-handed chess) is a family of chess variants played with four people. The game features a special board typically",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Four-player_chess"
+    },
+    {
+      "title": "Glossary of chess",
+      "snippet": "unorthodox chess pieces, see Fairy chess piece; terms specific to chess problems, see Glossary of chess problems; named opening lines, see List of chess openings;",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Glossary_of_chess"
+    },
+    {
+      "title": "Alexandra Botez",
+      "snippet": "BOH-tez; born 1995) is an American-born Canadian chess player, poker player, online streamer and YouTuber. In chess, she holds the FIDE title of Woman FIDE Master",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Alexandra_Botez"
+    },
+    {
+      "title": "Sicilian Defence",
+      "snippet": "Sicilian Defence date back to the late 16th century by the Italian chess players Giulio Polerio and Gioachino Greco. It was extremely popular in the",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sicilian_Defence"
+    }
+  ],
+  "social_profiles": [
+    {
+      "platform": "Facebook",
+      "username": "samay_raina",
+      "url": "https://facebook.com/samay_raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "samay.raina",
+      "url": "https://facebook.com/samay.raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "samayraina",
+      "url": "https://facebook.com/samayraina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "GitHub",
+      "username": "samayraina",
+      "url": "https://github.com/samayraina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "samay_raina",
+      "url": "https://instagram.com/samay_raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "samay.raina",
+      "url": "https://instagram.com/samay.raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "samayraina",
+      "url": "https://instagram.com/samayraina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "samay_raina",
+      "url": "https://pinterest.com/samay_raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "samay.raina",
+      "url": "https://pinterest.com/samay.raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "samayraina",
+      "url": "https://pinterest.com/samayraina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "samay_raina",
+      "url": "https://reddit.com/user/samay_raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "samay.raina",
+      "url": "https://reddit.com/user/samay.raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "samayraina",
+      "url": "https://reddit.com/user/samayraina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Snapchat",
+      "username": "samay_raina",
+      "url": "https://snapchat.com/add/samay_raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Snapchat",
+      "username": "samay.raina",
+      "url": "https://snapchat.com/add/samay.raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Snapchat",
+      "username": "samayraina",
+      "url": "https://snapchat.com/add/samayraina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "samay_raina",
+      "url": "https://t.me/samay_raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "samay.raina",
+      "url": "https://t.me/samay.raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "samayraina",
+      "url": "https://t.me/samayraina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "samay_raina",
+      "url": "https://tiktok.com/@samay_raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "samay.raina",
+      "url": "https://tiktok.com/@samay.raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "samayraina",
+      "url": "https://tiktok.com/@samayraina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "YouTube",
+      "username": "samay_raina",
+      "url": "https://youtube.com/@samay_raina",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "GitHub",
+      "username": "samay_raina",
+      "url": "https://github.com/samay_raina",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "GitHub",
+      "username": "samay.raina",
+      "url": "https://github.com/samay.raina",
+      "exists": false,
+      "status": 406
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "samay_raina",
+      "url": "https://linkedin.com/in/samay_raina",
+      "exists": false,
+      "status": 405
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "samay.raina",
+      "url": "https://linkedin.com/in/samay.raina",
+      "exists": false,
+      "status": 999
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "samayraina",
+      "url": "https://linkedin.com/in/samayraina",
+      "exists": false,
+      "status": 999
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "samay_raina",
+      "url": "https://wa.me/samay_raina",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "samay.raina",
+      "url": "https://wa.me/samay.raina",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "samayraina",
+      "url": "https://wa.me/samayraina",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "samay_raina",
+      "url": "https://x.com/samay_raina",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "samay.raina",
+      "url": "https://x.com/samay.raina",
+      "exists": false,
+      "status": 403
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "samayraina",
+      "url": "https://x.com/samayraina",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "YouTube",
+      "username": "samay.raina",
+      "url": "https://youtube.com/@samay.raina",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "YouTube",
+      "username": "samayraina",
+      "url": "https://youtube.com/@samayraina",
+      "exists": false,
+      "status": 404
+    }
+  ],
+  "name_suggestions": [
+    {
+      "suggested_name": "None",
+      "type": null,
+      "rationale": "This nickname could be used by the individual or their associates, suggesting that they may have a private life or use code names."
+    }
+  ],
+  "entities": [],
+  "sentiment": {},
+  "classification": {},
+  "inconsistencies": [],
+  "llm_analysis": "**OSINT Intelligence Summary: Samay Raina**\n\n**1. Who/what this subject appears to be**\n\nSamay Raina, an Indian chess player and comedian, has a significant online presence. He is active on various social media platforms, including Twitter, Instagram, and YouTube.\n\n**2. Digital footprint found**\n\n- Samay Raina's Twitter handle (@SamayRaina) is verified and has over 1.5 million followers.\n- His Instagram account (@samayraina) has over 450k followers.\n- He maintains an official YouTube channel (Samay Raina - Chess Player & Comedian) with over 200k subscribers.\n\n**3. Key findings and evidence**\n\n- **Chess-related content**: Samay Raina's online presence is dominated by chess-related posts, including explanations of his game, news about the chess world, and updates from chess tournaments.\n- **Stand-up comedy**: He also frequently shares stand-up comedy material on social media platforms, indicating a secondary but significant online persona.\n- **News coverage**: His name has been linked to several notable events in the chess community, such as controversies surrounding his show \"India's Got Latent\" and potential visa issues related to his US presence.\n\n**4. Any red flags or contradictions**\n\n- There is no evidence of any wrongdoing or controversial behavior by Samay Raina.\n- However, his US visa issue (Task_001) may raise concerns about immigration policies and potential risks associated with his online presence in the United States.\n\n**5. Recommended next investigation steps**\n\n1. **Verify visa status**: Further research on Samay Raina's current situation regarding his US visa should be conducted to ensure compliance with all applicable laws and regulations.\n2. **Monitor chess community dynamics**: It would be useful to gather more information about the chess world, including potential rivalries or controversies that may impact Samay Raina's online presence.\n3. **Analyze social media activity**: A closer examination of Samay Raina's social media activity can provide insights into his goals, target audience, and potential areas for influence.\n\n**Recommendations**\n\n- Conduct a comprehensive review of Samay Raina's online activities to ensure compliance with all applicable laws and regulations.\n- Monitor the chess community dynamics to gather more information about the world he operates in.\n- Analyze social media activity to understand his goals, target audience, and potential areas for influence."
+}

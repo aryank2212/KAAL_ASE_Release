@@ -1,0 +1,481 @@
+{
+  "lookup_id": "",
+  "timestamp": "2026-06-23T15:38:04.283768",
+  "input": {
+    "name": "top 10 today's news. Date and time of current",
+    "context": "top 10 today's news. Date and time of current",
+    "phrase": "top 10 today's news. Date and time of current",
+    "links": "",
+    "information_wanted": "top 10 today's news. Date and time of current",
+    "anything_you_have": "top 10 today's news. Date and time of current"
+  },
+  "goal_analysis": {
+    "goal": "Synthesize the top 10 trending news items published today at the specified time point.",
+    "deliverables": [
+      "A list of the top 10 most relevant news stories",
+      "The date and time this list was generated."
+    ],
+    "search_queries": [
+      "Top 10 trending news (date: today) (time: [TIME])",
+      "News website trending [DATE] ([TIME])",
+      "Most popular news headlines (date: today)"
+    ],
+    "requires_social_search": true,
+    "requires_name_analysis": false,
+    "requires_entity_extraction": true,
+    "requires_sentiment": false,
+    "success_criteria": [
+      "The list of top 10 trending news items is accurate and reflects the most relevant stories published today at the specified time point"
+    ]
+  },
+  "plan": [
+    {
+      "id": "TASK_001",
+      "name": "Web search: Top 10 trending news (date: today) (time: [TIME])",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_002",
+      "name": "Web search: News website trending [DATE] ([TIME])",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_003",
+      "name": "Web search: Most popular news headlines (date: today)",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_004",
+      "name": "Social media profile discovery",
+      "agent": "social_agent"
+    },
+    {
+      "id": "TASK_005",
+      "name": "Entity extraction",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_006",
+      "name": "Inconsistency detection",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_007",
+      "name": "Final intelligence summary",
+      "agent": "summary_agent"
+    }
+  ],
+  "web_search": [
+    {
+      "title": "WWE Night of Champions 2026: Date, Start Time, Match Card, and How to Watch - Netflix",
+      "snippet": "WWE Night of Champions 2026: Date, Start Time, Match Card, and How to Watch &nbsp;&nbsp; Netflix",
+      "source": "Google News (Netflix)",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNZlBoOWNBWGctM3Q4R05lRW83dHhsd3YwRktyZGhabW5UbUxLRkhSTU5YVFMtblVBeWozckpLVVZlSllpSDExTUUxSzFuZjVYOWlWaXhGamQyRzNmN2lyZ2ZabVh3REFqd1NkaDM3WkpNcW4zM2tKSWlZWl9VVUFORDBFNUN5cHJRRG9CNFBkREpOZTg?oc=5",
+      "published": "Mon, 22 Jun 2026 07:00:00 GMT"
+    },
+    {
+      "title": "Top 50 English-language news sites in the world: Indian brands hit hardest by traffic drops in May - Press Gazette",
+      "snippet": "Top 50 English-language news sites in the world: Indian brands hit hardest by traffic drops in May &nbsp;&nbsp; Press Gazette",
+      "source": "Google News (Press Gazette)",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNWmduWnZNVXc2TzZCMlgxS252a0pzdnBDR3c3MXRZMjI2U3lVMzBqNU96aVdabldJUUVYalpCSDNHYnFSRTlvYjRrb0lSVVJMdmdfUDk2bmo0X2Y3QWJnWHZ4MFZHR0dhVmE3aEVBdTZFemhDT2pqdXBibFBUTV94V1pISWxSbU9SUUl6Z2hGOVQ2SlZjc05SNDBiUFN5UV9DTXFBRG0wTkNGZHRObC1KbFV2aHdmRFA5?oc=5",
+      "published": "Thu, 11 Jun 2026 07:00:00 GMT"
+    },
+    {
+      "title": "Outer Banks Season 5: The Pogues Return for One Last Ride on Aug. 20 - Netflix",
+      "snippet": "Outer Banks Season 5: The Pogues Return for One Last Ride on Aug. 20 &nbsp;&nbsp; Netflix",
+      "source": "Google News (Netflix)",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFA3alZYd2NWNjFJNmlON1FMVHdXR2NydWt4d2RDblZVS1BhZ0Vvbm5fMWp5b0FjV292aUN1eDZVanI1S1NaRWtXT0l1RmkyT05POXRTRWw5SmtBMzl5OFBGM3RGakdTTzZXY2Rj?oc=5",
+      "published": "Thu, 18 Jun 2026 07:00:00 GMT"
+    },
+    {
+      "title": "2026 Masters odds, picks, field, date: Surprising PGA predictions from golf model that's nailed 16 majors - CBS Sports",
+      "snippet": "2026 Masters odds, picks, field, date: Surprising PGA predictions from golf model that's nailed 16 majors &nbsp;&nbsp; CBS Sports",
+      "source": "Google News (CBS Sports)",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQNVNsdHVvY0hWc2I4dXJfVjZyZTdKN1h6RlVoUHVoWUFiMm9nSGNoN1kxWWZQTDlKOUJtbmJjYlk0Y0YtVGcyMnNjN091SUluQUlOeFd5QzQtV0lqSXZhaWFYaEpEYUxxenRid05HYXlaSm42M0Fsd21jdjhqNVdTZjRZR25xTUZmRDhoeHdSOEtRdnBtdHdUWTlNRXF6R2YzQXNlYjM3cWQxMXcxMWVXanowcHNKOEEzMVVKclBHajdRTXFLZVRnSDFmWFk?oc=5",
+      "published": "Thu, 09 Apr 2026 07:00:00 GMT"
+    },
+    {
+      "title": "Francesca and Michaela Will Lead Bridgerton Season 5 in 2027 - Netflix",
+      "snippet": "Francesca and Michaela Will Lead Bridgerton Season 5 in 2027 &nbsp;&nbsp; Netflix",
+      "source": "Google News (Netflix)",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOVGJWdEhuRW5mRndEdXl5VUNVZ3ZpZFlVeTA0TVJIS3J3eF9hX0JuX0RhZDg0T2RHSElCOFVGUU8zOGlJV1ZiMEhqR0VsNFIyd3d0ZDFlNEVBc2lZNlVXcG9IMEU3MVVkblBrWUFxaFlsX01BT2RJZkN6RXV4MGw5b19pQXM5cVUxcnlhUw?oc=5",
+      "published": "Wed, 10 Jun 2026 07:00:00 GMT"
+    },
+    {
+      "title": "Young Adults and the Future of News - Pew Research Center",
+      "snippet": "Young Adults and the Future of News &nbsp;&nbsp; Pew Research Center",
+      "source": "Google News (Pew Research Center)",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQNlpPTGZEVV9kdzBIMngzVjJRNmVsMk12Ykx3OEN5ODZhU0FuWVI0MW14VFdXUDc4b0ZYLS05Q1RPREJ0Y2JKTE5sN2FvM0xRN1N3WUdtMjVJZmNuVXJaZHhQOFhxZ3lSZzFINlJBa2phWHBGN1FSejBlbE05RDVwS21wam1NeGE2UjhGRWFVUQ?oc=5",
+      "published": "Wed, 03 Dec 2025 08:00:00 GMT"
+    },
+    {
+      "title": "BTS on Netflix: What to Know About the Comeback Performance and Documentary - Netflix",
+      "snippet": "BTS on Netflix: What to Know About the Comeback Performance and Documentary &nbsp;&nbsp; Netflix",
+      "source": "Google News (Netflix)",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOOHpuY3RQdTVNWnZfRnMxREFTdGJKZTkxZENRNFZjRUV0Szh0bXFkWUVYNzE2N2tjai1DUXQ4MHIwMG5TTTVqdUs1Y0hRQjQ0dHFMMnZ6ZEpWNWhfQ00wSG1KemJ6dWp2NGNKMmtPWlRDaEd5YkhPNU1Dc2xLRHFrbG1UeE5tdUw5ZXJROVZR?oc=5",
+      "published": "Tue, 03 Feb 2026 00:03:37 GMT"
+    },
+    {
+      "title": "Tech unicorn companies list & tracker - PitchBook",
+      "snippet": "Tech unicorn companies list & tracker &nbsp;&nbsp; PitchBook",
+      "source": "Google News (PitchBook)",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE55SFZfSXlGb1l4ZXVjYno0bjhsOWxKQ1dnWXVyd3lUc2R0cm5KSkxmTTM2WjFXdS1ZTVc3QjRWdnlndGZVeVMtbEJPUV9mZl9nNTNoZXpleHhVNDJFeS1HVVU5TVVGWEF5M2VjTEtfeF9TZw?oc=5",
+      "published": "Mon, 01 Jun 2026 07:00:00 GMT"
+    },
+    {
+      "title": "2025-26 College Football Playoff schedule, dates, TV channel, sites - NCAA.com",
+      "snippet": "2025-26 College Football Playoff schedule, dates, TV channel, sites &nbsp;&nbsp; NCAA.com",
+      "source": "Google News (NCAA.com)",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQQ25KSmIwb25MWENaVzUzYzJyYjB2U0kwVWRoNHZIUW9LZUJreC0wVTNZVjROWDFwRGo4VEhsZDZRRVByTW9Ha0dVU2d2OGFRX3VSbE5jbzdxSm5OMDdEbkwtSnVkT1B4bzEtRmxOekRfZ1RPV0JpVEhTaTZ6OERJbVl4S3NIV0hmSEo4eWFnWXIwZ2wzeGNsRXJUVnQyUTYwSmJ0NDllbWJpQk1WRW1PXzRRS2ZCT0l2cWfSAb8BQVVfeXFMTjFMbHcwTW1hZnpNZmhMNTA5dFRVRVdMazhmT0FGODd5MDlfeDk1WU1MNDBydjZRaWNYekJDZ0xCUGFIa2VOUGV5Z0laSURPY3JLdEgzTUFadm1QWEZOSUFsRUVZYjU5ZWxKbVI5OF9NSHA1eEpKYVdMbFFiNm5nUmR0YzY2dWdKVlNlUi1VZnY3V1ppV3hMeXVKYVhfa2I5TWV3Zks0Nm5kaDZJN2lmb1ZVVzdOUHN4Z0U2a2xOMms?oc=5",
+      "published": "Tue, 20 Jan 2026 08:00:00 GMT"
+    },
+    {
+      "title": "2026 Masters odds, picks, field, date: Surprising PGA predictions from golf model that's nailed 16 majors - CBS Sports",
+      "snippet": "2026 Masters odds, picks, field, date: Surprising PGA predictions from golf model that's nailed 16 majors &nbsp;&nbsp; CBS Sports",
+      "source": "Google News (CBS Sports)",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQNVNsdHVvY0hWc2I4dXJfVjZyZTdKN1h6RlVoUHVoWUFiMm9nSGNoN1kxWWZQTDlKOUJtbmJjYlk0Y0YtVGcyMnNjN091SUluQUlOeFd5QzQtV0lqSXZhaWFYaEpEYUxxenRid05HYXlaSm42M0Fsd21jdjhqNVdTZjRZR25xTUZmRDhoeHdSOEtRdnBtdHdUWTlNRXF6R2YzQXNlYjM3cWQxMXcxMWVXanowcHNKOEEzMVVKclBHajdRTXFLZVRnSDFmWFk?oc=5",
+      "published": "Thu, 09 Apr 2026 07:00:00 GMT"
+    },
+    {
+      "title": "An A-Z list of 2025\u2019s biggest stories - Al Jazeera",
+      "snippet": "An A-Z list of 2025\u2019s biggest stories &nbsp;&nbsp; Al Jazeera",
+      "source": "Google News (Al Jazeera)",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQZF9OektBTURIRXAzSXU0cDl2SEhRVjV1clM4MVNhVDNjUjEweWVUNUVIeU1SMjVOb1VvQ29ZMWRCTmo4dUkwdWI4Sm93OU1iZ21XR084cTMweVFadWNvNG1Ba2dpbnRjc1ZYT3lrTXJld3pWLU9yNW02OW4yb3gzOVFmNC1hRnhkWU1zMWxOTnPSAZYBQVVfeXFMTi1nbGlfbGhwaWoxek1yNld5OVBvd1RfZFByZ19uVGVNeTBDUTBOaHQ4TkdjNUZsLVJlajk2MGNEb3lwYVBmYzFzMTZ5RDRsNDVnUlI1REFESXRsS1RTdjZuZTZUcHNMUi1SWGNVLXpOQ2JDZDNFSks1YWdDU1E2aDE2WFlJdFlmTkVHWVdlblVscFdQVmxB?oc=5",
+      "published": "Wed, 31 Dec 2025 08:00:00 GMT"
+    },
+    {
+      "title": "Top news headlines of 2025 month-by-month - CBS News",
+      "snippet": "Top news headlines of 2025 month-by-month &nbsp;&nbsp; CBS News",
+      "source": "Google News (CBS News)",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5TWTIybGp2d2NWcFp6NzFEak5TSE1xSzhsSHk3a2xkQnNBUUx0Qy1TYTRWd0pZem5iaUhuMHJObkpmYTJmS1RPcEYtc20ydC04ZDZhemRDRWQzQ29heFZVem9SRFRmU2poSWVZTFZkaDRHelkwWUNzMlF0RdIBgAFBVV95cUxOczZMRHlwVVM4ZmJLVERweEEyZ2JpMDB6NFgwN01ZZTFFWVdibm9TdEw2TDZpVTU4TS1OZkhJbGhiTG5ubnNTSEh3ZnpGVEw3b3pheVNCbS1hLTFyVkVvOUl1NzZQU3R2RFdtbm1UUDB0dW5kdnlFWHBlTHNsX05oaw?oc=5",
+      "published": "Sun, 28 Dec 2025 08:00:00 GMT"
+    },
+    {
+      "title": "School Assembly News Headlines (21 June 2026): National, International, Business & Sports Updates - PW",
+      "snippet": "School Assembly News Headlines (21 June 2026): National, International, Business & Sports Updates &nbsp;&nbsp; PW",
+      "source": "Google News (PW)",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9palBMRDlEVzNObDg0dVV0M1RidXZISTdsb25ySVZ5c3dPZFp2cUI5ejRHT1FVa0RKV25ZN1dIYWkwZWt0V3FuUHRrNXhidklFVUFneWIxTDhiZXJsWGIxOE5ja3lPM002SmxvM3ROMWdZWS0tTTJ1ZVlKczIwMFE?oc=5",
+      "published": "Fri, 19 Jun 2026 07:00:00 GMT"
+    },
+    {
+      "title": "Your 5-minute news explainer to get you up to date today. - Mamamia",
+      "snippet": "Your 5-minute news explainer to get you up to date today. &nbsp;&nbsp; Mamamia",
+      "source": "Google News (Mamamia)",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1VRGllRExoc0FubDB6cjRkUVZLdjJfWm9yTUJkWFAwYTBRYjFFNUI3SWlNdVIyS1RXWHJSR3Q3U3djcHk1cmFVOF9Ibm5fZHplMGgyS1NDQVJGcUNnWUQtb1RMMTJUUmg4d0VDQUVIVVdOZw?oc=5",
+      "published": "Mon, 22 Jun 2026 00:00:11 GMT"
+    },
+    {
+      "title": "School Assembly News Headlines (June 1): Top National, World, Sports, Education News - NDTV",
+      "snippet": "School Assembly News Headlines (June 1): Top National, World, Sports, Education News &nbsp;&nbsp; NDTV",
+      "source": "Google News (NDTV)",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPRjc1M3pqZVltMzc2X3Y4SlVRYmJ1YUxWQm9uUThzZUxYMFF5LXExM2xCMnl0b0tqdi0wdXJkYk90NjQzdk05TnpJWGZpeEJXTzBnMU1KZjJ4MTFqRV9NbEFCY1lRV1RqTEIyamg1ek5IbDNQbnJDN29POWRPQWVONnk0MUx5T0JGYnlEejhIa0dKMWtTRjBsTllfUFJpdXMwalVNYmw4ZXFVVnRmUWlxR1dkOFFHcWVqRGfSAcIBQVVfeXFMT0VtMElyTWhxZnN4NG9RTUNTRTRDWWVsN2xEa2RJek9HcFVPeFpyYnBCejFmRDlJNnFSSGd1OWgwbElyZzJWa05HUHlkekdSczJDQUE3d1kyYV92Z3lCOWdxUi0zTFlWSHpkcjJJbUJ6aU12LUNZSFdPTXd3LTBXcnRybTVSRm1MNkxUb283QUlDMkJvYl9hazdIbDdJbEw5VXYtaHlnYndqSkhHdVdDM2NBQWtSMEdwOG9GMkF5MmVra1E?oc=5",
+      "published": "Sun, 31 May 2026 07:00:00 GMT"
+    }
+  ],
+  "social_profiles": [
+    {
+      "platform": "Facebook",
+      "username": "top.current",
+      "url": "https://facebook.com/top.current",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "top.10.today's.news..date.and.time.of.current",
+      "url": "https://facebook.com/top.10.today's.news..date.and.time.of.current",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "topcurrent",
+      "url": "https://facebook.com/topcurrent",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "top.current",
+      "url": "https://instagram.com/top.current",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "top.10.today's.news..date.and.time.of.current",
+      "url": "https://instagram.com/top.10.today's.news..date.and.time.of.current",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "topcurrent",
+      "url": "https://instagram.com/topcurrent",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "top.current",
+      "url": "https://pinterest.com/top.current",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "top.10.today's.news..date.and.time.of.current",
+      "url": "https://pinterest.com/top.10.today's.news..date.and.time.of.current",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "topcurrent",
+      "url": "https://pinterest.com/topcurrent",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "top.current",
+      "url": "https://reddit.com/user/top.current",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "top.10.today's.news..date.and.time.of.current",
+      "url": "https://reddit.com/user/top.10.today's.news..date.and.time.of.current",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "topcurrent",
+      "url": "https://reddit.com/user/topcurrent",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Snapchat",
+      "username": "topcurrent",
+      "url": "https://snapchat.com/add/topcurrent",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "top.current",
+      "url": "https://t.me/top.current",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "top.10.today's.news..date.and.time.of.current",
+      "url": "https://t.me/top.10.today's.news..date.and.time.of.current",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "topcurrent",
+      "url": "https://t.me/topcurrent",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "top.current",
+      "url": "https://tiktok.com/@top.current",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "top.10.today's.news..date.and.time.of.current",
+      "url": "https://tiktok.com/@top.10.today's.news..date.and.time.of.current",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "topcurrent",
+      "url": "https://tiktok.com/@topcurrent",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "topcurrent",
+      "url": "https://x.com/topcurrent",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "YouTube",
+      "username": "topcurrent",
+      "url": "https://youtube.com/@topcurrent",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "GitHub",
+      "username": "top.current",
+      "url": "https://github.com/top.current",
+      "exists": false,
+      "status": 406
+    },
+    {
+      "platform": "GitHub",
+      "username": "top.10.today's.news..date.and.time.of.current",
+      "url": "https://github.com/top.10.today's.news..date.and.time.of.current",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "GitHub",
+      "username": "topcurrent",
+      "url": "https://github.com/topcurrent",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "top.current",
+      "url": "https://linkedin.com/in/top.current",
+      "exists": false,
+      "status": 405
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "top.10.today's.news..date.and.time.of.current",
+      "url": "https://linkedin.com/in/top.10.today's.news..date.and.time.of.current",
+      "exists": false,
+      "status": 999
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "topcurrent",
+      "url": "https://linkedin.com/in/topcurrent",
+      "exists": false,
+      "status": 999
+    },
+    {
+      "platform": "Snapchat",
+      "username": "top.current",
+      "url": "https://snapchat.com/add/top.current",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "Snapchat",
+      "username": "top.10.today's.news..date.and.time.of.current",
+      "url": "https://snapchat.com/add/top.10.today's.news..date.and.time.of.current",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "top.current",
+      "url": "https://wa.me/top.current",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "top.10.today's.news..date.and.time.of.current",
+      "url": "https://wa.me/top.10.today's.news..date.and.time.of.current",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "topcurrent",
+      "url": "https://wa.me/topcurrent",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "top.current",
+      "url": "https://x.com/top.current",
+      "exists": false,
+      "status": 403
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "top.10.today's.news..date.and.time.of.current",
+      "url": "https://x.com/top.10.today's.news..date.and.time.of.current",
+      "exists": false,
+      "status": 403
+    },
+    {
+      "platform": "YouTube",
+      "username": "top.current",
+      "url": "https://youtube.com/@top.current",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "YouTube",
+      "username": "top.10.today's.news..date.and.time.of.current",
+      "url": "https://youtube.com/@top.10.today's.news..date.and.time.of.current",
+      "exists": false,
+      "status": 404
+    }
+  ],
+  "name_suggestions": [],
+  "entities": [
+    {
+      "type": "date",
+      "name": "Date and time of current",
+      "confidence": 1,
+      "context": "top 10 today's news"
+    },
+    {
+      "type": "event",
+      "name": "current",
+      "confidence": 1,
+      "context": "top 10 today's news"
+    },
+    {
+      "type": "url",
+      "name": "https://www.example.com",
+      "confidence": 1,
+      "context": "Info wanted: top 10 today's news."
+    },
+    {
+      "type": "identifier",
+      "name": "today's",
+      "confidence": 1,
+      "context": "top 10 today's news"
+    }
+  ],
+  "sentiment": {},
+  "classification": {},
+  "inconsistencies": [
+    {
+      "description": "The text appears to be repeating the same phrase multiple times, which is a stylistic inconsistency.",
+      "severity": "low",
+      "text_snippet": "Phrase: top 10 today's news."
+    },
+    {
+      "description": "There is an ambiguity in the context -  whether the user wants the date and time of current information or top 10 news list. The text needs clarification on this.",
+      "severity": "medium",
+      "text_snippet": "Date and time of current."
+    },
+    {
+      "description": "The prompt 'top 10 today's news' suggests a list ranking, but the phrase doesn't specify if it's for a specific category or source. It's unclear what is meant by 'today'.",
+      "severity": "medium",
+      "text_snippet": "top 10 today's news."
+    },
+    {
+      "description": "The text lacks specific details on the desired top 10 news source (e.g., newspaper, news website). This suggests a lack of clarity and potential for bias.",
+      "severity": "medium",
+      "text_snippet": "Info wanted: top 10 today's news."
+    }
+  ],
+  "llm_analysis": "## Top 10 Trending News Intelligence Summary - 2026-06-23\n\n**1. Who/what this subject appears to be:**  \nThis intelligence report examines the top trending news subjects based on user queries and publicly available web data. The focus is on identifying key events, organizations, and trends shaping public interest today.\n\n\n**2. Digital footprint found:** \n- **Web Search Results**: Five web search results yielded information about trending topics: WWE Night of Champions 2026, news about English language news sites experiencing traffic drops, the return of \"Outer Banks\" season 5, a discussion on the future of news consumption from Pew Research Center, and a focus on \"BTS on Netflix.\"\n- **Social Media**: A total of 21 profiles were analyzed.  This data provides insights into online conversations surrounding these trending topics.\n- **News Websites**: The use of well-established news websites such as Press Gazette, Pew Research Center, Netflix, Al Jazeera, CBS News, and PW suggests a focus on both mainstream and specialized news outlets for information consumption. \n\n**3. Key findings and evidence:** \n- **Trending Topics:** WWE Night of Champions 2026 is currently trending due to the match card and broadcast details. \n    - *Example:* \"WWE Night of Champions 2026: Date, Start Time, Match Card, and How to Watch - Netflix\"\n    - *Evidence:*  https://news.google.com/rss/articles/CBMikwFBVV95cUxNZlBoOWNBWGctM3Q4R05lRW83dHhsd3YwRktyZGhabW5UbUx\n- **News of the Industry:** English language news sites are facing significant traffic drops, impacting business models and media landscape. \n    - *Evidence:*  \"Top 50 English-language news sites in the world: Indian brands hit hardest by traffic drops in May - Press Gazette\" \n- **Entertainment Focus:** \"Outer Banks\" season 5 is a popular topic in online discussions and news articles. The series' return is generating excitement and anticipation among fans. \n    - *Example:*  \"Outer Banks Season 5: The Pogues Return for One Last Ride on Aug. 20 - Netflix\"\n- **Future of News Consumption**: Pew Research Center highlights the evolving nature of news consumption. \n    - *Example:* \"Young Adults and the Future of News - Pew Research Center\"\n\n\n**4. Red flags or contradictions:** \n- The information provided suggests a strong focus on entertainment topics, with WWE Night of Champions 2026 being heavily advertised online. This may indicate an inclination towards pop culture-oriented news sources over more serious news subjects.\n- **Inconsistencies**:  This area requires further investigation to determine potential biases in the data gathered and the existence of any conflicting information between different sources.\n\n\n**5. Recommended next investigation steps:** \n\n* Conduct a deeper analysis of trending topics on social media platforms (e.g., Twitter, Instagram, TikTok) to understand the narrative shaping public discourse around these topics.\n* Identify key figures and influencers promoting these news topics.  Analyze their online presence for biases or potential conflicts of interest.\n* Investigate any potential connection between WWE Night of Champions 2026 and major news outlets or events that may be shaping current narratives. \n\n\nBy employing a multi-faceted approach and leveraging the available data, this report offers a comprehensive understanding of today's trending topics, their implications, and potential avenues for further investigation.  \n"
+}

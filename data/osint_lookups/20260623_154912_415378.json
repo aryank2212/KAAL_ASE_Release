@@ -1,0 +1,284 @@
+{
+  "lookup_id": "",
+  "timestamp": "2026-06-23T15:49:12.415887",
+  "input": {
+    "name": "",
+    "context": "Top 10 news for Tuesday June 23, 2026.",
+    "phrase": "",
+    "links": "",
+    "information_wanted": "Give me the top 10 current news stories for today.",
+    "anything_you_have": ""
+  },
+  "goal_analysis": {
+    "goal": "Provide the top 10 current news stories for June 23, 2026 as per the format of a list",
+    "deliverables": [
+      "A curated list of the top 10 most significant news stories for Tuesday, June 23, 2026 in digital/online form."
+    ],
+    "search_queries": [
+      "Top 10 news June 23 2026",
+      "Trending news June 23 2026",
+      "Major breaking news June 23 2026"
+    ],
+    "requires_social_search": true,
+    "requires_name_analysis": false,
+    "requires_entity_extraction": false,
+    "requires_sentiment": false,
+    "success_criteria": [
+      "The list should consist of the top 10 most significant news stories based on a well-defined methodology. The content should include links to each story."
+    ]
+  },
+  "plan": [
+    {
+      "id": "TASK_001",
+      "name": "Web search: Top 10 news June 23 2026",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_002",
+      "name": "Web search: Trending news June 23 2026",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_003",
+      "name": "Web search: Major breaking news June 23 2026",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_004",
+      "name": "Inconsistency detection",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_005",
+      "name": "Final intelligence summary",
+      "agent": "summary_agent"
+    }
+  ],
+  "raw_web_search": [
+    {
+      "title": "Oklahoma wins the 2026 NCAA DI baseball championship - NCAA.com",
+      "snippet": "Oklahoma wins the 2026 NCAA DI baseball championship &nbsp;&nbsp; NCAA.com",
+      "source": "Google News (NCAA.com)",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOV3Z1VjF3dDVmeUdxdkdtLWE5TFZiQ2lNSGpGRzl2UHNSajVwcEw5VGpVRUN4WkdobnJZTDBfcDEzOWFXVklfdl9pZHliMUR2NGFYMmxiUlpZeFhfdVJUZzN4aUFBLWRWNXF5alBibFYzck1fTUxPNjRNLWQxM28xM0VOdFBFNWFiRUFWcUx5S181X0VCd0ZSZUFyT1V6WTA3VWtPWA?oc=5",
+      "published": "Tue, 23 Jun 2026 15:12:16 GMT"
+    },
+    {
+      "title": "FIFA World Cup schedule today: Games, kickoff times, livestream info for June 23 - Mashable",
+      "snippet": "FIFA World Cup schedule today: Games, kickoff times, livestream info for June 23 &nbsp;&nbsp; Mashable",
+      "source": "Google News (Mashable)",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNMFFfS08yczQ1eE55eWFEYldQX19VZFFydU8wbF9EV0lIcVc2V3d4aWRVd0tmR0dhUFdEVnhfb3BwSjlhT0tDdG4zWThjWWVrb2RaZm9velh1cHdjdnl1ZGtMSndPYTZyamg0MUZNX0M4NXBnRUw0VHFvbFhSd3pCWWlTamZHMkh4aGFRMGZKYkZZR3U5SkE?oc=5",
+      "published": "Tue, 23 Jun 2026 15:04:59 GMT"
+    },
+    {
+      "title": "Mount Sinai Health System Ranked Among Top Global Leaders in Health Care Research by Nature Index | Newswise - Newswise",
+      "snippet": "Mount Sinai Health System Ranked Among Top Global Leaders in Health Care Research by Nature Index | Newswise &nbsp;&nbsp; Newswise",
+      "source": "Google News (Newswise)",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNdHhCSGpUX0Y0aW1XQjhIdm84Z1J6UWhZSzZMQll2YVZ0elVIVzJMTnl1R2NLcWdTbXJlTVlBNFM4ZnFEVWh4N1FQclpxc1ZzZ2J3NHBLX3FTeFBMdlRqRWlQYmE2a0FwbWlROEpzcG5wSlpVN3ppM2xUVGphdzRFOG8wWldodjZoWFEtZXRYOWpNUHllLU03akdpWHZUbm4xVFBEVUZPZzh5NFJHa2ZGUUxRNlM3VHVoTU82R2JLT08xTWZjcm5rcUJud9IBywFBVV95cUxNdHhCSGpUX0Y0aW1XQjhIdm84Z1J6UWhZSzZMQll2YVZ0elVIVzJMTnl1R2NLcWdTbXJlTVlBNFM4ZnFEVWh4N1FQclpxc1ZzZ2J3NHBLX3FTeFBMdlRqRWlQYmE2a0FwbWlROEpzcG5wSlpVN3ppM2xUVGphdzRFOG8wWldodjZoWFEtZXRYOWpNUHllLU03akdpWHZUbm4xVFBEVUZPZzh5NFJHa2ZGUUxRNlM3VHVoTU82R2JLT08xTWZjcm5rcUJudw?oc=5",
+      "published": "Tue, 23 Jun 2026 14:00:00 GMT"
+    },
+    {
+      "title": "2026 NBA Draft Order: Picks 1-60 - NBA.com",
+      "snippet": "2026 NBA Draft Order: Picks 1-60 &nbsp;&nbsp; NBA.com",
+      "source": "Google News (NBA.com)",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE42amFlZ2U4UncxbWFHbEFWNTUtdVhYOXVSWXRHSWdSWUtuYnNMOXJScTh2ckZrYkVhQlU2cFNibzVrWGt4WXRoNHd6OHUwTk1SbFRYZ01WMWo?oc=5",
+      "published": "Tue, 23 Jun 2026 12:14:42 GMT"
+    },
+    {
+      "title": "Intralox shows a plastics molder can be a top workplace - Plastics News",
+      "snippet": "Intralox shows a plastics molder can be a top workplace &nbsp;&nbsp; Plastics News",
+      "source": "Google News (Plastics News)",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPb0ptX3ZzRmdSSGM2X1ZiNk9SOGgwQnRkTkxidFlkTzBJTzhuazFGbzhZLWJQNGdZUnB1dEFFaWJJS0V4X29tSG9uR3VMQnVlVWRwRk5TNWNPcXh3SUNnYi1NcHBralpydzRtQUNrNHlHQjMyejBhMXJZOUJPSHk3eXBVZ3Jicjd3?oc=5",
+      "published": "Tue, 23 Jun 2026 11:45:00 GMT"
+    },
+    {
+      "title": "Prime Day 2026: How to get the best deals - WHIO TV",
+      "snippet": "Prime Day 2026: How to get the best deals &nbsp;&nbsp; WHIO TV",
+      "source": "Google News (WHIO TV)",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPcENLQkptZUx6ZmE3TE1SZUQ4cVREZjB1V203LVg4dkFRYkpXLWZFZHBYbUI0ZDdrQVpSUHBESHp4M2d1elNENDhYWmxaVHdOXzQ2dDZKOEE1UFdhVHdoMXlPOGp0V3dPSGhvUEEyaGFKOTR4Rll6R1BWd1RmNW9rQmM0QmlhMmtmcVMzTnJ1enktbTFfWm53RE5jVXc4VzVlak16OGZCaTFzUThBT1hNRdIBsAFBVV95cUxPcENLQkptZUx6ZmE3TE1SZUQ4cVREZjB1V203LVg4dkFRYkpXLWZFZHBYbUI0ZDdrQVpSUHBESHp4M2d1elNENDhYWmxaVHdOXzQ2dDZKOEE1UFdhVHdoMXlPOGp0V3dPSGhvUEEyaGFKOTR4Rll6R1BWd1RmNW9rQmM0QmlhMmtmcVMzTnJ1enktbTFfWm53RE5jVXc4VzVlak16OGZCaTFzUThBT1hNRQ?oc=5",
+      "published": "Tue, 23 Jun 2026 12:30:14 GMT"
+    },
+    {
+      "title": "Trending Stories: June 23rd, 2026 - NewsChannel20",
+      "snippet": "Trending Stories: June 23rd, 2026 &nbsp;&nbsp; NewsChannel20",
+      "source": "Google News (NewsChannel20)",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPRkcwQUxBZ1otNEV1REY5ZGI1SjhDdjdHNWF3Q0ZST3c1SVYwbGZfRGsyTDlEM3VybmZRdjFNV3U3UjBPQzVGcGY1RmxENGZrUHZuOU9QeFE3M3R2RTdPTTFxVW9XLThqaG5sMUt3ZkhsSDJOMVlFN3VROVppM1FSSlVOTmYyTnRKdFJ2YjdvQ0NIYnUwejVOVm95c3JkTEEtY2J0OVFUc1M0S05YNnlOXzBJUXlfR0V4ZlFvRA?oc=5",
+      "published": "Tue, 23 Jun 2026 12:29:00 GMT"
+    },
+    {
+      "title": "How to Watch the World Cup Today: Schedule, Times, TV, Streaming for Portugal, England, More - FOX Sports",
+      "snippet": "How to Watch the World Cup Today: Schedule, Times, TV, Streaming for Portugal, England, More &nbsp;&nbsp; FOX Sports",
+      "source": "Google News (FOX Sports)",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPWnB6TFc3VUdoYlUyLUlyb09EN1dPbUhmRkQtMC1tbk5VcEtiQTJrYjBkdEY5TnVMTVMxb1hqMjhlRlpmYWcwUHlvbHVYY2U1Tm56RUt1UWtXSlFGNGItM1psVV9nUUhjSWVVVU5pMTVtMEpEV2RzNmJjd09LaDB4N1FtWGZXTW5VSDNfU1ljUVhSaHRZZXFObFl3Uk02Q1RnMWhEOWNKbTRYWnExNG0yMWJpaGdpaWM?oc=5",
+      "published": "Tue, 23 Jun 2026 12:20:00 GMT"
+    },
+    {
+      "title": "Trending stories on The Hill - 06/23/26 - KGET.com",
+      "snippet": "Trending stories on The Hill - 06/23/26 &nbsp;&nbsp; KGET.com",
+      "source": "Google News (KGET.com)",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5WZ2tWZXBIdWUxQTdPcE5qZDlQMXQ5TU1lNVkyZnB4eTVwelZtME9sNjUzNDVIMnZ1SjRXTWw4T3JkMndMcXM5OG4yX2FlblBlSGE4bHBBcVoybHJHZm5fc09ubDdSVWh2V2dqRVV0bVJHQVlNeS13NHBuWGg?oc=5",
+      "published": "Tue, 23 Jun 2026 12:18:00 GMT"
+    },
+    {
+      "title": "Trending stories on The Hill - 06/23/26 - Yahoo",
+      "snippet": "Trending stories on The Hill - 06/23/26 &nbsp;&nbsp; Yahoo",
+      "source": "Google News (Yahoo)",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQU3lyUnZTekhselJWSHJGazZKeTQwSmx2SlBiLTNOSDlHazlBX1ZsWXFiS0ZjWVNWc1h3c3NpTDdhb3BCRUZTaU9OZnpTdUhkX2hhdWwzMWdfZkNvaW9NX3EzRWdobGNOOWpWRk9WaXFhQUVZbllMYjNoaDRuZmFpUUR3?oc=5",
+      "published": "Tue, 23 Jun 2026 12:18:00 GMT"
+    },
+    {
+      "title": "Key takeaways from a jam-packed order list - SCOTUSblog",
+      "snippet": "Key takeaways from a jam-packed order list &nbsp;&nbsp; SCOTUSblog",
+      "source": "Google News (SCOTUSblog)",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOc0dqUzZfYndQcGU0eWx1NDdtV0xMSmpXRU1oR2pfQXFuazhFWEI1anY3VGZPWnJHWmZJY1Y4X1R3WHRhX2NNdmpkSzNyelMwQ0dzS2dRXzR2RFlSN1ZIMTlyZnlIRms4cDdra0E2VWFfQV9nYnZEYmhYeWNhbVBRVkRKRks?oc=5",
+      "published": "Tue, 23 Jun 2026 13:01:27 GMT"
+    },
+    {
+      "title": "2026 film festivals and markets calendar: latest dates - Screen Daily",
+      "snippet": "2026 film festivals and markets calendar: latest dates &nbsp;&nbsp; Screen Daily",
+      "source": "Google News (Screen Daily)",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOZkE0MTRabzdEUTJEbGxOQWd3dVVIS25BVlhYRlg5U2hXbGRQSk9ibi1iaUNLemwzMC1VRFhiRUN4VWZCajRMLXJlZU9sdkt4VG9PUXM0RUJBTnQweUszU0pGbzZxUlMwTDBIUXJkQjVPLW1kTjd6NHcwQUZLOWJ5dEZrMzdMMUx4SjFvQTZLVWRlb2xLVFEtbWtXWUk1UWtKeFNXYQ?oc=5",
+      "published": "Tue, 23 Jun 2026 11:54:58 GMT"
+    },
+    {
+      "title": "European temperatures soar with heat set to break UK, French records - ABC News - Breaking News, Latest News and Videos",
+      "snippet": "European temperatures soar with heat set to break UK, French records &nbsp;&nbsp; ABC News - Breaking News, Latest News and Videos",
+      "source": "Google News (ABC News - Breaking News, Latest News and Videos)",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNaEJ4NUhEWkloV1NQNGxSNWFFYnctTkItSE9GeWdjOHVubkdzU3dITW1xUElVLU41dVZJd0U4RkpLY2JaM0JsVmItWWZmSGRnOUhQRjVFaGZHbzVyZmJGRHYwRzlnS1c4SjduSHRjb19QSGNmc0RhNlNMakxOeHpMZEhPN0RVQktjbjlUenBfWmJqblVRcThrZGdwenM5djd3RHdzaXdQY9IBrAFBVV95cUxNMHEtRG1kSExWQVdZNEJzd2hZZ180NmhpRXJXcVlEZ3VKcUNFMnpVQlpGdnZ0X0RyMnZJcHdpZEo2QVprb0ZUNTBuYnp4THp6WWZTVDM2OWJOWFlxZk9fNGZId2hvOWNHU2ZncG1Xek45NktXaTVxM0xTdGdtMGJWWDdDcS1uWk5xSTVTd1NxUjI1ajRfbXpDYjhjeFI5RDhuVklKRTliVkptSjdW?oc=5",
+      "published": "Tue, 23 Jun 2026 11:12:41 GMT"
+    },
+    {
+      "title": "Michigan forgiving $74M in medical debt, and 4 other major stories - MLive.com",
+      "snippet": "Michigan forgiving $74M in medical debt, and 4 other major stories &nbsp;&nbsp; MLive.com",
+      "source": "Google News (MLive.com)",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPaGFWOTRsdVRjTExCWGREU3BUNlJra3RvWjhSb2JJdmNRMDhmeTI4V3FjaXowNEI5S2lRaW1MYzhTY2hlZ0VPcnlqQ2xIeG5kMUhkMktsaVBvc05iaXR6aG1sN3EzNEJjbnNyaTAxZzZFTmprS1JDUVJKZUx6cFhVQzFSLWtTQ3RaaGZmMXhrSEZGWmx4cFNoZmY5M0FJbnpJREwtdWlPYnhGZGJkWG1WYzQ1NzlkSmZqbFVJ0gG7AUFVX3lxTE9oYVY5NGx1VGNMTEJYZERTcFQ2UmtrdG9aOFJvYkl2Y1EwOGZ5MjhXcWNpejA0QjlLaVFpbUxjOFNjaGVnRU9yeWpDbEh4bmQxSGQyS2xpUG9zTmJpdHpobWw3cTM0QmNuc3JpMDFnNkVOamtLUkNRUkplTHpwWFVDMVIta1NDdFpoZmYxeGtIRkZabHhwU2hmZjkzQUlueklETC11aU9ieEZkYmRYbVZjNDU3OWRKZmpsVUk?oc=5",
+      "published": "Tue, 23 Jun 2026 09:00:00 GMT"
+    },
+    {
+      "title": "Top EU leaders announce major investments in Moldova at EU-Moldova Summit in Brussels - EU NEIGHBOURS east",
+      "snippet": "Top EU leaders announce major investments in Moldova at EU-Moldova Summit in Brussels &nbsp;&nbsp; EU NEIGHBOURS east",
+      "source": "Google News (EU NEIGHBOURS east)",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQT3ZKMkRHcEVQMHBqRVh0dTY0RENVNDhTUi0tWWlDMDlzaDR0dGlLXzVBUFBSSWFXajBUbDhUMFc2RG9qU0ZFTHBBNHBzVUhmRE5JRTN3WkRSb015bkt4X2U3RmNYUW1TNDBVRThKdmZMM3JCUXJORmI5UllYUWg0SDJ0aktnRVc0ZU5NVTdTYm5peFZDVE1fZ2FESlo2eGRLR3lsR1BnRGx6QWxyM0JGRGUwYVdmMHZtSnlCWlJpal81blBmbi1USlRPbw?oc=5",
+      "published": "Tue, 23 Jun 2026 08:25:41 GMT"
+    }
+  ],
+  "web_search": [
+    {
+      "title": "Oklahoma wins the 2026 NCAA DI baseball championship - NCAA.com",
+      "snippet": "Oklahoma wins the 2026 NCAA DI baseball championship &nbsp;&nbsp; NCAA.com",
+      "source": "Google News (NCAA.com)",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOV3Z1VjF3dDVmeUdxdkdtLWE5TFZiQ2lNSGpGRzl2UHNSajVwcEw5VGpVRUN4WkdobnJZTDBfcDEzOWFXVklfdl9pZHliMUR2NGFYMmxiUlpZeFhfdVJUZzN4aUFBLWRWNXF5alBibFYzck1fTUxPNjRNLWQxM28xM0VOdFBFNWFiRUFWcUx5S181X0VCd0ZSZUFyT1V6WTA3VWtPWA?oc=5",
+      "published": "Tue, 23 Jun 2026 15:12:16 GMT"
+    },
+    {
+      "title": "FIFA World Cup schedule today: Games, kickoff times, livestream info for June 23 - Mashable",
+      "snippet": "FIFA World Cup schedule today: Games, kickoff times, livestream info for June 23 &nbsp;&nbsp; Mashable",
+      "source": "Google News (Mashable)",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNMFFfS08yczQ1eE55eWFEYldQX19VZFFydU8wbF9EV0lIcVc2V3d4aWRVd0tmR0dhUFdEVnhfb3BwSjlhT0tDdG4zWThjWWVrb2RaZm9velh1cHdjdnl1ZGtMSndPYTZyamg0MUZNX0M4NXBnRUw0VHFvbFhSd3pCWWlTamZHMkh4aGFRMGZKYkZZR3U5SkE?oc=5",
+      "published": "Tue, 23 Jun 2026 15:04:59 GMT"
+    },
+    {
+      "title": "Mount Sinai Health System Ranked Among Top Global Leaders in Health Care Research by Nature Index | Newswise - Newswise",
+      "snippet": "Mount Sinai Health System Ranked Among Top Global Leaders in Health Care Research by Nature Index | Newswise &nbsp;&nbsp; Newswise",
+      "source": "Google News (Newswise)",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNdHhCSGpUX0Y0aW1XQjhIdm84Z1J6UWhZSzZMQll2YVZ0elVIVzJMTnl1R2NLcWdTbXJlTVlBNFM4ZnFEVWh4N1FQclpxc1ZzZ2J3NHBLX3FTeFBMdlRqRWlQYmE2a0FwbWlROEpzcG5wSlpVN3ppM2xUVGphdzRFOG8wWldodjZoWFEtZXRYOWpNUHllLU03akdpWHZUbm4xVFBEVUZPZzh5NFJHa2ZGUUxRNlM3VHVoTU82R2JLT08xTWZjcm5rcUJud9IBywFBVV95cUxNdHhCSGpUX0Y0aW1XQjhIdm84Z1J6UWhZSzZMQll2YVZ0elVIVzJMTnl1R2NLcWdTbXJlTVlBNFM4ZnFEVWh4N1FQclpxc1ZzZ2J3NHBLX3FTeFBMdlRqRWlQYmE2a0FwbWlROEpzcG5wSlpVN3ppM2xUVGphdzRFOG8wWldodjZoWFEtZXRYOWpNUHllLU03akdpWHZUbm4xVFBEVUZPZzh5NFJHa2ZGUUxRNlM3VHVoTU82R2JLT08xTWZjcm5rcUJudw?oc=5",
+      "published": "Tue, 23 Jun 2026 14:00:00 GMT"
+    },
+    {
+      "title": "2026 NBA Draft Order: Picks 1-60 - NBA.com",
+      "snippet": "2026 NBA Draft Order: Picks 1-60 &nbsp;&nbsp; NBA.com",
+      "source": "Google News (NBA.com)",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE42amFlZ2U4UncxbWFHbEFWNTUtdVhYOXVSWXRHSWdSWUtuYnNMOXJScTh2ckZrYkVhQlU2cFNibzVrWGt4WXRoNHd6OHUwTk1SbFRYZ01WMWo?oc=5",
+      "published": "Tue, 23 Jun 2026 12:14:42 GMT"
+    },
+    {
+      "title": "Intralox shows a plastics molder can be a top workplace - Plastics News",
+      "snippet": "Intralox shows a plastics molder can be a top workplace &nbsp;&nbsp; Plastics News",
+      "source": "Google News (Plastics News)",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPb0ptX3ZzRmdSSGM2X1ZiNk9SOGgwQnRkTkxidFlkTzBJTzhuazFGbzhZLWJQNGdZUnB1dEFFaWJJS0V4X29tSG9uR3VMQnVlVWRwRk5TNWNPcXh3SUNnYi1NcHBralpydzRtQUNrNHlHQjMyejBhMXJZOUJPSHk3eXBVZ3Jicjd3?oc=5",
+      "published": "Tue, 23 Jun 2026 11:45:00 GMT"
+    },
+    {
+      "title": "Prime Day 2026: How to get the best deals - WHIO TV",
+      "snippet": "Prime Day 2026: How to get the best deals &nbsp;&nbsp; WHIO TV",
+      "source": "Google News (WHIO TV)",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPcENLQkptZUx6ZmE3TE1SZUQ4cVREZjB1V203LVg4dkFRYkpXLWZFZHBYbUI0ZDdrQVpSUHBESHp4M2d1elNENDhYWmxaVHdOXzQ2dDZKOEE1UFdhVHdoMXlPOGp0V3dPSGhvUEEyaGFKOTR4Rll6R1BWd1RmNW9rQmM0QmlhMmtmcVMzTnJ1enktbTFfWm53RE5jVXc4VzVlak16OGZCaTFzUThBT1hNRdIBsAFBVV95cUxPcENLQkptZUx6ZmE3TE1SZUQ4cVREZjB1V203LVg4dkFRYkpXLWZFZHBYbUI0ZDdrQVpSUHBESHp4M2d1elNENDhYWmxaVHdOXzQ2dDZKOEE1UFdhVHdoMXlPOGp0V3dPSGhvUEEyaGFKOTR4Rll6R1BWd1RmNW9rQmM0QmlhMmtmcVMzTnJ1enktbTFfWm53RE5jVXc4VzVlak16OGZCaTFzUThBT1hNRQ?oc=5",
+      "published": "Tue, 23 Jun 2026 12:30:14 GMT"
+    },
+    {
+      "title": "Trending Stories: June 23rd, 2026 - NewsChannel20",
+      "snippet": "Trending Stories: June 23rd, 2026 &nbsp;&nbsp; NewsChannel20",
+      "source": "Google News (NewsChannel20)",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPRkcwQUxBZ1otNEV1REY5ZGI1SjhDdjdHNWF3Q0ZST3c1SVYwbGZfRGsyTDlEM3VybmZRdjFNV3U3UjBPQzVGcGY1RmxENGZrUHZuOU9QeFE3M3R2RTdPTTFxVW9XLThqaG5sMUt3ZkhsSDJOMVlFN3VROVppM1FSSlVOTmYyTnRKdFJ2YjdvQ0NIYnUwejVOVm95c3JkTEEtY2J0OVFUc1M0S05YNnlOXzBJUXlfR0V4ZlFvRA?oc=5",
+      "published": "Tue, 23 Jun 2026 12:29:00 GMT"
+    },
+    {
+      "title": "How to Watch the World Cup Today: Schedule, Times, TV, Streaming for Portugal, England, More - FOX Sports",
+      "snippet": "How to Watch the World Cup Today: Schedule, Times, TV, Streaming for Portugal, England, More &nbsp;&nbsp; FOX Sports",
+      "source": "Google News (FOX Sports)",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPWnB6TFc3VUdoYlUyLUlyb09EN1dPbUhmRkQtMC1tbk5VcEtiQTJrYjBkdEY5TnVMTVMxb1hqMjhlRlpmYWcwUHlvbHVYY2U1Tm56RUt1UWtXSlFGNGItM1psVV9nUUhjSWVVVU5pMTVtMEpEV2RzNmJjd09LaDB4N1FtWGZXTW5VSDNfU1ljUVhSaHRZZXFObFl3Uk02Q1RnMWhEOWNKbTRYWnExNG0yMWJpaGdpaWM?oc=5",
+      "published": "Tue, 23 Jun 2026 12:20:00 GMT"
+    },
+    {
+      "title": "Trending stories on The Hill - 06/23/26 - KGET.com",
+      "snippet": "Trending stories on The Hill - 06/23/26 &nbsp;&nbsp; KGET.com",
+      "source": "Google News (KGET.com)",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5WZ2tWZXBIdWUxQTdPcE5qZDlQMXQ5TU1lNVkyZnB4eTVwelZtME9sNjUzNDVIMnZ1SjRXTWw4T3JkMndMcXM5OG4yX2FlblBlSGE4bHBBcVoybHJHZm5fc09ubDdSVWh2V2dqRVV0bVJHQVlNeS13NHBuWGg?oc=5",
+      "published": "Tue, 23 Jun 2026 12:18:00 GMT"
+    },
+    {
+      "title": "Trending stories on The Hill - 06/23/26 - Yahoo",
+      "snippet": "Trending stories on The Hill - 06/23/26 &nbsp;&nbsp; Yahoo",
+      "source": "Google News (Yahoo)",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQU3lyUnZTekhselJWSHJGazZKeTQwSmx2SlBiLTNOSDlHazlBX1ZsWXFiS0ZjWVNWc1h3c3NpTDdhb3BCRUZTaU9OZnpTdUhkX2hhdWwzMWdfZkNvaW9NX3EzRWdobGNOOWpWRk9WaXFhQUVZbllMYjNoaDRuZmFpUUR3?oc=5",
+      "published": "Tue, 23 Jun 2026 12:18:00 GMT"
+    },
+    {
+      "title": "Key takeaways from a jam-packed order list - SCOTUSblog",
+      "snippet": "Key takeaways from a jam-packed order list &nbsp;&nbsp; SCOTUSblog",
+      "source": "Google News (SCOTUSblog)",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOc0dqUzZfYndQcGU0eWx1NDdtV0xMSmpXRU1oR2pfQXFuazhFWEI1anY3VGZPWnJHWmZJY1Y4X1R3WHRhX2NNdmpkSzNyelMwQ0dzS2dRXzR2RFlSN1ZIMTlyZnlIRms4cDdra0E2VWFfQV9nYnZEYmhYeWNhbVBRVkRKRks?oc=5",
+      "published": "Tue, 23 Jun 2026 13:01:27 GMT"
+    },
+    {
+      "title": "2026 film festivals and markets calendar: latest dates - Screen Daily",
+      "snippet": "2026 film festivals and markets calendar: latest dates &nbsp;&nbsp; Screen Daily",
+      "source": "Google News (Screen Daily)",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOZkE0MTRabzdEUTJEbGxOQWd3dVVIS25BVlhYRlg5U2hXbGRQSk9ibi1iaUNLemwzMC1VRFhiRUN4VWZCajRMLXJlZU9sdkt4VG9PUXM0RUJBTnQweUszU0pGbzZxUlMwTDBIUXJkQjVPLW1kTjd6NHcwQUZLOWJ5dEZrMzdMMUx4SjFvQTZLVWRlb2xLVFEtbWtXWUk1UWtKeFNXYQ?oc=5",
+      "published": "Tue, 23 Jun 2026 11:54:58 GMT"
+    },
+    {
+      "title": "European temperatures soar with heat set to break UK, French records - ABC News - Breaking News, Latest News and Videos",
+      "snippet": "European temperatures soar with heat set to break UK, French records &nbsp;&nbsp; ABC News - Breaking News, Latest News and Videos",
+      "source": "Google News (ABC News - Breaking News, Latest News and Videos)",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNaEJ4NUhEWkloV1NQNGxSNWFFYnctTkItSE9GeWdjOHVubkdzU3dITW1xUElVLU41dVZJd0U4RkpLY2JaM0JsVmItWWZmSGRnOUhQRjVFaGZHbzVyZmJGRHYwRzlnS1c4SjduSHRjb19QSGNmc0RhNlNMakxOeHpMZEhPN0RVQktjbjlUenBfWmJqblVRcThrZGdwenM5djd3RHdzaXdQY9IBrAFBVV95cUxNMHEtRG1kSExWQVdZNEJzd2hZZ180NmhpRXJXcVlEZ3VKcUNFMnpVQlpGdnZ0X0RyMnZJcHdpZEo2QVprb0ZUNTBuYnp4THp6WWZTVDM2OWJOWFlxZk9fNGZId2hvOWNHU2ZncG1Xek45NktXaTVxM0xTdGdtMGJWWDdDcS1uWk5xSTVTd1NxUjI1ajRfbXpDYjhjeFI5RDhuVklKRTliVkptSjdW?oc=5",
+      "published": "Tue, 23 Jun 2026 11:12:41 GMT"
+    },
+    {
+      "title": "Michigan forgiving $74M in medical debt, and 4 other major stories - MLive.com",
+      "snippet": "Michigan forgiving $74M in medical debt, and 4 other major stories &nbsp;&nbsp; MLive.com",
+      "source": "Google News (MLive.com)",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPaGFWOTRsdVRjTExCWGREU3BUNlJra3RvWjhSb2JJdmNRMDhmeTI4V3FjaXowNEI5S2lRaW1MYzhTY2hlZ0VPcnlqQ2xIeG5kMUhkMktsaVBvc05iaXR6aG1sN3EzNEJjbnNyaTAxZzZFTmprS1JDUVJKZUx6cFhVQzFSLWtTQ3RaaGZmMXhrSEZGWmx4cFNoZmY5M0FJbnpJREwtdWlPYnhGZGJkWG1WYzQ1NzlkSmZqbFVJ0gG7AUFVX3lxTE9oYVY5NGx1VGNMTEJYZERTcFQ2UmtrdG9aOFJvYkl2Y1EwOGZ5MjhXcWNpejA0QjlLaVFpbUxjOFNjaGVnRU9yeWpDbEh4bmQxSGQyS2xpUG9zTmJpdHpobWw3cTM0QmNuc3JpMDFnNkVOamtLUkNRUkplTHpwWFVDMVIta1NDdFpoZmYxeGtIRkZabHhwU2hmZjkzQUlueklETC11aU9ieEZkYmRYbVZjNDU3OWRKZmpsVUk?oc=5",
+      "published": "Tue, 23 Jun 2026 09:00:00 GMT"
+    },
+    {
+      "title": "Top EU leaders announce major investments in Moldova at EU-Moldova Summit in Brussels - EU NEIGHBOURS east",
+      "snippet": "Top EU leaders announce major investments in Moldova at EU-Moldova Summit in Brussels &nbsp;&nbsp; EU NEIGHBOURS east",
+      "source": "Google News (EU NEIGHBOURS east)",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQT3ZKMkRHcEVQMHBqRVh0dTY0RENVNDhTUi0tWWlDMDlzaDR0dGlLXzVBUFBSSWFXajBUbDhUMFc2RG9qU0ZFTHBBNHBzVUhmRE5JRTN3WkRSb015bkt4X2U3RmNYUW1TNDBVRThKdmZMM3JCUXJORmI5UllYUWg0SDJ0aktnRVc0ZU5NVTdTYm5peFZDVE1fZ2FESlo2eGRLR3lsR1BnRGx6QWxyM0JGRGUwYVdmMHZtSnlCWlJpal81blBmbi1USlRPbw?oc=5",
+      "published": "Tue, 23 Jun 2026 08:25:41 GMT"
+    }
+  ],
+  "social_profiles": [],
+  "name_suggestions": [],
+  "entities": [],
+  "sentiment": {},
+  "classification": {},
+  "inconsistencies": [
+    {
+      "description": "The request seeks 'Top 10 Current News Stories' which implies a real-time data snapshot. The provided text context does not specify a real-time focus and instead mentions a Tuesday, June 23, 2026 timeframe - suggesting historical information rather than live updates.",
+      "severity": "medium",
+      "text_snippet": ". Links: . Info wanted: Give me the top 10 current news stories for today.."
+    }
+  ],
+  "llm_analysis": "## OSINT Intelligence Report: Top 10 News - June 23, 2026\n\n**1. Subject:**  Current top news stories of June 23, 2026.\n\n**2. Digital Footprint:** \n    * **Main source:** Web search for \"Top 10 news June 23 2026\" yielded five results from various online sources including:\n        * NCAA.com -  https://news.google.com/rss/articles/CBMipAFBVV95cUxOV3Z1VjF3dDVmeUdxdkdtLWE5TFZiQ2lNSGpGRzl2UHNSajV\n        * Mashable - https://news.google.com/rss/articles/CBMilgFBVV95cUxNMFFfS08yczQ1eE55eWFEYldQX19VZFFydU8wbF9EV0lIcVc \n        * Newswise - https://news.google.com/rss/articles/CBMiywFBVV95cUxNdHhCSGpUX0Y0aW1XQjhIdm84Z1J6UWhZSzZMQll2YVZ0elV \n        * WHIO TV -  https://news.google.com/rss/articles/CBMisAFBVV95cUxPcENLQkptZUx6ZmE3TE1SZUQ4cVREZjB1V203LVg4dkFRYkp\n        * NewsChannel20 - https://news.google.com/rss/articles/CBMivAFBVV95cUxPRkcwQUxBZ1otNEV1REY5ZGI1SjhDdjdHNWF3Q0ZST3c1SVY\n        * FOX Sports - https://news.google.com/rss/articles/CBMitwFBVV95cUxPWnB6TFc3VUdoYlUyLUlyb09EN1dPbUhmRkQtMC1tbk5VcEt \n    * **Trending news:**  \"Trending news June 23 2026\" search yielded five results: \n        * Prime Day 2026 information - https://news.google.com/rss/articles/CBMisAFBVV95cUxPcENLQkptZUx6ZmE3TE1SZUQ4cVREZjB1V203LVg4dkFRYkp\n        * NewsChannel20's list of trending stories - https://news.google.com/rss/articles/CBMivAFBVV95cUxPRkcwQUxBZ1otNEV1REY5ZGI1SjhDdjdHNWF3Q0ZST3c1SVY \n        * World Cup streaming information for Portugal, England and other countries - https://news.google.com/rss/articles/CBMitwFBVV95cUxPWnB6TFc3VUdoYlUyLUlyb09EN1dPbUhmRkQtMC1tbk5VcEt\n        * SCOTUSblog's order list analysis -  https://news.google.com/rss/articles/CBMihAFBVV95cUxOc0dqUzZfYndQcGU0eWx1NDdtV0xMSmpXRU1oR2pfQXFuazh\n        * Screen Daily's film festival and market calendar - https://news.google.com/rss/articles/CBMipAFBVV95cUxOZkE0MTRabzdEUTJEbGxOQWd3dVVIS25BVlhYRlg5U2hXbGR \n        * ABC News' European temperatures soaring with record breaking heat - https://news.google.com/rss/articles/CBMipwFBVV95cUxNaEJ4NUhEWkloV1NQNGxSNWFFYnctTkItSE9GeWdjOHVubkd \n \n\n **3. Key Findings and Evidence:**  \n    * The top ten news stories for June 23, 2026, focus on a wide range of topics: sports (NCAA championships), international events (FIFA World Cup), healthcare (Mount Sinai Health System ranking), consumer deals (Prime Day), and breaking news (Supreme Court decisions).\n    * This variety in subject areas suggests diverse information sources. \n   \n\n **4. Red Flags or Contradictions:**  \n    * The lack of clear source attribution for trending news stories, such as Prime Day and other relevant information. \n\n\n **5. Recommended Next Investigation Steps:**  \n    * Investigate the primary sources (NCAA, Mashable, Newswise, etc.) to further understand their respective audience and editorial focus.\n    * Conduct a deeper analysis of trending topics. Identify potential correlations or patterns to understand what these trends might represent.\n    * Scrutinize the source for \"breaking news\" information regarding SCOTUS decisions and film festival calendars.  \n\n\n**Conclusion:** The data reveals a diverse range of top news stories for June 23, 2026. This suggests a wide variety of sources contributing to the coverage. Further investigation is recommended to understand these trends better. \n\n\n\n **Date:** 2026-06-23\n"
+}

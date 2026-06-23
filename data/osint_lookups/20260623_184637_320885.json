@@ -1,0 +1,2149 @@
+{
+  "lookup_id": "",
+  "timestamp": "2026-06-23T18:46:37.320965",
+  "input": {
+    "name": "johnwick",
+    "context": "fictional character assassin",
+    "phrase": "",
+    "links": "",
+    "information_wanted": "everything available about this subject",
+    "anything_you_have": ""
+  },
+  "model": "gemma4",
+  "goal_analysis": {
+    "goal": "Generate a comprehensive investigative report encompassing all publicly available information about the fictional assassin John Wick.",
+    "deliverables": [
+      "Detailed profile of John Wick",
+      "Information on any known associates, contacts, and potential allies",
+      "Possible locations associated with John Wick based on his activities",
+      "Sources and evidence indicating his alleged past acts as an assassin",
+      "Public statements or records related to John Wick's background"
+    ],
+    "search_queries": [
+      "John Wick assassination records public records",
+      "John Wick criminal history online",
+      "John Wick fictional persona biography sources"
+    ],
+    "requires_social_search": true,
+    "requires_name_analysis": false,
+    "requires_entity_extraction": true,
+    "requires_sentiment": false,
+    "success_criteria": [
+      "Report should include verifiable and corroborated information about John Wick",
+      "Use of open source intelligence techniques to obtain the requested data. "
+    ]
+  },
+  "plan": [
+    {
+      "id": "TASK_001",
+      "name": "Web search: John Wick assassination records public records",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_002",
+      "name": "Web search: John Wick criminal history online",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_003",
+      "name": "Web search: John Wick fictional persona biography sources",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_004",
+      "name": "Social media profile discovery",
+      "agent": "social_agent"
+    },
+    {
+      "id": "TASK_005",
+      "name": "Entity extraction",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_006",
+      "name": "Inconsistency detection",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_007",
+      "name": "Final intelligence summary",
+      "agent": "summary_agent"
+    }
+  ],
+  "raw_web_search": [
+    {
+      "title": "John Wick",
+      "snippet": "John Wick is an American media franchise created by Derek Kolstad. It centers on a neo-noir action thriller film series directed by Chad Stahelski featuring",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/John_Wick"
+    },
+    {
+      "title": "John Wick (film)",
+      "snippet": "John Wick is a 2014 American action thriller film directed by Chad Stahelski and written by Derek Kolstad. Keanu Reeves stars as John Wick, a legendary",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/John_Wick_%28film%29"
+    },
+    {
+      "title": "Brown Mogotsi",
+      "snippet": "where he mentioned that Vusi Matlala is known as &quot;John Wick&quot; in the Crime Intelligence circles. John Wick is known to have killed and terrorized members",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Brown_Mogotsi"
+    },
+    {
+      "title": "James Earl Ray",
+      "snippet": "convicted of the assassination of Martin Luther King Jr. at the Lorraine Motel in Memphis, Tennessee, on April 4, 1968. After the assassination, Ray, who had",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/James_Earl_Ray"
+    },
+    {
+      "title": "Tyler Bates",
+      "snippet": "Dawn of the Dead, 300, Sucker Punch, Halloween and Halloween II and the John Wick franchise. He has collaborated with directors like Zack Snyder, Rob Zombie",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Tyler_Bates"
+    },
+    {
+      "title": "Netflix thriller is 'Keanu Reeves' best performance' that's not John Wick - Wales Online",
+      "snippet": "Netflix thriller is 'Keanu Reeves' best performance' that's not John Wick &nbsp;&nbsp; Wales Online",
+      "source": "Google News (Wales Online)",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPbnFIb193NXBGVm9vY1prcGxpRU5jSHdMMVJMUmtReFNHdGM0MDBZck0tVWZSVGN3SGpEREtsZjRxc3lzYWZFVTBlZnBrQ2tDR05KT3lRV2thSWZqZTNjVWl1a2l6TTFHX1R2Z0x4Y1llcEJpb1plTzViaWVWSXFqMm9mXzFKdVpzbFBPbDliWdIBlAFBVV95cUxPOU5SV1o2MF9tUmRWV25kN0FRUWxXRFRPSXN4dElDZ29ldDhRM05Oc0RtUGp3ZTVnY0JFNWtzWDBpaDd3WmR2Y0JwYXk2ZFVnOWJGU25QSnNsMElaUXFJbzFvVUF4d203Q19wOHA5d2pTaGExQ1dUX2gxWG9lUnp3LXNaTHZ4WWhTczRlYkVOME5iaGhv?oc=5",
+      "published": "Thu, 18 Jun 2026 12:53:58 GMT"
+    },
+    {
+      "title": "Hannah Waddingham thrills in 'high-octane' new series ideal for John Wick fans - Wales Online",
+      "snippet": "Hannah Waddingham thrills in 'high-octane' new series ideal for John Wick fans &nbsp;&nbsp; Wales Online",
+      "source": "Google News (Wales Online)",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOeUFHREFQYVZYeU10UC1NdExEWFM5NldpWEZTWHpzNzZzS2dVelUtVS0tZjQ2Z2l6TFA1S0xsby1yNTF5NnM4N2gwRGJhcGstSWthTGtkeUNZbGtLdDZVVEctSFFWSF85YkZYekhDZzhLemV5TFNnXzIxbWJtdExWWXN3N3RpbGFE0gGOAUFVX3lxTE9DZ0FoakhFLUhqU3dwbG5LVS1HaTdwaU9rZGduZ0FEQldzaWN0VXJsOGZtNUhsdV9tTVFVcGE3Yk9FemptOTU1eEF4em9CQzJmNlNrZ2xrMExyNnlCeXdET05XdDV2azBaZkQ1eTBYbDRKUnhTajJ2MEJkLWNTQmc4TTJaRkE0MTRabWtBbXc?oc=5",
+      "published": "Tue, 09 Jun 2026 07:00:00 GMT"
+    },
+    {
+      "title": "John Wick (film)",
+      "snippet": "John Wick is a 2014 American action thriller film directed by Chad Stahelski and written by Derek Kolstad. Keanu Reeves stars as John Wick, a legendary",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/John_Wick_%28film%29"
+    },
+    {
+      "title": "Brown Mogotsi",
+      "snippet": "where he mentioned that Vusi Matlala is known as &quot;John Wick&quot; in the Crime Intelligence circles. John Wick is known to have killed and terrorized members",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Brown_Mogotsi"
+    },
+    {
+      "title": "Adrianne Palicki",
+      "snippet": "Huver, Scott. &quot;From &#039;John Wick&#039; to &#039;Agents of SHIELD,&#039; Adrianne Palicki Loves &#039;Kicking Butt&#039;| TV &amp; Film News Daily&quot;. Spinoff Online | TV &amp; Film News Daily",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Adrianne_Palicki"
+    }
+  ],
+  "web_search": [
+    {
+      "title": "John Wick",
+      "snippet": "John Wick is an American media franchise created by Derek Kolstad. It centers on a neo-noir action thriller film series directed by Chad Stahelski featuring",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/John_Wick"
+    },
+    {
+      "title": "John Wick (film)",
+      "snippet": "John Wick is a 2014 American action thriller film directed by Chad Stahelski and written by Derek Kolstad. Keanu Reeves stars as John Wick, a legendary",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/John_Wick_%28film%29"
+    },
+    {
+      "title": "Brown Mogotsi",
+      "snippet": "where he mentioned that Vusi Matlala is known as &quot;John Wick&quot; in the Crime Intelligence circles. John Wick is known to have killed and terrorized members",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Brown_Mogotsi"
+    },
+    {
+      "title": "James Earl Ray",
+      "snippet": "convicted of the assassination of Martin Luther King Jr. at the Lorraine Motel in Memphis, Tennessee, on April 4, 1968. After the assassination, Ray, who had",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/James_Earl_Ray"
+    },
+    {
+      "title": "Tyler Bates",
+      "snippet": "Dawn of the Dead, 300, Sucker Punch, Halloween and Halloween II and the John Wick franchise. He has collaborated with directors like Zack Snyder, Rob Zombie",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Tyler_Bates"
+    },
+    {
+      "title": "Netflix thriller is 'Keanu Reeves' best performance' that's not John Wick - Wales Online",
+      "snippet": "Netflix thriller is 'Keanu Reeves' best performance' that's not John Wick &nbsp;&nbsp; Wales Online",
+      "source": "Google News (Wales Online)",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPbnFIb193NXBGVm9vY1prcGxpRU5jSHdMMVJMUmtReFNHdGM0MDBZck0tVWZSVGN3SGpEREtsZjRxc3lzYWZFVTBlZnBrQ2tDR05KT3lRV2thSWZqZTNjVWl1a2l6TTFHX1R2Z0x4Y1llcEJpb1plTzViaWVWSXFqMm9mXzFKdVpzbFBPbDliWdIBlAFBVV95cUxPOU5SV1o2MF9tUmRWV25kN0FRUWxXRFRPSXN4dElDZ29ldDhRM05Oc0RtUGp3ZTVnY0JFNWtzWDBpaDd3WmR2Y0JwYXk2ZFVnOWJGU25QSnNsMElaUXFJbzFvVUF4d203Q19wOHA5d2pTaGExQ1dUX2gxWG9lUnp3LXNaTHZ4WWhTczRlYkVOME5iaGhv?oc=5",
+      "published": "Thu, 18 Jun 2026 12:53:58 GMT"
+    },
+    {
+      "title": "Hannah Waddingham thrills in 'high-octane' new series ideal for John Wick fans - Wales Online",
+      "snippet": "Hannah Waddingham thrills in 'high-octane' new series ideal for John Wick fans &nbsp;&nbsp; Wales Online",
+      "source": "Google News (Wales Online)",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOeUFHREFQYVZYeU10UC1NdExEWFM5NldpWEZTWHpzNzZzS2dVelUtVS0tZjQ2Z2l6TFA1S0xsby1yNTF5NnM4N2gwRGJhcGstSWthTGtkeUNZbGtLdDZVVEctSFFWSF85YkZYekhDZzhLemV5TFNnXzIxbWJtdExWWXN3N3RpbGFE0gGOAUFVX3lxTE9DZ0FoakhFLUhqU3dwbG5LVS1HaTdwaU9rZGduZ0FEQldzaWN0VXJsOGZtNUhsdV9tTVFVcGE3Yk9FemptOTU1eEF4em9CQzJmNlNrZ2xrMExyNnlCeXdET05XdDV2azBaZkQ1eTBYbDRKUnhTajJ2MEJkLWNTQmc4TTJaRkE0MTRabWtBbXc?oc=5",
+      "published": "Tue, 09 Jun 2026 07:00:00 GMT"
+    },
+    {
+      "title": "John Wick (film)",
+      "snippet": "John Wick is a 2014 American action thriller film directed by Chad Stahelski and written by Derek Kolstad. Keanu Reeves stars as John Wick, a legendary",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/John_Wick_%28film%29"
+    },
+    {
+      "title": "Brown Mogotsi",
+      "snippet": "where he mentioned that Vusi Matlala is known as &quot;John Wick&quot; in the Crime Intelligence circles. John Wick is known to have killed and terrorized members",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Brown_Mogotsi"
+    },
+    {
+      "title": "Adrianne Palicki",
+      "snippet": "Huver, Scott. &quot;From &#039;John Wick&#039; to &#039;Agents of SHIELD,&#039; Adrianne Palicki Loves &#039;Kicking Butt&#039;| TV &amp; Film News Daily&quot;. Spinoff Online | TV &amp; Film News Daily",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Adrianne_Palicki"
+    },
+    {
+      "title": "List of fictional antiheroes",
+      "snippet": "This list is for characters in fictional works who exemplify the qualities of an antihero\u2014a protagonist or supporting character whose characteristics",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/List_of_fictional_antiheroes"
+    },
+    {
+      "title": "Barbara Gordon",
+      "snippet": "Spoiler) will both be Batgirls again. According to the character&#039;s fictional biography, Barbara Gordon trained in Boxing, Capoeira, Judo, Kung Fu, Eskrima",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Barbara_Gordon"
+    },
+    {
+      "title": "Alain Delon",
+      "snippet": "inspiration from Le Cercle Rouge and Le Samoura\u00ef when crafting John Wick\u00a0: &quot;The John Wick films are all love letters from Keanu, myself, our stunt team",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Alain_Delon"
+    },
+    {
+      "title": "Will Smith",
+      "snippet": "Director Antoine Fuqua on Denzel&#039;s Enduring Stardom, Not Competing With John Wick, and Emancipation&#039;s Oscar Snub&quot;. M&amp;ES. August 30, 2023. Retrieved September",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Will_Smith"
+    },
+    {
+      "title": "Game of Death",
+      "snippet": "fight a taller Chinese basketballer Sun Mingming. The Keanu Reeves film John Wick: Chapter 3 \u2013 Parabellum (2019) pays homage in a scene featuring NBA basketball",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Game_of_Death"
+    }
+  ],
+  "social_profiles": [
+    {
+      "platform": "500px",
+      "username": "johnwick",
+      "url": "https://500px.com/p/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "About.me",
+      "username": "johnwick",
+      "url": "https://about.me/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Academia.edu",
+      "username": "johnwick",
+      "url": "https://independent.academia.edu/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Amazon",
+      "username": "johnwick",
+      "url": "https://amazon.com/author/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Ameblo",
+      "username": "johnwick",
+      "url": "https://ameblo.jp/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Bandcamp",
+      "username": "johnwick",
+      "url": "https://www.bandcamp.com/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Behance",
+      "username": "johnwick",
+      "url": "https://www.behance.net/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Bluesky",
+      "username": "johnwick",
+      "url": "https://bsky.app/profile/johnwick.bsky.social",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "BuyMeACoffee",
+      "username": "johnwick",
+      "url": "https://buymeacoff.ee/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Calendly",
+      "username": "johnwick",
+      "url": "https://calendly.com/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Codecademy",
+      "username": "johnwick",
+      "url": "https://www.codecademy.com/profiles/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Codecanyon",
+      "username": "johnwick",
+      "url": "https://codecanyon.net/user/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Codepen",
+      "username": "johnwick",
+      "url": "https://codepen.io/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "DEV Community",
+      "username": "johnwick",
+      "url": "https://dev.to/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "DailyMotion",
+      "username": "johnwick",
+      "url": "https://www.dailymotion.com/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "DeviantART",
+      "username": "johnwick",
+      "url": "https://johnwick.deviantart.com",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "DigitalOcean",
+      "username": "johnwick",
+      "url": "https://www.digitalocean.com/community/users/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Diigo",
+      "username": "johnwick",
+      "url": "https://www.diigo.com/interact_api/load_profile_info?name=johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Discogs",
+      "username": "johnwick",
+      "url": "https://www.discogs.com/user/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Disqus",
+      "username": "johnwick",
+      "url": "https://disqus.com/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Dribbble",
+      "username": "johnwick",
+      "url": "https://dribbble.com/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Duolingo",
+      "username": "johnwick",
+      "url": "https://www.duolingo.com/profile/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Facebook",
+      "username": "johnwick",
+      "url": "https://www.facebook.com/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Figma",
+      "username": "johnwick",
+      "url": "https://www.figma.com/@johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Fiverr",
+      "username": "johnwick",
+      "url": "https://www.fiverr.com/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Flightradar24",
+      "username": "johnwick",
+      "url": "https://my.flightradar24.com/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Flipboard",
+      "username": "johnwick",
+      "url": "https://flipboard.com/@johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Geeksfor Geeks",
+      "username": "johnwick",
+      "url": "https://www.geeksforgeeks.org/profile/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Genius",
+      "username": "johnwick",
+      "url": "https://genius.com/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Giphy",
+      "username": "johnwick",
+      "url": "https://giphy.com/channel/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "GitHub",
+      "username": "johnwick",
+      "url": "https://github.com/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "GitLab",
+      "username": "johnwick",
+      "url": "https://gitlab.com/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Gitee",
+      "username": "johnwick",
+      "url": "https://gitee.com/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "GoodReads",
+      "username": "johnwick",
+      "url": "https://www.goodreads.com/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Google Scholar",
+      "username": "johnwick",
+      "url": "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=johnwick&btnG=",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Gumroad",
+      "username": "johnwick",
+      "url": "https://www.gumroad.com/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Habr",
+      "username": "johnwick",
+      "url": "https://habr.com/ru/users/johnwick/",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "HubPages",
+      "username": "johnwick",
+      "url": "https://hubpages.com/@johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "HuggingFace",
+      "username": "johnwick",
+      "url": "https://huggingface.co/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "ImageShack",
+      "username": "johnwick",
+      "url": "https://imageshack.com/user/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Imgur",
+      "username": "johnwick",
+      "url": "https://imgur.com/user/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Instagram",
+      "username": "johnwick",
+      "url": "https://www.instagram.com/johnwick/",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Instructables",
+      "username": "johnwick",
+      "url": "https://www.instructables.com/member/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Itch.io",
+      "username": "johnwick",
+      "url": "https://johnwick.itch.io/",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Kickstarter",
+      "username": "johnwick",
+      "url": "https://www.kickstarter.com/profile/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Laracast",
+      "username": "johnwick",
+      "url": "https://laracasts.com/@johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Letterboxd",
+      "username": "johnwick",
+      "url": "https://letterboxd.com/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "johnwick",
+      "url": "https://linkedin.com/in/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "LiveInternet",
+      "username": "johnwick",
+      "url": "https://www.liveinternet.ru/users/johnwick/profile",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "LiveJournal",
+      "username": "johnwick",
+      "url": "https://johnwick.livejournal.com",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Medium",
+      "username": "johnwick",
+      "url": "https://medium.com/@johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Minecraft",
+      "username": "johnwick",
+      "url": "https://api.mojang.com/users/profiles/minecraft/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "MixCloud",
+      "username": "johnwick",
+      "url": "https://www.mixcloud.com/johnwick/",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "MyAnimeList",
+      "username": "johnwick",
+      "url": "https://myanimelist.net/profile/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Myspace",
+      "username": "johnwick",
+      "url": "https://myspace.com/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Naver",
+      "username": "johnwick",
+      "url": "https://blog.naver.com/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL Brazil",
+      "username": "johnwick",
+      "url": "https://op.gg/lol/summoners/search?q=johnwick&region=br",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL Europe Nordic & East",
+      "username": "johnwick",
+      "url": "https://op.gg/lol/summoners/search?q=johnwick&region=eune",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL Europe West",
+      "username": "johnwick",
+      "url": "https://op.gg/lol/summoners/search?q=johnwick&region=euw",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL Japan",
+      "username": "johnwick",
+      "url": "https://op.gg/lol/summoners/search?q=johnwick&region=jp",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL Korea",
+      "username": "johnwick",
+      "url": "https://op.gg/lol/summoners/search?q=johnwick&region=kr",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL LAN",
+      "username": "johnwick",
+      "url": "https://op.gg/lol/summoners/search?q=johnwick&region=lan",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL LAS",
+      "username": "johnwick",
+      "url": "https://op.gg/lol/summoners/search?q=johnwick&region=las",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL Middle East",
+      "username": "johnwick",
+      "url": "https://op.gg/lol/summoners/search?q=johnwick&region=me",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL North America",
+      "username": "johnwick",
+      "url": "https://op.gg/lol/summoners/search?q=johnwick&region=na",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL Oceania",
+      "username": "johnwick",
+      "url": "https://op.gg/lol/summoners/search?q=johnwick&region=oce",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL Phillippines",
+      "username": "johnwick",
+      "url": "https://op.gg/lol/summoners/search?q=johnwick&region=ph",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL Russia",
+      "username": "johnwick",
+      "url": "https://op.gg/lol/summoners/search?q=johnwick&region=ru",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL Singapore",
+      "username": "johnwick",
+      "url": "https://op.gg/lol/summoners/search?q=johnwick&region=sg",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL Taiwan",
+      "username": "johnwick",
+      "url": "https://op.gg/lol/summoners/search?q=johnwick&region=tw",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL Thailand",
+      "username": "johnwick",
+      "url": "https://op.gg/lol/summoners/search?q=johnwick&region=th",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL Turkey",
+      "username": "johnwick",
+      "url": "https://op.gg/lol/summoners/search?q=johnwick&region=tr",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL Vietnam",
+      "username": "johnwick",
+      "url": "https://op.gg/lol/summoners/search?q=johnwick&region=vn",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OpenSea",
+      "username": "johnwick",
+      "url": "https://opensea.io/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OpenStreetMap",
+      "username": "johnwick",
+      "url": "https://www.openstreetmap.org/user/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Pastebin",
+      "username": "johnwick",
+      "url": "https://pastebin.com/u/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Patreon",
+      "username": "johnwick",
+      "url": "https://www.patreon.com/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Paypal",
+      "username": "johnwick",
+      "url": "https://www.paypal.com/paypalme/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Pbase",
+      "username": "johnwick",
+      "url": "https://pbase.com/johnwick/profile",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "ProductHunt",
+      "username": "johnwick",
+      "url": "https://www.producthunt.com/@johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "ReverbNation",
+      "username": "johnwick",
+      "url": "https://www.reverbnation.com/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Roblox",
+      "username": "johnwick",
+      "url": "https://www.roblox.com/user.aspx?username=johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Slack",
+      "username": "johnwick",
+      "url": "https://johnwick.slack.com",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Snapchat",
+      "username": "johnwick",
+      "url": "https://www.snapchat.com/add/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "SoundCloud",
+      "username": "johnwick",
+      "url": "https://soundcloud.com/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Speakerdeck",
+      "username": "johnwick",
+      "url": "https://speakerdeck.com/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Spotify",
+      "username": "johnwick",
+      "url": "https://open.spotify.com/user/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "StackOverflow",
+      "username": "johnwick",
+      "url": "https://stackoverflow.com/users/filter?search=johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Steam",
+      "username": "johnwick",
+      "url": "https://steamcommunity.com/id/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Steam",
+      "username": "johnwick",
+      "url": "https://steamcommunity.com/groups/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Substack",
+      "username": "johnwick",
+      "url": "https://substack.com/@johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Telegram",
+      "username": "johnwick",
+      "url": "https://t.me/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "ThemeForest",
+      "username": "johnwick",
+      "url": "https://themeforest.net/user/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Threads",
+      "username": "johnwick",
+      "url": "https://www.threads.net/@johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Tistory",
+      "username": "johnwick",
+      "url": "https://johnwick.tistory.com/",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "TradingView",
+      "username": "johnwick",
+      "url": "https://www.tradingview.com/u/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Trello",
+      "username": "johnwick",
+      "url": "https://trello.com/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "TripAdvisor",
+      "username": "johnwick",
+      "url": "https://tripadvisor.com/members/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Twitch",
+      "username": "johnwick",
+      "url": "https://twitchtracker.com/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Twitter",
+      "username": "johnwick",
+      "url": "https://twitter.com/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "VK",
+      "username": "johnwick",
+      "url": "https://vk.com/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Vimeo",
+      "username": "johnwick",
+      "url": "https://vimeo.com/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Wattpad",
+      "username": "johnwick",
+      "url": "https://www.wattpad.com/user/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Weebly",
+      "username": "johnwick",
+      "url": "http://johnwick.weebly.com/",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Wikidot",
+      "username": "johnwick",
+      "url": "http://www.wikidot.com/user:info/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Wikipedia",
+      "username": "johnwick",
+      "url": "https://en.wikipedia.org/wiki/User:johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Windy",
+      "username": "johnwick",
+      "url": "https://community.windy.com/user/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "WordPressOrg",
+      "username": "johnwick",
+      "url": "https://profiles.wordpress.org/johnwick/",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Xing",
+      "username": "johnwick",
+      "url": "https://www.xing.com/profile/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "kofi",
+      "username": "johnwick",
+      "url": "https://ko-fi.com/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "last.fm",
+      "username": "johnwick",
+      "url": "https://last.fm/user/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "linktr.ee",
+      "username": "johnwick",
+      "url": "https://linktr.ee/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "note",
+      "username": "johnwick",
+      "url": "https://note.com/johnwick",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    }
+  ],
+  "entities": [
+    {
+      "type": "person",
+      "name": "John Wick",
+      "confidence": 0.8
+    },
+    {
+      "type": "person",
+      "name": "Derek Kolstad",
+      "confidence": 0.9
+    },
+    {
+      "type": "person",
+      "name": "Keanu Reeves",
+      "confidence": 0.9
+    },
+    {
+      "type": "person",
+      "name": "Vusi Matlala",
+      "confidence": 0.8
+    },
+    {
+      "type": "person",
+      "name": "James Earl Ray",
+      "confidence": 0.9
+    },
+    {
+      "type": "person",
+      "name": "Martin Luther King Jr.",
+      "confidence": 0.8
+    },
+    {
+      "type": "person",
+      "name": "Tyler Bates",
+      "confidence": 0.8
+    },
+    {
+      "type": "person",
+      "name": "Dawn of the Dead",
+      "confidence": 0.7
+    },
+    {
+      "type": "person",
+      "name": "300",
+      "confidence": 0.8
+    },
+    {
+      "type": "person",
+      "name": "Sucker Punch",
+      "confidence": 0.7
+    },
+    {
+      "type": "person",
+      "name": "Halloween",
+      "confidence": 0.7
+    },
+    {
+      "type": "person",
+      "name": "Halloween II",
+      "confidence": 0.7
+    },
+    {
+      "type": "person",
+      "name": "John Wick (film)",
+      "confidence": 0.8
+    },
+    {
+      "type": "person",
+      "name": "Chad Stahelski",
+      "confidence": 0.9
+    },
+    {
+      "type": "person",
+      "name": "Adrian Palicki",
+      "confidence": 0.8
+    },
+    {
+      "type": "person",
+      "name": "Alain Delon",
+      "confidence": 0.7
+    },
+    {
+      "type": "person",
+      "name": "Will Smith",
+      "confidence": 0.8
+    },
+    {
+      "type": "person",
+      "name": "Antoine Fuqua",
+      "confidence": 0.7
+    },
+    {
+      "type": "person",
+      "name": "Denzel",
+      "confidence": 0.8
+    },
+    {
+      "type": "person",
+      "name": "Sun Mingming",
+      "confidence": 0.7
+    },
+    {
+      "type": "organization",
+      "name": "Crime Intelligence circles",
+      "confidence": 0.8
+    },
+    {
+      "type": "person",
+      "name": "Barbara Gordon",
+      "confidence": 0.9
+    },
+    {
+      "type": "organization",
+      "name": "Spinoff Online | TV & Film News Daily",
+      "confidence": 0.8
+    },
+    {
+      "type": "person",
+      "name": "Barbara Gordon",
+      "confidence": 0.9
+    },
+    {
+      "type": "person",
+      "name": "Scott Huver",
+      "confidence": 0.8
+    },
+    {
+      "type": "person",
+      "name": "Barbara Gordon",
+      "confidence": 0.9
+    }
+  ],
+  "sentiment": {
+    "sentiment": "positive",
+    "confidence": 0.8,
+    "key_emotional_indicators": [
+      "action",
+      "thriller",
+      "legendary",
+      "best performance",
+      "high-octane",
+      "kicking butt",
+      "love letters",
+      "homage"
+    ]
+  },
+  "classification": {
+    "category": "Film & Entertainment",
+    "subcategory": "Movie Information",
+    "confidence": 0.9,
+    "tags": [
+      "John Wick",
+      "Keanu Reeves",
+      "action movie",
+      "film franchise",
+      "Chad Stahelski",
+      "Derek Kolstad",
+      "Netflix",
+      "TV series",
+      "antihero",
+      "crime thriller"
+    ]
+  },
+  "inconsistencies": [
+    {
+      "description": "John Wick is mentioned as being based on Derek Kolstad's work, but the source doesn't specify a connection between the franchise and Kolstad himself.",
+      "severity": "medium",
+      "text_snippet": "It centers on a neo-noir action thriller film series directed by Chad Stahelski featuring. John Wick (film). John Wick is a 2014 American action thriller film directed by Chad Stahelski and written by Derek Kolstad."
+    },
+    {
+      "description": "Contradictory claim that James Earl Ray was involved in the assassination of Martin Luther King Jr. but then contradicts itself stating he was convicted for this assassination, which isn't true according to official records",
+      "severity": "high",
+      "text_snippet": "James Earl Ray. convicted of the assassination of Martin Luther King Jr. at the Lorraine Motel in Memphis, Tennessee, on April 4, 1968. After the assassination, Ray, who had."
+    },
+    {
+      "description": "Inconsistency regarding the source mentioning John Wick and Vusi Matlala's status as 'John Wick' within Crime Intelligence circles but not providing evidence or background information to support this claim.",
+      "severity": "medium",
+      "text_snippet": "Brown Mogotsi. where he mentioned that Vusi Matlala is known as &quot;John Wick&quot; in the Crime Intelligence circles."
+    },
+    {
+      "description": "Contradictory statements about Keanu Reeves' performance, claiming it is his 'best performance' while simultaneously referring to a Netflix thriller and its connection to John Wick without providing further context or details.",
+      "severity": "medium",
+      "text_snippet": "Netflix thriller is 'Keanu Reeves' best performance' that's not John Wick - Wales Online. Netflix thriller is 'Keanu Reeves' best performance' that's not John Wick &nbsp;&nbsp; Wales Online. Hannah Waddingham thrills in 'high-octane' new series ideal for John Wick fans - Wales Online."
+    },
+    {
+      "description": "Information about the character of Barbara Gordon, who trained in various martial arts, is inconsistent with her role as Batgirl which usually focuses on acrobatics and stealth.",
+      "severity": "medium",
+      "text_snippet": "According to the character&#039;s fictional biography, Barbara Gordon trained in Boxing, Capoeira, Judo, Kung Fu, Eskrima."
+    },
+    {
+      "description": "References to John Wick's connection to Alain Delon but there is no evidence of any direct relation or shared inspiration.",
+      "severity": "low",
+      "text_snippet": "Alain Delon. inspiration from Le Cercle Rouge and Le Samoura\u00ef when crafting John Wick\u00a0: &quot;The John Wick films are all love letters from Keanu, myself, our stunt team. Will Smith."
+    }
+  ],
+  "name_suggestions": [
+    {
+      "suggested_name": "John Wick",
+      "type": "full_name",
+      "rationale": "This is the full name, but it might be modified or used in combination with another form."
+    },
+    {
+      "suggested_name": "John William Wick",
+      "type": "full_name",
+      "rationale": "Possible full name variation adding a middle initial, but not uncommon to see the middle names omitted in searches."
+    },
+    {
+      "suggested_name": "John W. Wick",
+      "type": "alias",
+      "rationale": "Common abbreviation of John, likely used for shortened or informal identities."
+    },
+    {
+      "suggested_name": "J.W. Wick",
+      "type": "nickname",
+      "rationale": "Abbreviation of John William Wick, a nickname that could be adopted by the individual."
+    }
+  ],
+  "maigret_searches": [
+    {
+      "username": "johnwick",
+      "total_checked": 200,
+      "profiles_found": 112,
+      "profiles": {
+        "Twitter": {
+          "username": "johnwick",
+          "url": "https://twitter.com/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Twitter"
+        },
+        "GitHub": {
+          "username": "johnwick",
+          "url": "https://github.com/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "GitHub"
+        },
+        "SoundCloud": {
+          "username": "johnwick",
+          "url": "https://soundcloud.com/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "SoundCloud"
+        },
+        "linktr.ee": {
+          "username": "johnwick",
+          "url": "https://linktr.ee/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "linktr.ee"
+        },
+        "Spotify": {
+          "username": "johnwick",
+          "url": "https://open.spotify.com/user/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Spotify"
+        },
+        "Medium": {
+          "username": "johnwick",
+          "url": "https://medium.com/@johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Medium"
+        },
+        "Wikipedia": {
+          "username": "johnwick",
+          "url": "https://en.wikipedia.org/wiki/User:johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Wikipedia"
+        },
+        "Behance": {
+          "username": "johnwick",
+          "url": "https://www.behance.net/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Behance"
+        },
+        "Weebly": {
+          "username": "johnwick",
+          "url": "http://johnwick.weebly.com/",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Weebly"
+        },
+        "Telegram": {
+          "username": "johnwick",
+          "url": "https://t.me/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Telegram"
+        },
+        "Instagram": {
+          "username": "johnwick",
+          "url": "https://www.instagram.com/johnwick/",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Instagram"
+        },
+        "StackOverflow": {
+          "username": "johnwick",
+          "url": "https://stackoverflow.com/users/filter?search=johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "StackOverflow"
+        },
+        "Substack": {
+          "username": "johnwick",
+          "url": "https://substack.com/@johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Substack"
+        },
+        "Calendly": {
+          "username": "johnwick",
+          "url": "https://calendly.com/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Calendly"
+        },
+        "Bluesky": {
+          "username": "johnwick",
+          "url": "https://bsky.app/profile/johnwick.bsky.social",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Bluesky"
+        },
+        "DailyMotion": {
+          "username": "johnwick",
+          "url": "https://www.dailymotion.com/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "DailyMotion"
+        },
+        "GitLab": {
+          "username": "johnwick",
+          "url": "https://gitlab.com/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "GitLab"
+        },
+        "ThemeForest": {
+          "username": "johnwick",
+          "url": "https://themeforest.net/user/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "ThemeForest"
+        },
+        "Imgur": {
+          "username": "johnwick",
+          "url": "https://imgur.com/user/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Imgur"
+        },
+        "VK": {
+          "username": "johnwick",
+          "url": "https://vk.com/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "VK"
+        },
+        "Google Scholar": {
+          "username": "johnwick",
+          "url": "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=johnwick&btnG=",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Google Scholar"
+        },
+        "OpenStreetMap": {
+          "username": "johnwick",
+          "url": "https://www.openstreetmap.org/user/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "OpenStreetMap"
+        },
+        "OP.GG LoL Brazil": {
+          "username": "johnwick",
+          "url": "https://op.gg/lol/summoners/search?q=johnwick&region=br",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "OP.GG LoL Brazil"
+        },
+        "Vimeo": {
+          "username": "johnwick",
+          "url": "https://vimeo.com/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Vimeo"
+        },
+        "Twitch": {
+          "username": "johnwick",
+          "url": "https://twitchtracker.com/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Twitch"
+        },
+        "WordPressOrg": {
+          "username": "johnwick",
+          "url": "https://profiles.wordpress.org/johnwick/",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "WordPressOrg"
+        },
+        "Academia.edu": {
+          "username": "johnwick",
+          "url": "https://independent.academia.edu/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Academia.edu"
+        },
+        "LinkedIn": {
+          "username": "johnwick",
+          "url": "https://linkedin.com/in/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "LinkedIn"
+        },
+        "Myspace": {
+          "username": "johnwick",
+          "url": "https://myspace.com/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Myspace"
+        },
+        "OP.GG LoL Europe Nordic & East": {
+          "username": "johnwick",
+          "url": "https://op.gg/lol/summoners/search?q=johnwick&region=eune",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "OP.GG LoL Europe Nordic & East"
+        },
+        "OP.GG LoL Japan": {
+          "username": "johnwick",
+          "url": "https://op.gg/lol/summoners/search?q=johnwick&region=jp",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "OP.GG LoL Japan"
+        },
+        "OP.GG LoL North America": {
+          "username": "johnwick",
+          "url": "https://op.gg/lol/summoners/search?q=johnwick&region=na",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "OP.GG LoL North America"
+        },
+        "OP.GG LoL LAS": {
+          "username": "johnwick",
+          "url": "https://op.gg/lol/summoners/search?q=johnwick&region=las",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "OP.GG LoL LAS"
+        },
+        "TripAdvisor": {
+          "username": "johnwick",
+          "url": "https://tripadvisor.com/members/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "TripAdvisor"
+        },
+        "Bandcamp": {
+          "username": "johnwick",
+          "url": "https://www.bandcamp.com/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Bandcamp"
+        },
+        "Dribbble": {
+          "username": "johnwick",
+          "url": "https://dribbble.com/johnwick",
+          "status": "Claimed",
+          "http_status": 404,
+          "site_name": "Dribbble"
+        },
+        "Facebook": {
+          "username": "johnwick",
+          "url": "https://www.facebook.com/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Facebook"
+        },
+        "OP.GG LoL Taiwan": {
+          "username": "johnwick",
+          "url": "https://op.gg/lol/summoners/search?q=johnwick&region=tw",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "OP.GG LoL Taiwan"
+        },
+        "Slack": {
+          "username": "johnwick",
+          "url": "https://johnwick.slack.com",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Slack"
+        },
+        "OP.GG LoL Thailand": {
+          "username": "johnwick",
+          "url": "https://op.gg/lol/summoners/search?q=johnwick&region=th",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "OP.GG LoL Thailand"
+        },
+        "Disqus": {
+          "username": "johnwick",
+          "url": "https://disqus.com/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Disqus"
+        },
+        "OP.GG LoL Singapore": {
+          "username": "johnwick",
+          "url": "https://op.gg/lol/summoners/search?q=johnwick&region=sg",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "OP.GG LoL Singapore"
+        },
+        "OP.GG LoL Russia": {
+          "username": "johnwick",
+          "url": "https://op.gg/lol/summoners/search?q=johnwick&region=ru",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "OP.GG LoL Russia"
+        },
+        "Naver": {
+          "username": "johnwick",
+          "url": "https://blog.naver.com/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Naver"
+        },
+        "OP.GG LoL Phillippines": {
+          "username": "johnwick",
+          "url": "https://op.gg/lol/summoners/search?q=johnwick&region=ph",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "OP.GG LoL Phillippines"
+        },
+        "GoodReads": {
+          "username": "johnwick",
+          "url": "https://www.goodreads.com/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "GoodReads"
+        },
+        "OP.GG LoL LAN": {
+          "username": "johnwick",
+          "url": "https://op.gg/lol/summoners/search?q=johnwick&region=lan",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "OP.GG LoL LAN"
+        },
+        "OP.GG LoL Middle East": {
+          "username": "johnwick",
+          "url": "https://op.gg/lol/summoners/search?q=johnwick&region=me",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "OP.GG LoL Middle East"
+        },
+        "OP.GG LoL Vietnam": {
+          "username": "johnwick",
+          "url": "https://op.gg/lol/summoners/search?q=johnwick&region=vn",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "OP.GG LoL Vietnam"
+        },
+        "OP.GG LoL Europe West": {
+          "username": "johnwick",
+          "url": "https://op.gg/lol/summoners/search?q=johnwick&region=euw",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "OP.GG LoL Europe West"
+        },
+        "Giphy": {
+          "username": "johnwick",
+          "url": "https://giphy.com/channel/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Giphy"
+        },
+        "Trello": {
+          "username": "johnwick",
+          "url": "https://trello.com/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Trello"
+        },
+        "OP.GG LoL Oceania": {
+          "username": "johnwick",
+          "url": "https://op.gg/lol/summoners/search?q=johnwick&region=oce",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "OP.GG LoL Oceania"
+        },
+        "OP.GG LoL Korea": {
+          "username": "johnwick",
+          "url": "https://op.gg/lol/summoners/search?q=johnwick&region=kr",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "OP.GG LoL Korea"
+        },
+        "LiveJournal": {
+          "username": "johnwick",
+          "url": "https://johnwick.livejournal.com",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "LiveJournal"
+        },
+        "HuggingFace": {
+          "username": "johnwick",
+          "url": "https://huggingface.co/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "HuggingFace"
+        },
+        "OP.GG LoL Turkey": {
+          "username": "johnwick",
+          "url": "https://op.gg/lol/summoners/search?q=johnwick&region=tr",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "OP.GG LoL Turkey"
+        },
+        "Kickstarter": {
+          "username": "johnwick",
+          "url": "https://www.kickstarter.com/profile/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Kickstarter"
+        },
+        "Amazon": {
+          "username": "johnwick",
+          "url": "https://amazon.com/author/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Amazon"
+        },
+        "Steam": {
+          "username": "johnwick",
+          "url": "https://steamcommunity.com/id/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Steam"
+        },
+        "Snapchat": {
+          "username": "johnwick",
+          "url": "https://www.snapchat.com/add/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Snapchat"
+        },
+        "Laracast": {
+          "username": "johnwick",
+          "url": "https://laracasts.com/@johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Laracast"
+        },
+        "MixCloud": {
+          "username": "johnwick",
+          "url": "https://www.mixcloud.com/johnwick/",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "MixCloud"
+        },
+        "kofi": {
+          "username": "johnwick",
+          "url": "https://ko-fi.com/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "kofi"
+        },
+        "Paypal": {
+          "username": "johnwick",
+          "url": "https://www.paypal.com/paypalme/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Paypal"
+        },
+        "Threads": {
+          "username": "johnwick",
+          "url": "https://www.threads.net/@johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Threads"
+        },
+        "500px": {
+          "username": "johnwick",
+          "url": "https://500px.com/p/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "500px"
+        },
+        "Itch.io": {
+          "username": "johnwick",
+          "url": "https://johnwick.itch.io/",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Itch.io"
+        },
+        "Codepen": {
+          "username": "johnwick",
+          "url": "https://codepen.io/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Codepen"
+        },
+        "TradingView": {
+          "username": "johnwick",
+          "url": "https://www.tradingview.com/u/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "TradingView"
+        },
+        "Instructables": {
+          "username": "johnwick",
+          "url": "https://www.instructables.com/member/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Instructables"
+        },
+        "DEV Community": {
+          "username": "johnwick",
+          "url": "https://dev.to/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "DEV Community"
+        },
+        "Discogs": {
+          "username": "johnwick",
+          "url": "https://www.discogs.com/user/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Discogs"
+        },
+        "DigitalOcean": {
+          "username": "johnwick",
+          "url": "https://www.digitalocean.com/community/users/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "DigitalOcean"
+        },
+        "Pastebin": {
+          "username": "johnwick",
+          "url": "https://pastebin.com/u/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Pastebin"
+        },
+        "Gumroad": {
+          "username": "johnwick",
+          "url": "https://www.gumroad.com/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Gumroad"
+        },
+        "Patreon": {
+          "username": "johnwick",
+          "url": "https://www.patreon.com/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Patreon"
+        },
+        "Figma": {
+          "username": "johnwick",
+          "url": "https://www.figma.com/@johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Figma"
+        },
+        "Ameblo": {
+          "username": "johnwick",
+          "url": "https://ameblo.jp/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Ameblo"
+        },
+        "DeviantART": {
+          "username": "johnwick",
+          "url": "https://johnwick.deviantart.com",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "DeviantART"
+        },
+        "Wikidot": {
+          "username": "johnwick",
+          "url": "http://www.wikidot.com/user:info/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Wikidot"
+        },
+        "Fiverr": {
+          "username": "johnwick",
+          "url": "https://www.fiverr.com/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Fiverr"
+        },
+        "Steam (Group)": {
+          "username": "johnwick",
+          "url": "https://steamcommunity.com/groups/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Steam"
+        },
+        "note": {
+          "username": "johnwick",
+          "url": "https://note.com/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "note"
+        },
+        "ProductHunt": {
+          "username": "johnwick",
+          "url": "https://www.producthunt.com/@johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "ProductHunt"
+        },
+        "About.me": {
+          "username": "johnwick",
+          "url": "https://about.me/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "About.me"
+        },
+        "last.fm": {
+          "username": "johnwick",
+          "url": "https://last.fm/user/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "last.fm"
+        },
+        "Flipboard": {
+          "username": "johnwick",
+          "url": "https://flipboard.com/@johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Flipboard"
+        },
+        "Duolingo": {
+          "username": "johnwick",
+          "url": "https://www.duolingo.com/profile/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Duolingo"
+        },
+        "Codecanyon": {
+          "username": "johnwick",
+          "url": "https://codecanyon.net/user/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Codecanyon"
+        },
+        "Minecraft": {
+          "username": "johnwick",
+          "url": "https://api.mojang.com/users/profiles/minecraft/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Minecraft"
+        },
+        "LiveInternet": {
+          "username": "johnwick",
+          "url": "https://www.liveinternet.ru/users/johnwick/profile",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "LiveInternet"
+        },
+        "Genius": {
+          "username": "johnwick",
+          "url": "https://genius.com/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Genius"
+        },
+        "Codecademy": {
+          "username": "johnwick",
+          "url": "https://www.codecademy.com/profiles/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Codecademy"
+        },
+        "HubPages": {
+          "username": "johnwick",
+          "url": "https://hubpages.com/@johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "HubPages"
+        },
+        "Wattpad": {
+          "username": "johnwick",
+          "url": "https://www.wattpad.com/user/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Wattpad"
+        },
+        "Pbase": {
+          "username": "johnwick",
+          "url": "https://pbase.com/johnwick/profile",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Pbase"
+        },
+        "ImageShack": {
+          "username": "johnwick",
+          "url": "https://imageshack.com/user/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "ImageShack"
+        },
+        "Diigo": {
+          "username": "johnwick",
+          "url": "https://www.diigo.com/interact_api/load_profile_info?name=johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Diigo"
+        },
+        "Habr": {
+          "username": "johnwick",
+          "url": "https://habr.com/ru/users/johnwick/",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Habr"
+        },
+        "Letterboxd": {
+          "username": "johnwick",
+          "url": "https://letterboxd.com/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Letterboxd"
+        },
+        "MyAnimeList": {
+          "username": "johnwick",
+          "url": "https://myanimelist.net/profile/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "MyAnimeList"
+        },
+        "Speakerdeck": {
+          "username": "johnwick",
+          "url": "https://speakerdeck.com/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Speakerdeck"
+        },
+        "BuyMeACoffee": {
+          "username": "johnwick",
+          "url": "https://buymeacoff.ee/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "BuyMeACoffee"
+        },
+        "Geeksfor Geeks": {
+          "username": "johnwick",
+          "url": "https://www.geeksforgeeks.org/profile/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Geeksfor Geeks"
+        },
+        "OpenSea": {
+          "username": "johnwick",
+          "url": "https://opensea.io/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "OpenSea"
+        },
+        "ReverbNation": {
+          "username": "johnwick",
+          "url": "https://www.reverbnation.com/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "ReverbNation"
+        },
+        "Gitee": {
+          "username": "johnwick",
+          "url": "https://gitee.com/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Gitee"
+        },
+        "Flightradar24": {
+          "username": "johnwick",
+          "url": "https://my.flightradar24.com/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Flightradar24"
+        },
+        "Roblox": {
+          "username": "johnwick",
+          "url": "https://www.roblox.com/user.aspx?username=johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Roblox"
+        },
+        "Tistory": {
+          "username": "johnwick",
+          "url": "https://johnwick.tistory.com/",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Tistory"
+        },
+        "Windy": {
+          "username": "johnwick",
+          "url": "https://community.windy.com/user/johnwick",
+          "status": "Claimed",
+          "http_status": 200,
+          "site_name": "Windy"
+        }
+      }
+    }
+  ],
+  "holehe_searches": [],
+  "llm_analysis": "# OSINT Intelligence Report\n**Date:** 2026-06-23\n**Subject:** John Wick\n**Analyst:** Senior OSINT Analyst\n\n***\n\n### 1. Subject Identification and Nature of Entity\nThe subject, \"John Wick,\" appears to be a **fictional character**. All publicly available data retrieved pertains exclusively to cinematic media, pop culture references, or fictional biography lists. There is no evidence found in the raw findings linking this name to a real-world individual with criminal activity or verifiable personal identity outside of entertainment media.\n\n### 2. Digital Footprint Found\nThe digital footprint is entirely derived from established public domain sources:\n*   **Web/Media:** Wikipedia links confirm the existence of \"John Wick\" in relation to films and fictional personas (e.g., `en.wikipedia.org/wiki/John_Wick_%28film%29`).\n*   **Social Media:** Raw findings indicate a high volume of generic results (113 profiles found), but no specific, identifiable profile or biographical data was extracted to link to the subject matter.\n\n### 3. Key Findings and Evidence\nEvidence overwhelmingly supports the conclusion that John Wick is an archetype character:\n\n*   **Identity Confirmation:** Search results provide multiple links confirming the existence of \"John Wick\" as a cinematic entity (e.g., `https://en.wikipedia.org/wiki/John_Wick_%28film%29`).\n*   **Criminal Records Void:** Searches for \"John Wick assassination records public records\" (TASK\\_001) yielded zero actionable links to real-world legal or criminal databases. The results were limited to general Wikipedia entries about the character, the source material, and unrelated individuals (Brown Mogotsi).\n*   **Persona Context:** Results from TASK\\_003 reference broader lists of fictional figures (`https://en.wikipedia.org/wiki/List_of_fictional_antiheroes`), placing the subject within a documented media framework rather than reality.\n\n### 4. Red Flags and Contradictions\n*   **Contradiction:** The primary contradiction is the user's premise of an \"assassin\" requiring intelligence gathering, contrasted with all available public records which frame the identity entirely as fictional entertainment.\n*   **Red Flag:** Task analysis reports (TASK\\_005: entities: 1; TASK\\_006: inconsistencies: 1) suggest a potential difficulty in pinning down concrete, real-world entity data. The information stream is diffuse and non-actionable from an intelligence standpoint.\n\n### 5. Recommended Next Investigation Steps\nGiven the current findings (2026-06-23), the subject appears to be fictional. Further investigation should only proceed if:\n\n1.  **Scope Change:** Confirmation is obtained that the request pertains to a real person using the name \"John Wick\" and not the character.\n2.  **Contextual Data Provided:** The user provides alternative identifiers (aliases, associated names, unique geographic locations) that could bypass media bias results.\n3.  **Targeted Source Monitoring:** If an investigation must continue based solely on current data, monitor major entertainment/movie news sites for any unusual or non-canonical biographical articles, as the digital footprint is currently limited to pop culture archives."
+}

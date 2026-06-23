@@ -1,0 +1,134 @@
+{
+  "lookup_id": "",
+  "timestamp": "2026-06-23T14:10:18.069804",
+  "input": {
+    "name": "test123",
+    "context": "",
+    "phrase": "",
+    "links": "",
+    "information_wanted": "",
+    "anything_you_have": ""
+  },
+  "goal_analysis": {
+    "goal": "",
+    "deliverables": [],
+    "search_queries": [],
+    "requires_social_search": false,
+    "requires_name_analysis": false,
+    "requires_entity_extraction": true,
+    "requires_sentiment": true,
+    "success_criteria": []
+  },
+  "plan": [
+    {
+      "id": "TASK_001",
+      "name": "Web search: test123",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_002",
+      "name": "Entity extraction",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_003",
+      "name": "Sentiment & classification",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_004",
+      "name": "Inconsistency detection",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_005",
+      "name": "test123",
+      "agent": "summary_agent"
+    }
+  ],
+  "web_search": [
+    {
+      "title": "Free tests that take you further! | 123test.com",
+      "snippet": "",
+      "source": "DuckDuckGo",
+      "url": "https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.123test.com%2F&amp;rut=c9fe8dd73872ae6c37dae0dcbe03b159374a046242649e0a482bb3d256b3189b"
+    },
+    {
+      "title": "Login | Test123 - Salesforce",
+      "snippet": "",
+      "source": "DuckDuckGo",
+      "url": "https://duckduckgo.com/l/?uddg=https%3A%2F%2Fsolnetworkinc.my.site.com%2Flogin%3Flocale%3Dus&amp;rut=758915ddd431a80df9b05656072c2115139ee444e4ad11e789c710b89104da43"
+    },
+    {
+      "title": "IQ Test. Free and No registration. Best IQ tests online since 2003.",
+      "snippet": "",
+      "source": "DuckDuckGo",
+      "url": "https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.123test.com%2Fiq%2Dtest%2F&amp;rut=a476f57d643436c7ce75b4c1e333929616773890e4fc94ebc63f8a2f5089de08"
+    },
+    {
+      "title": "All online tests available at 123test.com",
+      "snippet": "",
+      "source": "DuckDuckGo",
+      "url": "https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.123test.com%2Fall%2Dtests%2F&amp;rut=a688e5dc4279d0b784e5fb9b109d6f0b5aeddf4bdff080865ee010fc649d30c7"
+    },
+    {
+      "title": "test123",
+      "snippet": "",
+      "source": "DuckDuckGo",
+      "url": "https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.roblox.com%2Fbundles%2F178081315460469%2Ftest123&amp;rut=e66ca866e40f1a0aab3867e75ccdc733bbe06ff9bd015a2303efe602b60276cf"
+    }
+  ],
+  "social_profiles": [],
+  "name_suggestions": [],
+  "entities": [
+    {
+      "type": "person",
+      "name": "test123",
+      "confidence": 0.95
+    }
+  ],
+  "sentiment": {
+    "sentiment": "neutral",
+    "confidence": 0.7,
+    "key_emotional_indicators": [
+      "None"
+    ]
+  },
+  "classification": {
+    "category": "Text",
+    "subcategory": "Document/Message",
+    "confidence": 0.9,
+    "tags": [
+      "OSINT",
+      "Information Extraction"
+    ]
+  },
+  "inconsistencies": [
+    {
+      "description": "Lack of context for the provided 'test123' name suggests potential ambiguity or purposeful obscurity, potentially hindering analysis efforts.",
+      "severity": "medium",
+      "text_snippet": "Name: test123."
+    },
+    {
+      "description": "The phrase '...' is missing, lacking essential information to understand the nature and purpose of the text.",
+      "severity": "high",
+      "text_snippet": "..."
+    },
+    {
+      "description": "Missing links make it impossible to verify the source's validity or assess potential connections between different data points.",
+      "severity": "high",
+      "text_snippet": "Links: ."
+    },
+    {
+      "description": "The 'Info wanted' field is blank, indicating a lack of specific requirements for analysis and potentially hindering targeted data extraction.",
+      "severity": "medium",
+      "text_snippet": "Info wanted: ."
+    },
+    {
+      "description": "Missing 'Additional' information hinders a comprehensive understanding of the context, potential sources of bias, or any constraints related to the analyzed data. ",
+      "severity": "medium",
+      "text_snippet": "Additional: . "
+    }
+  ],
+  "llm_analysis": "## Intelligence Report: Test123 \n\n**Prepared for:**  [User Name]\n**Date:** 2023-10-27\n**Classification:**  Public Information \n\n\n**1. Who/What is Test123?**\n\nBased on the available information, \"test123\" appears to be a **placeholder name or identifier**. It likely represents an individual who:\n\n* Could be a **user profile**, a **test subject**, or a **company name**. \n* The **digital footprint suggests potential connections to online testing and IQ assessment platforms.**\n\n**2. Digital Footprint Found:**\n\nA series of web search results revealed the following digital presence related to \"test123\":\n\n* **Website:**  https://www.123test.com/ - This website presents a range of \"free tests\" for individuals, highlighting \"IQ tests\" and other assessments.\n* **Login link:** https://solnetworkinc.my.site.com/login?locale=us - This URL likely leads to a login page for a company or platform using the \"test123\" identifier.\n\n**3. Key Findings and Evidence:** \n\n*  **5 Web Search Results:** The frequency of search results indicates that \"Test123\" is either widely known or a commonly used identifier in a specific context.\n* **Focus on Testing:** The presence of website, login link, and IQ tests suggest a potential focus on online testing and assessment platforms. \n\n**4. Red Flags and Contradictions:**  \n\n* **5 Inconsistencies**: This indicates a discrepancy between the available information, raising concerns about missing details or conflicting data. Further investigation is necessary to understand the cause of these inconsistencies.\n\n\n**5. Recommended Next Investigation Steps:**\n\n* **Domain analysis:** Investigate the domain associated with \"123test.com\" -  is there more than one website using this structure? \n* **Contact information**:  Attempt to contact the organizations/companies mentioned in the search results for clarification or further details. \n* **Social Media Search**: Analyze social media platforms for any public profiles associated with \"test123.\" This could provide additional insights into this individual's online presence and activities.\n* **Data analysis**: Investigate potential user data available from the websites mentioned, focusing on privacy settings and data protection policies.  \n\n\n**Note:** The lack of clear context or a specific target for the information requires further investigation to confirm the significance of \"test123\" and its digital footprint. \n"
+}

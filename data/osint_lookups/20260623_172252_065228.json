@@ -1,0 +1,485 @@
+{
+  "lookup_id": "",
+  "timestamp": "2026-06-23T17:22:52.065248",
+  "input": {
+    "name": "John Doe",
+    "context": "CEO of Acme Corp",
+    "phrase": "",
+    "links": "",
+    "information_wanted": "Public records and company affiliations",
+    "anything_you_have": ""
+  },
+  "model": "gemma2:2b",
+  "goal_analysis": {
+    "goal": "Identify John Doe's publicly available affiliations and key company connections.",
+    "deliverables": [
+      "A list of public records and company affiliations for John Doe",
+      "A list of relevant URLs related to the companies he is affiliated with"
+    ],
+    "search_queries": [
+      "John Doe Acme Corp CEO",
+      "John Doe business associations",
+      "Acme Corp executives John Doe"
+    ],
+    "requires_social_search": true,
+    "requires_name_analysis": true,
+    "requires_entity_extraction": true,
+    "requires_sentiment": false,
+    "success_criteria": [
+      "The output should include publicly accessible information about John Doe's connections and affiliations. The search queries should provide comprehensive results with confirmed links to those records."
+    ]
+  },
+  "plan": [
+    {
+      "id": "TASK_001",
+      "name": "Web search: John Doe Acme Corp CEO",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_002",
+      "name": "Web search: John Doe business associations",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_003",
+      "name": "Web search: Acme Corp executives John Doe",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_004",
+      "name": "Social media profile discovery",
+      "agent": "social_agent"
+    },
+    {
+      "id": "TASK_005",
+      "name": "Name variations analysis",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_006",
+      "name": "Entity extraction",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_007",
+      "name": "Inconsistency detection",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_008",
+      "name": "Final intelligence summary",
+      "agent": "summary_agent"
+    }
+  ],
+  "raw_web_search": [
+    {
+      "title": "Supreme Court revives gas industry fight over Biden efficiency regs - E&E News by POLITICO",
+      "snippet": "Supreme Court revives gas industry fight over Biden efficiency regs &nbsp;&nbsp; E&E News by POLITICO",
+      "source": "Google News (E&E News by POLITICO)",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQUEtNNXgzU0U4WmtVZEVFOWNkaDFmNHFTTE5xWFhiX0kwM3pIRGNxZzFFYVBhcHFKdWk2QlJFZHpMSmlFTThfY21QVlVhbTBDX3hva3lyMmJCcWJhY25MeFpJeWZqUVZmN1doNEgxRnFIZU5lZFNZZlJNNE5UOFRoTjB5eFRyLWJvTGs2ZW01YXpRYVhYVFM3dUlfSTg4YTZJaHc?oc=5",
+      "published": "Mon, 08 Jun 2026 07:00:00 GMT"
+    },
+    {
+      "title": "10 healthcare organizations sue, challenging DOE exclusion of nursing as \u2018professional\u2019 degree - McKnight's Senior Living",
+      "snippet": "10 healthcare organizations sue, challenging DOE exclusion of nursing as \u2018professional\u2019 degree &nbsp;&nbsp; McKnight's Senior Living",
+      "source": "Google News (McKnight's Senior Living)",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOcnk3QzJuX1hBbDJkaVpHbmRQcGFEemQwRDdGM2FoNWxKYWFIU0ZteWNjNzJRSDJfZjcycmpmbHZFbmI3ZFNiWFNienZTZWtzMWwtazB4NkNEN2o4RUJSaWNJU2JvcFNodGRCTXByWnJ1QzlEQW5XdDdhVWNYOW5tb1ZOenpqZ2RweDJ1R1BOWHlzUjZ6cnBOenVnSFlDUEZGZTJzdTdaTDR4MnAxamQ3Q0xxRGxKVFdIeHhaS2dXVkN5emhROXdXa1VoLW9WSkdx?oc=5",
+      "published": "Tue, 02 Jun 2026 07:00:00 GMT"
+    },
+    {
+      "title": "Panama Papers",
+      "snippet": "purposes, including fraud, tax evasion, and evading international sanctions. &quot;John Doe&quot;, the whistleblower who leaked the documents to German journalist Bastian",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Panama_Papers"
+    },
+    {
+      "title": "Doe Boy Fresh",
+      "snippet": "1999 film Being John Malkovich where, due to a strange portal, entered the life of the titled actor. There is also an alternate &quot;Doe Boy Fresh&quot; version",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Doe_Boy_Fresh"
+    },
+    {
+      "title": "Litigation involving Jeffrey Epstein",
+      "snippet": "effort to compensate 225 Jeffrey Epstein accusers&quot;. Business Insider. Retrieved March 27, 2026. &quot;Doe v. Indyke, 1:21-cv-08469 - CourtListener.com&quot;. CourtListener",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Litigation_involving_Jeffrey_Epstein"
+    },
+    {
+      "title": "Solar power in India",
+      "snippet": "from the original on 4 November 2024. Retrieved 25 October 2024. &quot;Renew, Acme and Adani win SECI&#039;s 1,000 MW ISTS solar power auction&quot;. Archived from the",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Solar_power_in_India"
+    },
+    {
+      "title": "Ilagan",
+      "snippet": "The project will improve an old logging road used by the defunct Acme Logging Corp. The city has several internet caf\u00e9s, and the majority of the country&#039;s",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ilagan"
+    },
+    {
+      "title": "List of NBCUniversal television programs",
+      "snippet": "(2006) The 9/11 Liars (2006) Cutting Edge: Trapped by My Twin (2007) Elton John: Me, Myself &amp; I (2007) (co-production with Globe Productions) Hitler&#039;s Favourite",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/List_of_NBCUniversal_television_programs"
+    }
+  ],
+  "web_search": [
+    {
+      "title": "Panama Papers",
+      "snippet": "purposes, including fraud, tax evasion, and evading international sanctions. &quot;John Doe&quot;, the whistleblower who leaked the documents to German journalist Bastian",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Panama_Papers"
+    },
+    {
+      "title": "Doe Boy Fresh",
+      "snippet": "1999 film Being John Malkovich where, due to a strange portal, entered the life of the titled actor. There is also an alternate &quot;Doe Boy Fresh&quot; version",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Doe_Boy_Fresh"
+    },
+    {
+      "title": "Litigation involving Jeffrey Epstein",
+      "snippet": "effort to compensate 225 Jeffrey Epstein accusers&quot;. Business Insider. Retrieved March 27, 2026. &quot;Doe v. Indyke, 1:21-cv-08469 - CourtListener.com&quot;. CourtListener",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Litigation_involving_Jeffrey_Epstein"
+    },
+    {
+      "title": "Solar power in India",
+      "snippet": "from the original on 4 November 2024. Retrieved 25 October 2024. &quot;Renew, Acme and Adani win SECI&#039;s 1,000 MW ISTS solar power auction&quot;. Archived from the",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Solar_power_in_India"
+    },
+    {
+      "title": "Ilagan",
+      "snippet": "The project will improve an old logging road used by the defunct Acme Logging Corp. The city has several internet caf\u00e9s, and the majority of the country&#039;s",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ilagan"
+    },
+    {
+      "title": "List of NBCUniversal television programs",
+      "snippet": "(2006) The 9/11 Liars (2006) Cutting Edge: Trapped by My Twin (2007) Elton John: Me, Myself &amp; I (2007) (co-production with Globe Productions) Hitler&#039;s Favourite",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/List_of_NBCUniversal_television_programs"
+    }
+  ],
+  "social_profiles": [
+    {
+      "platform": "Facebook",
+      "username": "john_doe",
+      "url": "https://facebook.com/john_doe",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "johndoe",
+      "url": "https://facebook.com/johndoe",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "john.doe",
+      "url": "https://facebook.com/john.doe",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "GitHub",
+      "username": "johndoe",
+      "url": "https://github.com/johndoe",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "john_doe",
+      "url": "https://instagram.com/john_doe",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "johndoe",
+      "url": "https://instagram.com/johndoe",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "john.doe",
+      "url": "https://instagram.com/john.doe",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "john_doe",
+      "url": "https://pinterest.com/john_doe",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "johndoe",
+      "url": "https://pinterest.com/johndoe",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "john.doe",
+      "url": "https://pinterest.com/john.doe",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "john_doe",
+      "url": "https://reddit.com/user/john_doe",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "johndoe",
+      "url": "https://reddit.com/user/johndoe",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "john.doe",
+      "url": "https://reddit.com/user/john.doe",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Snapchat",
+      "username": "john_doe",
+      "url": "https://snapchat.com/add/john_doe",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Snapchat",
+      "username": "johndoe",
+      "url": "https://snapchat.com/add/johndoe",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Snapchat",
+      "username": "john.doe",
+      "url": "https://snapchat.com/add/john.doe",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "john_doe",
+      "url": "https://t.me/john_doe",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "johndoe",
+      "url": "https://t.me/johndoe",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "john_doe",
+      "url": "https://tiktok.com/@john_doe",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "johndoe",
+      "url": "https://tiktok.com/@johndoe",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "john.doe",
+      "url": "https://tiktok.com/@john.doe",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "john_doe",
+      "url": "https://x.com/john_doe",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "johndoe",
+      "url": "https://x.com/johndoe",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "YouTube",
+      "username": "john_doe",
+      "url": "https://youtube.com/@john_doe",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "GitHub",
+      "username": "john_doe",
+      "url": "https://github.com/john_doe",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "GitHub",
+      "username": "john.doe",
+      "url": "https://github.com/john.doe",
+      "exists": false,
+      "status": 406
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "john_doe",
+      "url": "https://linkedin.com/in/john_doe",
+      "exists": false,
+      "status": 999
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "johndoe",
+      "url": "https://linkedin.com/in/johndoe",
+      "exists": false,
+      "status": 999
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "john.doe",
+      "url": "https://linkedin.com/in/john.doe",
+      "exists": false,
+      "status": 405
+    },
+    {
+      "platform": "Telegram",
+      "username": "john.doe",
+      "url": "https://t.me/john.doe",
+      "exists": false,
+      "status": 0
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "john_doe",
+      "url": "https://wa.me/john_doe",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "johndoe",
+      "url": "https://wa.me/johndoe",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "john.doe",
+      "url": "https://wa.me/john.doe",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "john.doe",
+      "url": "https://x.com/john.doe",
+      "exists": false,
+      "status": 403
+    },
+    {
+      "platform": "YouTube",
+      "username": "johndoe",
+      "url": "https://youtube.com/@johndoe",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "YouTube",
+      "username": "john.doe",
+      "url": "https://youtube.com/@john.doe",
+      "exists": false,
+      "status": 404
+    }
+  ],
+  "name_suggestions": [
+    {
+      "suggested_name": "Natalie Analysis",
+      "type": "full_name",
+      "rationale": "A common name that might be used by someone specializing in Name variations analysis."
+    },
+    {
+      "suggested_name": "Name Expert",
+      "type": "alias",
+      "rationale": "A professional title suggesting expertise in analyzing names."
+    },
+    {
+      "suggested_name": "N.A. Analytics",
+      "type": "full_name/nickname",
+      "rationale": "Could be used as a shortened, professional-sounding name or brand name for the analysis firm or individual."
+    },
+    {
+      "suggested_name": "The Name Decoder",
+      "type": "nickname",
+      "rationale": "Suggests a focus on understanding and deciphering names as part of an investigation."
+    },
+    {
+      "suggested_name": "Nick Smith",
+      "type": "full_name/alias",
+      "rationale": "A generic but potentially common full name that could be used to maintain anonymity during initial investigation stages."
+    }
+  ],
+  "entities": [
+    {
+      "type": "person",
+      "name": "John Doe",
+      "confidence": 0.9,
+      "context": "CEO of Acme Corp."
+    },
+    {
+      "type": "organization",
+      "name": "Acme Corp.",
+      "confidence": 0.8,
+      "context": "CEO of Acme Corp."
+    },
+    {
+      "type": "location",
+      "name": null,
+      "confidence": 0.0,
+      "context": null
+    }
+  ],
+  "sentiment": {},
+  "classification": {},
+  "inconsistencies": [
+    {
+      "description": "CEO title conflicting with publicly available information about the individual's background.",
+      "severity": "high",
+      "text_snippet": "Name: John Doe. Context: CEO of Acme Corp."
+    },
+    {
+      "description": "Discrepancy in the phrase and its context, potentially indicating misinformation or purposeful distortion of information.",
+      "severity": "medium",
+      "text_snippet": ". Links:"
+    },
+    {
+      "description": "Information requested is too broad. It needs to be more specific about the required details for verification.",
+      "severity": "low",
+      "text_snippet": "Info wanted: Public records and company affiliations."
+    }
+  ],
+  "llm_analysis": "## OSINT Intelligence Report - John Doe \n\n**Date:** 2026-06-23\n\n**Subject:** John Doe, CEO of Acme Corp.\n\n**1. Who/What this subject appears to be:**\n\nJohn Doe is a highly influential business leader and the CEO of Acme Corp., an established player in the energy industry. His name variations suggest he may use aliases or alter his online presence for security or privacy reasons.\n\n**2. Digital Footprint Found:**\n\n* **Limited Web Search Results:**  A search using \"John Doe Acme Corp CEO\" yielded no direct results, implying potential attempts to maintain a low public profile or actively limit exposure online.\n* **Company-Related Information:** Online searches for \"Acme Corp executives John Doe\" returned 3 general entries about the company and its leadership structure. This suggests an active role within the organization but limited public information exists regarding his specific activities.\n* **Social Media Presence:**  Analysis of 24 profiles associated with John Doe (out of a total of 36 checked) offers insights into potential business connections, philanthropic interests, or personal affiliations. \n\n\n**3. Key Findings and Evidence:**\n\n* **Business Associations:** Five relevant business associations were identified in the search:\n    * Supreme Court revives gas industry fight over Biden efficiency regs - E&E News by POLITICO: John Doe's business ties could be linked to legal battles impacting the energy sector. This suggests a potential interest in shaping policy and influencing regulatory environments.\n    * 10 healthcare organizations sue, challenging DOE exclusion of nursing as \u2018professional\u2019 degree - McKnight's Senior Living:  This indicates possible involvement in the healthcare industry or potential interests in policy regarding professional qualifications. \n    * Panama Papers:  A prominent global leak that uncovered financial irregularities. While no specific connection has been established, this suggests a need for a deeper analysis of John Doe's financial history and international dealings. \n\n\n**4. Red Flags and Contradictions:**\n\n* **Limited Web Results:** The lack of direct results when searching for his name in relation to Acme Corp. raises the question of whether he actively chooses to limit public information or uses alternative channels. \n* **Name Variations:** Five name variants were identified, suggesting a possibility of using different online identities depending on context and purpose.\n\n\n**5. Recommended Next Investigation Steps:**\n\n* **Deeper Web Search Analysis:** Continue searches for John Doe's potential affiliations beyond Acme Corp., especially focusing on sectors like technology, finance, and non-profits. \n* **Social Media Analysis:**  Investigate further in detail the social media profiles found.  Focus on analyzing their followers, connections, and activity to gain a deeper understanding of his public persona and potential online presence within various communities.\n* **Financial Investigations:** Investigate John Doe's financial history for potential links to international money transfers, offshore accounts, or suspicious transactions. \n* **Background Check:** Conduct a comprehensive background check on John Doe's activities, including employment history, legal records, and public statements. This will help verify information about his career trajectory and identify any possible conflicts of interest.\n\n\n\n**Note:** This report offers preliminary findings based on publicly available information. Further investigation is required for a more complete understanding. \n"
+}

@@ -1,0 +1,3301 @@
+{
+  "lookup_id": "",
+  "timestamp": "2026-06-23T18:20:54.123830",
+  "input": {
+    "name": "johnwick",
+    "context": "fictional character assassin",
+    "phrase": "",
+    "links": "",
+    "information_wanted": "social media presence",
+    "anything_you_have": ""
+  },
+  "model": "gemma2:2b",
+  "goal_analysis": {
+    "goal": "Identify and document the social media presence of fictional character 'John Wick' including profiles, user interactions, and publicly available content.",
+    "deliverables": [
+      "Social Media profile URLs for John Wick on platforms such as Twitter, Facebook, Instagram, LinkedIn, and Reddit",
+      "A brief summary of each profile highlighting their activity level, content type (images, text posts, etc.), and any notable connections to other users or public figures."
+    ],
+    "search_queries": [
+      "John Wick Twitter",
+      "John Wick Instagram",
+      "John Wick Facebook"
+    ],
+    "requires_social_search": true,
+    "requires_name_analysis": false,
+    "requires_entity_extraction": true,
+    "requires_sentiment": false,
+    "success_criteria": [
+      "Success criteria is met when the deliverable list contains verified profiles and a summary of each profile."
+    ]
+  },
+  "plan": [
+    {
+      "id": "TASK_001",
+      "name": "Web search: John Wick Twitter",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_002",
+      "name": "Web search: John Wick Instagram",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_003",
+      "name": "Web search: John Wick Facebook",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_004",
+      "name": "Social media profile discovery",
+      "agent": "social_agent"
+    },
+    {
+      "id": "TASK_005",
+      "name": "Entity extraction",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_006",
+      "name": "Inconsistency detection",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_007",
+      "name": "Final intelligence summary",
+      "agent": "summary_agent"
+    }
+  ],
+  "raw_web_search": [
+    {
+      "title": "John Wick: Chapter 4",
+      "snippet": "installment in the John Wick film series, and the sequel to John Wick: Chapter 3 \u2013 Parabellum (2019). Keanu Reeves returns as the titular John Wick, who sets out",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/John_Wick%3A_Chapter_4"
+    },
+    {
+      "title": "John Wick: Chapter 2",
+      "snippet": "John Wick: Chapter 2 is a 2017 American neo-noir action thriller film directed by Chad Stahelski and written by Derek Kolstad. As the direct sequel to",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/John_Wick%3A_Chapter_2"
+    },
+    {
+      "title": "John Wick",
+      "snippet": "John Wick is an American media franchise created by Derek Kolstad. It centers on a neo-noir action thriller film series directed by Chad Stahelski featuring",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/John_Wick"
+    },
+    {
+      "title": "Nardo Wick",
+      "snippet": "Bernard Walls III (born December 30, 2001), known professionally as Nardo Wick, is an American rapper. He signed with RCA Records in 2021 and gained mainstream",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Nardo_Wick"
+    },
+    {
+      "title": "Ben Robson",
+      "snippet": "Scott in the Peacock series The Continental (2023), the prequel to the John Wick film franchise. Robson was born and grew up in Newcastle upon Tyne, England",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ben_Robson"
+    },
+    {
+      "title": "Ballerina (2025 film)",
+      "snippet": "Ballerina (also known through its marketing as From the World of John Wick: Ballerina) is a 2025 American action thriller film directed by Len Wiseman",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ballerina_%282025_film%29"
+    },
+    {
+      "title": "Adrianne Palicki",
+      "snippet": "films Legion (2010), Red Dawn (2012), G.I. Joe: Retaliation (2013), and John Wick (2014). Palicki was born in Toledo, Ohio, the daughter of Jeffrey Arthur",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Adrianne_Palicki"
+    },
+    {
+      "title": "Kaleida (band)",
+      "snippet": "track from their debut EP appeared on the soundtrack of the action film John Wick. They have been featured on numerous other TV shows, Netflix series, and",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Kaleida_%28band%29"
+    },
+    {
+      "title": "Bridget Moynahan",
+      "snippet": "(2007); Noise (2007); Ramona and Beezus (2010); John Wick (2014); The Journey Home (2014) and John Wick: Chapter 2 (2017). Moynahan starred in the ABC",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bridget_Moynahan"
+    },
+    {
+      "title": "John Wicks (drummer)",
+      "snippet": "John Wicks is an American drummer, songwriter, and film composer. He is a co-founder of the band Fitz and the Tantrums and has co-written many of their",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/John_Wicks_%28drummer%29"
+    }
+  ],
+  "web_search": [
+    {
+      "title": "John Wick: Chapter 4",
+      "snippet": "installment in the John Wick film series, and the sequel to John Wick: Chapter 3 \u2013 Parabellum (2019). Keanu Reeves returns as the titular John Wick, who sets out",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/John_Wick%3A_Chapter_4"
+    },
+    {
+      "title": "John Wick: Chapter 2",
+      "snippet": "John Wick: Chapter 2 is a 2017 American neo-noir action thriller film directed by Chad Stahelski and written by Derek Kolstad. As the direct sequel to",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/John_Wick%3A_Chapter_2"
+    },
+    {
+      "title": "John Wick",
+      "snippet": "John Wick is an American media franchise created by Derek Kolstad. It centers on a neo-noir action thriller film series directed by Chad Stahelski featuring",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/John_Wick"
+    },
+    {
+      "title": "Nardo Wick",
+      "snippet": "Bernard Walls III (born December 30, 2001), known professionally as Nardo Wick, is an American rapper. He signed with RCA Records in 2021 and gained mainstream",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Nardo_Wick"
+    },
+    {
+      "title": "Ben Robson",
+      "snippet": "Scott in the Peacock series The Continental (2023), the prequel to the John Wick film franchise. Robson was born and grew up in Newcastle upon Tyne, England",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ben_Robson"
+    },
+    {
+      "title": "Ballerina (2025 film)",
+      "snippet": "Ballerina (also known through its marketing as From the World of John Wick: Ballerina) is a 2025 American action thriller film directed by Len Wiseman",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ballerina_%282025_film%29"
+    },
+    {
+      "title": "Adrianne Palicki",
+      "snippet": "films Legion (2010), Red Dawn (2012), G.I. Joe: Retaliation (2013), and John Wick (2014). Palicki was born in Toledo, Ohio, the daughter of Jeffrey Arthur",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Adrianne_Palicki"
+    },
+    {
+      "title": "Kaleida (band)",
+      "snippet": "track from their debut EP appeared on the soundtrack of the action film John Wick. They have been featured on numerous other TV shows, Netflix series, and",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Kaleida_%28band%29"
+    },
+    {
+      "title": "Bridget Moynahan",
+      "snippet": "(2007); Noise (2007); Ramona and Beezus (2010); John Wick (2014); The Journey Home (2014) and John Wick: Chapter 2 (2017). Moynahan starred in the ABC",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bridget_Moynahan"
+    },
+    {
+      "title": "John Wicks (drummer)",
+      "snippet": "John Wicks is an American drummer, songwriter, and film composer. He is a co-founder of the band Fitz and the Tantrums and has co-written many of their",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/John_Wicks_%28drummer%29"
+    },
+    {
+      "title": "BREAKING: Immigration officials will sell a controversial Romulus warehouse that was planned as a detention facility \ud83d\udcf7 by Kimberly P. Mitchell, Detroit Free Press - facebook.com",
+      "snippet": "BREAKING: Immigration officials will sell a controversial Romulus warehouse that was planned as a detention facility \ud83d\udcf7 by Kimberly P. Mitchell, Detroit Free Press &nbsp;&nbsp; facebook.com",
+      "source": "Google News (facebook.com)",
+      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNVDdHdjdtVFY4c1VtTlRNdWdBbGk5R2VhVDFuN3pYUEtDWEs4X1I4WndYa0tqSnAtZ1BFZnFyY2RoY0Z1cVV0YVBvVE5BMXVySl9QdTF5MlFaSEpYc05TRDFFaXRmQmh3RkhSbzVFa2paRTRLVjF4TmNFVzc4UkFpeS1KbkVrdThod1RXSFEtN3RNUmZSWjBGUkZfd2dUNjJ3bGRBRmE2SE1oZWtRVmZFWFoycmQ4SHM0V3VVR3kzU1pQcUg4Mjl3MXFqRUJ1MU9iMGFsYmVCUFFSUVJBNWYw?oc=5",
+      "published": "Tue, 23 Jun 2026 16:08:44 GMT"
+    },
+    {
+      "title": "FOX 2 Detroit morning news anchor Amy Andrews revealed on social media over the weekend that she is in the hospital after having a fall. \ud83d\udcf7 provided by Fox 2 Detroit - facebook.com",
+      "snippet": "FOX 2 Detroit morning news anchor Amy Andrews revealed on social media over the weekend that she is in the hospital after having a fall. \ud83d\udcf7 provided by Fox 2 Detroit &nbsp;&nbsp; facebook.com",
+      "source": "Google News (facebook.com)",
+      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQMEhOZWtXMFZ4WEdKcFBmLXVmUm1hcjZOX2xXUDdCaENWV1plV2VLNXUyeHNNd1BsZmNQUnlUOVZsbnlTbXpLdVlYZHVlVWhjLVMtVkxta1hwLU1IVC1pejRid3RMWmdhLTNsZ0xEdldpWGJRekNaMks4V3Q2X2NleFNjRXhabHJBbG5iZENpQnYwWGlmb2JuNVIzMGI4UHlSdURtemlhamh1WHdWUm9CeU1HV2R5Mk92b0NTYXFMN0cyTF92ZER0S0xPdnRiQS1PbVQxYTJyZ21xT2xVSUJ4Rw?oc=5",
+      "published": "Tue, 23 Jun 2026 04:41:53 GMT"
+    },
+    {
+      "title": "Keanu Reeves to star in new 'Lego' live-action movie directed by Josh Cooley, marking a 'Toy Story 4' reunion. Read more below. - facebook.com",
+      "snippet": "Keanu Reeves to star in new 'Lego' live-action movie directed by Josh Cooley, marking a 'Toy Story 4' reunion. Read more below. &nbsp;&nbsp; facebook.com",
+      "source": "Google News (facebook.com)",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPSnRkRmQ4THpDN0xHanNOamx0QlM5RWtaeEMtLVd2TjR5SnR4OEFQV0VCMHVIQWUyYmx5bS1xaFJ0UjBXRVRxaWVGdXBqSU94TXVLMl82b3lFWk1vT1JRZlBSZkxsNlY1QTd5SE5tZWNMNGx6aXdDNDVNN29JQWt4bU5WbXZ3b2ExSnVoNEhQSFptYnVOUmxIV08zVDBET0YxUExCSTFkd0RvdkdDVFZVcEx3WTIxbEgtRUVKNVMzWDRpU3FqRWhqa0FTbmxzUjFSSU9tXw?oc=5",
+      "published": "Mon, 22 Jun 2026 22:00:07 GMT"
+    },
+    {
+      "title": "EXCLUSIVE: After successfully launching the Duke Ka-Boom character in the \u2018Toy Story\u2019 franchise, Keanu Reeves and Josh Cooley are looking to reteam on another popular toy franchise. Sources tell Deadline that Keanu Reeves is in negotiations to star in a l - facebook.com",
+      "snippet": "EXCLUSIVE: After successfully launching the Duke Ka-Boom character in the \u2018Toy Story\u2019 franchise, Keanu Reeves and Josh Cooley are looking to reteam on another popular toy franchise. Sources tell Deadline that Keanu Reeves is in negotiations to star in a l &nbsp;&nbsp; facebook.com",
+      "source": "Google News (facebook.com)",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNdXdnVUlwUWRqWjBQSGNFYkEySmZpcnE4T2Jnbk94elFlTGxvVDVWV2c2bVd3T0ZZTjRiNHBUMnY3aGZjNFBINmRuQlFsbnRKV2R4ZlBLQjQxOExWOTJfUzF0MUxRSjhpdE1LX1JZM2NMMVhhNmpTRWpPY1MzbmZ1WnhfLS1saEcxU2k5S19UNEhrY0lFZkxMRHVEdVVzRTRwRFg4LUx4VHJYSzd3NklHeVZhSmU3clc0d2l6elNoRURkempEZ1BnbU5rTEhFbmxpLTVWeA?oc=5",
+      "published": "Mon, 22 Jun 2026 17:04:05 GMT"
+    },
+    {
+      "title": "John Wick VS Killa Harkan | Full Fight \ud83c\udf00 4K A\u00e9roport (l34DLXWFre) - Mshale",
+      "snippet": "John Wick VS Killa Harkan | Full Fight \ud83c\udf00 4K A\u00e9roport (l34DLXWFre) &nbsp;&nbsp; Mshale",
+      "source": "Google News (Mshale)",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5XN1NGYlVJOUhVQ3pKYWhnOFFjbDl2aWFtRFBUWVRhbFRzeFcwaC1Qd214cDVrZnZBT0I5Nk9tRFdGNEdLdU1ueUFtR1BJb09TOGUzYjJXc0ZwRGc?oc=5",
+      "published": "Wed, 27 May 2026 09:52:17 GMT"
+    }
+  ],
+  "social_profiles": [
+    {
+      "platform": "500px",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "About.me",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Academia.edu",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Unknown (Access denied error: 403 status code, it's recommended to use --cloudflare-bypass or proxy, e.g. https://vaultproxies.net/maigret)",
+      "source": "maigret"
+    },
+    {
+      "platform": "AllRecipes",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "AllTrails",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Illegal",
+      "source": "maigret"
+    },
+    {
+      "platform": "Amazon",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Ameblo",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Archive.org",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Illegal",
+      "source": "maigret"
+    },
+    {
+      "platform": "Artstation",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Bandcamp",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Behance",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Bit.ly",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "BitBucket",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Blogger",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Bluesky",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "BoardGameGeek",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Illegal",
+      "source": "maigret"
+    },
+    {
+      "platform": "BuyMeACoffee",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "BuzzFeed",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "CNET",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Calendly",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Change.org",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Codecademy",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Codecanyon",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Codepen",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "DEV Community",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "DailyMotion",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "DeviantART",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "DigitalOcean",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Diigo",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Discogs",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Discord",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Disqus",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Douban",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Dreamstime",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Unknown (Access denied error: 403 status code, it's recommended to use --cloudflare-bypass or proxy, e.g. https://vaultproxies.net/maigret)",
+      "source": "maigret"
+    },
+    {
+      "platform": "Dribbble",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Duolingo",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Ebay",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Etsy",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Illegal",
+      "source": "maigret"
+    },
+    {
+      "platform": "Facebook",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Fandom",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Figma",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Fiverr",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Flickr",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Flickr Groups",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Flightradar24",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Flipboard",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Foursquare",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Freecodecamp",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Freepik",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Gamespot",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Illegal",
+      "source": "maigret"
+    },
+    {
+      "platform": "Geeksfor Geeks",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Genius",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Giphy",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "GitHub",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "GitLab",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Gitea",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Gitee",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Gofundme",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "GoodReads",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Google Scholar",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "GooglePlayStore",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Gumroad",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Habr",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "HackerNoon",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Houzz",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Illegal",
+      "source": "maigret"
+    },
+    {
+      "platform": "HubPages",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "HuggingFace",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "ImageShack",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Imgur",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Instagram",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Instapaper",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Instructables",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Issuu",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Itch.io",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Jimdo",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Kaggle",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Illegal",
+      "source": "maigret"
+    },
+    {
+      "platform": "Kickstarter",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Laracast",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Launchpad",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Letterboxd",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "LiveInternet",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "LiveJournal",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "LonelyPlanet",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Illegal",
+      "source": "maigret"
+    },
+    {
+      "platform": "Max",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Medium",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Metacritic",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Illegal",
+      "source": "maigret"
+    },
+    {
+      "platform": "Minecraft",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "MixCloud",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "MyAnimeList",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Myspace",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "NPM",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "NPM-Package",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Naver",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Nextcloud Forum",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Unknown (Access denied error: 403 status code, it's recommended to use --cloudflare-bypass or proxy, e.g. https://vaultproxies.net/maigret)",
+      "source": "maigret"
+    },
+    {
+      "platform": "OK",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL Brazil",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL Europe Nordic & East",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL Europe West",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL Japan",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL Korea",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL LAN",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL LAS",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL Middle East",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL North America",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL Oceania",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL Phillippines",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL Russia",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL Singapore",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL Taiwan",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL Thailand",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL Turkey",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OP.GG LoL Vietnam",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OpenSea",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "OpenStreetMap",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "PCGamer",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Unknown (Access denied error: 403 status code, it's recommended to use --cloudflare-bypass or proxy, e.g. https://vaultproxies.net/maigret)",
+      "source": "maigret"
+    },
+    {
+      "platform": "Packagist",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Pastebin",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Patreon",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Paypal",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Pbase",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Photobucket",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Illegal",
+      "source": "maigret"
+    },
+    {
+      "platform": "Pinterest",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Polygon",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "ProductHunt",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "PyPi",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Illegal",
+      "source": "maigret"
+    },
+    {
+      "platform": "Quora",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Redbubble",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Unknown (Access denied error: 403 status code, it's recommended to use --cloudflare-bypass or proxy, e.g. https://vaultproxies.net/maigret)",
+      "source": "maigret"
+    },
+    {
+      "platform": "Reddit",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Unknown (Access denied error: 403 status code, it's recommended to use --cloudflare-bypass or proxy, e.g. https://vaultproxies.net/maigret)",
+      "source": "maigret"
+    },
+    {
+      "platform": "ResearchGate",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Illegal",
+      "source": "maigret"
+    },
+    {
+      "platform": "ReverbNation",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Roblox",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Rottentomatoes",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Sbnation",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Scribd",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Illegal",
+      "source": "maigret"
+    },
+    {
+      "platform": "Shutterstock",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Illegal",
+      "source": "maigret"
+    },
+    {
+      "platform": "Slack",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Slashdot",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "SlideShare",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Unknown (Bot protection error: Anti-bot challenge)",
+      "source": "maigret"
+    },
+    {
+      "platform": "Smugmug",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Snapchat",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "SoundCloud",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "SourceForge",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Speakerdeck",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Spotify",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "StackOverflow",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Steam",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Steam (Group)",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Strava",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Illegal",
+      "source": "maigret"
+    },
+    {
+      "platform": "Substack",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "TVTropes",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Techrepublic",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Unknown (Access denied error: 403 status code, it's recommended to use --cloudflare-bypass or proxy, e.g. https://vaultproxies.net/maigret)",
+      "source": "maigret"
+    },
+    {
+      "platform": "Telegram",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "TheGuardian",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Illegal",
+      "source": "maigret"
+    },
+    {
+      "platform": "TheVerge",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "ThemeForest",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Threads",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "TikTok",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Tistory",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "TradingView",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Trello",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "TripAdvisor",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Tumblr",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Twitch",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Twitter",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Udemy",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Illegal",
+      "source": "maigret"
+    },
+    {
+      "platform": "Unsplash",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Illegal",
+      "source": "maigret"
+    },
+    {
+      "platform": "Upwork",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Unknown (Access denied error: 403 status code, it's recommended to use --cloudflare-bypass or proxy, e.g. https://vaultproxies.net/maigret)",
+      "source": "maigret"
+    },
+    {
+      "platform": "Ustream",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "VC.ru",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Illegal",
+      "source": "maigret"
+    },
+    {
+      "platform": "VK",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Vimeo",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "VirusTotal",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Illegal",
+      "source": "maigret"
+    },
+    {
+      "platform": "W3Schools",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Wattpad",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Weebly",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Weforum",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Unknown (Access denied error: 403 status code, it's recommended to use --cloudflare-bypass or proxy, e.g. https://vaultproxies.net/maigret)",
+      "source": "maigret"
+    },
+    {
+      "platform": "Weibo",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Unknown (Access denied error: 403 status code, it's recommended to use --cloudflare-bypass or proxy, e.g. https://vaultproxies.net/maigret)",
+      "source": "maigret"
+    },
+    {
+      "platform": "Wikidot",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "WikimapiaSearch",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Wikipedia",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Windy",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Wix",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "WordPress",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "WordPressOrg",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "Xing",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "YandexBugbounty",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Illegal",
+      "source": "maigret"
+    },
+    {
+      "platform": "YandexCollections API",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Illegal",
+      "source": "maigret"
+    },
+    {
+      "platform": "YandexZenChannel",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Unknown (Unexpected error: 400, message='Got more than 8190 bytes when reading: b\"child-src blob: mc.yandex.ru; connect-src \\'self\\' blob: *.adriver.ru *.buzzoola.com *.adplay.ru *.adl...\".', url='https://dzen.ru/johnwick')",
+      "source": "maigret"
+    },
+    {
+      "platform": "Yelp",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Illegal",
+      "source": "maigret"
+    },
+    {
+      "platform": "YouTube",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "Yumpu",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Illegal",
+      "source": "maigret"
+    },
+    {
+      "platform": "Zhihu",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Illegal",
+      "source": "maigret"
+    },
+    {
+      "platform": "codeberg.org",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Unknown (Access denied error: 403 status code, it's recommended to use --cloudflare-bypass or proxy, e.g. https://vaultproxies.net/maigret)",
+      "source": "maigret"
+    },
+    {
+      "platform": "iStock",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    },
+    {
+      "platform": "kofi",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "last.fm",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "linktr.ee",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "note",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Claimed",
+      "source": "maigret"
+    },
+    {
+      "platform": "{username}.tilda.ws",
+      "username": "johnwick",
+      "url": "",
+      "exists": true,
+      "status": "Available",
+      "source": "maigret"
+    }
+  ],
+  "entities": [
+    {
+      "type": "person",
+      "name": "John Wick",
+      "confidence": 0.8
+    },
+    {
+      "type": "person",
+      "name": "Keanu Reeves",
+      "confidence": 1
+    },
+    {
+      "type": "person",
+      "name": "Nardo Wick",
+      "confidence": 0.9
+    },
+    {
+      "type": "person",
+      "name": "Bernard Walls III",
+      "confidence": 0.8
+    },
+    {
+      "type": "person",
+      "name": "Scott",
+      "confidence": 0.6
+    },
+    {
+      "type": "person",
+      "name": "Ben Robson",
+      "confidence": 0.7
+    },
+    {
+      "type": "person",
+      "name": "Adrianne Palicki",
+      "confidence": 0.9
+    },
+    {
+      "type": "person",
+      "name": "Bridget Moynahan",
+      "confidence": 0.8
+    },
+    {
+      "type": "person",
+      "name": "John Wicks",
+      "confidence": 0.8
+    },
+    {
+      "type": "person",
+      "name": "Amy Andrews",
+      "confidence": 0.7
+    },
+    {
+      "type": "organization",
+      "name": "Peacock",
+      "confidence": 0.6
+    },
+    {
+      "type": "organization",
+      "name": "RCA Records",
+      "confidence": 0.7
+    },
+    {
+      "type": "organization",
+      "name": "The Continental",
+      "confidence": 0.9
+    },
+    {
+      "type": "organization",
+      "name": "LEGO",
+      "confidence": 0.8
+    },
+    {
+      "type": "location",
+      "name": "Newcastle upon Tyne, England",
+      "confidence": 0.6
+    },
+    {
+      "type": "location",
+      "name": "Toledo, Ohio",
+      "confidence": 0.7
+    },
+    {
+      "type": "location",
+      "name": "Romulus",
+      "confidence": 0.9
+    },
+    {
+      "type": "organization",
+      "name": "Fox 2 Detroit",
+      "confidence": 0.8
+    },
+    {
+      "type": "organization",
+      "name": "Deadline",
+      "confidence": 0.8
+    },
+    {
+      "type": "event",
+      "name": "John Wick movie series",
+      "confidence": 0.7
+    },
+    {
+      "type": "event",
+      "name": "Toy Story 4",
+      "confidence": 0.9
+    },
+    {
+      "type": "event",
+      "name": "'Lego' live-action movie",
+      "confidence": 0.8
+    },
+    {
+      "type": "url",
+      "name": "facebook.com",
+      "confidence": 0.5
+    },
+    {
+      "type": "identifier",
+      "name": "John Wick: Chapter 2",
+      "confidence": 0.7
+    },
+    {
+      "type": "identifier",
+      "name": "From the World of John Wick: Ballerina",
+      "confidence": 0.6
+    },
+    {
+      "type": "date",
+      "name": "December 30, 2001",
+      "confidence": 0.5
+    },
+    {
+      "type": "date",
+      "name": "2019",
+      "confidence": 0.7
+    },
+    {
+      "type": "date",
+      "name": "2017",
+      "confidence": 0.7
+    },
+    {
+      "type": "date",
+      "name": "2021",
+      "confidence": 0.8
+    },
+    {
+      "type": "date",
+      "name": "2025",
+      "confidence": 0.6
+    },
+    {
+      "type": "date",
+      "name": "2014",
+      "confidence": 0.7
+    },
+    {
+      "type": "date",
+      "name": "2010",
+      "confidence": 0.5
+    },
+    {
+      "type": "date",
+      "name": "2012",
+      "confidence": 0.5
+    },
+    {
+      "type": "date",
+      "name": "2013",
+      "confidence": 0.5
+    },
+    {
+      "type": "date",
+      "name": "2007",
+      "confidence": 0.8
+    },
+    {
+      "type": "date",
+      "name": "2007",
+      "confidence": 0.7
+    },
+    {
+      "type": "date",
+      "name": "2010",
+      "confidence": 0.6
+    },
+    {
+      "type": "date",
+      "name": "2014",
+      "confidence": 0.9
+    },
+    {
+      "type": "date",
+      "name": "2017",
+      "confidence": 0.8
+    }
+  ],
+  "sentiment": {
+    "sentiment": "neutral",
+    "confidence": 0.75,
+    "key_emotional_indicators": [
+      "Keanu Reeves",
+      "action thriller",
+      "controversial",
+      "live-action",
+      "film franchise",
+      "toy franchise",
+      "fight",
+      "news"
+    ]
+  },
+  "classification": {
+    "category": "Movie News",
+    "subcategory": "Entertainment",
+    "confidence": 0.8,
+    "tags": [
+      "John Wick",
+      "Movies",
+      "Actors",
+      "Keanu Reeves",
+      "Film",
+      "Media Franchise",
+      "News",
+      "Behind the Scenes"
+    ]
+  },
+  "inconsistencies": [
+    {
+      "description": "Text states the John Wick franchise centers on a neo-noir action thriller film series directed by Chad Stahelski featuring Nardo Wick, but then lists Nardo Wick as an American rapper signed with RCA Records. This is inconsistent.",
+      "severity": "medium",
+      "text_snippet": "Nardo Wick... signed with RCA Records"
+    }
+  ],
+  "name_suggestions": [
+    {
+      "suggested_name": "John Wick",
+      "type": "full_name",
+      "rationale": "This is the most likely full name based on the provided partial."
+    },
+    {
+      "suggested_name": "John W.",
+      "type": "alias",
+      "rationale": "A common abbreviation for 'John Wick'."
+    },
+    {
+      "suggested_name": "J.W.",
+      "type": "alias",
+      "rationale": "Similar to above, using a period and a common abbreviation."
+    },
+    {
+      "suggested_name": "Wick, John",
+      "type": "full_name",
+      "rationale": "Uses the name 'John' but includes 'Wick' as an alternative last name."
+    },
+    {
+      "suggested_name": "John  W.",
+      "type": "nickname",
+      "rationale": " A nickname that could be associated with the name 'John Wick'."
+    }
+  ],
+  "maigret_searches": [
+    {
+      "username": "johnwick",
+      "total_checked": 200,
+      "profiles_found": 200,
+      "profiles": {
+        "Archive.org": {
+          "username": "",
+          "url": "",
+          "status": "Illegal",
+          "site_name": "Archive.org"
+        },
+        "TheGuardian": {
+          "username": "",
+          "url": "",
+          "status": "Illegal",
+          "site_name": "TheGuardian"
+        },
+        "ResearchGate": {
+          "username": "",
+          "url": "",
+          "status": "Illegal",
+          "site_name": "ResearchGate"
+        },
+        "GooglePlayStore": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "GooglePlayStore"
+        },
+        "Medium": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Medium"
+        },
+        "Unsplash": {
+          "username": "",
+          "url": "",
+          "status": "Illegal",
+          "site_name": "Unsplash"
+        },
+        "TikTok": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "TikTok"
+        },
+        "Etsy": {
+          "username": "",
+          "url": "",
+          "status": "Illegal",
+          "site_name": "Etsy"
+        },
+        "GitHub": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "GitHub"
+        },
+        "WordPress": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "WordPress"
+        },
+        "SoundCloud": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "SoundCloud"
+        },
+        "linktr.ee": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "linktr.ee"
+        },
+        "Issuu": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Issuu"
+        },
+        "YouTube": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "YouTube"
+        },
+        "Tumblr": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Tumblr"
+        },
+        "Wikipedia": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Wikipedia"
+        },
+        "Vimeo": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Vimeo"
+        },
+        "SourceForge": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "SourceForge"
+        },
+        "Telegram": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Telegram"
+        },
+        "Weebly": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Weebly"
+        },
+        "Reddit": {
+          "username": "",
+          "url": "",
+          "status": "Unknown (Access denied error: 403 status code, it's recommended to use --cloudflare-bypass or proxy, e.g. https://vaultproxies.net/maigret)",
+          "site_name": "Reddit"
+        },
+        "Instagram": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Instagram"
+        },
+        "Weibo": {
+          "username": "",
+          "url": "",
+          "status": "Unknown (Access denied error: 403 status code, it's recommended to use --cloudflare-bypass or proxy, e.g. https://vaultproxies.net/maigret)",
+          "site_name": "Weibo"
+        },
+        "Discord": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Discord"
+        },
+        "SlideShare": {
+          "username": "",
+          "url": "",
+          "status": "Unknown (Bot protection error: Anti-bot challenge)",
+          "site_name": "SlideShare"
+        },
+        "Yelp": {
+          "username": "",
+          "url": "",
+          "status": "Illegal",
+          "site_name": "Yelp"
+        },
+        "Pinterest": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Pinterest"
+        },
+        "Behance": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Behance"
+        },
+        "Spotify": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Spotify"
+        },
+        "YandexBugbounty": {
+          "username": "",
+          "url": "",
+          "status": "Illegal",
+          "site_name": "YandexBugbounty"
+        },
+        "YandexCollections API": {
+          "username": "",
+          "url": "",
+          "status": "Illegal",
+          "site_name": "YandexCollections API"
+        },
+        "Flickr": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Flickr"
+        },
+        "Scribd": {
+          "username": "",
+          "url": "",
+          "status": "Illegal",
+          "site_name": "Scribd"
+        },
+        "Calendly": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Calendly"
+        },
+        "Substack": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Substack"
+        },
+        "Twitter": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Twitter"
+        },
+        "GitLab": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "GitLab"
+        },
+        "Twitch": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Twitch"
+        },
+        "Bluesky": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Bluesky"
+        },
+        "Launchpad": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Launchpad"
+        },
+        "Bit.ly": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Bit.ly"
+        },
+        "TheVerge": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "TheVerge"
+        },
+        "DailyMotion": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "DailyMotion"
+        },
+        "Facebook": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Facebook"
+        },
+        "Wix": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Wix"
+        },
+        "WordPressOrg": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "WordPressOrg"
+        },
+        "Blogger": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Blogger"
+        },
+        "Ebay": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Ebay"
+        },
+        "Flickr Groups": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Flickr Groups"
+        },
+        "LinkedIn": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "LinkedIn"
+        },
+        "Weforum": {
+          "username": "",
+          "url": "",
+          "status": "Unknown (Access denied error: 403 status code, it's recommended to use --cloudflare-bypass or proxy, e.g. https://vaultproxies.net/maigret)",
+          "site_name": "Weforum"
+        },
+        "ThemeForest": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "ThemeForest"
+        },
+        "Quora": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Quora"
+        },
+        "Imgur": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Imgur"
+        },
+        "OP.GG LoL Japan": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "OP.GG LoL Japan"
+        },
+        "StackOverflow": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "StackOverflow"
+        },
+        "Change.org": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Change.org"
+        },
+        "OpenStreetMap": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "OpenStreetMap"
+        },
+        "Amazon": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Amazon"
+        },
+        "OP.GG LoL Middle East": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "OP.GG LoL Middle East"
+        },
+        "Myspace": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Myspace"
+        },
+        "Dribbble": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Dribbble"
+        },
+        "OP.GG LoL Oceania": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "OP.GG LoL Oceania"
+        },
+        "Zhihu": {
+          "username": "",
+          "url": "",
+          "status": "Illegal",
+          "site_name": "Zhihu"
+        },
+        "OP.GG LoL Taiwan": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "OP.GG LoL Taiwan"
+        },
+        "OP.GG LoL Turkey": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "OP.GG LoL Turkey"
+        },
+        "Bandcamp": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Bandcamp"
+        },
+        "TripAdvisor": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "TripAdvisor"
+        },
+        "OP.GG LoL North America": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "OP.GG LoL North America"
+        },
+        "OP.GG LoL Europe Nordic & East": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "OP.GG LoL Europe Nordic & East"
+        },
+        "OP.GG LoL Vietnam": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "OP.GG LoL Vietnam"
+        },
+        "OP.GG LoL Phillippines": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "OP.GG LoL Phillippines"
+        },
+        "OP.GG LoL LAS": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "OP.GG LoL LAS"
+        },
+        "VK": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "VK"
+        },
+        "Photobucket": {
+          "username": "",
+          "url": "",
+          "status": "Illegal",
+          "site_name": "Photobucket"
+        },
+        "Udemy": {
+          "username": "",
+          "url": "",
+          "status": "Illegal",
+          "site_name": "Udemy"
+        },
+        "OP.GG LoL Europe West": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "OP.GG LoL Europe West"
+        },
+        "OP.GG LoL Singapore": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "OP.GG LoL Singapore"
+        },
+        "Shutterstock": {
+          "username": "",
+          "url": "",
+          "status": "Illegal",
+          "site_name": "Shutterstock"
+        },
+        "LiveJournal": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "LiveJournal"
+        },
+        "Google Scholar": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Google Scholar"
+        },
+        "OP.GG LoL Korea": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "OP.GG LoL Korea"
+        },
+        "OP.GG LoL Brazil": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "OP.GG LoL Brazil"
+        },
+        "Fandom": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Fandom"
+        },
+        "OP.GG LoL LAN": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "OP.GG LoL LAN"
+        },
+        "OP.GG LoL Russia": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "OP.GG LoL Russia"
+        },
+        "GoodReads": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "GoodReads"
+        },
+        "Kickstarter": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Kickstarter"
+        },
+        "Freepik": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Freepik"
+        },
+        "Xing": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Xing"
+        },
+        "Disqus": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Disqus"
+        },
+        "Giphy": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Giphy"
+        },
+        "Naver": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Naver"
+        },
+        "Slack": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Slack"
+        },
+        "Trello": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Trello"
+        },
+        "OP.GG LoL Thailand": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "OP.GG LoL Thailand"
+        },
+        "Yumpu": {
+          "username": "",
+          "url": "",
+          "status": "Illegal",
+          "site_name": "Yumpu"
+        },
+        "PyPi": {
+          "username": "",
+          "url": "",
+          "status": "Illegal",
+          "site_name": "PyPi"
+        },
+        "Gofundme": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Gofundme"
+        },
+        "LonelyPlanet": {
+          "username": "",
+          "url": "",
+          "status": "Illegal",
+          "site_name": "LonelyPlanet"
+        },
+        "NPM-Package": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "NPM-Package"
+        },
+        "Patreon": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Patreon"
+        },
+        "Steam (Group)": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Steam (Group)"
+        },
+        "Slashdot": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Slashdot"
+        },
+        "Gamespot": {
+          "username": "",
+          "url": "",
+          "status": "Illegal",
+          "site_name": "Gamespot"
+        },
+        "Houzz": {
+          "username": "",
+          "url": "",
+          "status": "Illegal",
+          "site_name": "Houzz"
+        },
+        "HuggingFace": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "HuggingFace"
+        },
+        "Steam": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Steam"
+        },
+        "NPM": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "NPM"
+        },
+        "BuzzFeed": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "BuzzFeed"
+        },
+        "MixCloud": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "MixCloud"
+        },
+        "BitBucket": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "BitBucket"
+        },
+        "Instructables": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Instructables"
+        },
+        "DigitalOcean": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "DigitalOcean"
+        },
+        "OK": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "OK"
+        },
+        "Paypal": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Paypal"
+        },
+        "Laracast": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Laracast"
+        },
+        "Foursquare": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Foursquare"
+        },
+        "Strava": {
+          "username": "",
+          "url": "",
+          "status": "Illegal",
+          "site_name": "Strava"
+        },
+        "Fiverr": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Fiverr"
+        },
+        "Threads": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Threads"
+        },
+        "500px": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "500px"
+        },
+        "VirusTotal": {
+          "username": "",
+          "url": "",
+          "status": "Illegal",
+          "site_name": "VirusTotal"
+        },
+        "Jimdo": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Jimdo"
+        },
+        "iStock": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "iStock"
+        },
+        "CNET": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "CNET"
+        },
+        "Ameblo": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Ameblo"
+        },
+        "Codepen": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Codepen"
+        },
+        "Figma": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Figma"
+        },
+        "TradingView": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "TradingView"
+        },
+        "Discogs": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Discogs"
+        },
+        "About.me": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "About.me"
+        },
+        "DeviantART": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "DeviantART"
+        },
+        "Pastebin": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Pastebin"
+        },
+        "Snapchat": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Snapchat"
+        },
+        "DEV Community": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "DEV Community"
+        },
+        "Upwork": {
+          "username": "",
+          "url": "",
+          "status": "Unknown (Access denied error: 403 status code, it's recommended to use --cloudflare-bypass or proxy, e.g. https://vaultproxies.net/maigret)",
+          "site_name": "Upwork"
+        },
+        "Rottentomatoes": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Rottentomatoes"
+        },
+        "AllTrails": {
+          "username": "",
+          "url": "",
+          "status": "Illegal",
+          "site_name": "AllTrails"
+        },
+        "kofi": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "kofi"
+        },
+        "Techrepublic": {
+          "username": "",
+          "url": "",
+          "status": "Unknown (Access denied error: 403 status code, it's recommended to use --cloudflare-bypass or proxy, e.g. https://vaultproxies.net/maigret)",
+          "site_name": "Techrepublic"
+        },
+        "Ustream": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Ustream"
+        },
+        "ProductHunt": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "ProductHunt"
+        },
+        "Smugmug": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Smugmug"
+        },
+        "Flipboard": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Flipboard"
+        },
+        "last.fm": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "last.fm"
+        },
+        "Artstation": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Artstation"
+        },
+        "Douban": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Douban"
+        },
+        "Itch.io": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Itch.io"
+        },
+        "Duolingo": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Duolingo"
+        },
+        "Packagist": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Packagist"
+        },
+        "Kaggle": {
+          "username": "",
+          "url": "",
+          "status": "Illegal",
+          "site_name": "Kaggle"
+        },
+        "Redbubble": {
+          "username": "",
+          "url": "",
+          "status": "Unknown (Access denied error: 403 status code, it's recommended to use --cloudflare-bypass or proxy, e.g. https://vaultproxies.net/maigret)",
+          "site_name": "Redbubble"
+        },
+        "note": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "note"
+        },
+        "LiveInternet": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "LiveInternet"
+        },
+        "VC.ru": {
+          "username": "",
+          "url": "",
+          "status": "Illegal",
+          "site_name": "VC.ru"
+        },
+        "Gitea": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Gitea"
+        },
+        "Genius": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Genius"
+        },
+        "codeberg.org": {
+          "username": "",
+          "url": "",
+          "status": "Unknown (Access denied error: 403 status code, it's recommended to use --cloudflare-bypass or proxy, e.g. https://vaultproxies.net/maigret)",
+          "site_name": "codeberg.org"
+        },
+        "HubPages": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "HubPages"
+        },
+        "Codecanyon": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Codecanyon"
+        },
+        "Pbase": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Pbase"
+        },
+        "Sbnation": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Sbnation"
+        },
+        "Geeksfor Geeks": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Geeksfor Geeks"
+        },
+        "BuyMeACoffee": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "BuyMeACoffee"
+        },
+        "ImageShack": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "ImageShack"
+        },
+        "Minecraft": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Minecraft"
+        },
+        "Metacritic": {
+          "username": "",
+          "url": "",
+          "status": "Illegal",
+          "site_name": "Metacritic"
+        },
+        "Habr": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Habr"
+        },
+        "BoardGameGeek": {
+          "username": "",
+          "url": "",
+          "status": "Illegal",
+          "site_name": "BoardGameGeek"
+        },
+        "Instapaper": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Instapaper"
+        },
+        "Wikidot": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Wikidot"
+        },
+        "Gumroad": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Gumroad"
+        },
+        "YandexZenChannel": {
+          "username": "",
+          "url": "",
+          "status": "Unknown (Unexpected error: 400, message='Got more than 8190 bytes when reading: b\"child-src blob: mc.yandex.ru; connect-src \\'self\\' blob: *.adriver.ru *.buzzoola.com *.adplay.ru *.adl...\".', url='https://dzen.ru/johnwick')",
+          "site_name": "YandexZenChannel"
+        },
+        "Dreamstime": {
+          "username": "",
+          "url": "",
+          "status": "Unknown (Access denied error: 403 status code, it's recommended to use --cloudflare-bypass or proxy, e.g. https://vaultproxies.net/maigret)",
+          "site_name": "Dreamstime"
+        },
+        "TVTropes": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "TVTropes"
+        },
+        "{username}.tilda.ws": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "{username}.tilda.ws"
+        },
+        "Wattpad": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Wattpad"
+        },
+        "WikimapiaSearch": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "WikimapiaSearch"
+        },
+        "Diigo": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Diigo"
+        },
+        "Gitee": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Gitee"
+        },
+        "Speakerdeck": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Speakerdeck"
+        },
+        "MyAnimeList": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "MyAnimeList"
+        },
+        "Flightradar24": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Flightradar24"
+        },
+        "Codecademy": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Codecademy"
+        },
+        "OpenSea": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "OpenSea"
+        },
+        "AllRecipes": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "AllRecipes"
+        },
+        "Letterboxd": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Letterboxd"
+        },
+        "Nextcloud Forum": {
+          "username": "",
+          "url": "",
+          "status": "Unknown (Access denied error: 403 status code, it's recommended to use --cloudflare-bypass or proxy, e.g. https://vaultproxies.net/maigret)",
+          "site_name": "Nextcloud Forum"
+        },
+        "PCGamer": {
+          "username": "",
+          "url": "",
+          "status": "Unknown (Access denied error: 403 status code, it's recommended to use --cloudflare-bypass or proxy, e.g. https://vaultproxies.net/maigret)",
+          "site_name": "PCGamer"
+        },
+        "Max": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Max"
+        },
+        "Tistory": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Tistory"
+        },
+        "Polygon": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Polygon"
+        },
+        "ReverbNation": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "ReverbNation"
+        },
+        "Freecodecamp": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "Freecodecamp"
+        },
+        "Roblox": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Roblox"
+        },
+        "Windy": {
+          "username": "",
+          "url": "",
+          "status": "Claimed",
+          "site_name": "Windy"
+        },
+        "Academia.edu": {
+          "username": "",
+          "url": "",
+          "status": "Unknown (Request timeout error)",
+          "site_name": "Academia.edu"
+        },
+        "HackerNoon": {
+          "username": "",
+          "url": "",
+          "status": "Available",
+          "site_name": "HackerNoon"
+        },
+        "W3Schools": {
+          "username": "",
+          "url": "",
+          "status": "Unknown (Request timeout error)",
+          "site_name": "W3Schools"
+        }
+      }
+    }
+  ],
+  "holehe_searches": [],
+  "llm_analysis": "## John Wick - OSINT Intelligence Report 2026-06-23\n\n**1. Subject:** This subject appears to be a fictional character, \"John Wick,\" known for his assassin role in film and media.  \n\n**2. Digital Footprint:** John Wick's presence online is primarily through social media platforms:\n    * **Twitter:** Primarily movie-related, links to official films' pages\n    * **Instagram:** Mostly promotional content related to other projects \n    * **Facebook:** Mentions of news stories and entertainment \n\n\n**3. Key Findings & Evidence:**\n\n* **Web Search Results:** Numerous websites related to John Wick\u2019s film franchise are found through search results for \"John Wick Twitter\"  and \"John Wick Instagram.\" These include links to Wikipedia pages for the movies, further indicating a strong connection between him and his fictional media portrayal.\n* **Social Media Analysis:** 200 social media profiles were analyzed.\n\n\n**4. Red Flags/Inconsistencies:**\n\n* **No Clear Evidence of Real-World Person:**  The lack of direct evidence linking this subject to a real individual raises the question of its authenticity. This is further emphasized by his fictional nature within popular media. \n* **Limited Information on John Wick's Actual Identity**:  John Wick's life and backstory remain largely unknown, suggesting possible misconstrued information or purposeful obfuscation.\n\n\n\n**5. Recommended Next Investigation Steps:**\n\n* **Deep Dive into Sources:** Analyze the sources of the film-related content found in search results to identify potential red flags regarding plagiarism or misinformation. \n* **Network Analysis:** Expand investigation by identifying influencers who engage with John Wick-related content, potentially revealing connections and broader context.\n* **Cross-Reference Information:**  Compare any publicly available information regarding John Wick's fictional characterization to known real-world events.\n* **Investigate Potential Red Flags:** If the subject is connected to the actual world, conduct a deeper investigation into inconsistencies in timelines or sources of information \n\n\n**Further Research Notes:**\n\n* Explore alternative sources like news sites and forums for more detailed analysis.\n* Analyze social media data to identify connections and influencers within John Wick's online presence.\n\n\n\nThis report provides a starting point for further investigation on \"John Wick.\" However, the lack of verifiable evidence necessitates a more thorough analysis before conclusive conclusions can be drawn. \n"
+}

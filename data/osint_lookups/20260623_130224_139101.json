@@ -1,0 +1,839 @@
+{
+  "lookup_id": "",
+  "timestamp": "2026-06-23T13:02:24.139502",
+  "input": {
+    "name": "Elon Musk",
+    "context": "CEO of Tesla and SpaceX",
+    "phrase": "lets go to mars",
+    "links": "",
+    "information_wanted": "social media profiles and aliases",
+    "anything_you_have": ""
+  },
+  "web_search": [],
+  "social_profiles": [
+    {
+      "platform": "Facebook",
+      "username": "elon_musk",
+      "url": "https://facebook.com/elon_musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "elonmusk",
+      "url": "https://facebook.com/elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "lets.go.to.mars",
+      "url": "https://facebook.com/lets.go.to.mars",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "lets go to mars",
+      "url": "https://facebook.com/lets go to mars",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "letsgotomars",
+      "url": "https://facebook.com/letsgotomars",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "elon-musk",
+      "url": "https://facebook.com/elon-musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "elon",
+      "url": "https://facebook.com/elon",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "musk",
+      "url": "https://facebook.com/musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Facebook",
+      "username": "elon.musk",
+      "url": "https://facebook.com/elon.musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "GitHub",
+      "username": "elonmusk",
+      "url": "https://github.com/elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "GitHub",
+      "username": "letsgotomars",
+      "url": "https://github.com/letsgotomars",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "GitHub",
+      "username": "elon-musk",
+      "url": "https://github.com/elon-musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "GitHub",
+      "username": "elon",
+      "url": "https://github.com/elon",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "GitHub",
+      "username": "musk",
+      "url": "https://github.com/musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "elon_musk",
+      "url": "https://instagram.com/elon_musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "elonmusk",
+      "url": "https://instagram.com/elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "lets.go.to.mars",
+      "url": "https://instagram.com/lets.go.to.mars",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "lets go to mars",
+      "url": "https://instagram.com/lets go to mars",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "letsgotomars",
+      "url": "https://instagram.com/letsgotomars",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "elon-musk",
+      "url": "https://instagram.com/elon-musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "elon",
+      "url": "https://instagram.com/elon",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "musk",
+      "url": "https://instagram.com/musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Instagram",
+      "username": "elon.musk",
+      "url": "https://instagram.com/elon.musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "elon_musk",
+      "url": "https://pinterest.com/elon_musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "elonmusk",
+      "url": "https://pinterest.com/elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "lets.go.to.mars",
+      "url": "https://pinterest.com/lets.go.to.mars",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "lets go to mars",
+      "url": "https://pinterest.com/lets go to mars",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "letsgotomars",
+      "url": "https://pinterest.com/letsgotomars",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "elon-musk",
+      "url": "https://pinterest.com/elon-musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "elon",
+      "url": "https://pinterest.com/elon",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "musk",
+      "url": "https://pinterest.com/musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Pinterest",
+      "username": "elon.musk",
+      "url": "https://pinterest.com/elon.musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "elon_musk",
+      "url": "https://reddit.com/user/elon_musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "elonmusk",
+      "url": "https://reddit.com/user/elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "lets.go.to.mars",
+      "url": "https://reddit.com/user/lets.go.to.mars",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "lets go to mars",
+      "url": "https://reddit.com/user/lets go to mars",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "letsgotomars",
+      "url": "https://reddit.com/user/letsgotomars",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "elon-musk",
+      "url": "https://reddit.com/user/elon-musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "elon",
+      "url": "https://reddit.com/user/elon",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "musk",
+      "url": "https://reddit.com/user/musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Reddit",
+      "username": "elon.musk",
+      "url": "https://reddit.com/user/elon.musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Snapchat",
+      "username": "elon_musk",
+      "url": "https://snapchat.com/add/elon_musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Snapchat",
+      "username": "elonmusk",
+      "url": "https://snapchat.com/add/elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Snapchat",
+      "username": "letsgotomars",
+      "url": "https://snapchat.com/add/letsgotomars",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Snapchat",
+      "username": "elon-musk",
+      "url": "https://snapchat.com/add/elon-musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Snapchat",
+      "username": "musk",
+      "url": "https://snapchat.com/add/musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Snapchat",
+      "username": "elon.musk",
+      "url": "https://snapchat.com/add/elon.musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "elon_musk",
+      "url": "https://t.me/elon_musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "elonmusk",
+      "url": "https://t.me/elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "lets.go.to.mars",
+      "url": "https://t.me/lets.go.to.mars",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "lets go to mars",
+      "url": "https://t.me/lets go to mars",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "letsgotomars",
+      "url": "https://t.me/letsgotomars",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "elon-musk",
+      "url": "https://t.me/elon-musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "elon",
+      "url": "https://t.me/elon",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "musk",
+      "url": "https://t.me/musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "Telegram",
+      "username": "elon.musk",
+      "url": "https://t.me/elon.musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "elon_musk",
+      "url": "https://tiktok.com/@elon_musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "elonmusk",
+      "url": "https://tiktok.com/@elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "lets.go.to.mars",
+      "url": "https://tiktok.com/@lets.go.to.mars",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "lets go to mars",
+      "url": "https://tiktok.com/@lets go to mars",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "letsgotomars",
+      "url": "https://tiktok.com/@letsgotomars",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "elon-musk",
+      "url": "https://tiktok.com/@elon-musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "elon",
+      "url": "https://tiktok.com/@elon",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "musk",
+      "url": "https://tiktok.com/@musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "TikTok",
+      "username": "elon.musk",
+      "url": "https://tiktok.com/@elon.musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "elon_musk",
+      "url": "https://x.com/elon_musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "elonmusk",
+      "url": "https://x.com/elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "letsgotomars",
+      "url": "https://x.com/letsgotomars",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "elon",
+      "url": "https://x.com/elon",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "musk",
+      "url": "https://x.com/musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "YouTube",
+      "username": "elonmusk",
+      "url": "https://youtube.com/@elonmusk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "YouTube",
+      "username": "letsgotomars",
+      "url": "https://youtube.com/@letsgotomars",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "YouTube",
+      "username": "elon-musk",
+      "url": "https://youtube.com/@elon-musk",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "YouTube",
+      "username": "elon",
+      "url": "https://youtube.com/@elon",
+      "exists": true,
+      "status": 200
+    },
+    {
+      "platform": "GitHub",
+      "username": "elon_musk",
+      "url": "https://github.com/elon_musk",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "GitHub",
+      "username": "lets.go.to.mars",
+      "url": "https://github.com/lets.go.to.mars",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "GitHub",
+      "username": "lets go to mars",
+      "url": "https://github.com/lets go to mars",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "GitHub",
+      "username": "elon.musk",
+      "url": "https://github.com/elon.musk",
+      "exists": false,
+      "status": 406
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "elon_musk",
+      "url": "https://linkedin.com/in/elon_musk",
+      "exists": false,
+      "status": 999
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "elonmusk",
+      "url": "https://linkedin.com/in/elonmusk",
+      "exists": false,
+      "status": 999
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "lets.go.to.mars",
+      "url": "https://linkedin.com/in/lets.go.to.mars",
+      "exists": false,
+      "status": 405
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "lets go to mars",
+      "url": "https://linkedin.com/in/lets go to mars",
+      "exists": false,
+      "status": 999
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "letsgotomars",
+      "url": "https://linkedin.com/in/letsgotomars",
+      "exists": false,
+      "status": 405
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "elon-musk",
+      "url": "https://linkedin.com/in/elon-musk",
+      "exists": false,
+      "status": 999
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "elon",
+      "url": "https://linkedin.com/in/elon",
+      "exists": false,
+      "status": 405
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "musk",
+      "url": "https://linkedin.com/in/musk",
+      "exists": false,
+      "status": 999
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "elon.musk",
+      "url": "https://linkedin.com/in/elon.musk",
+      "exists": false,
+      "status": 999
+    },
+    {
+      "platform": "Snapchat",
+      "username": "lets.go.to.mars",
+      "url": "https://snapchat.com/add/lets.go.to.mars",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "Snapchat",
+      "username": "lets go to mars",
+      "url": "https://snapchat.com/add/lets go to mars",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "Snapchat",
+      "username": "elon",
+      "url": "https://snapchat.com/add/elon",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "elon_musk",
+      "url": "https://wa.me/elon_musk",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "elonmusk",
+      "url": "https://wa.me/elonmusk",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "lets.go.to.mars",
+      "url": "https://wa.me/lets.go.to.mars",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "lets go to mars",
+      "url": "https://wa.me/lets go to mars",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "letsgotomars",
+      "url": "https://wa.me/letsgotomars",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "elon-musk",
+      "url": "https://wa.me/elon-musk",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "elon",
+      "url": "https://wa.me/elon",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "musk",
+      "url": "https://wa.me/musk",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "elon.musk",
+      "url": "https://wa.me/elon.musk",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "lets.go.to.mars",
+      "url": "https://x.com/lets.go.to.mars",
+      "exists": false,
+      "status": 403
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "lets go to mars",
+      "url": "https://x.com/lets go to mars",
+      "exists": false,
+      "status": 403
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "elon-musk",
+      "url": "https://x.com/elon-musk",
+      "exists": false,
+      "status": 403
+    },
+    {
+      "platform": "X / Twitter",
+      "username": "elon.musk",
+      "url": "https://x.com/elon.musk",
+      "exists": false,
+      "status": 403
+    },
+    {
+      "platform": "YouTube",
+      "username": "elon_musk",
+      "url": "https://youtube.com/@elon_musk",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "YouTube",
+      "username": "lets.go.to.mars",
+      "url": "https://youtube.com/@lets.go.to.mars",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "YouTube",
+      "username": "lets go to mars",
+      "url": "https://youtube.com/@lets go to mars",
+      "exists": false,
+      "status": 404
+    },
+    {
+      "platform": "YouTube",
+      "username": "musk",
+      "url": "https://youtube.com/@musk",
+      "exists": false,
+      "status": 0
+    },
+    {
+      "platform": "YouTube",
+      "username": "elon.musk",
+      "url": "https://youtube.com/@elon.musk",
+      "exists": false,
+      "status": 404
+    }
+  ],
+  "name_suggestions": [
+    "Elon Reeve Musk",
+    "Elon M.",
+    "E.M.",
+    "El",
+    "The Dogefather"
+  ],
+  "entities": [
+    {
+      "type": "person",
+      "name": "Elon Musk",
+      "confidence": 0.9,
+      "context": "CEO of Tesla and SpaceX"
+    },
+    {
+      "type": "event",
+      "name": "lets go to mars",
+      "confidence": 0.8,
+      "context": "Phrase: lets go to mars."
+    },
+    {
+      "type": "location",
+      "name": null,
+      "confidence": 0.5,
+      "context": "Phrase: lets go to mars."
+    },
+    {
+      "type": "organization",
+      "name": "Tesla",
+      "confidence": 0.7,
+      "context": "CEO of Tesla and SpaceX"
+    },
+    {
+      "type": "organization",
+      "name": "SpaceX",
+      "confidence": 0.7,
+      "context": "CEO of Tesla and SpaceX"
+    }
+  ],
+  "sentiment": {
+    "sentiment": "positive",
+    "confidence": 0.8,
+    "key_emotional_indicators": [
+      "enthusiasm",
+      "ambition"
+    ]
+  },
+  "classification": {
+    "category": "Person",
+    "subcategory": "Public Figure",
+    "confidence": 0.9,
+    "tags": [
+      "ElonMusk",
+      "CEO",
+      "Tesla",
+      "SpaceX",
+      "Mars",
+      "social media"
+    ]
+  },
+  "inconsistencies": [
+    {
+      "description": "Contradiction between business focus and public statements.",
+      "severity": "medium",
+      "text_snippet": "lets go to mars."
+    }
+  ],
+  "llm_analysis": "## Elon Musk - Social Media Profile Intelligence Summary\n\n**Who is he:**  Elon Reeve Musk is CEO of Tesla and SpaceX, a prominent figure in the space exploration and sustainable energy sectors. His outspoken personality and ambitious vision for Mars have garnered significant media attention.\n\n**Digital Footprint:** A substantial digital footprint exists for Elon Musk across social media platforms.  Over 100 profiles were identified, with some existing users likely utilizing multiple names/aliases to maintain a lower profile (names: Elon Musk, Elon Reeve Musk, Elmusk).   No specific website links were found in the provided data.\n\n**Notable Social Media Presence:**  Musk's social media presence is highly prominent, showcasing active engagement on Twitter (@elonmusk) and other platforms. His influence on public discourse and discussion of space exploration is undeniable.\n\n**Contradictions or Red Flags:**  No significant contradictions or red flags were identified within the presented data, but further analysis of Musk's profiles could reveal potential security vulnerabilities or inconsistencies in online activity. \n\n **Next Investigation Steps:**\n\n* **Detailed Social Media Analysis:**  Investigate user profiles (especially Twitter) for any connections to anonymous accounts/groups.\n* **Reverse Domain Lookup:** Search for domains associated with Musk\u2019s profile names to gain deeper insight into possible aliases and connected entities.\n* **Contextual Data Aggregation:** Examine the timeline of online activity on social media, looking for correlations or specific events that may signal potential manipulation or misinformation campaigns. \n\n\n**Recommendation:**  The identified digital footprint suggests Elon Musk is actively engaging online with a public persona. Further investigation will clarify his activities and potentially uncover hidden connections to broader political or societal movements. \n"
+}

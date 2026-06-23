@@ -1,0 +1,7 @@
+INFO:     Started server process [1450]
+INFO:     Waiting for application startup.
+2026-06-23 17:11:21,979  INFO     app.main  Database tables verified/created
+INFO:     Application startup complete.
+ERROR:    [Errno 98] error while attempting to bind on address ('0.0.0.0', 8000): address already in use
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.

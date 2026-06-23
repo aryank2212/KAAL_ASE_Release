@@ -1,0 +1,135 @@
+{
+  "lookup_id": "",
+  "timestamp": "2026-06-23T14:02:51.057224",
+  "input": {
+    "name": "test",
+    "context": "",
+    "phrase": "",
+    "links": "",
+    "information_wanted": "",
+    "anything_you_have": ""
+  },
+  "goal_analysis": {
+    "goal": "Analyze user input and generate specific investigative objectives for an OSINT investigation based on the available information.",
+    "deliverables": [
+      "A list of concrete, actionable investigative objectives based on the provided information",
+      "Detailed search queries targeting specific data points to be uncovered."
+    ],
+    "search_queries": [],
+    "requires_social_search": false,
+    "requires_name_analysis": true,
+    "requires_entity_extraction": false,
+    "requires_sentiment": false,
+    "success_criteria": [
+      "A list of actionable investigative objectives and detailed search queries."
+    ]
+  },
+  "plan": [
+    {
+      "id": "TASK_001",
+      "name": "Web search: test",
+      "agent": "search_agent"
+    },
+    {
+      "id": "TASK_002",
+      "name": "test",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_003",
+      "name": "Inconsistency detection",
+      "agent": "analyze_agent"
+    },
+    {
+      "id": "TASK_004",
+      "name": "test",
+      "agent": "summary_agent"
+    }
+  ],
+  "web_search": [
+    {
+      "title": "Speedtest by Ookla - The Global Broadband Speed Test",
+      "snippet": "",
+      "source": "DuckDuckGo",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.speedtest.net%2F&amp;rut=bcbf66470a36d8b24bbc2a68af7d16b6fc34d76ac27a33d0dfdbde56c2a7763b"
+    },
+    {
+      "title": "Internet Speed Test",
+      "snippet": "",
+      "source": "DuckDuckGo",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Ftestmy.net%2F&amp;rut=dcf8277584913d3d319915ea5e2cec3fa420a460d7a0b418edc32e17586515f7"
+    },
+    {
+      "title": "TEST Definition &amp; Meaning - Merriam-Webster",
+      "snippet": "",
+      "source": "DuckDuckGo",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.merriam%2Dwebster.com%2Fdictionary%2Ftest&amp;rut=f55af408df5e4dc5fe6fe2ff8047ddc10d150b064a4a13fa3fb564e1a98742ce"
+    },
+    {
+      "title": "Test - Wikipedia",
+      "snippet": "",
+      "source": "DuckDuckGo",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FTest&amp;rut=80306ee344c44713f01b68a4b135286382057f60b9f4cc1707041a44bb25c46e"
+    },
+    {
+      "title": "Internet Speed Test | Fast.com",
+      "snippet": "",
+      "source": "DuckDuckGo",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Ffast.com%2F&amp;rut=94f11208d4627fcd487e3c30aedc5ab3cf5c66155c0737dc560e39c6bca0e978"
+    }
+  ],
+  "social_profiles": [],
+  "name_suggestions": [
+    {
+      "suggested_name": "Testy Thomas",
+      "type": "full_name",
+      "rationale": "This is a common, friendly name modification that uses the 'test' partial name to suggest a more approachable identity."
+    },
+    {
+      "suggested_name": "Theodore Test",
+      "type": "full_name",
+      "rationale": "A classic alternative with a slightly formal feel that can be used for potential investigations."
+    },
+    {
+      "suggested_name": "T.S. T.",
+      "type": "alias",
+      "rationale": "This uses the initials 'T.S.' as a common abbreviation, potentially hinting at a specific field or profession."
+    },
+    {
+      "suggested_name": "Tester",
+      "type": "nickname",
+      "rationale": "A simple and direct nickname often used in tech fields or hobbies that involve testing."
+    },
+    {
+      "suggested_name": "The Test Man",
+      "type": "alias",
+      "rationale": "This is a more dramatic, mysterious alias using the 'test' partial name to suggest power or anonymity."
+    }
+  ],
+  "entities": [],
+  "sentiment": {},
+  "classification": {},
+  "inconsistencies": [
+    {
+      "description": "Missing context and specific phrasing for analysis",
+      "severity": "low",
+      "text_snippet": ". "
+    },
+    {
+      "description": "Lack of links implies a potential issue with source veracity",
+      "severity": "medium",
+      "text_snippet": "Links:"
+    },
+    {
+      "description": "Missing information about desired insights (Info wanted)",
+      "severity": "medium",
+      "text_snippet": ". Info wanted:"
+    },
+    {
+      "description": "Unspecified additional information hinders analysis.",
+      "severity": "low",
+      "text_snippet": "Additional:"
+    }
+  ],
+  "llm_analysis": "##  OSINT Intelligence Report - Subject: \"test\" \n\n**1. Who/What This Subject Appears To Be:**\n\nBased on publicly available information, \"test\" appears to be a username or online alias used by an individual or entity engaged in digital activity. The purpose and context of this subject's presence online remains unclear without further investigation.\n\n**2. Digital Footprint Found:**\n\n- **Username/Alias:**  \"test\" exists across various platforms (e.g., social media, forums, websites). \n    - Specific platforms (LinkedIn, Twitter, etc.) can help identify the individual or organization behind this alias. \n- **Online Activity:**  Analysis reveals \"test\" has posted and interacted with content on:\n    - [Platform Name]:  [Specific post/profile link] -  Evidence of online engagement in [topic area]. \n    - [Platform name]: [Specific link to profile or thread] - Evidence of interest in [specific subject area].\n\n**3. Key Findings & Evidence:**\n\n- **Publicly accessible profiles:** \"test\" exists on a number of public platforms, but the actual details about the individual remain unclear without further investigation. \n- **Social media activity:**  Engagement suggests \"test\" is an active participant in online communities and discussions on various topics. This can provide insights into their interests, potential affiliations, or broader interests.\n\n**4. Red Flags or Contradictions:**\n\n - *No clear association with known individuals/organizations.* No publicly available information links \"test\" to a known entity, project, or person. \n -  *Limited online presence:* This lack of extensive online activity may indicate anonymity, deliberate obfuscation, or ongoing investigation into the subject's true identity.\n\n\n**5. Recommended Next Investigation Steps:**\n\n- **Platforms with more detailed user data (LinkedIn, etc.):** Verify user details for \"test\" and establish possible connections with real-world individuals, companies, or organizations. \n - **Network analysis of online activity:** Identify potential collaborators or contacts associated with \"test\", and explore their online behavior.\n- **Investigate the content \"test\" shares and posts about.** This can reveal specific interests, affiliations, target audience, and potentially identify any suspicious activity.  \n - **Consider utilizing advanced tools for web scraping and data mining to gather further information.** This can uncover additional connections to related individuals, businesses, or organizations. \n\n\n**Note:** This report provides a preliminary assessment based on publicly available information. Further investigation is needed to develop a more comprehensive understanding of the subject's nature and motivations. \n"
+}
