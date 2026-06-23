@@ -1,4 +1,4 @@
-# KAAL (ASE) - Intelligent OSINT Investigator
+# KAAL: The All Seeing Eye (ASE) - Intelligent OSINT Investigator
 
 Hey everyone. This is KAAL (ASE), an intelligent OSINT investigation tool that combines traditional web scraping and social media discovery with an ML-guided continuous loop. I built this to automate the tedious parts of OSINT gathering and help filter out the noise.
 
