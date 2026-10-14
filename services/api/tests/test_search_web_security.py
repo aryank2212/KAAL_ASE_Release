@@ -33,7 +33,7 @@ class PublicURLValidationTests(unittest.TestCase):
             (socket.AF_INET, socket.SOCK_STREAM, 6, "", ("192.168.10.20", 443))
         ]
         with self.assertRaises(ValueError):
-            _validate_public_http_url("https://example.test/")
+            _validate_public_http_url("https://example.com/")
 
     @patch("app.search_web.socket.getaddrinfo")
     def test_accepts_hostname_resolving_only_to_public_address(self, getaddrinfo):

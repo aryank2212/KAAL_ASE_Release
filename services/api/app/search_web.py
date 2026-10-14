@@ -289,6 +289,8 @@ def _validate_public_http_url(url: str) -> str:
         raise ValueError("Only ports 80 and 443 are allowed")
 
     host = parsed.hostname.rstrip(".").lower()
+    if "%" in host:
+        raise ValueError("Scoped IP literals are not allowed")
     if (
         host == "localhost"
         or host.endswith((".localhost", ".local", ".internal", ".test", ".invalid"))
