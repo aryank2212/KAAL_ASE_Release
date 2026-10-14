@@ -1,3 +1,6 @@
+import logging
+import os
+import time
 from datetime import UTC, datetime
 
 from sqlalchemy.orm import Session
@@ -6,6 +9,8 @@ from app.audit import audit
 from app.database import SessionLocal
 from app.extractors import extract_evidence_metadata, extract_social_indicators
 from app.models import Evidence, IngestionJob, Observation
+
+logger = logging.getLogger(__name__)
 
 
 def process_next_job(db: Session) -> IngestionJob | None:
@@ -61,8 +66,9 @@ def process_next_job(db: Session) -> IngestionJob | None:
             metadata={"observation_count": len(all_observations)},
         )
     except Exception as exc:
+        logger.exception("Evidence ingestion failed for job %s", job.ingestion_job_id)
         job.status = "failed"
-        job.error_message = str(exc)
+        job.error_message = f"Ingestion failed ({type(exc).__name__})"
         job.finished_at = datetime.now(UTC)
         evidence.ingestion_status = "failed"
         audit(
@@ -71,7 +77,7 @@ def process_next_job(db: Session) -> IngestionJob | None:
             resource_type="ingestion_job",
             resource_id=str(job.ingestion_job_id),
             case_id=evidence.case_id,
-            metadata={"error": str(exc)},
+            metadata={"error_type": type(exc).__name__},
         )
 
     db.commit()
@@ -80,14 +86,23 @@ def process_next_job(db: Session) -> IngestionJob | None:
 
 
 def main() -> None:
-    with SessionLocal() as db:
-        job = process_next_job(db)
-        if not job:
-            print("No queued ingestion jobs.")
-            return
-        print(f"Processed ingestion job {job.ingestion_job_id}: {job.status}")
+    poll_seconds = max(0.25, float(os.getenv("WORKER_POLL_SECONDS", "2")))
+    logger.info("Ingestion worker started (poll interval: %.2fs)", poll_seconds)
+    while True:
+        try:
+            with SessionLocal() as db:
+                job = process_next_job(db)
+            if job is None:
+                time.sleep(poll_seconds)
+            else:
+                logger.info("Processed ingestion job %s: %s", job.ingestion_job_id, job.status)
+        except KeyboardInterrupt:
+            logger.info("Ingestion worker stopped")
+            break
+        except Exception:
+            logger.exception("Ingestion worker iteration failed")
+            time.sleep(poll_seconds)
 
 
 if __name__ == "__main__":
     main()
-

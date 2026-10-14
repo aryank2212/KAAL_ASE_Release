@@ -1,3 +1,4 @@
+# Python
 __pycache__/
 *.py[cod]
 .pytest_cache/
@@ -5,6 +6,23 @@ __pycache__/
 .ruff_cache/
 .venv/
 venv/
-.env
 *.log
 
+# Local secrets (keep the template)
+.env
+.env.*
+!.env.example
+services/api/.env
+
+# Generated investigations and reports: never commit real lookup data
+/data/
+/reports/
+test_api_output.json
+*.db
+*.sqlite
+*.sqlite3
+
+# Local tooling
+.DS_Store
+.vscode/
+.idea/

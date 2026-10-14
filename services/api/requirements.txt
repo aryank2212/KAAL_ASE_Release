@@ -7,3 +7,4 @@ httpx==0.28.1
 redis==5.2.1
 neo4j==5.27.0
 qdrant-client==1.12.1
+maigret==0.6.6

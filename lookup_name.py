@@ -1,6 +1,10 @@
-import httpx, json
+import json
+import os
 
-API = "http://localhost:8000/api/v1/analysis"
+import httpx
+
+API = "http://127.0.0.1:8000/api/v1/analysis"
+API_KEY = os.getenv("KAAL_API_KEY", "").strip()
 
 FIELDS = [
     ("name",               "Full name of subject"),
@@ -56,7 +60,7 @@ def run_lookup(data: dict):
     print("\nRunning OSINT lookup...")
 
     try:
-        r = httpx.post(f"{API}/osint-lookup", json=data, timeout=300)
+        r = httpx.post(f"{API}/osint-lookup", json=data, headers=({"X-API-Key": API_KEY} if API_KEY else {}), timeout=300)
         if r.status_code != 200:
             print(f"ERROR {r.status_code}")
             print(r.text[:500])

@@ -13,7 +13,8 @@ import time
 import httpx
 from datetime import datetime
 
-API_BASE = "http://localhost:8000/api/v1/analysis"
+API_BASE = "http://127.0.0.1:8000/api/v1/analysis"
+API_KEY = os.getenv("KAAL_API_KEY", "").strip()
 OLLAMA_API = "http://localhost:11434/api/chat"
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -129,7 +130,7 @@ async def check_relevance(text: str, context: str, model: str) -> bool:
 async def run_osint_lookup(query: dict) -> dict:
     async with httpx.AsyncClient() as client:
         try:
-            r = await client.post(f"{API_BASE}/osint-lookup", json=query, timeout=300.0)
+            r = await client.post(f"{API_BASE}/osint-lookup", json=query, headers=({"X-API-Key": API_KEY} if API_KEY else {}), timeout=300.0)
             if r.status_code == 200:
                 return r.json()
             return {"error": f"API Error {r.status_code}: {r.text[:200]}"}

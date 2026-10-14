@@ -16,7 +16,8 @@ import time
 import urllib.parse
 from datetime import datetime
 
-API_BASE = "http://localhost:8000/api/v1/analysis/osint-lookup"
+API_BASE = "http://127.0.0.1:8000/api/v1/analysis/osint-lookup"
+API_KEY = os.getenv("KAAL_API_KEY", "").strip()
 OLLAMA_API = "http://localhost:11434/api/chat"
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -129,6 +130,7 @@ async def run_osint_lookup(query: dict) -> dict:
             "curl", "-s", "--max-time", "120",
             "-X", "POST",
             "-H", "Content-Type: application/json",
+            "-H", f"X-API-Key: {API_KEY}",
             "-d", payload.decode(),
             API_BASE,
             stdout=asyncio.subprocess.PIPE,

@@ -1,59 +1,91 @@
-# KAAL: The All Seeing Eye (ASE) - Intelligent OSINT Investigator
+# KAAL-ASE — The All Seeing Eye
 
-Hey everyone. This is KAAL (ASE), an intelligent OSINT investigation tool that combines traditional web scraping and social media discovery with an ML-guided continuous loop. I built this to automate the tedious parts of OSINT gathering and help filter out the noise.
+KAAL-ASE is an OSINT research and evidence-management project built around a Python/FastAPI API, public-source search adapters, local Ollama analysis, and structured case/evidence records.
 
-Basically, you feed it a name, a little context, and some starting links, and the script handles the rest. It uses a local LLM to judge the relevance of the scraped data so it doesn't get distracted by random Wikipedia articles or historical fluff. 
+> Responsible use: Use this tool only for lawful, authorized research. Prefer public-interest and consent-based investigations. Do not use it to stalk, harass, dox, discriminate against, or infer sensitive traits about private people. Treat generated matches as unverified leads, not facts.
 
-## Prerequisites & Installation
+## Status
 
-To run this, you'll need a few things installed on your system:
+The API supports case/profile/evidence records, LLM-assisted analysis, and a saved lookup store. The vector-search and graph endpoints are currently placeholders. The frontend is represented by a Git submodule entry that is not configured in this repository, so the web Compose profile remains opt-in.
 
-1. **Python 3.10+**
-2. **cURL**: Make sure you have `curl` installed and accessible in your system PATH (used for fetching pages safely).
-3. **Ollama**: You need this running locally to power the LLM analysis.
-   - Download it from [ollama.com](https://ollama.com/)
-   - Once installed, pull the models you want to use. I recommend `gemma4:latest` or `gemma2:2b`.
-   - Run: `ollama run gemma4:latest` (or whichever model you choose) so it's active on port `11434`.
+## Requirements
 
-### Setup
+- Python 3.10+
+- Docker Engine and Docker Compose plugin
+- Ollama on the host, with a chat model and nomic-embed-text available
 
-Clone the repo and install the required Python packages:
+Pull the default models on the host:
 
-```bash
-git clone https://github.com/yourusername/KAAL-ASE.git
-cd KAAL-ASE
-pip install -r requirements.txt
-```
+    ollama pull gemma2:2b
+    ollama pull nomic-embed-text
 
-## How to Use
+## Secure local setup
 
-First, you need to spin up the backend API that handles the heavy lifting. I've included an `infra` setup for this. 
-*(Note: A huge shoutout to the original Infra structure—I built and tweaked it a bit to make it fully compatible with KAAL (ASE)).*
+Generate a private .env with fresh secrets:
 
-You can start the backend using Docker or directly with uvicorn (if you're just testing):
-```bash
-python -m uvicorn services.api.app.main:app --reload --host 0.0.0.0 --port 8000
-```
+    ./scripts/init_env.sh
 
-Once the API and Ollama are both running, just launch the main script:
-```bash
-python intelligent_recon.py
-```
+The script refuses to overwrite an existing .env and restricts it to the current user. Keep that file private. If you prefer manual setup, copy .env.example to .env and set each required secret to a strong, random, URL-safe value; openssl rand -hex 32 is suitable.
 
-It will prompt you for the target's details:
-- **Full name**: The person you are looking for.
-- **Background context**: Quick context (e.g., "19 yr old student in Delhi").
-- **Known links**: Drop their Instagram, YouTube, or email here. 
-- **Phrase / quote**: Anything specific you want to search.
+Start the API and infrastructure:
 
-Let it run for the duration you set, and it will output a comprehensive intelligence report in the `reports/` folder.
+    docker compose up --build -d
+    docker compose ps
+    docker compose logs -f api
 
-## Credits & Acknowledgements
+Start the persistent ingestion worker as well:
 
-This project relies on some awesome open-source tools from the community:
-- **Ollama**: For making local LLM execution painless.
-- **FastAPI / Uvicorn**: Powering the backend API seamlessly.
-- **Maigret**: Huge credit to the Maigret project for the underlying username scraping logic.
-- **cURL**: For reliable and simple web requests.
+    docker compose --profile worker up --build -d
 
-Feel free to fork, mess around with the prompts, and submit PRs. Enjoy!
+By default, published service ports bind to 127.0.0.1 only. Do not change them to public interfaces without adding an appropriate deployment boundary, TLS, a secrets manager, and stronger user-level access control.
+
+The API uses X-API-Key for every /api/* endpoint. Health and documentation endpoints are public; data routes fail with HTTP 503 when KAAL_API_KEY is missing and HTTP 401 for a missing or incorrect key.
+
+Example:
+
+    set -a
+    source .env
+    set +a
+    curl -sS http://127.0.0.1:8000/api/v1/search \
+      -H "Content-Type: application/json" \
+      -H "X-API-Key: $KAAL_API_KEY" \
+      -d '{"case_id":"00000000-0000-0000-0000-000000000000","query":"example"}'
+
+The example case ID is deliberately synthetic. Use a case created in your own local instance.
+
+## Direct Python development
+
+Install the dependencies:
+
+    python -m venv .venv
+    source .venv/bin/activate
+    pip install -r services/api/requirements.txt
+
+For direct execution, export a valid DATABASE_URL for your local PostgreSQL instance and the same KAAL_API_KEY you use for the CLI scripts. Then:
+
+    cd services/api
+    uvicorn app.main:app --host 127.0.0.1 --port 8000
+
+On Windows, activate the virtual environment using its Scripts activation command.
+
+The Maigret database is resolved from the installed package by default. Set MAIGRET_DB_PATH if you maintain a separate data.json file. Set KAAL_LOOKUP_DIR to change where runtime investigation JSON files are stored.
+
+## Important operational notes
+
+- Generated lookup records are runtime data and must not be committed. They are ignored under data/; keep backups in private storage.
+- Removing leaked files from the current tree does not erase them from Git history, forks, caches, or existing clones. Follow docs/SECURITY_CLEANUP.md to complete history cleanup and rotate any exposed credentials.
+- A shared API key is a basic perimeter control, not multi-user authentication or case-level authorization. Do not expose KAAL to the internet until per-user identity, roles, case membership checks, audit review, and a deployment security review are implemented.
+- The current search and graph API routes return placeholders. Do not treat their presence as evidence that vector or graph search is implemented.
+- API and database schema changes currently need to be coordinated carefully; use versioned migrations before operational deployment.
+
+## Project layout
+
+- services/api/: FastAPI API, analysis, models, extraction, and ingestion worker
+- infra/postgres/: initial PostgreSQL schema
+- api/openapi.yaml: API contract
+- intelligent_recon.py, lookup_name.py, recon_loop.py: CLI entry points
+- data/, reports/: local runtime outputs (ignored)
+
+## License
+
+See the repository license file if present. Third-party tools retain their own licenses.

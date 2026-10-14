@@ -1,24 +1,46 @@
 import asyncio
+import importlib
 import logging
+import os
 import re
-import sys
+from pathlib import Path
 
 from app.llm import _chat
 
 logger = logging.getLogger(__name__)
 
-sys.path.insert(0, "/mnt/d/BACKUP/KAAL (ASE)/osint_tools/maigret")
-
-MAIGRET_DB_PATH = "/mnt/d/BACKUP/KAAL (ASE)/osint_tools/maigret/maigret/resources/data.json"
+MAIGRET_DB_PATH = os.getenv("MAIGRET_DB_PATH", "").strip()
 
 _maigret_db = None
 
 def _get_maigret_db():
     global _maigret_db
-    if _maigret_db is None:
-        from maigret.maigret import MaigretDatabase
-        _maigret_db = MaigretDatabase()
-        _maigret_db.load_from_path(MAIGRET_DB_PATH)
+    if _maigret_db is not None:
+        return _maigret_db
+
+    try:
+        module = importlib.import_module("maigret.maigret")
+        MaigretDatabase = module.MaigretDatabase
+    except (ImportError, AttributeError) as exc:
+        raise RuntimeError(
+            "Maigret is unavailable. Install the project requirements before running social-profile scans."
+        ) from exc
+
+    if MAIGRET_DB_PATH:
+        database_path = Path(MAIGRET_DB_PATH).expanduser()
+    else:
+        package_dir = Path(module.__file__).resolve().parent
+        database_path = package_dir / "resources" / "data.json"
+
+    if not database_path.is_file():
+        raise RuntimeError(
+            f"Maigret site database was not found at {database_path}. "
+            "Set MAIGRET_DB_PATH to the location of data.json."
+        )
+
+    database = MaigretDatabase()
+    database.load_from_path(str(database_path))
+    _maigret_db = database
     return _maigret_db
 
 

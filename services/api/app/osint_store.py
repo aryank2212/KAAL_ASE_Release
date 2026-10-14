@@ -6,7 +6,11 @@ from pathlib import Path
 
 logger = logging.getLogger(__name__)
 
-DATA_DIR = Path(os.path.dirname(os.path.abspath(__file__))) / ".." / ".." / ".." / "data" / "osint_lookups"
+_repo_root = Path(__file__).resolve()
+for _ in range(4):
+    _repo_root = _repo_root.parent
+_default_data_dir = _repo_root / "data" / "osint_lookups"
+DATA_DIR = Path(os.getenv("KAAL_LOOKUP_DIR", str(_default_data_dir))).expanduser()
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 
@@ -14,9 +18,9 @@ def save_lookup(data: dict) -> str:
     lookup_id = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
     path = DATA_DIR / f"{lookup_id}.json"
     record = {"lookup_id": lookup_id, "timestamp": datetime.now().isoformat(), **data}
-    with open(path, "w") as f:
-        json.dump(record, f, indent=2, default=str)
-    logger.info("Saved OSINT lookup %s to %s", lookup_id, path)
+    with path.open("w", encoding="utf-8") as f:
+        json.dump(record, f, indent=2, ensure_ascii=False, default=str)
+    logger.info("Saved OSINT lookup %s", lookup_id)
     return lookup_id
 
 
@@ -25,16 +29,18 @@ def get_lookups(limit: int = 20) -> list[dict]:
     results = []
     for f in files:
         try:
-            with open(f) as fh:
+            with f.open(encoding="utf-8") as fh:
                 results.append(json.load(fh))
-        except Exception as e:
-            logger.warning("Failed to read %s: %s", f, e)
+        except Exception:
+            logger.warning("Failed to read saved lookup %s", f.name, exc_info=True)
     return results
 
 
 def get_lookup(lookup_id: str) -> dict | None:
+    if not lookup_id or any(ch not in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-" for ch in lookup_id):
+        return None
     path = DATA_DIR / f"{lookup_id}.json"
-    if path.exists():
-        with open(path) as f:
+    if path.is_file():
+        with path.open(encoding="utf-8") as f:
             return json.load(f)
     return None

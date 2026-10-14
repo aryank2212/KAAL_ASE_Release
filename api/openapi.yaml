@@ -5,10 +5,13 @@ info:
   description: API contract for the KAAL-ASE intelligence management platform.
 servers:
   - url: http://localhost:8000
+security:
+  - ApiKeyAuth: []
 paths:
   /health:
     get:
       summary: Health check
+      security: []
       responses:
         "200":
           description: Service is healthy
@@ -182,6 +185,11 @@ paths:
         "202":
           description: Analysis queued
 components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
   parameters:
     CaseId:
       name: case_id
