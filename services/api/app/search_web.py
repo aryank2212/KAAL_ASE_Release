@@ -1,7 +1,9 @@
 import datetime
+import ipaddress
 import email.utils
 import logging
 import re
+import socket
 import urllib.parse
 import xml.etree.ElementTree as ET
 
@@ -262,20 +264,117 @@ def _search_google_news(query: str, max_results: int = 5) -> list[dict]:
     return results
 
 
+MAX_REDIRECTS = 5
+ALLOWED_HTTP_PORTS = {80, 443}
+
+
+def _validate_public_http_url(url: str) -> str:
+    """Reject non-web URLs and hosts that resolve to non-public IP addresses."""
+    if not isinstance(url, str) or not url.strip():
+        raise ValueError("URL is required")
+
+    parsed = urllib.parse.urlsplit(url.strip())
+    if parsed.scheme.lower() not in {"http", "https"}:
+        raise ValueError("Only HTTP and HTTPS URLs are allowed")
+    if not parsed.hostname:
+        raise ValueError("URL must include a hostname")
+    if parsed.username is not None or parsed.password is not None:
+        raise ValueError("URLs containing credentials are not allowed")
+
+    try:
+        port = parsed.port
+    except ValueError as exc:
+        raise ValueError("Invalid URL port") from exc
+    if port is not None and port not in ALLOWED_HTTP_PORTS:
+        raise ValueError("Only ports 80 and 443 are allowed")
+
+    host = parsed.hostname.rstrip(".").lower()
+    if (
+        host == "localhost"
+        or host.endswith((".localhost", ".local", ".internal", ".test", ".invalid"))
+    ):
+        raise ValueError("Local hostnames are not allowed")
+
+    try:
+        addresses = {ipaddress.ip_address(host)}
+    except ValueError:
+        try:
+            records = socket.getaddrinfo(
+                host,
+                port or (443 if parsed.scheme.lower() == "https" else 80),
+                type=socket.SOCK_STREAM,
+            )
+        except OSError as exc:
+            raise ValueError("Hostname could not be resolved") from exc
+        addresses = {
+            ipaddress.ip_address(record[4][0].split("%", 1)[0])
+            for record in records
+        }
+
+    # Reject a hostname if any returned address is private, loopback, link-local,
+    # reserved, multicast, or otherwise not globally routable.
+    if not addresses or any(not address.is_global for address in addresses):
+        raise ValueError("URL host must resolve exclusively to public IP addresses")
+
+    return url.strip()
+
+
+def _safe_http_request(
+    method: str,
+    url: str,
+    *,
+    timeout: float,
+    headers: dict[str, str] | None = None,
+):
+    """Make an outbound request while validating every redirect destination."""
+    current_url = url
+    request_headers = {"User-Agent": USER_AGENT}
+    if headers:
+        request_headers.update(headers)
+
+    for redirect_count in range(MAX_REDIRECTS + 1):
+        _validate_public_http_url(current_url)
+        response = httpx.request(
+            method,
+            current_url,
+            timeout=timeout,
+            follow_redirects=False,
+            headers=request_headers,
+            trust_env=False,
+        )
+
+        if response.status_code not in {301, 302, 303, 307, 308}:
+            return response, current_url
+
+        location = response.headers.get("location")
+        response.close()
+        if not location or redirect_count >= MAX_REDIRECTS:
+            return None, current_url
+
+        next_url = urllib.parse.urljoin(current_url, location)
+        previous_scheme = urllib.parse.urlsplit(current_url).scheme.lower()
+        next_scheme = urllib.parse.urlsplit(next_url).scheme.lower()
+        if previous_scheme == "https" and next_scheme != "https":
+            raise ValueError("HTTPS-to-HTTP redirects are not allowed")
+        current_url = next_url
+
+    return None, current_url
+
+
 def fetch_page_text(url: str) -> dict | None:
     try:
-        resp = httpx.get(
+        resp, final_url = _safe_http_request(
+            "GET",
             url,
             timeout=10,
-            follow_redirects=True,
             headers={
-                "User-Agent": USER_AGENT,
                 "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
                 "Accept-Language": "en-US,en;q=0.9",
             },
         )
-        if resp.status_code != 200:
+        if resp is None or resp.status_code != 200:
             return None
+
         text = resp.text
         title_m = re.search(r"<title>(.*?)</title>", text, re.IGNORECASE | re.DOTALL)
         title = title_m.group(1).strip() if title_m else ""
@@ -283,18 +382,20 @@ def fetch_page_text(url: str) -> dict | None:
             text = re.sub(rf"<{tag}[^>]*>.*?</{tag}>", "", text, flags=re.DOTALL | re.IGNORECASE)
         text = re.sub(r"<[^>]+>", " ", text)
         text = re.sub(r"\s+", " ", text).strip()
-        lines = [l.strip() for l in text.split("\n") if l.strip() and len(l.strip()) > 30]
+        lines = [line.strip() for line in text.split("\n") if line.strip() and len(line.strip()) > 30]
         body = "\n".join(lines[:30])
         if body:
-            return {"url": url, "title": title, "text": body[:5000]}
-    except Exception as e:
-        logger.warning("Failed to fetch %s: %s", url, e)
+            return {"url": final_url, "title": title, "text": body[:5000]}
+    except Exception as exc:
+        logger.warning("Page fetch rejected or failed: %s", exc)
     return None
 
 
 def check_url_exists(url: str, timeout: int = 5) -> dict:
     try:
-        resp = httpx.head(url, timeout=timeout, follow_redirects=True)
-        return {"url": url, "status": resp.status_code, "exists": resp.status_code < 400}
-    except Exception as e:
-        return {"url": url, "status": 0, "exists": False, "error": str(e)}
+        resp, final_url = _safe_http_request("HEAD", url, timeout=timeout)
+        if resp is None:
+            return {"url": url, "status": 0, "exists": False, "error": "Redirect limit exceeded"}
+        return {"url": final_url, "status": resp.status_code, "exists": resp.status_code < 400}
+    except Exception as exc:
+        return {"url": url, "status": 0, "exists": False, "error": str(exc)}

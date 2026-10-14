@@ -74,6 +74,7 @@ The Maigret database is resolved from the installed package by default. Set MAIG
 
 - Generated lookup records are runtime data and must not be committed. They are ignored under data/; keep backups in private storage.
 - Removing leaked files from the current tree does not erase them from Git history, forks, caches, or existing clones. Follow docs/SECURITY_CLEANUP.md to complete history cleanup and rotate any exposed credentials.
+- Outbound page fetching validates HTTP(S) destinations, blocks non-public IP ranges, and revalidates each redirect. Keep network-level egress controls enabled in deployed environments as an additional SSRF defense.
 - A shared API key is a basic perimeter control, not multi-user authentication or case-level authorization. Do not expose KAAL to the internet until per-user identity, roles, case membership checks, audit review, and a deployment security review are implemented.
 - The current search and graph API routes return placeholders. Do not treat their presence as evidence that vector or graph search is implemented.
 - API and database schema changes currently need to be coordinated carefully; use versioned migrations before operational deployment.
