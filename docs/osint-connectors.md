@@ -20,7 +20,7 @@ errors are audited too. Nothing is promoted to an accepted fact by a connector.
 | `whois` | domain | python-whois | MIT | Registrant names, emails and addresses are dropped by design |
 | `cert_transparency` | domain | crt.sh | public logs | Subdomains from CT logs |
 | `wayback` | domain | Internet Archive CDX | public archive | Up to 25 snapshots |
-| `theharvester` | domain | theHarvester | GPL-2.0 | Opt-in. Run as a separate program (set `THEHARVESTER_BIN`), never imported. Passive sources only |
+| `theharvester` | domain | theHarvester 4.x | GPL-2.0 | Opt-in. Run as a separate program (installed by `install-optional-tools.sh`, or set `THEHARVESTER_BIN`), never imported. Passive, keyless sources only; reports total hosts found (the response lists the first 500) |
 | `maigret` | username | Maigret | MIT | Top 150 sites. Needs `acknowledge_lawful_use` |
 | `sherlock` | username | Sherlock | MIT | Needs `acknowledge_lawful_use` |
 | `phone_parse` | phone | phonenumbers | Apache-2.0 | Offline validity and region only. No subscriber lookup |

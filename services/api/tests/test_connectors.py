@@ -132,10 +132,23 @@ class ConnectorTests(unittest.TestCase):
             self.assertIsNone(base.tool_cmd("maigret"))
 
     def test_harvester_uses_passive_sources_only(self):
-        a = builtin.TheHarvester().args("/x/theHarvester", "example.com", "/tmp/o")
+        a = builtin.TheHarvester().args("/x/theHarvester", "example.com", "/tmp/x.tmp/o")
         self.assertEqual(a[a.index("-b") + 1], builtin.TheHarvester.PASSIVE_SOURCES)
-        for active in ("bruteforce", "dnsbrute", "-c", "-t", "-s"):
+        for active in ("bruteforce", "dnsbrute", "-c", "-t", "-s", "-n", "-r", "-a"):
             self.assertNotIn(active, a)
+        self.assertTrue(a[a.index("-f") + 1].endswith(".rpt"), "explicit extension protects against dots in the path")
+
+    def test_harvester_parse_normalises_and_filters(self):
+        data = {"hosts": ["*.example.com", "*.example.com:198.54.14.52", "www.Example.com:93.184.216.34", "evil.org:1.2.3.4",
+                          "notexample.com", "a.b.example.com"], "emails": ["Info@Example.com", "x@other.com"],
+                "ips": ["93.184.216.34", "93.184.216.34", "1.1.1.1"], "asns": ["AS15133"]}
+        o = builtin.TheHarvester.parse(data, "example.com")
+        self.assertEqual(o["hosts"], ["a.b.example.com", "example.com", "www.example.com"])
+        self.assertEqual(o["total_hosts"], 3)
+        self.assertEqual(o["host_ips"]["www.example.com"], ["93.184.216.34"])
+        self.assertEqual(o["host_ips"]["example.com"], ["198.54.14.52"])
+        self.assertEqual(o["emails"], ["info@example.com"])
+        self.assertEqual(o["ips"], ["1.1.1.1", "93.184.216.34"])
 
     def test_image_path_traversal_blocked(self):
         c = builtin.ImageMetadata(_tmp)

@@ -224,17 +224,35 @@ class Sherlock(_UsernameCli):
 
 
 class TheHarvester(Connector):
-    """Opt-in. theHarvester is GPL-2.0, so it is run as a separate program and never imported or copied."""
+    """GPL-2.0, so it is run as a separate program (its own venv / uv environment) and never imported or copied.
+    Passive sources only: no DNS brute force (-c), takeover checks (-t), Shodan (-s) or DNS lookups (-n/-r)."""
     name, kind, license = "theharvester", "domain", "GPL-2.0 (run as external program)"
-    description = "Passive-source domain recon (hosts, emails) via theHarvester. Needs THEHARVESTER_BIN set."
-    PASSIVE_SOURCES = "crtsh,hackertarget,rapiddns,threatminer,urlscan,otx"
-    timeout = 180
+    description = "Passive-source domain recon (hosts, IPs, emails) via theHarvester 4.x. No API keys needed for the default sources."
+    # Keyless sources that exist in theHarvester 4.11. Sources that need API keys are left to the operator's theHarvester config.
+    PASSIVE_SOURCES = "crtsh,certspotter,hackertarget,rapiddns,subdomaincenter,threatcrowd,urlscan,otx"
+    timeout = 240
 
     def available(self): return find_binary("theHarvester", "THEHARVESTER_BIN") is not None
     def normalise(self, t): return policy.normalise_domain(t)
 
     def args(self, bin_, domain, out_base):
-        return [bin_, "-d", domain, "-b", self.PASSIVE_SOURCES, "-l", "200", "-f", out_base]
+        # theHarvester derives the report name with rsplit('.', 1)[0] + '.json'. Give it an explicit extension so a dot
+        # anywhere earlier in the path (e.g. a temp directory called "x.tmp") cannot truncate the path.
+        return [bin_, "-d", domain, "-b", self.PASSIVE_SOURCES, "-l", "200", "-q", "-f", out_base + ".rpt"]
+
+    @staticmethod
+    def parse(data: dict, domain: str) -> dict:
+        hosts, host_ips = set(), {}
+        for h in data.get("hosts", []):
+            name, _, ip = str(h).partition(":")
+            name = name.lower().lstrip("*.").strip()
+            if name == domain or name.endswith("." + domain):
+                hosts.add(name)
+                if ip and ip[0].isdigit():
+                    host_ips.setdefault(name, set()).add(ip)
+        emails = sorted({e.lower() for e in data.get("emails", []) if e.lower().endswith("@" + domain)})[:100]
+        return {"total_hosts": len(hosts), "hosts": sorted(hosts)[:500], "host_ips": {k: sorted(v) for k, v in sorted(host_ips.items())[:500]},
+                "ips": sorted(set(data.get("ips", [])))[:200], "emails": emails, "asns": data.get("asns", [])[:50]}
 
     def run(self, domain):
         bin_ = find_binary("theHarvester", "THEHARVESTER_BIN")
@@ -243,14 +261,15 @@ class TheHarvester(Connector):
         out_base = tempfile.mkdtemp(prefix="kaal-harvest-") + "/out"
         run_cli(self.args(bin_, domain, out_base), self.timeout)
         try:
-            data = json.load(open(out_base + ".json"))
+            data = json.load(open(out_base + ".json", encoding="utf-8"))
         except (OSError, ValueError):
-            raise ConnectorError("theHarvester produced no readable output")
-        hosts = sorted({h.split(":")[0].lower() for h in data.get("hosts", []) if domain in h.lower()})[:300]
-        emails = sorted({e.lower() for e in data.get("emails", []) if e.lower().endswith("@" + domain)})[:100]
-        return {"outputs": {"hosts": hosts, "emails": emails}, "source_references": [f"theharvester://{domain}"],
-                "confidence": 0.6 if (hosts or emails) else 0.0,
-                "warnings": ["Passive sources only. Emails found are for the target domain and need analyst review."]}
+            raise ConnectorError("theHarvester produced no readable output (all sources failed or rate-limited it)")
+        out = self.parse(data, domain)
+        return {"outputs": out, "source_references": [f"theharvester://{domain}?b={self.PASSIVE_SOURCES}"],
+                "confidence": 0.6 if (out["hosts"] or out["emails"]) else 0.0,
+                "warnings": ["Passive sources only; names come from third-party datasets and may be stale or not live.",
+                             "Wildcard entries were normalised to their base name. Emails found need analyst review."]
+                            + ([] if out["hosts"] or out["emails"] else ["Nothing returned. This is not proof there are no hosts."])}
 
 
 class WikipediaBriefing(Connector):

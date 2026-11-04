@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+- Fixed the `theharvester` connector for theHarvester 4.11: it asked for a source that no longer exists (`threatminer`), would have failed on every run, and could lose its report when a temp path contained a dot. Hosts, IPs, ASNs and emails are now parsed and normalised, and `total_hosts` reports the real count.
+- `install-optional-tools.sh` now installs theHarvester 4.11.1 (via uv) as well.
+
 ## 2.2.0
 - Remote model host: Ollama or LM Studio (for example your laptop) selectable at runtime from the console or `kaal-model`; all LLM calls go through one switchable backend. See docs/remote-models.md.
 - New connectors: `sentinel2` (Copernicus Sentinel-2 imagery with a baseline ship-candidate detector), `opensky` (flights), `aisstream` (ships).
