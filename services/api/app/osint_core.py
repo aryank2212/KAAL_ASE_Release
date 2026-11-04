@@ -113,48 +113,6 @@ def search_username_maigret(username: str, timeout: int = 10, max_sites: int = 2
     }
 
 
-def search_email_holehe(email: str, timeout: int = 15) -> dict:
-    try:
-        from holehe.core import get_functions, import_submodules, launch_module
-
-        modules = import_submodules("holehe.modules")
-        funcs = get_functions(modules)
-
-        async def _check_all():
-            sem = asyncio.Semaphore(20)
-            async def _check_one(func):
-                async with sem:
-                    try:
-                        return func.__name__, await launch_module(func, email, max(1, timeout // 20))
-                    except Exception:
-                        return func.__name__, None
-            tasks = [_check_one(f) for f in funcs]
-            raw = await asyncio.gather(*tasks, return_exceptions=True)
-            results = {}
-            for item in raw:
-                if isinstance(item, tuple):
-                    name, result = item
-                    if result:
-                        results[name] = {
-                            "exists": result.get("exists", False),
-                            "email": result.get("email", ""),
-                            "rateLimit": result.get("rateLimit", False),
-                        }
-            return results
-
-        results = asyncio.run(_check_all())
-        found = {k: v for k, v in results.items() if v.get("exists")}
-        return {
-            "email": email,
-            "total_checked": len(results),
-            "registrations_found": len(found),
-            "registrations": found,
-        }
-    except Exception as e:
-        logger.warning("Holehe search failed: %s", e)
-        return {"email": email, "error": str(e), "registrations_found": 0, "registrations": {}}
-
-
 def analyze_osint_data_ollama(
     name: str,
     maigret_results: list[dict],

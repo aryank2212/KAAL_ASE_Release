@@ -14,6 +14,7 @@ class Settings(BaseSettings):
     qdrant_url: str = "http://localhost:6333"
     object_storage_endpoint: str = "http://localhost:9000"
     object_storage_bucket: str = "kaal-evidence"
+    evidence_dir: str = "/data/evidence"
     ollama_base_url: str = "http://localhost:11434"
     ollama_model: str = "gemma2:2b"
     ollama_embed_model: str = "nomic-embed-text"

@@ -1,7 +1,7 @@
 from app.agents.base import BaseAgent
 from app.search_web import search_recent, search_web, fetch_page_text
 from app.social_search import search_social_profiles
-from app.osint_core import search_username_maigret, search_email_holehe, _extract_emails
+from app.osint_core import search_username_maigret
 
 
 class SearchAgent(BaseAgent):
@@ -34,14 +34,8 @@ class SocialSearchAgent(BaseAgent):
 
         profiles = search_social_profiles(name, phrase, links)
 
-        emails = _extract_emails(f"{name} {phrase} {links}")
+        # V2: email-registration probing (Holehe) was removed. It is not a public-source lookup.
         holehe_results = []
-        for email in emails[:3]:
-            try:
-                hr = search_email_holehe(email, timeout=10)
-                holehe_results.append(hr)
-            except Exception as e:
-                holehe_results.append({"email": email, "error": str(e)})
 
         maigret_results = {"username_searches": [], "email_searches": holehe_results}
         seen_usernames = set()

@@ -7,14 +7,14 @@ from fastapi.responses import JSONResponse
 
 from app.config import settings
 from app.database import init_db
-from app.routers import analysis, cases, evidence, graph, health, profiles, search
+from app.routers import analysis, cases, evidence, graph, health, osint, profiles, search
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s  %(levelname)-8s %(name)s  %(message)s")
 logger = logging.getLogger(__name__)
 
 app = FastAPI(
     title="KAAL-ASE API",
-    version="0.4.0",
+    version="2.0.0",
     description="API for the KAAL-ASE intelligence management platform.",
 )
 
@@ -67,3 +67,4 @@ app.include_router(evidence.router, prefix="/api/v1", tags=["evidence"])
 app.include_router(search.router, prefix="/api/v1", tags=["search"])
 app.include_router(graph.router, prefix="/api/v1", tags=["graph"])
 app.include_router(analysis.router, prefix="/api/v1", tags=["analysis"])
+app.include_router(osint.router, prefix="/api/v1", tags=["osint"])
