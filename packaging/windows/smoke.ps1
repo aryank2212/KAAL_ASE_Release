@@ -28,7 +28,8 @@ try {
   if ($sys.connectors.ready -lt 8) { throw "too few connectors ready" }
   $names = (Invoke-RestMethod "http://127.0.0.1:$Port/api/v1/osint/connectors" -Headers $h) | Where-Object { $_.status -eq "ready" } | ForEach-Object { $_.name }
   Write-Host ("ready: " + ($names -join ", "))
-  foreach ($need in @("dns_records", "maigret", "sherlock", "sentinel2", "opensky", "face_compare")) { if ($names -notcontains $need) { throw "connector not ready: $need" } }
+  # face_* connectors need the opt-in model download, Holehe/GHunt are opt-in tools, aisstream needs a key: none of those are required here
+  foreach ($need in @("dns_records", "whois", "wayback", "phone_parse", "image_metadata", "maigret", "sherlock", "sentinel2", "opensky", "wikipedia_briefing")) { if ($names -notcontains $need) { throw "connector not ready: $need" } }
   $case = Invoke-RestMethod "http://127.0.0.1:$Port/api/v1/cases" -Method Post -Headers $h -ContentType "application/json" -Body '{"title":"smoke"}'
   $body = '{"connector":"dns_records","target":"example.com","purpose":"Installer smoke test on a public domain"}'
   $r = Invoke-RestMethod "http://127.0.0.1:$Port/api/v1/cases/$($case.case_id)/osint/run" -Method Post -Headers $h -ContentType "application/json" -Body $body
