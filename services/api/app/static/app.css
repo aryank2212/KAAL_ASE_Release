@@ -1,0 +1,38 @@
+:root{--bg:#0a0a0b;--panel:#131316;--panel2:#1a1a1f;--line:#2a2a31;--fg:#ececf1;--mut:#9a9aa6;--red:#e5383b;--ok:#3ecf8e;--warn:#f5a524;--info:#4aa3ff;color-scheme:dark}
+@media (prefers-color-scheme:light){:root[data-theme=auto]{--bg:#f6f6f8;--panel:#fff;--panel2:#f0f0f4;--line:#d9d9e0;--fg:#17171c;--mut:#5d5d69;color-scheme:light}}
+*{box-sizing:border-box}[hidden]{display:none!important}html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.sr{position:absolute;left:-9999px}
+.top{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--panel);position:sticky;top:0;z-index:1000}
+.brand{display:flex;align-items:center;gap:8px;color:var(--red)}.brand b{color:var(--fg);letter-spacing:.08em}.ver{color:var(--mut);font-size:12px}
+nav{display:flex;gap:4px;flex-wrap:wrap}nav button{background:none;border:0;color:var(--mut);padding:7px 12px;border-radius:6px;cursor:pointer;font:inherit}
+nav button:hover{color:var(--fg)}nav button.on{background:var(--panel2);color:var(--fg);box-shadow:inset 0 -2px 0 var(--red)}
+.keybar{margin-left:auto;display:flex;gap:6px}.keybar input{width:180px}
+input,select,textarea,button{font:inherit}
+input,select,textarea{background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:7px 9px;min-width:0}
+input:focus,select:focus,textarea:focus,button:focus-visible{outline:2px solid var(--info);outline-offset:1px}
+button{background:var(--panel2);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:7px 12px;cursor:pointer}
+button:hover{border-color:var(--mut)}button.primary{background:var(--red);border-color:var(--red);color:#fff}button:disabled{opacity:.45;cursor:not-allowed}
+.banner{padding:9px 16px;background:#3a1517;color:#ffb3b5;border-bottom:1px solid #5a2326}.banner.ok{background:#12301f;color:#9be7c0;border-color:#1d4a30}
+main{max-width:1200px;margin:0 auto;padding:18px 16px 40px}
+h1{font-size:20px;margin:0 0 14px}h2{font-size:15px;margin:0 0 10px;color:var(--mut);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px}
+.stat{font-size:28px;font-weight:650}.stat small{display:block;font-size:12px;color:var(--mut);font-weight:400}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.row>.grow{flex:1 1 220px}
+.field{display:flex;flex-direction:column;gap:4px;margin-bottom:10px}.field label{font-size:12px;color:var(--mut)}
+.badge{display:inline-block;padding:1px 8px;border-radius:999px;font-size:12px;border:1px solid var(--line);color:var(--mut)}
+.badge.ready,.badge.accepted{color:var(--ok);border-color:#1f5a3d}.badge.needs_setup,.badge.proposed{color:var(--warn);border-color:#6a4b10}
+.badge.not_installed,.badge.rejected{color:var(--red);border-color:#6a2326}
+.bar{height:6px;background:var(--panel2);border-radius:3px;overflow:hidden;margin:6px 0}.bar>i{display:block;height:100%;background:var(--info)}
+.warn{color:var(--warn);font-size:13px;margin:3px 0}.mut{color:var(--mut)}
+table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--mut);font-weight:600}
+pre{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:10px;overflow:auto;max-height:340px;font-size:12px}
+#map{height:520px;border:1px solid var(--line);border-radius:10px;background:#101014}
+.legend span{margin-right:14px}.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px}
+.ac{color:var(--info);font-size:18px;line-height:18px;text-shadow:0 0 3px #000}
+.models{display:grid;gap:6px}.split{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:900px){.split{grid-template-columns:360px 1fr}}
+.foot{max-width:1200px;margin:0 auto;padding:0 16px 24px;color:var(--mut);font-size:12px}
+details summary{cursor:pointer;color:var(--mut)}
+.leaflet-container{font:inherit}

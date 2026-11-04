@@ -1,0 +1,17 @@
+# Lean runtime set used by the .deb, Arch package and Windows installer (SQLite, single process).
+# The Docker Compose stack uses requirements.txt (Postgres, Redis, Neo4j, Qdrant clients) instead.
+fastapi==0.115.6
+uvicorn==0.34.0
+pydantic-settings==2.7.1
+sqlalchemy==2.0.51
+httpx==0.28.1
+maigret==0.6.6
+sherlock-project==0.16.2
+dnspython==2.9.2
+python-whois==0.9.6
+ExifRead==3.5.1
+phonenumbers==9.0.42
+opencv-python-headless==5.0.0.93
+numpy==2.5.4
+rasterio==1.5.2
+websockets==17.4

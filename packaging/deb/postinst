@@ -1,0 +1,23 @@
+#!/bin/sh
+set -e
+case "$1" in
+configure)
+  getent group kaal-ase >/dev/null || addgroup --system kaal-ase >/dev/null
+  getent passwd kaal-ase >/dev/null || adduser --system --ingroup kaal-ase --home /var/lib/kaal-ase --no-create-home --shell /usr/sbin/nologin kaal-ase >/dev/null
+  install -d -o kaal-ase -g kaal-ase -m 750 /var/lib/kaal-ase
+  echo "kaal-ase: creating the Python environment (needs internet, a few minutes)..."
+  python3 -m venv /opt/kaal-ase/venv
+  if ! /opt/kaal-ase/venv/bin/pip install --disable-pip-version-check -q -r /opt/kaal-ase/requirements-core.txt; then
+    echo "kaal-ase: dependency install failed. Check your connection, then run: sudo dpkg --configure kaal-ase" >&2
+    exit 1
+  fi
+  if [ -d /run/systemd/system ]; then
+    systemctl daemon-reload || true
+    systemctl enable kaal-ase.service >/dev/null 2>&1 || true
+    systemctl restart kaal-ase.service || echo "kaal-ase: could not start the service yet; see: journalctl -u kaal-ase" >&2
+  fi
+  echo "kaal-ase: console at http://127.0.0.1:8140/ui/   API key: sudo cat /var/lib/kaal-ase/api_key"
+  echo "kaal-ase: optional Holehe/GHunt/face models: sudo -u kaal-ase /opt/kaal-ase/install-optional-tools.sh"
+  ;;
+esac
+exit 0

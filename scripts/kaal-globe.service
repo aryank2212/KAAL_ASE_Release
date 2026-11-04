@@ -1,0 +1,20 @@
+# User systemd unit for the God's Eye View globe: waits for Docker and the Tailscale address, then starts it.
+# Install (edit the two IP/path values if yours differ):
+#   mkdir -p ~/.config/systemd/user && cp scripts/kaal-globe.service ~/.config/systemd/user/
+#   systemctl --user daemon-reload && systemctl --user enable --now kaal-globe.service
+# Needs "loginctl enable-linger $USER" so user services start at boot (already on for this host).
+[Unit]
+Description=God's Eye View globe (KAAL companion): starts once Docker and Tailscale are up
+After=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+TimeoutStartSec=300
+# The globe publishes on the Tailscale address, which may not exist yet right after boot. Wait for it (and for Docker).
+ExecStartPre=/bin/sh -c 'for i in $(seq 1 140); do docker info >/dev/null 2>&1 && ip -4 addr show tailscale0 2>/dev/null | grep -q 100.77.54.107 && exit 0; sleep 2; done; exit 1'
+ExecStart=/usr/bin/docker compose -f %h/gods-eye-view/compose.kaal.yaml up -d
+ExecStop=/usr/bin/docker compose -f %h/gods-eye-view/compose.kaal.yaml stop
+
+[Install]
+WantedBy=default.target

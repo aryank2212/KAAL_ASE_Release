@@ -1,0 +1,15 @@
+_venv() {
+  echo ">>> kaal-ase: creating the Python environment (needs internet, a few minutes)..."
+  python -m venv /opt/kaal-ase/venv &&
+    /opt/kaal-ase/venv/bin/pip install --disable-pip-version-check -q -r /opt/kaal-ase/requirements-core.txt ||
+    echo ">>> kaal-ase: dependency install failed. Re-run: python -m venv /opt/kaal-ase/venv && /opt/kaal-ase/venv/bin/pip install -r /opt/kaal-ase/requirements-core.txt" >&2
+}
+post_install() {
+  _venv
+  echo ">>> kaal-ase: start with  sudo systemctl enable --now kaal-ase"
+  echo ">>> kaal-ase: console http://127.0.0.1:8140/ui/   API key: sudo cat /var/lib/kaal-ase/api_key"
+  echo ">>> kaal-ase: optional Holehe/GHunt/face models: sudo -u kaal-ase /opt/kaal-ase/install-optional-tools.sh"
+}
+post_upgrade() { _venv; systemctl try-restart kaal-ase.service 2>/dev/null || true; }
+pre_remove() { systemctl disable --now kaal-ase.service 2>/dev/null || true; }
+post_remove() { rm -rf /opt/kaal-ase/venv; }

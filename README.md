@@ -4,6 +4,18 @@ KAAL-ASE is an OSINT research and evidence-management project built around a Pyt
 
 > Responsible use: Use this tool only for lawful, authorized research. Prefer public-interest and consent-based investigations. Do not use it to stalk, harass, dox, discriminate against, or infer sensitive traits about private people. Treat generated matches as unverified leads, not facts.
 
+## V2: OSINT connectors
+
+KAAL-ASE 2.0 adds Maigret, Sherlock, DNS, WHOIS, certificate-transparency, Wayback, phone-parsing, image-metadata,
+Holehe, GHunt, 1:1 face comparison, an optional theHarvester adapter and a sourced-briefing connector behind one guardrailed API. See
+[docs/osint-connectors.md](docs/osint-connectors.md) and [CHANGELOG.md](CHANGELOG.md).
+
+## Install and run (2.2)
+
+Download the `.deb`, Arch package or Windows installer from the latest release. See [docs/installing.md](docs/installing.md).
+Models run on a separate host (e.g. your laptop with Ollama or LM Studio): [docs/remote-models.md](docs/remote-models.md).
+Imagery, flights and ships on a map: [docs/area-watch.md](docs/area-watch.md). The console is at `/ui/`.
+
 ## Status
 
 The API supports case/profile/evidence records, LLM-assisted analysis, and a saved lookup store. The vector-search and graph endpoints are currently placeholders. The frontend is represented by a Git submodule entry that is not configured in this repository, so the web Compose profile remains opt-in.

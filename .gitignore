@@ -26,3 +26,12 @@ test_api_output.json
 .DS_Store
 .vscode/
 .idea/
+
+# build output
+dist/
+build/
+*.deb
+*.pkg.tar.zst
+__pycache__/
+*.pyc
+.pytest_cache/
