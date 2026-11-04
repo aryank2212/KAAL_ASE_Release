@@ -82,8 +82,10 @@ _UI = os.path.join(os.path.dirname(os.path.abspath(__file__)), "static")
 async def ui_headers(request: Request, call_next):
     resp = await call_next(request)
     if request.url.path.startswith("/ui"):
+        from app.routers.console import globe_origin
         resp.headers["Content-Security-Policy"] = ("default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; "
                                                    "img-src 'self' data: blob: https://tile.openstreetmap.org; connect-src 'self'; "
+                                                   f"frame-src {globe_origin() or chr(39) + 'none' + chr(39)}; "
                                                    "frame-ancestors 'none'; base-uri 'none'; form-action 'none'")
         resp.headers["X-Content-Type-Options"] = "nosniff"
         resp.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"

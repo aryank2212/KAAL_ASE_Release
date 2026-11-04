@@ -92,6 +92,7 @@ const views = {
       h("div", { class: "card" }, h("div", { class: "row" }, bboxIn,
         h("button", { onclick: () => { const b = state.map.getBounds(); bboxIn.value = [b.getWest(), b.getSouth(), b.getEast(), b.getNorth()].map(v => v.toFixed(4)).join(","); } }, "Use map view"),
         ...[["sentinel2", "Satellite + detector"], ["opensky", "Flights"], ["aisstream", "Ships (live AIS)"]].map(([n, l]) => h("button", { class: "primary", onclick: ev => go(n, ev.target) }, l)),
+        h("button", { onclick: () => { store.set("bbox", bboxIn.value); location.hash = "globe"; } }, "Open in Globe"),
         h("button", { onclick: () => { state.layers.clearLayers(); legend.replaceChildren(); table.replaceChildren(); } }, "Clear")),
         status),
       h("div", { style: "height:12px" }), mapDiv, legend, h("div", { style: "height:10px" }), table,
@@ -135,6 +136,35 @@ const views = {
       table.replaceChildren(h("div", { class: "card" }, h("h2", {}, `${name} results`), ...r.warnings.map(w => h("div", { class: "warn" }, "⚠ " + w)),
         h("table", {}, h("thead", {}, h("tr", {}, ["Name", "Lat", "Lon", "Info"].map(x => h("th", {}, x)))), h("tbody", {}, rows.slice(0, 200).map(x => h("tr", {}, x.map(c => h("td", {}, String(c)))))))));
     }
+  },
+
+  async globe(root) {
+    const g = await api("/globe");
+    if (!g.configured) {
+      root.append(h("h1", {}, "Globe"), h("div", { class: "card" }, h("p", {}, "God's Eye View is not connected."), h("p", { class: "mut" }, g.setup)));
+      return;
+    }
+    const bboxIn = h("input", { id: "gbbox", class: "grow", value: store.get("bbox") || "72.80,18.85,72.95,18.98", "aria-label": "Bounding box" });
+    const status = h("div", { class: "mut" }), frameBox = h("div"), openLink = h("a", { class: "badge", target: "_blank", rel: "noopener noreferrer" }, "Open full window ↗");
+    // Documented long share-link form: #lat=..&lon=..&alt=..&heading=..&pitch=.. ; embed=1 lets the app be framed by an allowed page.
+    const deepLink = (embed) => {
+      const [w, s, e, n] = bboxIn.value.split(",").map(Number);
+      if (![w, s, e, n].every(isFinite)) return null;
+      const lat = (s + n) / 2, lon = (w + e) / 2, spanKm = Math.max((n - s) * 111.32, (e - w) * 111.32 * Math.cos(lat * Math.PI / 180));
+      const alt = Math.round(Math.max(1500, spanKm * 1000 * 1.3));
+      return `${g.url}/${embed ? "?embed=1&k=" + Date.now() : ""}#lat=${lat.toFixed(5)}&lon=${lon.toFixed(5)}&alt=${alt}&heading=0&pitch=-90`;
+    };
+    const fly = () => {
+      const src = deepLink(true); if (!src) return banner("Bounding box must be west,south,east,north.");
+      store.set("bbox", bboxIn.value); openLink.href = deepLink(false);
+      frameBox.replaceChildren(h("iframe", { id: "globe", src, title: "God's Eye View", allow: "fullscreen", referrerpolicy: "no-referrer",
+        sandbox: "allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms", style: "width:100%;height:640px;border:1px solid var(--line);border-radius:10px;background:#000" }));
+    };
+    root.append(h("h1", {}, "Globe"), h("div", { class: "card" }, h("div", { class: "row" }, bboxIn, h("button", { class: "primary", onclick: fly }, "Fly to area"), openLink),
+      h("div", { style: "margin-top:8px" }, h("span", { class: "badge " + (g.reachable ? "ready" : "not_installed") }, g.reachable ? "connected" : "unreachable"), " ", h("span", { class: "mut" }, g.url), g.error ? h("span", { class: "warn" }, "  " + g.error) : ""), status),
+      h("div", { style: "height:12px" }), frameBox,
+      h("p", { class: "mut" }, "God's Eye View (MIT) is a separate project by Bilawal Sidhu, shown here in a frame. Its data comes from public feeds and some layers are estimates. Anything tracked there is a lead, not evidence, until you record it in a case."));
+    if (g.reachable) fly(); else status.textContent = "The globe is not answering. Check that the service is running and that this server can reach it.";
   },
 
   async models(root) {

@@ -2,7 +2,10 @@
 import platform
 import re
 import time
+from urllib.parse import urlparse
 from uuid import UUID
+
+import httpx
 
 from fastapi import APIRouter, Depends, HTTPException, Query
 from fastapi.responses import FileResponse
@@ -11,6 +14,7 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from app import llm_backend
+from app.config import settings
 from app.audit import audit
 from app.connectors import registry
 from app.connectors.geo import imagery_dir
@@ -114,3 +118,26 @@ def system(db: Session = Depends(get_db)) -> dict:
                        "proposed": db.query(Evidence).filter_by(ingestion_status="proposed").count()},
             "connectors": {s: sum(1 for c in conns if c["status"] == s) for s in ("ready", "needs_setup", "not_installed")},
             "llm": {k: v for k, v in llm_backend.status().items() if k != "models"}}
+
+
+def globe_origin() -> str:
+    """Origin of the configured God's Eye View instance, or '' when unset or not a plain http(s) origin."""
+    u = urlparse((settings.globe_url or "").strip())
+    if u.scheme not in ("http", "https") or not u.hostname or u.username or u.password:
+        return ""
+    return f"{u.scheme}://{u.netloc}"
+
+
+@router.get("/globe")
+def globe() -> dict:
+    """Is a God's Eye View instance configured for the Globe tab, and does it answer?"""
+    origin = globe_origin()
+    if not origin:
+        return {"configured": False, "setup": "Set KAAL_GLOBE_URL to your God's Eye View address (for example http://100.64.0.1:4173) "
+                "and restart. See docs/globe.md or run scripts/install-globe.sh."}
+    try:
+        r = httpx.get(origin + "/", timeout=4, follow_redirects=False)
+        reachable, err = r.status_code < 500, (None if r.status_code < 500 else f"HTTP {r.status_code}")
+    except httpx.HTTPError as e:
+        reachable, err = False, f"cannot reach {origin} ({type(e).__name__})"
+    return {"configured": True, "url": origin, "reachable": reachable, "error": err}
