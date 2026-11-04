@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KAAL ASE Console</title>
+  <meta name="theme-color" content="#0a0a0b">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 24'%3E%3Cpath d='M8 1.5 14 7.5 8 13.5 2 7.5Z' fill='none' stroke='%23e5383b' stroke-width='1.6'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="vendor/leaflet.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><svg viewBox="0 0 16 24" width="14" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 1.5 14 7.5 8 13.5 2 7.5Z"/></svg><b>KAAL ASE</b><span class="ver" id="ver"></span></div>
+    <nav id="nav">
+      <button data-v="overview">Overview</button><button data-v="investigate">Investigate</button><button data-v="map">Area watch</button>
+      <button data-v="models">Models</button><button data-v="audit">Audit</button>
+    </nav>
+    <form class="keybar" id="keybar"><label for="key" class="sr">API key</label><input id="key" type="password" placeholder="API key" autocomplete="off"><button>Connect</button></form>
+  </header>
+  <div id="banner" class="banner" hidden></div>
+  <main id="view" tabindex="-1"></main>
+  <footer class="foot">Use only for lawful, authorized research. Every result is an unverified lead until an analyst accepts it. Contains modified Copernicus Sentinel data where imagery is shown.</footer>
+  <script src="vendor/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

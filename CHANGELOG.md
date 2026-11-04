@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.2.0
+- Remote model host: Ollama or LM Studio (for example your laptop) selectable at runtime from the console or `kaal-model`; all LLM calls go through one switchable backend. See docs/remote-models.md.
+- New connectors: `sentinel2` (Copernicus Sentinel-2 imagery with a baseline ship-candidate detector), `opensky` (flights), `aisstream` (ships).
+- `image_metadata` now uses ExifTool when installed, falling back to ExifRead.
+- Web console at `/ui/` (overview, investigate with analyst accept/reject, area-watch map, models, audit).
+- Installers: `.deb`, Arch package and Windows `.exe`, built and smoke-tested by the release workflow. `kaal-ase` launcher with SQLite and an auto-generated API key.
+- Analyst review endpoint (`POST /evidence/{id}/review`), listing endpoints, `GET /system`.
+- Fixed: test runs no longer touch the real home directory.
+
 ## 2.1.0
 - Enabled Holehe (`holehe`), GHunt (`ghunt`) and face matching (`face_locate`, 1:1 `face_compare`) as connectors.
   They require a stated purpose and the lawful-use acknowledgment, and are audited like every other run.

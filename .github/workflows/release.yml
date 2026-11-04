@@ -1,0 +1,129 @@
+name: release
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r services/api/requirements-core.txt pytest
+      - run: python -m pytest -q tests
+        working-directory: services/api
+
+  deb:
+    needs: test
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          VER="${GITHUB_REF_NAME#v}"
+          packaging/deb/build.sh "$VER" dist
+          dpkg-deb -I dist/*.deb
+      - uses: actions/upload-artifact@v4
+        with: { name: deb, path: dist/*.deb }
+
+  arch:
+    needs: test
+    runs-on: ubuntu-24.04
+    container: archlinux:base-devel
+    steps:
+      - run: pacman -Syu --noconfirm git python pacman-contrib
+      - uses: actions/checkout@v4
+      - name: Build package
+        run: |
+          VER="${GITHUB_REF_NAME#v}"
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          useradd -m builder
+          mkdir -p /tmp/pkg
+          cp packaging/arch/* /tmp/pkg/
+          git archive --format=tar.gz --prefix="kaal-ase-$VER/" -o "/tmp/pkg/kaal-ase-$VER.tar.gz" HEAD
+          sed -i "s/^pkgver=.*/pkgver=$VER/" /tmp/pkg/PKGBUILD
+          chown -R builder /tmp/pkg
+          su builder -c "cd /tmp/pkg && updpkgsums && makepkg -f -d --noconfirm"
+          mkdir -p dist && cp /tmp/pkg/*.pkg.tar.zst dist/
+          pacman -Qip dist/*.pkg.tar.zst
+          pacman -Qlp dist/*.pkg.tar.zst | head -40
+      - uses: actions/upload-artifact@v4
+        with: { name: arch, path: dist/*.pkg.tar.zst }
+
+  windows:
+    needs: test
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: python -m pip install -r services/api/requirements-core.txt pyinstaller
+      - name: ExifTool (checksum-verified, optional)
+        shell: pwsh
+        run: |
+          try {
+            $ver = (Invoke-WebRequest https://exiftool.org/ver.txt -UseBasicParsing).Content.Trim()
+            $sums = (Invoke-WebRequest https://exiftool.org/checksums.txt -UseBasicParsing).Content
+            $zip = "exiftool-${ver}_64.zip"
+            Invoke-WebRequest "https://exiftool.org/$zip" -OutFile $zip -UseBasicParsing
+            $m = [regex]::Match($sums, "SHA2-256\($([regex]::Escape($zip))\)=\s*([0-9a-f]{64})")
+            $actual = (Get-FileHash $zip -Algorithm SHA256).Hash.ToLower()
+            if ($m.Success -and $m.Groups[1].Value -eq $actual) {
+              Expand-Archive $zip -DestinationPath exiftool-src
+              $d = Get-ChildItem exiftool-src -Directory | Select-Object -First 1
+              New-Item -ItemType Directory -Force -Path exiftool-stage | Out-Null
+              Copy-Item (Join-Path $d.FullName "exiftool(-k).exe") "exiftool-stage\exiftool.exe"
+              Copy-Item (Join-Path $d.FullName "exiftool_files") "exiftool-stage\exiftool_files" -Recurse
+              Write-Host "ExifTool $ver verified and staged"
+            } else { Write-Warning "ExifTool checksum missing or mismatched; building without it" }
+          } catch { Write-Warning "ExifTool not bundled: $($_.Exception.Message)" }
+      - run: pyinstaller packaging/windows/kaal-ase.spec --noconfirm --distpath dist --workpath build
+      - name: Add ExifTool to the build
+        shell: pwsh
+        run: if (Test-Path exiftool-stage) { Copy-Item exiftool-stage dist\kaal-ase\exiftool -Recurse }
+      - name: Bundled tools run
+        shell: pwsh
+        run: |
+          & dist\kaal-ase\kaal-ase.exe --run-tool maigret --version
+          if ($LASTEXITCODE -ne 0) { throw "bundled maigret failed" }
+          & dist\kaal-ase\kaal-ase.exe --run-tool sherlock_project --version
+          if ($LASTEXITCODE -ne 0) { throw "bundled sherlock failed" }
+      - name: Smoke test (unpackaged build)
+        shell: pwsh
+        run: ./packaging/windows/smoke.ps1 -Exe dist\kaal-ase\kaal-ase.exe -Port 8150
+      - name: Build installer
+        shell: pwsh
+        run: |
+          choco install innosetup -y --no-progress
+          $ver = "${env:GITHUB_REF_NAME}".TrimStart("v")
+          & "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe" "/DVersion=$ver" packaging\windows\kaal-ase.iss
+          Get-ChildItem dist\installer
+      - name: Install silently and smoke test the installed copy
+        shell: pwsh
+        run: |
+          $setup = Get-ChildItem dist\installer\*.exe | Select-Object -First 1
+          Start-Process $setup.FullName -ArgumentList "/VERYSILENT","/SUPPRESSMSGBOXES","/NORESTART","/DIR=C:\kaal-test" -Wait
+          if (-not (Test-Path C:\kaal-test\kaal-ase.exe)) { throw "installer did not install" }
+          ./packaging/windows/smoke.ps1 -Exe C:\kaal-test\kaal-ase.exe -Port 8151
+          Start-Process C:\kaal-test\unins000.exe -ArgumentList "/VERYSILENT" -Wait
+      - uses: actions/upload-artifact@v4
+        with: { name: windows, path: dist/installer/*.exe }
+
+  release:
+    needs: [deb, arch, windows]
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { path: assets, merge-multiple: true }
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp scripts/kaal-model.py assets/kaal-model.py
+          cd assets && sha256sum * | tee SHA256SUMS.txt && cd ..
+          VER="${GITHUB_REF_NAME#v}"
+          NOTES="docs/release-notes-$VER.md"; [ -f "$NOTES" ] || NOTES=CHANGELOG.md
+          gh release create "$GITHUB_REF_NAME" assets/* --title "KAAL ASE $VER" --notes-file "$NOTES" --verify-tag

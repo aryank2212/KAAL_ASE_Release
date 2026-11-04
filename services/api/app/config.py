@@ -1,3 +1,4 @@
+from pydantic import AliasChoices, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -14,6 +15,8 @@ class Settings(BaseSettings):
     qdrant_url: str = "http://localhost:6333"
     object_storage_endpoint: str = "http://localhost:9000"
     object_storage_bucket: str = "kaal-evidence"
+    data_dir: str = Field(default="~/.local/share/kaal-ase",   # llm.json, sqlite db, imagery cache
+                          validation_alias=AliasChoices("KAAL_DATA_DIR", "DATA_DIR"))
     evidence_dir: str = "/data/evidence"
     ollama_base_url: str = "http://localhost:11434"
     ollama_model: str = "gemma2:2b"

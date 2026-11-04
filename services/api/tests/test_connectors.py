@@ -116,11 +116,20 @@ class ConnectorTests(unittest.TestCase):
     def test_username_cli_output_parsed(self):
         sample = "[*] Checking\n\r[+] GitHub: https://github.com/python\n[+] GitHub: https://github.com/python\n[+] Reddit: https://www.reddit.com/user/python\n[-] X: not found\n"
         for cls in (builtin.Maigret, builtin.Sherlock):
-            with patch.object(builtin, "find_binary", return_value="/bin/true"), patch.object(builtin, "run_cli", return_value=sample):
+            with patch.object(builtin, "tool_cmd", return_value=["/bin/true"]), patch.object(builtin, "run_cli", return_value=sample):
                 r = cls().run("python")
             self.assertEqual(r["outputs"]["count"], 2)
             self.assertLess(r["confidence"], 0.5)
             self.assertIn("lead", r["warnings"][0])
+
+    def test_frozen_build_reruns_itself_as_the_tool(self):
+        from app.connectors import base
+        with patch.object(base, "find_binary", return_value=None), patch.object(base.sys, "frozen", True, create=True):
+            self.assertEqual(base.tool_cmd("maigret"), [base.sys.executable, "--run-tool", "maigret"])
+            self.assertEqual(base.tool_cmd("sherlock")[-1], "sherlock_project")
+            self.assertIsNone(base.tool_cmd("holehe"))
+        with patch.object(base, "find_binary", return_value=None):
+            self.assertIsNone(base.tool_cmd("maigret"))
 
     def test_harvester_uses_passive_sources_only(self):
         a = builtin.TheHarvester().args("/x/theHarvester", "example.com", "/tmp/o")

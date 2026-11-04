@@ -1,0 +1,24 @@
+[Unit]
+Description=KAAL ASE API and console
+Documentation=https://github.com/aryank2212/KAAL_ASE_Release
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=kaal-ase
+Group=kaal-ase
+WorkingDirectory=/opt/kaal-ase
+Environment=KAAL_DATA_DIR=/var/lib/kaal-ase
+Environment=KAAL_TOOLS_DIR=/var/lib/kaal-ase/tools
+EnvironmentFile=-/etc/kaal-ase/kaal-ase.env
+ExecStart=/opt/kaal-ase/venv/bin/python -m app.launcher
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/lib/kaal-ase
+
+[Install]
+WantedBy=multi-user.target

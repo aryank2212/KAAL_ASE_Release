@@ -5,6 +5,7 @@ from typing import Any
 
 import httpx
 
+from app import llm_backend
 from app.config import settings
 
 logger = logging.getLogger(__name__)
@@ -17,24 +18,11 @@ OLLAMA_EMBED_MODEL = settings.ollama_embed_model
 def _chat(
     system: str,
     prompt: str,
-    model: str = OLLAMA_MODEL,
+    model: str | None = None,
     temperature: float = 0.1,
 ) -> str:
-    resp = httpx.post(
-        f"{OLLAMA_BASE}/api/chat",
-        json={
-            "model": model,
-            "stream": False,
-            "temperature": temperature,
-            "messages": [
-                {"role": "system", "content": system},
-                {"role": "user", "content": prompt},
-            ],
-        },
-        timeout=120,
-    )
-    resp.raise_for_status()
-    return resp.json()["message"]["content"]
+    """Routed through app.llm_backend, so the provider and model can be switched at runtime."""
+    return llm_backend.chat(system, prompt, model=model, temperature=temperature)
 
 
 def _extract_json(text: str) -> str:
@@ -96,7 +84,7 @@ def _clean_json(text: str) -> str:
 def _json_chat(
     system: str,
     prompt: str,
-    model: str = OLLAMA_MODEL,
+    model: str | None = None,
 ) -> Any:
     system_prompt = system + (
         "\n\nIMPORTANT: Your entire response must be valid JSON. "
@@ -275,13 +263,7 @@ def generate_leads(context: dict[str, Any]) -> list[dict[str, Any]]:
 
 
 def embed_text(text: str) -> list[float]:
-    resp = httpx.post(
-        f"{OLLAMA_BASE}/api/embeddings",
-        json={"model": OLLAMA_EMBED_MODEL, "prompt": text},
-        timeout=30,
-    )
-    resp.raise_for_status()
-    return resp.json()["embedding"]
+    return llm_backend.embed(text)
 
 
 def _extract_suggestions(data: Any) -> list[dict[str, Any]]:

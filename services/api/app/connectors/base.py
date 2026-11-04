@@ -21,22 +21,38 @@ def find_binary(name: str, env_var: str | None = None) -> str | None:
     if env_var and os.environ.get(env_var):
         p = os.environ[env_var]
         return p if os.path.isfile(p) and os.access(p, os.X_OK) else None
-    iso = os.path.join(tools_dir(), f"{name.lower()}-venv", "bin", name)
+    sub, ext = ("Scripts", ".exe") if os.name == "nt" else ("bin", "")
+    iso = os.path.join(tools_dir(), f"{name.lower()}-venv", sub, name + ext)
     if os.path.isfile(iso) and os.access(iso, os.X_OK):
         return iso
-    local = os.path.join(os.path.dirname(sys.executable), name)
+    local = os.path.join(os.path.dirname(sys.executable), name + (".exe" if os.name == "nt" else ""))
     if os.path.isfile(local) and os.access(local, os.X_OK):
         return local
     return shutil.which(name)
 
 
-def run_cli(args: list[str], timeout: int) -> str:
+# In a frozen build (Windows installer) there is no `maigret` program on disk, so the app re-runs itself as the tool.
+FROZEN_TOOLS = {"maigret": "maigret", "sherlock": "sherlock_project"}
+
+
+def tool_cmd(name: str, env_var: str | None = None) -> list[str] | None:
+    exe = find_binary(name, env_var)
+    if exe:
+        return [exe]
+    if getattr(sys, "frozen", False) and name in FROZEN_TOOLS:
+        return [sys.executable, "--run-tool", FROZEN_TOOLS[name]]
+    return None
+
+
+def run_cli(args: list[str], timeout: int, stdout_only: bool = False) -> str:
     """Run a tool without a shell. Output is capped; the process is killed on timeout."""
     env = {"PATH": os.environ.get("PATH", ""), "HOME": os.environ.get("HOME", "/tmp"), "LANG": "C.UTF-8"}
     try:
         p = subprocess.run(args, capture_output=True, timeout=timeout, env=env, check=False)
     except subprocess.TimeoutExpired:
         raise ConnectorError(f"{os.path.basename(args[0])} timed out after {timeout}s")
+    if stdout_only:
+        return p.stdout[:MAX_OUTPUT].decode("utf-8", "replace")
     return (p.stdout[:MAX_OUTPUT] + b"\n" + p.stderr[:20_000]).decode("utf-8", "replace")
 
 

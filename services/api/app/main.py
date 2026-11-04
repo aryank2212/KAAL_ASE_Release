@@ -3,18 +3,20 @@ from secrets import compare_digest
 
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, RedirectResponse
+from fastapi.staticfiles import StaticFiles
+import os
 
 from app.config import settings
 from app.database import init_db
-from app.routers import analysis, cases, evidence, graph, health, osint, profiles, search
+from app.routers import analysis, cases, evidence, console, graph, health, llm_admin, osint, profiles, search
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s  %(levelname)-8s %(name)s  %(message)s")
 logger = logging.getLogger(__name__)
 
 app = FastAPI(
     title="KAAL-ASE API",
-    version="2.1.0",
+    version="2.2.0",
     description="API for the KAAL-ASE intelligence management platform.",
 )
 
@@ -67,4 +69,30 @@ app.include_router(evidence.router, prefix="/api/v1", tags=["evidence"])
 app.include_router(search.router, prefix="/api/v1", tags=["search"])
 app.include_router(graph.router, prefix="/api/v1", tags=["graph"])
 app.include_router(analysis.router, prefix="/api/v1", tags=["analysis"])
+app.include_router(llm_admin.router, prefix="/api/v1", tags=["llm"])
+app.include_router(console.router, prefix="/api/v1", tags=["console"])
 app.include_router(osint.router, prefix="/api/v1", tags=["osint"])
+
+
+# ---- dashboard (static, no secrets in it; every data call needs the API key) ----
+_UI = os.path.join(os.path.dirname(os.path.abspath(__file__)), "static")
+
+
+@app.middleware("http")
+async def ui_headers(request: Request, call_next):
+    resp = await call_next(request)
+    if request.url.path.startswith("/ui"):
+        resp.headers["Content-Security-Policy"] = ("default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; "
+                                                   "img-src 'self' data: blob: https://tile.openstreetmap.org; connect-src 'self'; "
+                                                   "frame-ancestors 'none'; base-uri 'none'; form-action 'none'")
+        resp.headers["X-Content-Type-Options"] = "nosniff"
+        resp.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+    return resp
+
+
+@app.get("/", include_in_schema=False)
+def _root():
+    return RedirectResponse("/ui/")
+
+
+app.mount("/ui", StaticFiles(directory=_UI, html=True), name="ui")

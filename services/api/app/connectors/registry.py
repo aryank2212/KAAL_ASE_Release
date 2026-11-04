@@ -9,13 +9,14 @@ from . import policy
 from .base import ConnectorError
 from .builtin import (CertTransparency, DnsRecords, ImageMetadata, Maigret, PhoneParse, Sherlock,
                       TheHarvester, Wayback, Whois, WikipediaBriefing)
+from .geo import AisStream, OpenSky, Sentinel2
 from .sensitive import FaceCompare, FaceLocate, Ghunt, Holehe
 
 
 def build() -> dict:
     cs = [DnsRecords(), Whois(), CertTransparency(), Wayback(), PhoneParse(), ImageMetadata(settings.evidence_dir),
           Maigret(), Sherlock(), TheHarvester(), WikipediaBriefing(),
-          Holehe(), Ghunt(), FaceLocate(settings.evidence_dir), FaceCompare(settings.evidence_dir)]
+          Sentinel2(), OpenSky(), AisStream(), Holehe(), Ghunt(), FaceLocate(settings.evidence_dir), FaceCompare(settings.evidence_dir)]
     return {c.name: c for c in cs}
 
 

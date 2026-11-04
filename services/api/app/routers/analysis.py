@@ -10,6 +10,7 @@ from sqlalchemy.orm import Session
 from app.audit import audit
 from app.config import settings
 from app.database import get_db
+from app import llm_backend
 from app.llm import (
     _chat,
     analyze_sentiment,
@@ -95,7 +96,7 @@ def analyze_extract_entities(
                         "context": ent.get("context"),
                     },
                     confidence=ent.get("confidence", 0.5),
-                    extractor=settings.ollama_model,
+                    extractor=llm_backend.current().model,
                     extractor_version="0.1.0",
                 )
                 db.add(obs)
@@ -226,7 +227,7 @@ def osint_lookup(payload: dict):
         "anything_you_have": anything_you_have,
     }
 
-    result = {"input": dict(user_input), "model": model or settings.ollama_model}
+    result = {"input": dict(user_input), "model": model or llm_backend.current().model}
 
     step = lambda s: logger.info("[osint-lookup] %s", s)
 

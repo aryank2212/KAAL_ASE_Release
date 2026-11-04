@@ -24,7 +24,10 @@ errors are audited too. Nothing is promoted to an accepted fact by a connector.
 | `maigret` | username | Maigret | MIT | Top 150 sites. Needs `acknowledge_lawful_use` |
 | `sherlock` | username | Sherlock | MIT | Needs `acknowledge_lawful_use` |
 | `phone_parse` | phone | phonenumbers | Apache-2.0 | Offline validity and region only. No subscriber lookup |
-| `image_metadata` | image | ExifRead | BSD-3 | Files must already be in `EVIDENCE_DIR`. GPS is flagged as sensitive |
+| `image_metadata` | image | ExifTool (preferred) / ExifRead | Artistic or GPL / BSD-3 | Files must already be in `EVIDENCE_DIR`. Uses ExifTool when installed (far more complete), else ExifRead. Server paths are dropped, GPS is flagged |
+| `sentinel2` | area | Sentinel-2 via Earth Search STAC | Copernicus open data | See [area-watch.md](area-watch.md). Detector is a baseline heuristic |
+| `opensky` | area | OpenSky Network | research terms | Aircraft in a bounding box |
+| `aisstream` | area | aisstream.io | free key | Vessels in a bounding box, ~12 s sample |
 | `holehe` | email | Holehe | GPL-3.0 | Opt-in tool, run as a separate program. Contacts each service with the address. Needs acknowledgment |
 | `ghunt` | email | GHunt | AGPL-3.0 | Run as a separate program under **your own** Google session (`ghunt login`, one manual step). Needs acknowledgment |
 | `face_locate` | image | OpenCV YuNet | Apache-2.0 | Face bounding boxes for redaction. Detection only |

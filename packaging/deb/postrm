@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+case "$1" in
+remove) rm -rf /opt/kaal-ase/venv /opt/kaal-ase/app/__pycache__ ;;
+purge)
+  rm -rf /opt/kaal-ase /var/lib/kaal-ase /etc/kaal-ase
+  getent passwd kaal-ase >/dev/null && deluser --system kaal-ase >/dev/null 2>&1 || true
+  getent group kaal-ase >/dev/null && delgroup --system kaal-ase >/dev/null 2>&1 || true
+  [ -d /run/systemd/system ] && systemctl daemon-reload || true ;;
+esac
+exit 0

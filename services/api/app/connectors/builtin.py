@@ -7,7 +7,7 @@ import urllib.parse
 import httpx
 
 from . import policy
-from .base import Connector, ConnectorError, find_binary, run_cli
+from .base import Connector, ConnectorError, find_binary, run_cli, tool_cmd
 
 UA = "KAAL-ASE/2.0 (+https://redclove.space)"
 FOUND_RE = re.compile(r"^\[\+\]\s+(.+?):\s+(https?://\S+)", re.M)
@@ -132,8 +132,9 @@ class PhoneParse(Connector):
 
 
 class ImageMetadata(Connector):
-    name, kind, license, dist = "image_metadata", "image", "BSD-3-Clause (ExifRead)", "ExifRead"
-    description = "EXIF metadata from an image already registered as evidence. GPS is flagged, not mapped to a person."
+    name, kind, license, dist = "image_metadata", "image", "ExifTool (Artistic/GPL) when installed, else BSD-3 (ExifRead)", "ExifRead"
+    description = ("Metadata from an image already registered as evidence. Uses ExifTool when installed (far more complete: "
+                   "maker notes, XMP, IPTC, video), otherwise falls back to ExifRead. GPS is flagged, not mapped to a person.")
 
     def __init__(self, evidence_dir: str):
         self.evidence_dir = evidence_dir
@@ -144,20 +145,40 @@ class ImageMetadata(Connector):
             raise policy.PolicyError("Give a filename inside the evidence store (no absolute paths or '..').")
         return t
 
-    def run(self, filename):
+    def _resolve(self, filename):
         import pathlib
-        import exifread
         root = pathlib.Path(self.evidence_dir).resolve()
         path = (root / filename).resolve()
         if not path.is_relative_to(root) or not path.is_file():
             raise ConnectorError("File not found in the evidence store.")
+        return path
+
+    def _exiftool(self, exe, path):
+        text = run_cli([exe, "-j", "-G1", "-n", "-api", "largefilesupport=1", "--", str(path)], 60, stdout_only=True)
+        try:
+            row = json.loads(text)[0]
+        except (ValueError, IndexError):
+            raise ConnectorError("exiftool produced no readable output")
+        drop = ("SourceFile", "System:", "ExifTool:")       # server paths, permissions, tool noise
+        return {k: str(v)[:300] for k, v in list(row.items())[:600] if not k.startswith(drop)}
+
+    def _exifread(self, path):
+        import exifread
         with open(path, "rb") as f:
             tags = exifread.process_file(f, details=False)
-        keep = {k: str(v)[:200] for k, v in tags.items() if not k.startswith("Thumbnail") and k != "JPEGThumbnail"}
-        has_gps = any(k.startswith("GPS") for k in keep)
+        return {k: str(v)[:200] for k, v in tags.items() if not k.startswith("Thumbnail") and k != "JPEGThumbnail"}
+
+    def run(self, filename):
+        path = self._resolve(filename)
+        exe = find_binary("exiftool", "EXIFTOOL_BIN")
+        engine, keep = ("exiftool", self._exiftool(exe, path)) if exe else ("exifread", self._exifread(path))
+        has_gps = any("GPS" in k for k in keep)
         w = ["GPS coordinates present: handle as sensitive and review before sharing."] if has_gps else []
-        return {"outputs": {"tags": keep, "has_gps": has_gps}, "source_references": [f"evidence://{filename}"],
-                "confidence": 0.95 if keep else 0.0, "warnings": w + ([] if keep else ["No EXIF metadata found."])}
+        if engine == "exifread":
+            w.append("ExifTool is not installed, so only basic EXIF was read. Install exiftool for full metadata.")
+        return {"outputs": {"tags": keep, "has_gps": has_gps, "engine": engine, "tag_count": len(keep)},
+                "source_references": [f"evidence://{filename}"],
+                "confidence": 0.95 if keep else 0.0, "warnings": w + ([] if keep else ["No metadata found."])}
 
 
 class _UsernameCli(Connector):
@@ -166,12 +187,12 @@ class _UsernameCli(Connector):
     binary = ""
     timeout = 120
 
-    def available(self): return find_binary(self.binary) is not None
+    def available(self): return tool_cmd(self.binary) is not None
     def normalise(self, t): return policy.normalise_username(t)
-    def args(self, bin_, username): raise NotImplementedError
+    def args(self, cmd, username): raise NotImplementedError
 
     def run(self, username):
-        bin_ = find_binary(self.binary)
+        bin_ = tool_cmd(self.binary)
         if not bin_:
             raise ConnectorError(f"{self.binary} is not installed")
         text = run_cli(self.args(bin_, username), self.timeout)
@@ -190,7 +211,7 @@ class Maigret(_UsernameCli):
     description = "Username search across the top public sites (Maigret)."
 
     def args(self, b, u):
-        return [b, u, "--no-progressbar", "--no-color", "--timeout", "10", "--top-sites", "150", "--no-recursion",
+        return [*b, u, "--no-progressbar", "--no-color", "--timeout", "10", "--top-sites", "150", "--no-recursion",
                 "--folderoutput", tempfile.mkdtemp(prefix="kaal-maigret-")]
 
 
@@ -199,7 +220,7 @@ class Sherlock(_UsernameCli):
     description = "Username search across public social sites (Sherlock)."
 
     def args(self, b, u):
-        return [b, u, "--print-found", "--no-color", "--timeout", "10", "--folderoutput", tempfile.mkdtemp(prefix="kaal-sherlock-")]
+        return [*b, u, "--print-found", "--no-color", "--timeout", "10", "--folderoutput", tempfile.mkdtemp(prefix="kaal-sherlock-")]
 
 
 class TheHarvester(Connector):
