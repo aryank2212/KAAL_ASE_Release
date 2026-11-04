@@ -33,6 +33,14 @@ try {
   $body = '{"connector":"dns_records","target":"example.com","purpose":"Installer smoke test on a public domain"}'
   $r = Invoke-RestMethod "http://127.0.0.1:$Port/api/v1/cases/$($case.case_id)/osint/run" -Method Post -Headers $h -ContentType "application/json" -Body $body
   if (-not $r.requires_human_review) { throw "contract broken" }
+  $ph = Invoke-RestMethod "http://127.0.0.1:$Port/api/v1/cases/$($case.case_id)/osint/run" -Method Post -Headers $h -ContentType "application/json" -Body '{"connector":"phone_parse","target":"+14155552671","purpose":"Installer smoke test, offline parsing"}'
+  if ($ph.outputs.region -ne "US") { throw "phone_parse (bundled data) failed" }
+  # Real imagery read through GDAL/rasterio inside the frozen app. Network-dependent, so a failure here is a warning, not fatal.
+  try {
+    $s2 = Invoke-RestMethod "http://127.0.0.1:$Port/api/v1/cases/$($case.case_id)/osint/run" -Method Post -Headers $h -ContentType "application/json" -TimeoutSec 180 `
+      -Body '{"connector":"sentinel2","target":"72.85,18.90,72.92,18.96","purpose":"Installer smoke test of the imagery pipeline on public open data"}'
+    Write-Host "sentinel2 OK: scene $($s2.outputs.scene_id), $($s2.outputs.size[0])x$($s2.outputs.size[1]) px, $($s2.outputs.detections.Count) candidates"
+  } catch { Write-Host "::warning title=sentinel2 in frozen build::$($_.Exception.Message) $($_.ErrorDetails.Message)" }
   Write-Host "smoke test passed"
 } catch {
   Write-Host "::error title=smoke test failed::$($_.Exception.Message)"
