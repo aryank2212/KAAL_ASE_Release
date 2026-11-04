@@ -90,10 +90,16 @@ jobs:
       - name: Bundled tools run
         shell: pwsh
         run: |
-          & dist\kaal-ase\kaal-ase.exe --run-tool maigret --version
-          if ($LASTEXITCODE -ne 0) { throw "bundled maigret failed" }
-          & dist\kaal-ase\kaal-ase.exe --run-tool sherlock_project --version
-          if ($LASTEXITCODE -ne 0) { throw "bundled sherlock failed" }
+          foreach ($tool in "maigret", "sherlock_project") {
+            $out = (& dist\kaal-ase\kaal-ase.exe --run-tool $tool --version 2>&1 | Out-String)
+            $code = $LASTEXITCODE
+            Write-Host $out
+            if ($code -ne 0) {
+              $tail = $out.Substring([Math]::Max(0, $out.Length - 1800)) -replace "`r", "" -replace "`n", "%0A"
+              Write-Host "::error title=bundled $tool failed (exit $code)::$tail"
+              throw "bundled $tool failed"
+            }
+          }
       - name: Smoke test (unpackaged build)
         shell: pwsh
         run: ./packaging/windows/smoke.ps1 -Exe dist\kaal-ase\kaal-ase.exe -Port 8150

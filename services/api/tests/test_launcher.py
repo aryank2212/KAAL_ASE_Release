@@ -52,3 +52,15 @@ class LauncherTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class InstallLayoutTests(unittest.TestCase):
+    def test_nothing_is_written_next_to_the_code_or_at_import(self):
+        """Regression: osint_store used to derive /data (or /home/data) from the install location and crash read-only installs."""
+        from app import osint_store
+        root = Path(os.environ["KAAL_DATA_DIR"]).resolve()
+        if not os.environ.get("KAAL_LOOKUP_DIR"):
+            self.assertTrue(str(osint_store.DATA_DIR.resolve()).startswith(str(root)), osint_store.DATA_DIR)
+        self.assertEqual(osint_store.get_lookups(), [] if not osint_store.DATA_DIR.exists() else osint_store.get_lookups())
+        lid = osint_store.save_lookup({"x": 1})                 # creates the directory on demand
+        self.assertTrue((osint_store.DATA_DIR / f"{lid}.json").is_file())

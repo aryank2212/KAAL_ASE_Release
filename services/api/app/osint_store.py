@@ -6,15 +6,15 @@ from pathlib import Path
 
 logger = logging.getLogger(__name__)
 
-_repo_root = Path(__file__).resolve()
-for _ in range(4):
-    _repo_root = _repo_root.parent
-_default_data_dir = _repo_root / "data" / "osint_lookups"
-DATA_DIR = Path(os.getenv("KAAL_LOOKUP_DIR", str(_default_data_dir))).expanduser()
-DATA_DIR.mkdir(parents=True, exist_ok=True)
+from app.config import settings
+
+# Lookups live under the configured data directory (KAAL_DATA_DIR). KAAL_LOOKUP_DIR still overrides it (Docker uses that).
+# Created lazily: a read-only install location must never break importing the app.
+DATA_DIR = Path(os.getenv("KAAL_LOOKUP_DIR") or (Path(settings.data_dir).expanduser() / "osint_lookups")).expanduser()
 
 
 def save_lookup(data: dict) -> str:
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
     lookup_id = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
     path = DATA_DIR / f"{lookup_id}.json"
     record = {"lookup_id": lookup_id, "timestamp": datetime.now().isoformat(), **data}

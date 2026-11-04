@@ -12,7 +12,12 @@ try {
     try { if ((Invoke-RestMethod "http://127.0.0.1:$Port/health").status -eq "ok") { $ok = $true; break } } catch {}
     if ($p.HasExited) { break }
   }
-  if (-not $ok) { Get-Content "$data.out.log", "$data.err.log" -ErrorAction SilentlyContinue | Select-Object -Last 40; throw "server did not become healthy" }
+  if (-not $ok) {
+    $log = (Get-Content "$data.out.log", "$data.err.log" -ErrorAction SilentlyContinue | Select-Object -Last 40 | Out-String)
+    $tail = $log.Substring([Math]::Max(0, $log.Length - 1800)) -replace "`r", "" -replace "`n", "%0A"
+    Write-Host "::error title=server did not become healthy::$tail"
+    throw "server did not become healthy"
+  }
   $key = (Get-Content (Join-Path $data "api_key")).Trim()
   $h = @{ "X-API-Key" = $key }
   $ui = Invoke-WebRequest "http://127.0.0.1:$Port/ui/" -UseBasicParsing
@@ -29,6 +34,9 @@ try {
   $r = Invoke-RestMethod "http://127.0.0.1:$Port/api/v1/cases/$($case.case_id)/osint/run" -Method Post -Headers $h -ContentType "application/json" -Body $body
   if (-not $r.requires_human_review) { throw "contract broken" }
   Write-Host "smoke test passed"
+} catch {
+  Write-Host "::error title=smoke test failed::$($_.Exception.Message)"
+  throw
 } finally {
   if (-not $p.HasExited) { Stop-Process -Id $p.Id -Force }
 }
