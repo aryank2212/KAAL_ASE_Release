@@ -18,6 +18,15 @@ the chat and embedding models you want; they are listed by the server automatica
 
 Ollama has **no authentication**. Expose it only on a private network (LAN or Tailscale), never the public internet.
 
+## Laptop gateway ("Anton Oracle")
+
+If the laptop runs the Oracle gateway (a small API in front of its Ollama, `GET /health` and `POST /v1/ask`, usually on port 8003), pick
+**Laptop gateway (Oracle)** as the provider and enter `http://<laptop>:8003`. It needs no token. Differences from talking to Ollama directly:
+
+- The gateway serves **one** model, the one the laptop is set up with. KAAL follows it automatically; to change model, change it on the laptop.
+- There is **no embedding endpoint** through the gateway, so embeddings need Ollama or LM Studio directly.
+- KAAL's instruction text is sent as the gateway's `context`, and the question as `message`. Reasoning `<think>` blocks are stripped.
+
 ## Connect
 
 In the console: **Models**, pick the provider, enter the laptop address (e.g. `http://100.64.0.2:11434` for Ollama or

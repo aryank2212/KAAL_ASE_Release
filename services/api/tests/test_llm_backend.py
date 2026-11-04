@@ -55,6 +55,15 @@ class FakeLMStudio(_Base):
         else: self._send({}, 404)
 
 
+class FakeOracle(_Base):
+    def do_GET(self):
+        self._send({"status": "ok", "model": "qwen3:8b", "ollama": "up"} if self.path == "/health" else {}, 200 if self.path == "/health" else 404)
+    def do_POST(self):
+        b = self.body(); SEEN.append(("oracle", self.path, b.get("context"), b.get("message")))
+        self._send({"reply": "<think>hmm</think>  answer:" + b["message"], "model": "qwen3:8b", "tokens": {"prompt": 1, "completion": 1}, "latency_ms": 5}
+                   if self.path == "/v1/ask" else {}, 200 if self.path == "/v1/ask" else 404)
+
+
 class T(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -80,6 +89,26 @@ class T(unittest.TestCase):
         # change just the model, no restart
         names = [m["name"] for m in self.c.get("/api/v1/llm/models", headers=H).json()]
         self.assertIn("qwen2.5-7b-instruct", names)
+
+    def test_oracle_gateway_provider(self):
+        srv, url = serve(FakeOracle)
+        r = self.c.put("/api/v1/llm", headers=H, json={"provider": "oracle", "base_url": url})
+        self.assertEqual(r.status_code, 200, r.text)
+        self.assertEqual(r.json()["config"]["model"], "qwen3:8b")                   # follows the laptop's model
+        self.assertEqual(llm._chat("SYSTEM TEXT", "hello"), "answer:hello")         # <think> stripped
+        self.assertEqual(SEEN[-1][2:], ("SYSTEM TEXT", "hello"))                    # system -> context, prompt -> message
+        with self.assertRaises(lb.LLMError) as cm: llm.embed_text("x")
+        self.assertIn("no embedding", str(cm.exception))
+        bad = self.c.put("/api/v1/llm", headers=H, json={"provider": "oracle", "base_url": url, "model": "llama3"})
+        self.assertEqual(bad.status_code, 422); self.assertIn("Change the model on the laptop", bad.json()["detail"])
+        srv.shutdown()
+
+    def test_oracle_with_ollama_down_is_an_error(self):
+        class Down(_Base):
+            def do_GET(self): self._send({"status": "ok", "model": "qwen3:8b", "ollama": "down"})
+        srv, url = serve(Down)
+        r = self.c.put("/api/v1/llm", headers=H, json={"provider": "oracle", "base_url": url})
+        self.assertEqual(r.status_code, 422); self.assertIn("Ollama is 'down'", r.json()["detail"]); srv.shutdown()
 
     def test_unknown_model_rejected_with_available_list(self):
         r = self.c.put("/api/v1/llm", headers=H, json={"provider": "ollama", "base_url": self.ourl, "model": "does-not-exist"})

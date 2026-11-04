@@ -6,6 +6,7 @@
   kaal-model set qwen2.5:7b           switch the chat model (takes effect immediately)
   kaal-model set llama3 --embed nomic-embed-text
   kaal-model host lmstudio --url http://100.64.0.2:1234 [--api-key KEY]
+  kaal-model host oracle --url http://100.64.0.2:8003      (the laptop gateway: it uses whatever model the laptop runs)
   kaal-model test                     send a tiny prompt through the configured model
 
 Server and key come from --server/--key or KAAL_SERVER (default http://127.0.0.1:8140) and KAAL_API_KEY.
@@ -50,7 +51,7 @@ def main(argv=None):
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("show"); sub.add_parser("models"); sub.add_parser("test")
     s = sub.add_parser("set"); s.add_argument("model"); s.add_argument("--embed")
-    h = sub.add_parser("host"); h.add_argument("provider", choices=["ollama", "lmstudio"]); h.add_argument("--url"); h.add_argument("--api-key")
+    h = sub.add_parser("host"); h.add_argument("provider", choices=["ollama", "lmstudio", "oracle"]); h.add_argument("--url"); h.add_argument("--api-key")
     a = ap.parse_args(argv)
     if not a.key:
         sys.exit("API key needed: set KAAL_API_KEY or pass --key")

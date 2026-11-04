@@ -5,6 +5,7 @@ every call (cheap, mtime-cached), so changing the model takes effect immediately
 """
 import json
 import os
+import re
 import threading
 import time
 from dataclasses import asdict, dataclass
@@ -18,6 +19,7 @@ from app.config import settings
 PROVIDERS = {
     "ollama": "http://localhost:11434",
     "lmstudio": "http://localhost:1234",
+    "oracle": "http://localhost:8003",     # "Anton Oracle" gateway in front of the laptop's Ollama: /health, /v1/ask
 }
 _LOCK = threading.Lock()
 _cache: dict = {"mtime": None, "cfg": None}
@@ -113,6 +115,12 @@ def _request(cfg: LLMConfig, method: str, path: str, timeout: float | None = Non
 
 def list_models(cfg: LLMConfig | None = None) -> list[dict]:
     cfg = cfg or current()
+    if cfg.provider == "oracle":
+        # The gateway serves exactly one model, chosen on the laptop; /health reports which.
+        data = _request(cfg, "GET", "/health", timeout=10)
+        if data.get("ollama") != "up":
+            raise LLMError(f"the gateway at {cfg.base_url} is up but its Ollama is '{data.get('ollama')}'")
+        return [{"name": data["model"], "embedding": False}] if data.get("model") else []
     if cfg.provider == "ollama":
         data = _request(cfg, "GET", "/api/tags", timeout=10)
         names = [m.get("name") or m.get("model") for m in data.get("models", [])]
@@ -126,6 +134,13 @@ def chat(system: str, prompt: str, model: str | None = None, temperature: float 
     cfg = current()
     model = model or cfg.model
     msgs = [{"role": "system", "content": system}, {"role": "user", "content": prompt}]
+    if cfg.provider == "oracle":
+        # The model is whatever the laptop runs (the `model` argument cannot change it). KAAL's system text goes in `context`.
+        data = _request(cfg, "POST", "/v1/ask", json={"message": prompt, "context": system[:12000]})
+        reply = data.get("reply")
+        if not isinstance(reply, str):
+            raise LLMError("unexpected reply from the gateway /v1/ask")
+        return re.sub(r"<think>.*?</think>", "", reply, flags=re.S).strip()
     if cfg.provider == "ollama":
         data = _request(cfg, "POST", "/api/chat", json={"model": model, "stream": False, "messages": msgs,
                                                         "options": {"temperature": temperature}})
@@ -143,6 +158,8 @@ def chat(system: str, prompt: str, model: str | None = None, temperature: float 
 
 def embed(text: str) -> list[float]:
     cfg = current()
+    if cfg.provider == "oracle":
+        raise LLMError("the Oracle gateway has no embedding endpoint; use Ollama or LM Studio directly for embeddings")
     if cfg.provider == "ollama":
         data = _request(cfg, "POST", "/api/embeddings", timeout=30, json={"model": cfg.embed_model, "prompt": text})
         return data["embedding"]

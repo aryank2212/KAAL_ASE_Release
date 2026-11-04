@@ -46,10 +46,19 @@ def set_llm(payload: LLMUpdate, db: Session = Depends(get_db)) -> dict:
         if cfg.provider not in lb.PROVIDERS:
             raise lb.LLMError(f"provider must be one of {sorted(lb.PROVIDERS)}")
         if payload.verify:
-            names = {m["name"] for m in lb.list_models(cfg)}
-            for label, name in (("model", cfg.model), ("embed_model", cfg.embed_model)):
-                if name not in names:
-                    raise lb.LLMError(f"{label} '{name}' is not installed on {cfg.base_url}. Available: {sorted(names)[:30]}")
+            models = lb.list_models(cfg)
+            names = {m["name"] for m in models}
+            if cfg.provider == "oracle":
+                # One fixed model, picked on the laptop: follow it instead of demanding a match.
+                if not models:
+                    raise lb.LLMError(f"the gateway at {cfg.base_url} did not report a model")
+                if payload.model and payload.model not in names:
+                    raise lb.LLMError(f"the gateway serves '{models[0]['name']}'. Change the model on the laptop; it cannot be chosen from here.")
+                cfg.model = models[0]["name"]
+            else:
+                for label, name in (("model", cfg.model), ("embed_model", cfg.embed_model)):
+                    if name not in names:
+                        raise lb.LLMError(f"{label} '{name}' is not installed on {cfg.base_url}. Available: {sorted(names)[:30]}")
         lb.save(cfg)
     except lb.LLMError as e:
         raise HTTPException(status_code=422, detail=str(e))

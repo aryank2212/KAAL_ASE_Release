@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- New model provider `oracle`: the laptop gateway (`/health`, `/v1/ask`). Follows the single model the laptop serves; no embeddings. Selectable in the console and with `kaal-model host oracle`.
+- `scripts/kaal-globe.service`: boot unit template for the globe companion.
 - Globe tab: embeds God's Eye View (MIT) as a companion service, with "Fly to area" from the Area-watch bounding box and a CSP that frames only the configured address. `scripts/install-globe.sh` installs it in Docker from a pinned commit. See docs/globe.md.
 - Fixed the `theharvester` connector for theHarvester 4.11: it asked for a source that no longer exists (`threatminer`), would have failed on every run, and could lose its report when a temp path contained a dot. Hosts, IPs, ASNs and emails are now parsed and normalised, and `total_hosts` reports the real count.
 - `install-optional-tools.sh` now installs theHarvester 4.11.1 (via uv) as well.

@@ -169,7 +169,7 @@ const views = {
 
   async models(root) {
     const st = await api("/llm"); const cfg = st.config;
-    const prov = h("select", { id: "prov" }, [["ollama", "Ollama"], ["lmstudio", "LM Studio"]].map(([v, l]) => h("option", { value: v, selected: v === cfg.provider }, l)));
+    const prov = h("select", { id: "prov" }, [["ollama", "Ollama"], ["lmstudio", "LM Studio"], ["oracle", "Laptop gateway (Oracle)"]].map(([v, l]) => h("option", { value: v, selected: v === cfg.provider }, l)));
     const url = h("input", { id: "url", value: cfg.base_url, class: "grow" }), key = h("input", { id: "lkey", type: "password", placeholder: cfg.api_key ? "(saved — leave blank to keep)" : "optional (LM Studio)", autocomplete: "off" });
     const chat = h("select", { id: "chat" }), emb = h("select", { id: "emb" }), msg = h("div", { class: "mut" }), stEl = h("div");
     const paint = s => stEl.replaceChildren(h("span", { class: "badge " + (s.reachable ? "ready" : "not_installed") }, s.reachable ? `reachable · ${s.latency_ms} ms` : "unreachable"), " ", s.error ? h("span", { class: "warn" }, s.error) : h("span", { class: "mut" }, `${s.config.provider} · ${s.config.model}`));
@@ -179,7 +179,7 @@ const views = {
       if (want && !names.includes(want)) names.unshift(want);
       names.forEach(n => s.append(h("option", { value: n, selected: n === want }, n))); } };
     fill(st.models, cfg);
-    prov.addEventListener("change", () => { url.value = prov.value === "ollama" ? "http://localhost:11434" : "http://localhost:1234"; });
+    prov.addEventListener("change", () => { url.value = { ollama: "http://localhost:11434", lmstudio: "http://localhost:1234", oracle: "http://localhost:8003" }[prov.value]; });
     const refresh = h("button", { onclick: async () => { msg.textContent = "Asking the host…";
       try { const cur = { ...cfg, provider: prov.value, base_url: url.value };
         const r = await api("/llm", { method: "PUT", body: { provider: prov.value, base_url: url.value, model: chat.value || undefined, embed_model: emb.value || undefined, ...(key.value ? { api_key: key.value } : {}), verify: false } });
