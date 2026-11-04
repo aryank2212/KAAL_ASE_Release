@@ -13,3 +13,5 @@ python-whois==0.9.6
 ExifRead==3.5.1
 phonenumbers==9.0.42
 sherlock-project==0.16.2
+opencv-python-headless==5.0.0.93
+numpy==2.5.4

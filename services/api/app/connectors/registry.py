@@ -9,11 +9,13 @@ from . import policy
 from .base import ConnectorError
 from .builtin import (CertTransparency, DnsRecords, ImageMetadata, Maigret, PhoneParse, Sherlock,
                       TheHarvester, Wayback, Whois, WikipediaBriefing)
+from .sensitive import FaceCompare, FaceLocate, Ghunt, Holehe
 
 
 def build() -> dict:
     cs = [DnsRecords(), Whois(), CertTransparency(), Wayback(), PhoneParse(), ImageMetadata(settings.evidence_dir),
-          Maigret(), Sherlock(), TheHarvester(), WikipediaBriefing()]
+          Maigret(), Sherlock(), TheHarvester(), WikipediaBriefing(),
+          Holehe(), Ghunt(), FaceLocate(settings.evidence_dir), FaceCompare(settings.evidence_dir)]
     return {c.name: c for c in cs}
 
 
@@ -22,7 +24,8 @@ REGISTRY = build()
 
 def describe() -> list[dict]:
     return [{"name": c.name, "kind": c.kind, "license": c.license, "description": c.description, "version": c.version(),
-             "available": c.available(), "requires_acknowledgment": c.people_adjacent} for c in REGISTRY.values()]
+             "available": c.available(), "status": c.status(), "setup": c.setup_hint(),
+             "requires_acknowledgment": c.people_adjacent} for c in REGISTRY.values()]
 
 
 def execute(connector: str, target: str, purpose: str, acknowledged: bool = False) -> dict:
@@ -38,6 +41,8 @@ def execute(connector: str, target: str, purpose: str, acknowledged: bool = Fals
     target = c.normalise(target)
     if not c.available():
         raise ConnectorError(f"Connector '{connector}' is not installed on this deployment.")
+    if c.setup_hint():
+        raise ConnectorError(f"Connector '{connector}' needs setup: {c.setup_hint()}")
     started = time.time()
     raw = c.run(target)
     result = {

@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 app = FastAPI(
     title="KAAL-ASE API",
-    version="2.0.0",
+    version="2.1.0",
     description="API for the KAAL-ASE intelligence management platform.",
 )
 

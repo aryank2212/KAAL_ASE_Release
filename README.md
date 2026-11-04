@@ -7,7 +7,7 @@ KAAL-ASE is an OSINT research and evidence-management project built around a Pyt
 ## V2: OSINT connectors
 
 KAAL-ASE 2.0 adds Maigret, Sherlock, DNS, WHOIS, certificate-transparency, Wayback, phone-parsing, image-metadata,
-an optional theHarvester adapter and a sourced-briefing connector behind one guardrailed API. See
+Holehe, GHunt, 1:1 face comparison, an optional theHarvester adapter and a sourced-briefing connector behind one guardrailed API. See
 [docs/osint-connectors.md](docs/osint-connectors.md) and [CHANGELOG.md](CHANGELOG.md).
 
 ## Status

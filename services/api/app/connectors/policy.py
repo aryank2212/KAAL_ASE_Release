@@ -5,11 +5,9 @@ DOMAIN_RE = re.compile(r"^(?=.{1,253}$)(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.
 USERNAME_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,38}[A-Za-z0-9]$")
 INTERNAL_SUFFIXES = (".local", ".internal", ".localhost", ".lan", ".home", ".corp", ".onion", ".arpa")
 
-# Capabilities KAAL ASE refuses by design. Names are matched against requested connectors.
+# Capabilities KAAL ASE still refuses by design. (Holehe, GHunt and face matching were enabled in 2.1.0
+# behind the purpose + acknowledgment + audit gates.)
 DENIED = {
-    "holehe": "Probes sites' password-reset flows to learn whether an email is registered. Not a public source.",
-    "ghunt": "Requires a logged-in Google session. Credentialed access is out of scope.",
-    "face_match": "Biometric identity matching is off. Faces may only be located for redaction.",
     "private_account": "No access to private accounts.",
 }
 
@@ -63,4 +61,14 @@ def normalise_topic(value: str) -> str:
     v = (value or "").strip()
     if not 4 <= len(v) <= 200:
         raise PolicyError("Ask a question between 4 and 200 characters.")
+    return v
+
+
+EMAIL_RE = re.compile(r"^[a-z0-9._%+\-]{1,64}@[a-z0-9.\-]{1,190}\.[a-z]{2,24}$")
+
+
+def normalise_email(value: str) -> str:
+    v = (value or "").strip().lower()
+    if len(v) > 254 or not EMAIL_RE.match(v):
+        raise PolicyError("Give a single email address.")
     return v

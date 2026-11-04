@@ -38,9 +38,16 @@ class PolicyTests(unittest.TestCase):
                 policy.normalise_domain(bad)
 
     def test_denied(self):
-        for n in ("holehe", "ghunt", "face_match"):
-            with self.assertRaises(policy.PolicyError):
-                policy.check_denied(n)
+        with self.assertRaises(policy.PolicyError):
+            policy.check_denied("private_account")
+        for n in ("holehe", "ghunt", "face_compare"):   # enabled in 2.1.0, behind the gates
+            policy.check_denied(n)
+
+    def test_email(self):
+        self.assertEqual(policy.normalise_email(" Jane.Doe@Example.COM "), "jane.doe@example.com")
+        for bad in ("a@b", "a b@example.com", "x@y@example.com", "", "a@example.com, b@example.com"):
+            with self.assertRaises(policy.PolicyError, msg=bad):
+                policy.normalise_email(bad)
 
     def test_purpose(self):
         with self.assertRaises(policy.PolicyError): policy.check_purpose("short")
@@ -56,8 +63,55 @@ class ConnectorTests(unittest.TestCase):
     def test_registry_lists_all_and_hides_denied(self):
         names = {c["name"] for c in registry.describe()}
         self.assertTrue({"dns_records", "whois", "cert_transparency", "wayback", "phone_parse", "image_metadata",
-                         "maigret", "sherlock", "theharvester", "wikipedia_briefing"} <= names)
+                         "maigret", "sherlock", "theharvester", "wikipedia_briefing",
+                         "holehe", "ghunt", "face_locate", "face_compare"} <= names)
         self.assertFalse(names & set(policy.DENIED))
+
+    def test_sensitive_connectors_require_acknowledgment(self):
+        for n in ("holehe", "ghunt", "face_compare"):
+            self.assertTrue(registry.REGISTRY[n].people_adjacent, n)
+        self.assertFalse(registry.REGISTRY["face_locate"].people_adjacent)
+
+    def test_holehe_output_parsed(self):
+        from app.connectors import sensitive
+        sample = "[+] Email used, [-] Email not used, [x] Rate limit\n\r[+] twitter.com\n\r[+] adobe.com\n[-] nope.com\n[x] flaky.com\n[+] adobe.com\n"
+        with patch.object(sensitive, "find_binary", return_value="/bin/true"), patch.object(sensitive, "run_cli", return_value=sample):
+            r = sensitive.Holehe().run("a@example.com")
+        self.assertEqual(r["outputs"]["services"], ["adobe.com", "twitter.com"])
+        self.assertEqual((r["outputs"]["checked"], r["outputs"]["failed"]), (4, 1))
+        self.assertIn("lead", r["warnings"][0])
+        self.assertIn("not proof", r["warnings"][-1])
+
+    def test_holehe_total_failure_is_an_error_not_an_empty_result(self):
+        from app.connectors import sensitive
+        from app.connectors.base import ConnectorError
+        sample = "".join(f"[x] site{i}.com\n" for i in range(40))
+        with patch.object(sensitive, "find_binary", return_value="/bin/true"), patch.object(sensitive, "run_cli", return_value=sample):
+            with self.assertRaises(ConnectorError) as cm:
+                sensitive.Holehe().run("a@example.com")
+        self.assertIn("NOT a negative result", str(cm.exception))
+
+    def test_ghunt_needs_login_before_running(self):
+        from app.connectors import sensitive
+        g = sensitive.Ghunt()
+        with patch.dict(os.environ, {"GHUNT_CREDS": "/nonexistent/creds.m"}), patch.object(sensitive, "find_binary", return_value="/bin/true"):
+            self.assertIn("ghunt login", g.setup_hint())
+            with patch.dict(registry.REGISTRY, {"ghunt": g}), self.assertRaises(Exception) as cm:
+                registry.execute("ghunt", "a@example.com", "Authorized brand-protection review", True)
+            self.assertIn("needs setup", str(cm.exception))
+
+    def test_face_compare_input_rules(self):
+        from app.connectors import sensitive
+        fc = sensitive.FaceCompare(_tmp)
+        for bad in ("a.jpg", "a.jpg,a.jpg", "a.jpg,b.jpg,c.jpg", "../x.jpg,b.jpg", "/etc/passwd,b.jpg"):
+            with self.assertRaises(policy.PolicyError, msg=bad):
+                fc.normalise(bad)
+        self.assertEqual(fc.normalise("a.jpg, b.jpg"), "a.jpg,b.jpg")
+
+    def test_face_model_checksums_pinned(self):
+        from app.connectors import sensitive
+        self.assertEqual(len(sensitive.MODEL_SHA256), 2)
+        self.assertTrue(all(len(h) == 64 for h in sensitive.MODEL_SHA256.values()))
 
     def test_username_cli_output_parsed(self):
         sample = "[*] Checking\n\r[+] GitHub: https://github.com/python\n[+] GitHub: https://github.com/python\n[+] Reddit: https://www.reddit.com/user/python\n[-] X: not found\n"

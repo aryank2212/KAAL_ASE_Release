@@ -12,11 +12,18 @@ class ConnectorError(RuntimeError):
     pass
 
 
+def tools_dir() -> str:
+    return os.environ.get("KAAL_TOOLS_DIR", os.path.expanduser("~/.kaal/tools"))
+
+
 def find_binary(name: str, env_var: str | None = None) -> str | None:
-    """Look next to the running interpreter (venv/bin) first, then PATH."""
+    """Env override, then <KAAL_TOOLS_DIR>/<name>-venv/bin, then next to the interpreter, then PATH."""
     if env_var and os.environ.get(env_var):
         p = os.environ[env_var]
         return p if os.path.isfile(p) and os.access(p, os.X_OK) else None
+    iso = os.path.join(tools_dir(), f"{name.lower()}-venv", "bin", name)
+    if os.path.isfile(iso) and os.access(iso, os.X_OK):
+        return iso
     local = os.path.join(os.path.dirname(sys.executable), name)
     if os.path.isfile(local) and os.access(local, os.X_OK):
         return local
@@ -50,6 +57,13 @@ class Connector(ABC):
 
     def available(self) -> bool:
         return True
+
+    def setup_hint(self) -> str | None:
+        """Why an installed connector is not ready yet (credentials, models). None when ready."""
+        return None
+
+    def status(self) -> str:
+        return "ready" if self.available() and not self.setup_hint() else ("needs_setup" if self.available() else "not_installed")
 
     def version(self) -> str:
         return pkg_version(self.dist) if self.dist else "n/a"
